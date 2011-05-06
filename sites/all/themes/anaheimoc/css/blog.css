@@ -1,0 +1,17 @@
+/* ADDED COMMENT*/
+body.node-type-blog-article .view-id-blog_author.view-display-id-block_1 .views-field-field-profile-image-fid
+{
+float: left;
+margin-right: 20px;
+width: 140px;	
+}
+
+.node-type-blogger-profile .field-field-profile-image{
+float: right;
+margin-left: 20px;
+margin-bottom: 10px;
+}
+
+.node-type-blogger-profile div.node div.content p{
+
+}

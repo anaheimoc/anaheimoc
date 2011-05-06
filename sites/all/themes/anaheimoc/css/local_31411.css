@@ -1,0 +1,135 @@
+/* $Id: local-sample.css,v 1.1.2.1 2010/01/11 00:08:12 sociotech Exp $ */
+
+.clear {clear: both;}
+
+/* Google Map Fix */
+.quicktabs-hide {
+  display: block;
+  position: absolute;
+  left: -10000px;
+  top: -10000px;
+}
+
+/* Partnership Tabs */
+ul.quicktabs_tabs.quicktabs-style-zen li a{
+font-family: Georgia;
+font-size: 16px;
+padding: 8px 16px;
+background: #00a4e4;
+color: #ffffff;
+}
+
+ul.quicktabs_tabs.quicktabs-style-zen{
+  margin:0;
+  padding:0;
+  font-size:16px;
+  list-style: none;
+  height:43px;
+  border: 1px;
+  border-bottom-style: solid;
+  border-bottom-width: 100%;
+  border-bottom-color: #eeeeee;
+  background:none;
+}
+
+ul.quicktabs_tabs.quicktabs-style-zen li{
+  float: left;
+  margin:0 2px 12px 0;
+  padding:0;
+  background: #00a4e4;
+}
+
+ul.quicktabs_tabs.quicktabs-style-zen li.last a{
+  background: #99cc00;
+}
+
+ul.quicktabs_tabs.quicktabs-style-zen li:hover a{
+  border-width: 0;
+  background: #dbeffb;
+  color: #000000;
+}
+
+quicktabs_tabs.quicktabs-style-zen li:hover{
+  background: #00a4e4;
+}
+
+ul.quicktabs_tabs.quicktabs-style-zen li.active a,
+ul.quicktabs_tabs.quicktabs-style-zen li.active a:hover{
+  text-decoration:none;
+  border-width: 0;
+  background:#dbeffb;
+  color:#000000;
+}
+ul.quicktabs_tabs.quicktabs-style-zen li.active{
+  background:#ffffff;
+}
+
+
+/* SEARCH BOX CSS STYLES */
+
+#header-top input#edit-search-block-form-1 {
+background:none repeat scroll 0 0 transparent;
+border:medium none;
+color:#000;
+float:left;
+margin:0;
+padding:5px;
+}
+
+#header-top form#search-block-form .form-text {
+display:inline;
+margin:6px 0 0 5px;
+width:200px;
+}
+
+#header-top form#search-block-form {
+background:#FFFFFF none repeat scroll 0 0;
+border:1px solid #AAAAAA;
+height:33px;
+margin:0;
+padding:0;
+position:absolute;
+right:0;
+top:15px;
+z-index:9999;
+}
+
+/* END OF SEARCH BOX CSS STYLES */
+
+/* NAVIGATION MENUS */
+#block-menu-menu-subsite-menu {
+float: left;
+}
+#block-menu-menu-subsite-menu ul li a.active {
+color: #58d0ff;
+background-color:#14536c;
+}
+
+
+/* MENUS */
+.menu-inline ul li{
+display: inline;
+}
+
+.menu-inline ul li a{
+padding: 0 8px 0 5px;
+}
+
+
+/* IMAGE LIBRARY GRID */
+.view-id-image_library table.views-view-grid td, .view-id-image_library table.views-view-grid h3.title{
+width: 160px;
+}
+
+.view-id-image_library table.views-view-grid tr{
+vertical-align: top;
+}
+
+/* Partner Listings */
+.views-field-field-mem-description-visfeature-value label {
+font-size: 22px;
+}
+/* hides node title from partner listings */
+.node-type-partner-listing .main-wrapper h1.title{
+	display: none;
+}
