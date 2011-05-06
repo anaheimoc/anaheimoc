@@ -1,0 +1,3 @@
+<?php
+
+include_once('anaheimoc_hero_feature.features.inc');
