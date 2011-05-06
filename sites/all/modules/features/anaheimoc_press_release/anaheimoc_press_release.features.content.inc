@@ -108,7 +108,7 @@ function anaheimoc_press_release_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Partner reference',
-      'weight' => '7',
+      'weight' => '8',
       'description' => '',
       'type' => 'nodereference_autocomplete',
       'module' => 'nodereference',
@@ -171,7 +171,7 @@ function anaheimoc_press_release_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Boilerplate copy',
-      'weight' => '4',
+      'weight' => '5',
       'description' => '',
       'type' => 'text_textarea',
       'module' => 'text',
@@ -229,7 +229,7 @@ function anaheimoc_press_release_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Contacts',
-      'weight' => '5',
+      'weight' => '6',
       'description' => '',
       'type' => 'text_textarea',
       'module' => 'text',
@@ -287,7 +287,7 @@ function anaheimoc_press_release_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Pull quote',
-      'weight' => '1',
+      'weight' => '2',
       'description' => '',
       'type' => 'text_textarea',
       'module' => 'text',
@@ -358,7 +358,7 @@ function anaheimoc_press_release_content_default_fields() {
       'year_range' => '-1:+3',
       'label_position' => 'above',
       'label' => 'Release date',
-      'weight' => 0,
+      'weight' => '1',
       'description' => '',
       'type' => 'date_popup',
       'module' => 'date',
@@ -428,6 +428,63 @@ function anaheimoc_press_release_content_default_fields() {
     ),
   );
 
+  // Exported field: field_pr_test_field
+  $fields['press_release-field_pr_test_field'] = array(
+    'field_name' => 'field_pr_test_field',
+    'type_name' => 'press_release',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => 5,
+      'size' => '60',
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Test field',
+      'weight' => 0,
+      'description' => '',
+      'type' => 'text_textfield',
+      'module' => 'text',
+    ),
+  );
+
   // Exported field: field_pr_video_link
   $fields['press_release-field_pr_video_link'] = array(
     'field_name' => 'field_pr_video_link',
@@ -491,7 +548,7 @@ function anaheimoc_press_release_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Video link',
-      'weight' => '3',
+      'weight' => '4',
       'description' => '',
       'type' => 'emvideo_textfields',
       'module' => 'emvideo',
@@ -506,6 +563,7 @@ function anaheimoc_press_release_content_default_fields() {
   t('Pull quote');
   t('Release date');
   t('Sub-headline');
+  t('Test field');
   t('Video link');
 
   return $fields;
