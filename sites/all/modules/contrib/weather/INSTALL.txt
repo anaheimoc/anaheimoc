@@ -1,0 +1,41 @@
+Installation
+------------
+
+* Create a new directory "weather" in your modules directory.
+* Copy the module into the newly created module/weather directory.
+* Go to admin/build/modules and enable the weather module.
+* Go on with the configuration, see below.
+
+Configuration
+-------------
+
+* If you want to have a system-wide weather block (i.e. the same
+  location for every user), go to Administer->Site configuration->Weather
+  and configure the location. Go to Administer->Site building->Blocks
+  and enable the "Weather: system-wide" block.
+* If you want to allow users to configure their own custom weather
+  blocks, go to Administer->Site building->Blocks and enable the
+  "Weather: custom user" block. You might want to change the
+  "Custom visibility settings" in the configuration page of the block to
+  "Hide this block by default but let individual users show it."
+  Afterwards, go to Administer->User management->Access control and
+  set the "administer custom weather block" permission for the
+  appropriate role.
+* Go to Administer->Site configuration->Weather or "My weather" and
+  select the location for which you would like to display the current
+  weather conditions.
+* If you want to add another location to your block, click on the link
+  "Add another location to the block", right under the button
+  "Save configuration". If you have configured multiple locations, they
+  will be listed on the bottom of the page. Click on the location to
+  change the configuration, or click on "Delete configuration" to
+  remove it from your block.
+* Optionally, decide which units should be used for displaying the
+  weather data.
+* You can also set the weight of the location, to change the order
+  of appearance in the block.  
+
+Requirements
+------------
+
+This module works with Drupal 6.x

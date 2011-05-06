@@ -1,0 +1,16 @@
+<?php
+
+function domain_partner_listing_form_alter(&$form, &$form_state, $form_id) {
+}
+
+function domain_partner_listing_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL){
+switch ($op) {
+    case 'presave':
+    	if ($node->nid){
+    	  if ($node->type == 'partner_listing'){
+    	  $node->domain_source = -5;
+    	  }
+    	}
+      break;
+  }
+}

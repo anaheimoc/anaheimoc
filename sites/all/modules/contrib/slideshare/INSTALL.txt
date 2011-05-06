@@ -1,0 +1,22 @@
+// $Id: INSTALL.txt,v 1.2 2009/11/22 12:37:44 antoniodemarco Exp $
+
+Getting Started
+---------------
+
+1. Upload and enable the following modules:
+    - Embedded Media Field (http://drupal.org/project/emfield)
+    - Embedded Media Video (http://drupal.org/project/emfield)
+    - Content Construction Kit (CCK) (http://drupal.org/project/cck) 
+    - Slideshare module 
+
+2. Go to "Administer" > "Content management" > "Embedded Media Field configuration". 
+
+3. Unfold "Embedded Video Field" and, under "Providers", the "Slideshare configuration" form.
+
+4. CLick on "Allow content from Slideshare"
+
+5. Provide "API Key" and "Shared Secret" by Slideshare, to obtain one apply to http://www.slideshare.net/developers/applyforapi.
+
+6. Add a CCK field of "Embedded Video" type and select "Slideshare" in "Providers Supported".
+
+7. In the node submission form paste the URL of the Slideshare presentation into the Embedded Media Video input field.

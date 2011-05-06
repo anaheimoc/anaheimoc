@@ -1,0 +1,978 @@
+# Translation of Weather to Greek
+#
+# This file is part of the Drupal Weather module.
+#
+# Weather is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# Weather is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Weather; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+# Copyright ©
+# Vasileios Lourdas <drupal@lourdas.name>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: weather.module\n"
+"POT-Creation-Date: 2010-05-03 14:44+0200\n"
+"PO-Revision-Date: 2008-12-23 22:42+0200\n"
+"Last-Translator: Vasileios Lourdas <drupal@lourdas.name>\n"
+"Language-Team: Ελληνικά <el@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: weather.tpl.php:10
+msgid "Temperature: !temperature1, feels like !temperature2"
+msgstr "Θερμοκρασία: !temperature1, μοιάζει με !temperature2"
+
+#: weather.tpl.php:15
+msgid "Temperature: !temperature"
+msgstr "Θερμοκρασία: !temperature"
+
+#: weather.tpl.php:20
+msgid "Wind: !wind"
+msgstr "Άνεμος: !wind"
+
+#: weather.tpl.php:24
+msgid "Pressure: !pressure"
+msgstr "Ατμοσφαιρική πίεση: !pressure"
+
+#: weather.tpl.php:28
+msgid "Rel. Humidity: !rel_humidity"
+msgstr "Σχετ. υγρασία: !rel_humidity"
+
+#: weather.tpl.php:32
+msgid "Visibility: !visibility"
+msgstr "Ορατότητα: !visibility"
+
+#: weather.tpl.php:42
+msgid "METAR data: !metar"
+msgstr "Δεδομένα METAR: !metar"
+
+#: weather.tpl.php:48
+msgid "Location of this weather station:"
+msgstr "Τοποθεσία του καιρικού σταθμού:"
+
+#: weather.tpl.php:55
+msgid "Reported on:"
+msgstr "Αναφέρθηκε στις:"
+
+#: weather.module:160
+msgid ""
+"You can add, edit, and delete locations from system-wide weather blocks. "
+"Moreover, you can specify default values for newly created locations."
+msgstr ""
+"Μπορείτε να προσθέσετε, τροποποιήσετε και διαγράψετε τοποθεσίες από τα "
+"καθολικά μπλοκ καιρού. Επίσης, μπορείτε να ορίσετε προκαθορισμένες τιμές για "
+"νέες δημιουργηθείσες τοποθεσίες."
+
+#: weather.module:165
+msgid "You can add, edit, and delete locations from your custom weather block."
+msgstr ""
+"Μπορείτε να προσθέσετε, τροποποιήσετε και διαγράψετε τοποθεσίες από το "
+"προσαρμοσμένο μπλοκ καιρού."
+
+#: weather.module:167
+msgid ""
+"Please note that the block will not be shown until you configure at least "
+"one location."
+msgstr ""
+"Πρέπει να σημειωθεί ότι το μπλοκ δε θα εμφανιστεί μέχρι να καθορίσετε "
+"τουλάχιστον μία τοποθεσία."
+
+#: weather.module:226
+msgid "Weather: custom user"
+msgstr "Καιρός: προσαρμογή χρήστη"
+
+#: weather.module:227
+msgid "Weather: location of nodes (requires Location or Node Map module)"
+msgstr "Καιρός: τοποθεσία κόμβων (απαιτεί τη μονάδα Location ή τη Node Map)"
+
+#: weather.module:233
+msgid "Weather: system-wide !number"
+msgstr "Καιρός: καθολικός αριθμός !number"
+
+#: weather.module:246;298
+msgid "Current weather"
+msgstr "Τρέχων καιρός"
+
+#: weather.module:290
+msgid "Current weather nearby"
+msgstr "Τρέχων καιρός πλησίον"
+
+#: weather.module:384
+msgid "No sunrise today"
+msgstr "Δεν υπάρχουν πληροφορίες ανατολής ηλίου σήμερα"
+
+#: weather.module:387
+msgid "No sunset today"
+msgstr "Δεν υπάρχουν πληροφορίες δύσης ηλίου σήμερα"
+
+#: weather.module:426
+msgid "Sunrise: !sunrise"
+msgstr "Ανατολή ηλίου: !sunrise"
+
+#: weather.module:428
+msgid "Sunset: !sunset"
+msgstr "Δύση ηλίου: !sunset"
+
+#: weather.module:538
+msgid "Real name"
+msgstr "Πραγματικό όνομα"
+
+#: weather.module:539;592;904
+msgid "Weight"
+msgstr "Βάρος"
+
+#: weather.module:540;593
+msgid "Operations"
+msgstr "Λειτουργίες"
+
+#: weather.module:552;604
+msgid "edit"
+msgstr "επεξεργασία"
+
+#: weather.module:553;605
+msgid "delete"
+msgstr "διαγραφή"
+
+#: weather.module:560
+msgid "There are currently no locations."
+msgstr "Δεν υπάρχουν αυτή τη στιγμή τοποθεσίες."
+
+#: weather.module:572
+msgid "Create new location"
+msgstr "Δημιουργία νέας τοποθεσίας"
+
+#: weather.module:591
+msgid "System-wide block !number"
+msgstr "Αριθμός !number καθολικού μπλοκ"
+
+#: weather.module:615
+msgid "Create new location in block !number"
+msgstr "Δημιουργία νέας τοποθεσίας στο μπλοκ με αριθμό !number"
+
+#: weather.module:623
+msgid "Create new system-wide block"
+msgstr "Δημιουργία νέου καθολικού μπλοκ"
+
+#: weather.module:627
+msgid "Configure the default location"
+msgstr "Παραμετροποίηση της εξ' ορισμού τοποθεσίας"
+
+#: weather.module:641
+msgid "Use cron to clear the cache once per hour"
+msgstr ""
+"Χρησιμοποίηση του cron για τον καθαρισμό της λανθάνουσας μνήμης ανά ώρα"
+
+#: weather.module:642
+msgid ""
+"If you use Drupal's cache, the system weather blocks will not be updated for "
+"anonymous users unless the cache is cleared. This happens e.g. when new "
+"nodes are created. If you want the system weather blocks to be updated when "
+"new weather data is available, you can clear the cache once per hour. Please "
+"note that this might slow down your site."
+msgstr ""
+"Αν χρησιμοποιείτε την λανθάνουσα μνήμη του Drupal, τα μπλοκ συστήματος "
+"καιρού δε θα ενημερώνονται για τους ανώνυμους χρήστες εκτός αν καθαρίζεται η "
+"λανθάνουσα μνήμη. Αυτό συμβαίνει όταν πχ. δημιουργούνται νέοι κόμβοι. Αν "
+"επιθυμείτε τα μπλοκ συστήματος καιρού να ενημερώνονται όταν υπάρχουν νέα "
+"δεδομένα για τον καιρό, μπορείτε να καθαρίζετε την λανθάνουσα μνήμη ανά μία "
+"ώρα. Πρέπει να σημειωθεί ότι αυτό μπορεί να επιβραδύνει την απόκριση του "
+"ιστοτόπου σας."
+
+#: weather.module:647
+msgid "Directory for custom images"
+msgstr ""
+
+#: weather.module:648
+msgid ""
+"Override the default image directory. This directory must be a subdirectory "
+"of the Drupal 'files' path."
+msgstr ""
+
+#: weather.module:653;918
+msgid "Save configuration"
+msgstr "Αποθήκευση παραμετροποίησης"
+
+#: weather.module:672
+msgid "The configuration has been saved."
+msgstr "Η παραμετροποίηση αποθηκεύθηκε."
+
+#: weather.module:728;772
+msgid "Place"
+msgstr "Τόπος"
+
+#: weather.module:729;773
+msgid "Select a place in that country for the weather display."
+msgstr "Επιλέξτε ένα τόπο σε αυτή τη χώρα για την εμφάνιση του καιρού."
+
+#: weather.module:760
+msgid "Country"
+msgstr "Χώρα"
+
+#: weather.module:761
+msgid "Select a country to narrow down your search."
+msgstr "Επιλέξτε μια χώρα για να περιορίσετε την αναζήτησή σας."
+
+#: weather.module:779
+msgid "ICAO code"
+msgstr "Κωδικός ICAO"
+
+#: weather.module:781
+msgid ""
+"Enter the 4-letter ICAO code of the weather station. If you first need to "
+"look up the code, you can use !url_1 or !url_2. Please note that not all "
+"stations listed at those URLs are providing weather data and thus may not be "
+"supported by this module."
+msgstr ""
+"Εισάγετε τον 4 χαρακτήρων κωδικό ICAO του καιρικού σταθμού. Αν χρειάζεται "
+"πρώτα να αναζητήσετε τον κωδικό, μπορείτε να δείτε στο !url_1 ή !url_2. "
+"Πρέπει να σημειωθεί ότι δεν παρέχουν δεδομένα καιρού όλοι οι σταθμοί που "
+"εμφανίζονται στις παραπάνω διευθύνσεις URL και έτσι να μην υποστηρίζονται "
+"από τη μονάδα."
+
+#: weather.module:792
+msgid "Real name for the selected place"
+msgstr "Πραγματικό όνομα για τον επιλεγμένο τόπο"
+
+#: weather.module:794
+msgid "You may enter another name for the place selected above."
+msgstr ""
+"Μπορείτε να εισάγετε ένα άλλο όνομα για τον τόπο που επιλέξατε παραπάνω."
+
+#: weather.module:800
+msgid "Display units"
+msgstr "Μονάδες εμφάνισης"
+
+#: weather.module:801
+msgid "You can specify which units should be used for displaying the data."
+msgstr ""
+"Μπορείτε να ορίσετε τις μονάδες που θα χρησιμοποιούνται για την εμφάνιση των "
+"δεδομένων."
+
+#: weather.module:808
+msgid "Temperature"
+msgstr "Θερμοκρασία"
+
+#: weather.module:810
+msgid "Celsius"
+msgstr "Κελσίου"
+
+#: weather.module:810
+msgid "Fahrenheit"
+msgstr "Φαρενάιτ"
+
+#: weather.module:811
+#, fuzzy
+msgid "Celsius / Fahrenheit"
+msgstr "Φαρενάιτ"
+
+#: weather.module:812
+#, fuzzy
+msgid "Fahrenheit / Celsius"
+msgstr "Φαρενάιτ"
+
+#: weather.module:813;821;828;834;841
+msgid "Don't display"
+msgstr "Να μην εμφανίζεται"
+
+#: weather.module:817
+msgid "Wind speed"
+msgstr "Ταχύτητα ανέμου"
+
+#: weather.module:819
+msgid "km/h"
+msgstr "χλμ/ώρα"
+
+#: weather.module:819
+msgid "mph"
+msgstr "μίλια/ώρα"
+
+#: weather.module:819
+msgid "Knots"
+msgstr "Κόμβοι"
+
+#: weather.module:820
+msgid "meter/s"
+msgstr "μέτρα/δευτ."
+
+#: weather.module:820
+msgid "Beaufort"
+msgstr "Μποφόρ"
+
+#: weather.module:825
+msgid "Pressure"
+msgstr "Ατμ. πίεση"
+
+#: weather.module:827
+msgid "hPa"
+msgstr "hPA"
+
+#: weather.module:827
+msgid "kPa"
+msgstr "kPa"
+
+#: weather.module:827
+msgid "inHg"
+msgstr "inHg"
+
+#: weather.module:827
+msgid "mmHg"
+msgstr "mmHg"
+
+#: weather.module:832
+msgid "Rel. Humidity"
+msgstr "Σχετ. υγρασία"
+
+#: weather.module:834
+msgid "Display"
+msgstr "Εμφάνιση"
+
+#: weather.module:838
+msgid "Visibility"
+msgstr "Ορατότητα"
+
+#: weather.module:840
+msgid "kilometers"
+msgstr "χιλιόμετρα"
+
+#: weather.module:840
+msgid "UK miles"
+msgstr "μίλια Η.Β."
+
+#: weather.module:845
+msgid "Display settings"
+msgstr "Ρυθμίσεις εμφάνισης"
+
+#: weather.module:846
+msgid "You can customize the display of the block."
+msgstr "Μπορείτε να προσαρμόσετε την εμφάνιση του μπλοκ."
+
+#: weather.module:853
+msgid "Show windchill temperature"
+msgstr "Εμφάνιση θερμοκρασίας ψυχρού αέρα"
+
+#: weather.module:855
+msgid ""
+"Calculates the temperature resulting from windchill. This is how the "
+"temperature <q>feels like</q>."
+msgstr ""
+"Υπολογίζει την θερμοκρασία που προκύπτει από τον ψυχρό αέρα. Αυτή είναι η "
+"θερμοκρασία που <q>μοιάζει</q>."
+
+#: weather.module:859
+msgid "Show unconverted METAR data"
+msgstr "Εμφάνιση μη τροποποιημένων δεδομένων METAR"
+
+#: weather.module:861
+msgid "Displays the original data of the METAR report."
+msgstr "Εμφανίζει τα αρχικά δεδομένα από την αναφορά METAR."
+
+#: weather.module:865
+msgid "Show abbreviated wind directions"
+msgstr "Εμφάνιση συντμήσεων κατευθύνσεων ανέμου"
+
+#: weather.module:867
+msgid ""
+"Displays abbreviated wind directions like N, SE, or W instead of North, "
+"Southeast, or West."
+msgstr ""
+"Εμφανίζει τις συντμήσεις κατευθύνσεων ανέμου, όπως Β, ΝΑ, ή Δ αντί για "
+"Βόρεια, Νοτιοανατολικά ή Δυτικά."
+
+#: weather.module:871
+msgid "Show degrees of wind directions"
+msgstr "Εμφάνιση των μοιρών κατεύθυνσης του ανέμου"
+
+#: weather.module:873
+msgid "Displays the degrees of wind directions, e.g. North (20°)."
+msgstr "Εμφανίζει τις μοίρες κατεύθυνσης του ανέμου, πχ. Βόρεια (20°)."
+
+#: weather.module:877
+msgid "Show time of sunrise and sunset"
+msgstr "Εμφάνιση ώρας ανατολής και δύσης ηλίου"
+
+#: weather.module:879
+msgid "Displays the time of sunrise and sunset."
+msgstr "Εμφανίζει την ώρα της ανατολής και δύσης του ηλίου."
+
+#: weather.module:882
+msgid "GMT"
+msgstr "GMT"
+
+#: weather.module:882
+msgid "Drupal"
+msgstr "Drupal"
+
+#: weather.module:891
+msgid "Timezone for sunrise and sunset"
+msgstr "Ώρα ζώνης για την ανατολή και δύση του ηλίου"
+
+#: weather.module:893
+msgid ""
+"Choose either Greenwich Mean Time (GMT), Drupal's standard timezone as set "
+"in the configuration, or a custom timezone."
+msgstr ""
+"Επιλέξτε το Greenwich Mean Time (GMT), την ώρα ζώνης του Drupal όπως έχει "
+"οριστεί στις ρυθμίσεις, ή μια καθορισμένη ώρα ζώνης."
+
+#: weather.module:898
+msgid "Show compact block"
+msgstr "Εμφάνιση συμπαγούς μπλοκ"
+
+#: weather.module:900
+msgid ""
+"Displays only the name, condition, and temperature of the weather station."
+msgstr ""
+"Εμφανίζει μόνο το όνομα, την κατάσταση και την θερμοκρασία του καιρικού "
+"σταθμού."
+
+#: weather.module:906
+msgid ""
+"Optional. In the block, the heavier locations will sink and the lighter "
+"locations will be positioned nearer the top. Locations with equal weights "
+"are sorted alphabetically."
+msgstr ""
+"Προαιρετικό. Στο μπλοκ, οι «βαρύτερες» τοποθεσίες θα βουλιάζουν και οι "
+"«ελαφρύτερες» θα τοποθετούνται πιο κοντά στην κορυφή. Οι τοποθεσίες με ίδια "
+"βάρη θα ταξινομούνται αλφαβητικά."
+
+#: weather.module:931
+msgid "The ICAO code is not supported by this module."
+msgstr "Ο κωδικός ICAO δεν υποστηρίζεται από τη μονάδα."
+
+#: weather.module:960
+msgid "The default configuration has been saved."
+msgstr "Η προκαθορισμένη ρύθμιση αποθηκεύθηκε."
+
+#: weather.module:963
+msgid "The location has been saved."
+msgstr "Η τοποθεσία αποθηκεύθηκε."
+
+#: weather.module:1003
+msgid "Are you sure you want to delete the location %name?"
+msgstr "Είστε σίγουρος για τη διαγραφή της τοποθεσίας %name;"
+
+#: weather.module:1006
+msgid "This action cannot be undone."
+msgstr "Η ενέργεια είναι μη αναστρέψιμη."
+
+#: weather.module:1007
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: weather.module:1008
+msgid "Cancel"
+msgstr "Άκυρο"
+
+#: weather.module:1022
+msgid "The location has been deleted."
+msgstr "Η τοποθεσία διαγράφηκε."
+
+#: weather.module:1059;1153
+msgid "The string to search for must be between 3 and 64 characters."
+msgstr "Η φράση για αναζήτηση πρέπει να είναι μεταξύ 3 και 64 χαρακτήρων."
+
+#: weather.module:1093
+msgid "Your search did not return any results."
+msgstr "Η αναζήτηση δεν επέστρεψε αποτελέσματα."
+
+#: weather.module:1116
+msgid "Search results for <q>@search</q>"
+msgstr "Αποτελέσματα αναζήτησης για το <q>@search</q>"
+
+#: weather.module:1134
+msgid "Search for a location"
+msgstr "Αναζήτηση τοποθεσίας"
+
+#: weather.module:1135
+msgid ""
+"Type in an ICAO code, a name, or a country to search for weather conditions "
+"at that location."
+msgstr ""
+"Εισάγετε ένα κωδικό ICAO, ένα όνομα ή μια χώρα για την αναζήτηση καιρικών "
+"συνθηκών σε αυτή την τοποθεσία."
+
+#: weather.module:1140
+msgid "Search"
+msgstr "Αναζήτηση"
+
+#: weather.module:1339
+msgid "No data"
+msgstr "Δεν υπάρχουν δεδομένα"
+
+#: weather.module:1344
+msgid "Clear sky"
+msgstr "Καθαρός ουρανός"
+
+#: weather.module:1345
+msgid "Few clouds"
+msgstr "Λίγα σύννεφα"
+
+#: weather.module:1346
+msgid "Scattered clouds"
+msgstr "Διασκορπισμένα σύννεφα"
+
+#: weather.module:1347
+msgid "Broken clouds"
+msgstr "Αρκετά σύννεφα"
+
+#: weather.module:1348
+msgid "Overcast"
+msgstr "Νεφοσκεπής"
+
+#: weather.module:1349
+msgid "No significant clouds"
+msgstr "Λίγα σύννεφα"
+
+#: weather.module:1354
+msgid "mist"
+msgstr "καταχνιά"
+
+#: weather.module:1359
+msgid "shallow fog"
+msgstr "ρηχύς ομίχλη"
+
+#: weather.module:1362
+msgid "partial fog"
+msgstr "μερική ομίχλη"
+
+#: weather.module:1365
+msgid "patches of fog"
+msgstr "τμήματα ομίχλης"
+
+#: weather.module:1368
+msgid "fog"
+msgstr "ομίχλη"
+
+#: weather.module:1372
+msgid "smoke"
+msgstr "αιθαλομίχλη"
+
+#: weather.module:1380
+msgid "light rain showers"
+msgstr "ελαφριά νεροποντή"
+
+#: weather.module:1383
+msgid "light freezing rain"
+msgstr "ελαφρύ χιονόνερο"
+
+#: weather.module:1386
+msgid "light rain"
+msgstr "ελαφριά βροχή"
+
+#: weather.module:1391
+msgid "heavy rain showers"
+msgstr "βαριά νεροποντή"
+
+#: weather.module:1394
+msgid "heavy freezing rain"
+msgstr "βαρύ χιονόνερο"
+
+#: weather.module:1397
+msgid "heavy rain"
+msgstr "βαριά βροχή"
+
+#: weather.module:1402
+msgid "rain showers"
+msgstr "νεροποντή"
+
+#: weather.module:1405
+msgid "freezing rain"
+msgstr "χιονόνερο"
+
+#: weather.module:1408
+msgid "rain"
+msgstr "βροχή"
+
+#: weather.module:1416
+msgid "light freezing drizzle"
+msgstr "ελαφρύ παγωμένο λεπτόβροχο"
+
+#: weather.module:1419
+msgid "light drizzle"
+msgstr "ελαφρύ λεπτόβροχο"
+
+#: weather.module:1424
+msgid "heavy freezing drizzle"
+msgstr "βαρύ παγωμένο λεπτόβροχο"
+
+#: weather.module:1427
+msgid "heavy drizzle"
+msgstr "βαρύ λεπτόβροχο"
+
+#: weather.module:1432
+msgid "freezing drizzle"
+msgstr "παγωμένο λεπτόβροχο"
+
+#: weather.module:1435
+msgid "drizzle"
+msgstr "λεπτόβροχο"
+
+#: weather.module:1443
+msgid "light blowing snow"
+msgstr "ελαφρύ χιόνι με μειωμένη ορατότητα"
+
+#: weather.module:1446
+msgid "light low drifting snow"
+msgstr "ελαφρύ χιόνι που το σηκώνει ο αέρας"
+
+#: weather.module:1449
+#, fuzzy
+msgid "light snow showers"
+msgstr "ελαφριά νεροποντή"
+
+#: weather.module:1452
+msgid "light snow"
+msgstr "ελαφρύ χιόνι"
+
+#: weather.module:1457
+msgid "heavy blowing snow"
+msgstr "βαρύ χιόνι με μειωμένη ορατότητα"
+
+#: weather.module:1460
+msgid "heavy low drifting snow"
+msgstr "βαρύ χιόνι που το σηκώνει ο αέρας χαμηλά"
+
+#: weather.module:1463
+#, fuzzy
+msgid "heavy snow showers"
+msgstr "βαριά νεροποντή"
+
+#: weather.module:1466
+msgid "heavy snow"
+msgstr "βαρύ χιόνι"
+
+#: weather.module:1471
+msgid "blowing snow"
+msgstr "χιόνι που το σηκώνει ο άερας"
+
+#: weather.module:1474
+msgid "low drifting snow"
+msgstr "χιόνι που το σηκώνει ο αέρας χαμηλά"
+
+#: weather.module:1477
+#, fuzzy
+msgid "snow showers"
+msgstr "νεροποντή"
+
+#: weather.module:1480
+msgid "snow"
+msgstr "χιόνι"
+
+#: weather.module:1514;1543
+msgid "!temperature&thinsp;°F"
+msgstr "!temperature&thinsp;°F"
+
+#: weather.module:1519;1547
+#, fuzzy
+msgid "!temperature_c&thinsp;°C / !temperature_f&thinsp;°F"
+msgstr "!temperature&thinsp;°F"
+
+#: weather.module:1528;1555
+#, fuzzy
+msgid "!temperature_f&thinsp;°F / !temperature_c&thinsp;°C"
+msgstr "!temperature&thinsp;°F"
+
+#: weather.module:1537;1564
+msgid "!temperature&thinsp;°C"
+msgstr "!temperature&thinsp;°C"
+
+#: weather.module:1584
+msgid "Calm"
+msgstr "Γαλήνη"
+
+#: weather.module:1607;1623
+msgid "Variable from !direction_a (!degree_a°) to !direction_b (!degree_b°)"
+msgstr "Μεταβλητή από !direction_a (!degree_a°) σε !direction_b (!degree_b°)"
+
+#: weather.module:1615;1631
+msgid "Variable from !direction_a to !direction_b"
+msgstr "Μεταβλητή από !direction_a σε !direction_b"
+
+#: weather.module:1639
+msgid "Variable"
+msgstr "Μεταβλητή"
+
+#: weather.module:1646;1656
+msgid "!direction (!degree°)"
+msgstr "!direction (!degree°)"
+
+#: weather.module:1671;1672
+msgid "!speed&thinsp;mph"
+msgstr "!speed&thinsp;μίλια/ώρα"
+
+#: weather.module:1675;1676
+msgid "!speed&thinsp;knots"
+msgstr "!speed&thinsp;κόμβοι"
+
+#: weather.module:1679;1680
+msgid "!speed&thinsp;meter/s"
+msgstr "!speed&thinsp;μ/δευτ."
+
+#: weather.module:1683;1684
+msgid "Beaufort !number"
+msgstr "!number Μποφόρ"
+
+#: weather.module:1688;1689
+msgid "!speed&thinsp;km/h"
+msgstr "!speed&thinsp;χλμ/ώρα"
+
+#: weather.module:1694
+msgid "gusts up to !speed"
+msgstr "ξαφνικοί άνεμοι με ταχύτητα μέχρι !speed"
+
+#: weather.module:1712
+msgid "!pressure&thinsp;inHg"
+msgstr "!pressure&thinsp;inHg"
+
+#: weather.module:1716
+msgid "!pressure&thinsp;mmHg"
+msgstr "!pressure&thinsp;mmHg"
+
+#: weather.module:1720
+msgid "!pressure&thinsp;kPa"
+msgstr "!pressure&thinsp;kPa"
+
+#: weather.module:1725
+msgid "!pressure&thinsp;hPa"
+msgstr "!pressure&thinsp;hPa"
+
+#: weather.module:1743
+msgid "!rel_humidity&thinsp;%"
+msgstr "!rel_humidity&thinsp;%"
+
+#: weather.module:1756
+msgid "!visibility&thinsp;mi"
+msgstr "!visibility&thinsp;μίλ."
+
+#: weather.module:1761
+msgid "!visibility&thinsp;km"
+msgstr "!visibility&thinsp;χλμ"
+
+#: weather.module:1788
+msgid "!distance&thinsp;mi !direction (!degree°)"
+msgstr "!distance&thinsp;μίλ. !direction (!degree°)"
+
+#: weather.module:1796
+msgid "!distance&thinsp;mi !direction"
+msgstr "!distance&thinsp;μίλ !direction"
+
+#: weather.module:1806
+msgid "!distance&thinsp;km !direction (!degree°)"
+msgstr "!distance&thinsp;χλμ !direction (!degree°)"
+
+#: weather.module:1814
+msgid "!distance&thinsp;km !direction"
+msgstr "!distance&thinsp;χλμ !direction"
+
+#: weather.module:1851
+msgid "North"
+msgstr "Βόρεια"
+
+#: weather.module:1852
+msgid "North-Northeast"
+msgstr "Βόρεια-Βορειοανατολικά"
+
+#: weather.module:1853
+msgid "Northeast"
+msgstr "Βορειοανατολικά"
+
+#: weather.module:1854
+msgid "East-Northeast"
+msgstr "Ανατολικά-Βορειοανατολικά"
+
+#: weather.module:1855
+msgid "East"
+msgstr "Ανατολικά"
+
+#: weather.module:1856
+msgid "East-Southeast"
+msgstr "Ανατολικά-Νοτιοανατολικά"
+
+#: weather.module:1857
+msgid "Southeast"
+msgstr "Νοτιοανατολικά"
+
+#: weather.module:1858
+msgid "South-Southeast"
+msgstr "Νότια-Νοτιοανατολικά"
+
+#: weather.module:1859
+msgid "South"
+msgstr "Νότια"
+
+#: weather.module:1860
+msgid "South-Southwest"
+msgstr "Νότια-Νοτιοδυτικά"
+
+#: weather.module:1861
+msgid "Southwest"
+msgstr "Νοτιοδυτικά"
+
+#: weather.module:1862
+msgid "West-Southwest"
+msgstr "Δυτικά-Νοτιοδυτικά"
+
+#: weather.module:1863
+msgid "West"
+msgstr "Δυτικά"
+
+#: weather.module:1864
+msgid "West-Northwest"
+msgstr "Δυτικά-Βορειοδυτικά"
+
+#: weather.module:1865
+msgid "Northwest"
+msgstr "Βορειοδυτικά"
+
+#: weather.module:1866
+msgid "North-Northwest"
+msgstr "Βόρεια-Βορειοδυτικά"
+
+#: weather.module:1871
+msgid "N"
+msgstr "Β"
+
+#: weather.module:1872
+msgid "NNE"
+msgstr "ΒΒΑ"
+
+#: weather.module:1873
+msgid "NE"
+msgstr "ΒΑ"
+
+#: weather.module:1874
+msgid "ENE"
+msgstr "ΑΒΑ"
+
+#: weather.module:1875
+msgid "E"
+msgstr "Α"
+
+#: weather.module:1876
+msgid "ESE"
+msgstr "ΑΝΑ"
+
+#: weather.module:1877
+msgid "SE"
+msgstr "ΝΑ"
+
+#: weather.module:1878
+msgid "SSE"
+msgstr "ΝΝΑ"
+
+#: weather.module:1879
+msgid "S"
+msgstr "Ν"
+
+#: weather.module:1880
+msgid "SSW"
+msgstr "ΝΝΔ"
+
+#: weather.module:1881
+msgid "SW"
+msgstr "ΝΔ"
+
+#: weather.module:1882
+msgid "WSW"
+msgstr "ΔΝΔ"
+
+#: weather.module:1883
+msgid "W"
+msgstr "Δ"
+
+#: weather.module:1884
+msgid "WNW"
+msgstr "ΔΒΔ"
+
+#: weather.module:1885
+msgid "NW"
+msgstr "ΒΔ"
+
+#: weather.module:1886
+msgid "NNW"
+msgstr "ΒΒΔ"
+
+#: weather.module:2136
+msgid "Download location for METAR data is not accessible."
+msgstr "Η τοποθεσία για τη λήψη των δεδομένων METAR δεν είναι προσπελάσιμη."
+
+#: weather.module:59
+msgid "administer custom weather block"
+msgstr "διαχείριση προσαρμοσμένου μπλοκ καιρού"
+
+#: weather.module:60
+msgid "access weather pages"
+msgstr "προσπέλαση σελίδων καιρού"
+
+#: weather.module:71;135 weather.info:0
+msgid "Weather"
+msgstr "Καιρός"
+
+#: weather.module:72
+msgid ""
+"Configure system-wide weather blocks and the default configuration for new "
+"locations."
+msgstr ""
+"Παραμετροποίηση των μπλοκ καιρού συστήματος και της προκαθορισμένης "
+"παραμετροποίησης για νέες τοποθεσίες."
+
+#: weather.module:78;111
+msgid "Edit location"
+msgstr "Επεξεργασία τοποθεσίας"
+
+#: weather.module:79
+msgid "Configure a system-wide weather block."
+msgstr "Παραμετροποίηση ενός καθολικού μπλοκ καιρού."
+
+#: weather.module:86;120
+msgid "Delete location"
+msgstr "Διαγραφή τοποθεσίας"
+
+#: weather.module:87
+msgid "Delete a location from a system-wide weather block."
+msgstr "Διαγραφή τοποθεσίας από ένα καθολικό μπλοκ καιρού."
+
+#: weather.module:94
+msgid "Default configuration"
+msgstr "Προκαθορισμένη παραμετροποίηση"
+
+#: weather.module:95
+msgid "Setup the default configuration for new locations."
+msgstr "Ορισμός της προκαθορισμένης παραμετροποίησης για νέες τοποθεσίες."
+
+#: weather.module:102
+msgid "My weather"
+msgstr "Ο καιρός μου"
+
+#: weather.module:103;112
+msgid "Configure your custom weather block."
+msgstr "Παραμετροποίηση του προσαρμοσμένου σας μπλοκ καιρού."
+
+#: weather.module:121
+msgid "Delete a location from your custom weather block."
+msgstr "Διαγραφή μιας τοποθεσίας από το προσαρμοσμένο μπλοκ σας καιρού."
+
+#: weather.module:136
+msgid "Search for locations and display their current weather."
+msgstr "Αναζήτηση για τοποθεσίες και εμφάνιση των καιρικών συνθηκών τους."
+
+#: weather.module:0
+msgid "weather"
+msgstr "καιρός"
+
+#: weather.info:0
+msgid "Displays METAR weather data"
+msgstr "Εμφανίζει τα δεδομένα καιρού METAR"

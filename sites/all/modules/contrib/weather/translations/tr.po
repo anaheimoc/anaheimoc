@@ -1,0 +1,995 @@
+# Translation of Weather to Turkish
+#
+# This file is part of the Drupal Weather module.
+#
+# Weather is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# Weather is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Weather; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+# Copyright ©
+# Drupal Hizmetleri <dh@drupalhizmetleri.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: weather.module\n"
+"POT-Creation-Date: 2010-05-03 14:44+0200\n"
+"PO-Revision-Date: 2008-09-12 20:00+0300\n"
+"Last-Translator: Drupal Hizmetleri <dh@drupalhizmetleri.com>\n"
+"Language-Team: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: weather.tpl.php:10
+#, fuzzy
+msgid "Temperature: !temperature1, feels like !temperature2"
+msgstr "Sıcaklık: !temperature"
+
+#: weather.tpl.php:15
+msgid "Temperature: !temperature"
+msgstr "Sıcaklık: !temperature"
+
+#: weather.tpl.php:20
+msgid "Wind: !wind"
+msgstr "Rüzgar: !wind"
+
+#: weather.tpl.php:24
+msgid "Pressure: !pressure"
+msgstr "Basınç: !pressure"
+
+#: weather.tpl.php:28
+msgid "Rel. Humidity: !rel_humidity"
+msgstr "Nem: !rel_humidity"
+
+#: weather.tpl.php:32
+msgid "Visibility: !visibility"
+msgstr "Görüş: !visibility"
+
+#: weather.tpl.php:42
+msgid "METAR data: !metar"
+msgstr "METAR verisi: !metar"
+
+#: weather.tpl.php:48
+msgid "Location of this weather station:"
+msgstr "Bu hava durumu merkezinin lokasyonu:"
+
+#: weather.tpl.php:55
+msgid "Reported on:"
+msgstr "Bildirim zamanı:"
+
+#: weather.module:160
+#, fuzzy
+msgid ""
+"You can add, edit, and delete locations from system-wide weather blocks. "
+"Moreover, you can specify default values for newly created locations."
+msgstr ""
+"Sistem hava durumu bloğuna, yeni lokasyon ekleyebilir, güncelleyebilir veya "
+"silebilirsiniz.Ayrıca, yeni oluşturulan lokasyonlar için öntanımlı değerlere "
+"belirleyebilirsiniz."
+
+#: weather.module:165
+msgid "You can add, edit, and delete locations from your custom weather block."
+msgstr ""
+"Kişisel hava durumu bloğuna lokasyan ekleyebilir, güncelleyebilir veya "
+"silebilirsiniz."
+
+#: weather.module:167
+msgid ""
+"Please note that the block will not be shown until you configure at least "
+"one location."
+msgstr ""
+"Dikkat! Bir lokasyon yapılandırılmadığı sürece bloğunuz gösterilmeyecektir."
+
+#: weather.module:226
+msgid "Weather: custom user"
+msgstr "Hava durumu: kişisel kullanıcı"
+
+#: weather.module:227
+#, fuzzy
+msgid "Weather: location of nodes (requires Location or Node Map module)"
+msgstr "Hava durumu: düğüm lokasyonları (Location eklentisi gereklidir)"
+
+#: weather.module:233
+#, fuzzy
+msgid "Weather: system-wide !number"
+msgstr "Hava durumu: sistem-wide"
+
+#: weather.module:246;298
+msgid "Current weather"
+msgstr "Mevcut Hava Durumu"
+
+#: weather.module:290
+msgid "Current weather nearby"
+msgstr ""
+
+#: weather.module:384
+msgid "No sunrise today"
+msgstr "Güneş yok"
+
+#: weather.module:387
+msgid "No sunset today"
+msgstr "Kapalı"
+
+#: weather.module:426
+msgid "Sunrise: !sunrise"
+msgstr "Gün doğumu: !sunrise"
+
+#: weather.module:428
+msgid "Sunset: !sunset"
+msgstr "Gün batımı: !sunset"
+
+#: weather.module:538
+msgid "Real name"
+msgstr "Gerçek isim"
+
+#: weather.module:539;592;904
+msgid "Weight"
+msgstr "Ağırlık"
+
+#: weather.module:540;593
+msgid "Operations"
+msgstr "Operasyonlar"
+
+#: weather.module:552;604
+msgid "edit"
+msgstr "güncelle"
+
+#: weather.module:553;605
+msgid "delete"
+msgstr "sil"
+
+#: weather.module:560
+msgid "There are currently no locations."
+msgstr "Hali hazırda lokasyon tanımlı değil."
+
+#: weather.module:572
+msgid "Create new location"
+msgstr "Yeni lokasyon tanımlı"
+
+#: weather.module:591
+msgid "System-wide block !number"
+msgstr ""
+
+#: weather.module:615
+#, fuzzy
+msgid "Create new location in block !number"
+msgstr "Yeni lokasyon tanımlı"
+
+#: weather.module:623
+#, fuzzy
+msgid "Create new system-wide block"
+msgstr "Sistem-wide hava durumu bloğunu yapılandır"
+
+#: weather.module:627
+msgid "Configure the default location"
+msgstr "Öntanımlı lokasyonu yapılandır."
+
+#: weather.module:641
+msgid "Use cron to clear the cache once per hour"
+msgstr "Saat başı önbelleği temizlemek üzere cron kullan"
+
+#: weather.module:642
+#, fuzzy
+msgid ""
+"If you use Drupal's cache, the system weather blocks will not be updated for "
+"anonymous users unless the cache is cleared. This happens e.g. when new "
+"nodes are created. If you want the system weather blocks to be updated when "
+"new weather data is available, you can clear the cache once per hour. Please "
+"note that this might slow down your site."
+msgstr ""
+"Eğer Drupal'in önbelleğini kullanıyor iseniz, sistem hava durumu bloğu "
+"misafir kullanıcılar için güncellenmeyecektir. Ta ki önbellek temizlenene "
+"kadar. Bu durum misal olarak yeni bir düğüm oluşturulduğunda oluşur. Eğer "
+"sistem hava durumu bloğununuyeni hava durumu bilgisi oluştuğunda "
+"güncellenmesini istiyorsanız, önbelleği saat başıtemizleyebilirsini. Bunun "
+"sitenizin yavaşlatabileceğini de dikkate alınız."
+
+#: weather.module:647
+msgid "Directory for custom images"
+msgstr ""
+
+#: weather.module:648
+msgid ""
+"Override the default image directory. This directory must be a subdirectory "
+"of the Drupal 'files' path."
+msgstr ""
+
+#: weather.module:653;918
+msgid "Save configuration"
+msgstr "Yapılandırmayı kaydet"
+
+#: weather.module:672
+msgid "The configuration has been saved."
+msgstr "Yapılandırma kaydedildi."
+
+#: weather.module:728;772
+msgid "Place"
+msgstr "Yer"
+
+#: weather.module:729;773
+msgid "Select a place in that country for the weather display."
+msgstr "Hava durumu gösterilecek yeri ülke içinden seçiniz."
+
+#: weather.module:760
+msgid "Country"
+msgstr "Ülke"
+
+#: weather.module:761
+msgid "Select a country to narrow down your search."
+msgstr "Arama için lütfen bir ülke seçiniz."
+
+#: weather.module:779
+msgid "ICAO code"
+msgstr "ICAO kodu"
+
+#: weather.module:781
+msgid ""
+"Enter the 4-letter ICAO code of the weather station. If you first need to "
+"look up the code, you can use !url_1 or !url_2. Please note that not all "
+"stations listed at those URLs are providing weather data and thus may not be "
+"supported by this module."
+msgstr ""
+"Hava durumu istasyonu için 4 haften oluşan ICAO kodunu giriniz. Eğer ilk "
+"evvelakoda bakmak istiyorsanız, !url_1 veya !url_2 bağlantılarını "
+"kullanabilirsiniz.Bu bağlantılarda hava durumu eklentisinin desteklemediği "
+"istasyonlar mevcuttur."
+
+#: weather.module:792
+msgid "Real name for the selected place"
+msgstr "Seçilen yerin gerçek adı"
+
+#: weather.module:794
+msgid "You may enter another name for the place selected above."
+msgstr "Yukarıda seçtiğiniz yer için başka bir isim girebilirsiniz."
+
+#: weather.module:800
+msgid "Display units"
+msgstr "Gösterim birimi"
+
+#: weather.module:801
+msgid "You can specify which units should be used for displaying the data."
+msgstr ""
+"Veri gösteriminde hangi birimlerin gösterilmesi gerektiği seçebilirsiniz."
+
+#: weather.module:808
+msgid "Temperature"
+msgstr "Derece"
+
+#: weather.module:810
+msgid "Celsius"
+msgstr "Selsius"
+
+#: weather.module:810
+msgid "Fahrenheit"
+msgstr "Fahrenhayt"
+
+#: weather.module:811
+#, fuzzy
+msgid "Celsius / Fahrenheit"
+msgstr "Fahrenhayt"
+
+#: weather.module:812
+#, fuzzy
+msgid "Fahrenheit / Celsius"
+msgstr "Fahrenhayt"
+
+#: weather.module:813;821;828;834;841
+msgid "Don't display"
+msgstr ""
+
+#: weather.module:817
+msgid "Wind speed"
+msgstr "Rüzgar hızı"
+
+#: weather.module:819
+msgid "km/h"
+msgstr "km/s"
+
+#: weather.module:819
+msgid "mph"
+msgstr "m/s"
+
+#: weather.module:819
+msgid "Knots"
+msgstr "Deniz mili"
+
+#: weather.module:820
+msgid "meter/s"
+msgstr "metre/s"
+
+#: weather.module:820
+msgid "Beaufort"
+msgstr "Bofor"
+
+#: weather.module:825
+msgid "Pressure"
+msgstr "Basınç"
+
+#: weather.module:827
+msgid "hPa"
+msgstr ""
+
+#: weather.module:827
+msgid "kPa"
+msgstr ""
+
+#: weather.module:827
+msgid "inHg"
+msgstr ""
+
+#: weather.module:827
+msgid "mmHg"
+msgstr ""
+
+#: weather.module:832
+#, fuzzy
+msgid "Rel. Humidity"
+msgstr "Nem: !rel_humidity"
+
+#: weather.module:834
+#, fuzzy
+msgid "Display"
+msgstr "Gösterim birimi"
+
+#: weather.module:838
+msgid "Visibility"
+msgstr "Görüş"
+
+#: weather.module:840
+msgid "kilometers"
+msgstr "kilometre"
+
+#: weather.module:840
+msgid "UK miles"
+msgstr "İngiltere mili"
+
+#: weather.module:845
+msgid "Display settings"
+msgstr "Ayarları göster"
+
+#: weather.module:846
+msgid "You can customize the display of the block."
+msgstr "Bloğun görümünü kişiselleştirebilirsiniz."
+
+#: weather.module:853
+msgid "Show windchill temperature"
+msgstr ""
+
+#: weather.module:855
+msgid ""
+"Calculates the temperature resulting from windchill. This is how the "
+"temperature <q>feels like</q>."
+msgstr ""
+
+#: weather.module:859
+msgid "Show unconverted METAR data"
+msgstr "Çevrilmemiş METAR verisini göster"
+
+#: weather.module:861
+msgid "Displays the original data of the METAR report."
+msgstr "METAR raporundaki asıl verileri gösterir."
+
+#: weather.module:865
+msgid "Show abbreviated wind directions"
+msgstr "Rüzgar yönlerinin kısatmalarını göster."
+
+#: weather.module:867
+msgid ""
+"Displays abbreviated wind directions like N, SE, or W instead of North, "
+"Southeast, or West."
+msgstr ""
+"Kısaltılmış rüzgar yönlerini gösterir. Örneğin, Kuzay, Güneybatı veya Batı "
+"yerine K,GB veya B gibi."
+
+#: weather.module:871
+msgid "Show degrees of wind directions"
+msgstr "Rüzgar yönlerinin açılarını göster"
+
+#: weather.module:873
+msgid "Displays the degrees of wind directions, e.g. North (20°)."
+msgstr "Rüzgar yönlerinini açılarını gösterir. Örneğin Kuzey (20°)"
+
+#: weather.module:877
+msgid "Show time of sunrise and sunset"
+msgstr "Güneş'in doğuş ve batış zamanını göster"
+
+#: weather.module:879
+#, fuzzy
+msgid "Displays the time of sunrise and sunset."
+msgstr "Güneş'in doğuş ve batış zamanını göster"
+
+#: weather.module:882
+msgid "GMT"
+msgstr ""
+
+#: weather.module:882
+msgid "Drupal"
+msgstr ""
+
+#: weather.module:891
+#, fuzzy
+msgid "Timezone for sunrise and sunset"
+msgstr "Güneş'in doğuş ve batış zamanını göster"
+
+#: weather.module:893
+msgid ""
+"Choose either Greenwich Mean Time (GMT), Drupal's standard timezone as set "
+"in the configuration, or a custom timezone."
+msgstr ""
+
+#: weather.module:898
+msgid "Show compact block"
+msgstr ""
+
+#: weather.module:900
+msgid ""
+"Displays only the name, condition, and temperature of the weather station."
+msgstr ""
+
+#: weather.module:906
+msgid ""
+"Optional. In the block, the heavier locations will sink and the lighter "
+"locations will be positioned nearer the top. Locations with equal weights "
+"are sorted alphabetically."
+msgstr ""
+"Opsiyonel. Blokta, ağır olan lokaslan batacak ve hafif olan lokasyonlarüst "
+"tarafa yakın olacak. Eşit ağırlıkta olanlar harf sırasına göre dizilecekler."
+
+#: weather.module:931
+msgid "The ICAO code is not supported by this module."
+msgstr "ICAO kodu bu eklenti tarafından desteklenmemektedir."
+
+#: weather.module:960
+msgid "The default configuration has been saved."
+msgstr "Öntanımlı yapılandırma kaydedildi."
+
+#: weather.module:963
+msgid "The location has been saved."
+msgstr "Lokasyon kaydedildi."
+
+#: weather.module:1003
+msgid "Are you sure you want to delete the location %name?"
+msgstr "%name lokasyonunu silmek istediğinizden emin misiniz?"
+
+#: weather.module:1006
+msgid "This action cannot be undone."
+msgstr "Bu işlem geri alınamaz."
+
+#: weather.module:1007
+msgid "Delete"
+msgstr "Sil"
+
+#: weather.module:1008
+msgid "Cancel"
+msgstr "İptal"
+
+#: weather.module:1022
+msgid "The location has been deleted."
+msgstr "Lokasyon silindi"
+
+#: weather.module:1059;1153
+msgid "The string to search for must be between 3 and 64 characters."
+msgstr ""
+
+#: weather.module:1093
+msgid "Your search did not return any results."
+msgstr ""
+
+#: weather.module:1116
+msgid "Search results for <q>@search</q>"
+msgstr ""
+
+#: weather.module:1134
+#, fuzzy
+msgid "Search for a location"
+msgstr "Yeni lokasyon tanımlı"
+
+#: weather.module:1135
+msgid ""
+"Type in an ICAO code, a name, or a country to search for weather conditions "
+"at that location."
+msgstr ""
+
+#: weather.module:1140
+msgid "Search"
+msgstr ""
+
+#: weather.module:1339
+msgid "No data"
+msgstr "Veri yok"
+
+#: weather.module:1344
+msgid "Clear sky"
+msgstr "Açık hava"
+
+#: weather.module:1345
+msgid "Few clouds"
+msgstr "Az bulutlu"
+
+#: weather.module:1346
+msgid "Scattered clouds"
+msgstr "Parçalı bulutlu"
+
+#: weather.module:1347
+msgid "Broken clouds"
+msgstr "Çok bulutlu"
+
+#: weather.module:1348
+msgid "Overcast"
+msgstr "Çok Bulutlu"
+
+#: weather.module:1349
+msgid "No significant clouds"
+msgstr "Bulutsuz"
+
+#: weather.module:1354
+msgid "mist"
+msgstr ""
+
+#: weather.module:1359
+msgid "shallow fog"
+msgstr ""
+
+#: weather.module:1362
+msgid "partial fog"
+msgstr ""
+
+#: weather.module:1365
+msgid "patches of fog"
+msgstr ""
+
+#: weather.module:1368
+msgid "fog"
+msgstr ""
+
+#: weather.module:1372
+msgid "smoke"
+msgstr ""
+
+#: weather.module:1380
+msgid "light rain showers"
+msgstr "Hafif sağnak yağmurlu"
+
+#: weather.module:1383
+msgid "light freezing rain"
+msgstr "Hafif karla karışık yağmurlu"
+
+#: weather.module:1386
+msgid "light rain"
+msgstr "Hafif yağmur"
+
+#: weather.module:1391
+msgid "heavy rain showers"
+msgstr "Kuvvetli sağnak yağış"
+
+#: weather.module:1394
+msgid "heavy freezing rain"
+msgstr "Kuvvetli karla karışık yağmur"
+
+#: weather.module:1397
+msgid "heavy rain"
+msgstr "Çok yağmurlu"
+
+#: weather.module:1402
+msgid "rain showers"
+msgstr "Sağnak yağmurlu"
+
+#: weather.module:1405
+msgid "freezing rain"
+msgstr "Yağmurlu"
+
+#: weather.module:1408
+msgid "rain"
+msgstr "Yağmurlu"
+
+#: weather.module:1416
+#, fuzzy
+msgid "light freezing drizzle"
+msgstr "Hafif karla karışık yağmurlu"
+
+#: weather.module:1419
+#, fuzzy
+msgid "light drizzle"
+msgstr "Hafif yağmur"
+
+#: weather.module:1424
+#, fuzzy
+msgid "heavy freezing drizzle"
+msgstr "Kuvvetli karla karışık yağmur"
+
+#: weather.module:1427
+#, fuzzy
+msgid "heavy drizzle"
+msgstr "Çok yağmurlu"
+
+#: weather.module:1432
+#, fuzzy
+msgid "freezing drizzle"
+msgstr "Yağmurlu"
+
+#: weather.module:1435
+msgid "drizzle"
+msgstr ""
+
+#: weather.module:1443
+msgid "light blowing snow"
+msgstr "Hafif rüzgarlı kar yağışı"
+
+#: weather.module:1446
+msgid "light low drifting snow"
+msgstr "Hafif kar tipisi"
+
+#: weather.module:1449
+#, fuzzy
+msgid "light snow showers"
+msgstr "Hafif sağnak yağmurlu"
+
+#: weather.module:1452
+msgid "light snow"
+msgstr "Hafif kar"
+
+#: weather.module:1457
+msgid "heavy blowing snow"
+msgstr "Kuvvetli sağnak kar tipisi"
+
+#: weather.module:1460
+msgid "heavy low drifting snow"
+msgstr "Kuvvetli kar tipisi"
+
+#: weather.module:1463
+#, fuzzy
+msgid "heavy snow showers"
+msgstr "Kuvvetli sağnak yağış"
+
+#: weather.module:1466
+msgid "heavy snow"
+msgstr "Yoğun kar"
+
+#: weather.module:1471
+msgid "blowing snow"
+msgstr "karla karışık şiddetli rüzgar"
+
+#: weather.module:1474
+msgid "low drifting snow"
+msgstr "hafif kar tipisi"
+
+#: weather.module:1477
+#, fuzzy
+msgid "snow showers"
+msgstr "Sağnak yağmurlu"
+
+#: weather.module:1480
+msgid "snow"
+msgstr "kar"
+
+#: weather.module:1514;1543
+#, fuzzy
+msgid "!temperature&thinsp;°F"
+msgstr "!temperature °F"
+
+#: weather.module:1519;1547
+#, fuzzy
+msgid "!temperature_c&thinsp;°C / !temperature_f&thinsp;°F"
+msgstr "!temperature °F"
+
+#: weather.module:1528;1555
+#, fuzzy
+msgid "!temperature_f&thinsp;°F / !temperature_c&thinsp;°C"
+msgstr "!temperature °F"
+
+#: weather.module:1537;1564
+#, fuzzy
+msgid "!temperature&thinsp;°C"
+msgstr "!temperature °C"
+
+#: weather.module:1584
+msgid "Calm"
+msgstr "Sakin"
+
+#: weather.module:1607;1623
+msgid "Variable from !direction_a (!degree_a°) to !direction_b (!degree_b°)"
+msgstr "!direction_a (!degree_a°) yönünden !direction_b (!degree_b°) yönüne"
+
+#: weather.module:1615;1631
+msgid "Variable from !direction_a to !direction_b"
+msgstr "!direction_a yönünden !direction_b yönüne değişken"
+
+#: weather.module:1639
+msgid "Variable"
+msgstr "Değişken"
+
+#: weather.module:1646;1656
+msgid "!direction (!degree°)"
+msgstr ""
+
+#: weather.module:1671;1672
+#, fuzzy
+msgid "!speed&thinsp;mph"
+msgstr "!speed m/s"
+
+#: weather.module:1675;1676
+#, fuzzy
+msgid "!speed&thinsp;knots"
+msgstr "!speed deniz mili"
+
+#: weather.module:1679;1680
+#, fuzzy
+msgid "!speed&thinsp;meter/s"
+msgstr "!speed metre/s"
+
+#: weather.module:1683;1684
+msgid "Beaufort !number"
+msgstr "Bofor !number"
+
+#: weather.module:1688;1689
+#, fuzzy
+msgid "!speed&thinsp;km/h"
+msgstr "!speed km/s"
+
+#: weather.module:1694
+#, fuzzy
+msgid "gusts up to !speed"
+msgstr "!speed m/s ani rüzgar"
+
+#: weather.module:1712
+msgid "!pressure&thinsp;inHg"
+msgstr ""
+
+#: weather.module:1716
+msgid "!pressure&thinsp;mmHg"
+msgstr ""
+
+#: weather.module:1720
+msgid "!pressure&thinsp;kPa"
+msgstr ""
+
+#: weather.module:1725
+msgid "!pressure&thinsp;hPa"
+msgstr ""
+
+#: weather.module:1743
+msgid "!rel_humidity&thinsp;%"
+msgstr ""
+
+#: weather.module:1756
+#, fuzzy
+msgid "!visibility&thinsp;mi"
+msgstr "!visibility mil"
+
+#: weather.module:1761
+#, fuzzy
+msgid "!visibility&thinsp;km"
+msgstr "!visibility mil"
+
+#: weather.module:1788
+#, fuzzy
+msgid "!distance&thinsp;mi !direction (!degree°)"
+msgstr "!distance mil !direction (!degree°)"
+
+#: weather.module:1796
+#, fuzzy
+msgid "!distance&thinsp;mi !direction"
+msgstr "!distance mil !direction"
+
+#: weather.module:1806
+#, fuzzy
+msgid "!distance&thinsp;km !direction (!degree°)"
+msgstr "!distance mil !direction (!degree°)"
+
+#: weather.module:1814
+#, fuzzy
+msgid "!distance&thinsp;km !direction"
+msgstr "!distance mil !direction"
+
+#: weather.module:1851
+msgid "North"
+msgstr "Kuzey"
+
+#: weather.module:1852
+msgid "North-Northeast"
+msgstr "Kuzey-Kuzeydoğu"
+
+#: weather.module:1853
+msgid "Northeast"
+msgstr "Kuzeydoğu"
+
+#: weather.module:1854
+msgid "East-Northeast"
+msgstr "Doğu-Kuzeydoğu"
+
+#: weather.module:1855
+msgid "East"
+msgstr "Doğu"
+
+#: weather.module:1856
+msgid "East-Southeast"
+msgstr "Doğu-Güneydoğu"
+
+#: weather.module:1857
+msgid "Southeast"
+msgstr "Güneydoğu"
+
+#: weather.module:1858
+msgid "South-Southeast"
+msgstr "Güney-Güneydoğu"
+
+#: weather.module:1859
+msgid "South"
+msgstr "Güney"
+
+#: weather.module:1860
+msgid "South-Southwest"
+msgstr "Güneydoğu-Günaybatı"
+
+#: weather.module:1861
+msgid "Southwest"
+msgstr "Güneybatı"
+
+#: weather.module:1862
+msgid "West-Southwest"
+msgstr "Batı-Günaybatı"
+
+#: weather.module:1863
+msgid "West"
+msgstr "Batı"
+
+#: weather.module:1864
+msgid "West-Northwest"
+msgstr "Batı-Kuzeybatı"
+
+#: weather.module:1865
+msgid "Northwest"
+msgstr "Kuzeybatı"
+
+#: weather.module:1866
+msgid "North-Northwest"
+msgstr "Kuzey-Kuzeybatı"
+
+#: weather.module:1871
+msgid "N"
+msgstr "K"
+
+#: weather.module:1872
+msgid "NNE"
+msgstr "KKD"
+
+#: weather.module:1873
+msgid "NE"
+msgstr "KD"
+
+#: weather.module:1874
+msgid "ENE"
+msgstr "DKD"
+
+#: weather.module:1875
+msgid "E"
+msgstr "D"
+
+#: weather.module:1876
+msgid "ESE"
+msgstr "DGD"
+
+#: weather.module:1877
+msgid "SE"
+msgstr "GD"
+
+#: weather.module:1878
+msgid "SSE"
+msgstr "GGD"
+
+#: weather.module:1879
+msgid "S"
+msgstr "G"
+
+#: weather.module:1880
+msgid "SSW"
+msgstr "GGB"
+
+#: weather.module:1881
+msgid "SW"
+msgstr "GB"
+
+#: weather.module:1882
+msgid "WSW"
+msgstr "BGB"
+
+#: weather.module:1883
+msgid "W"
+msgstr "B"
+
+#: weather.module:1884
+msgid "WNW"
+msgstr "BKB"
+
+#: weather.module:1885
+msgid "NW"
+msgstr "KB"
+
+#: weather.module:1886
+msgid "NNW"
+msgstr "KKB"
+
+#: weather.module:2136
+msgid "Download location for METAR data is not accessible."
+msgstr "METAR verisi için indirme lokasyonu ulaşılabilir değil."
+
+#: weather.module:59
+msgid "administer custom weather block"
+msgstr "kişisel hava durumu bloğunu yönet"
+
+#: weather.module:60
+msgid "access weather pages"
+msgstr ""
+
+#: weather.module:71;135 weather.info:0
+msgid "Weather"
+msgstr "Hava Durumu"
+
+#: weather.module:72
+#, fuzzy
+msgid ""
+"Configure system-wide weather blocks and the default configuration for new "
+"locations."
+msgstr ""
+"Sistem-wide hava durumu bloğu ve öntanımlı yapılandırmayı yeni "
+"lokasyonlariçin yapılandır."
+
+#: weather.module:78;111
+msgid "Edit location"
+msgstr "Lokasyon güncelle"
+
+#: weather.module:79
+#, fuzzy
+msgid "Configure a system-wide weather block."
+msgstr "Sistem-wide hava durumu bloğunu yapılandır"
+
+#: weather.module:86;120
+msgid "Delete location"
+msgstr "Lokasyon sil"
+
+#: weather.module:87
+#, fuzzy
+msgid "Delete a location from a system-wide weather block."
+msgstr "Sistem-wide hava durumu bloğundan bir lokasyon sil"
+
+#: weather.module:94
+msgid "Default configuration"
+msgstr "Öntanımlı yapılandırma"
+
+#: weather.module:95
+msgid "Setup the default configuration for new locations."
+msgstr "Yeni lokasyonlar için öntanımlı yapılandırmayı kur."
+
+#: weather.module:102
+msgid "My weather"
+msgstr "Hava durumum"
+
+#: weather.module:103;112
+msgid "Configure your custom weather block."
+msgstr "Kişisel hava durumu bloğunu yapılandır."
+
+#: weather.module:121
+msgid "Delete a location from your custom weather block."
+msgstr "Kişisel hava durumu bloğundan bir lokasyonu sil."
+
+#: weather.module:136
+msgid "Search for locations and display their current weather."
+msgstr ""
+
+#: weather.module:0
+msgid "weather"
+msgstr "hava durumu"
+
+#: weather.info:0
+msgid "Displays METAR weather data"
+msgstr "METAR verisini göster"

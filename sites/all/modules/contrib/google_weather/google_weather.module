@@ -1,0 +1,263 @@
+<?php
+// $Id: google_weather.module,v 1.4 2010/10/20 18:09:20 kubalawebdesign Exp $
+
+/**
+ * Implements hook_menu().
+ */
+function google_weather_menu() {
+  $items = array();
+
+  $items['admin/settings/google-weather'] = array(
+    'title' => "Weather Forecast from Google",
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('google_weather_admin'),
+    'access arguments' => array('configure weather forecast'),
+    'type' => MENU_NORMAL_ITEM
+  );
+
+  $items['admin/build/block/add-google-weather-block'] = array(
+    'title' => "Add google weather block",
+    'description' => "Add a new weather forecast block",
+    'access arguments' => array('administer blocks'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('google_weather_block_add_block_form'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'google_weather.admin.inc'
+  );
+
+  $items['admin/build/block/delete-google-weather-block'] = array(
+    'title' => "Delete google weather block",
+    'access arguments' => array('administer blocks'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('google_weather_delete'),
+    'type' => MENU_CALLBACK,
+    'file' => 'google_weather.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_perm().
+ */
+function google_weather_perm() {
+  return array('configure weather forecast');
+}
+
+/**
+ * Implements hook_admin().
+ */
+function google_weather_admin() {
+  $form = array();
+
+  $form['google_weather_fetch'] = array(
+    '#type' => 'fieldset',
+    '#title' => t("Configure connection with Google"),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $form['google_weather_fetch']['google_weather_timeout'] = array(
+    '#type' => 'textfield',
+    '#title' => t("Connection timeout"),
+    '#default_value' => variable_get('google_weather_timeout', 10),
+    '#required' => TRUE,
+  );
+
+  $form['google_weather_units'] = array(
+    '#type' => 'select',
+    '#title' => t("Unit system"),
+    '#default_value' => variable_get('google_weather_units', 'SI'),
+    '#options' => array(
+      'SI' => t("SI (Celsius)"),
+      'US' => t("US (Fahrenheit)"),
+    ),
+    '#required' => TRUE,
+    '#description' => t("Global setting for the unit system"),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_block().
+ */
+function google_weather_block($op = 'list', $delta = 0, $edit = array()) {
+  if ($op == 'view') {
+    $block['title'] = t("Weather");
+    $block['content'] = google_weather_get_content($delta);
+    return $block;
+  }
+  else {
+    $function = 'google_weather_block_' . $op;
+    module_load_include('inc', 'google_weather', 'google_weather.admin');
+    if (function_exists($function))
+      return $function($delta, $edit);
+  }
+}
+
+function google_weather_show($location, $how_long = NULL) {
+  global $language;
+
+  if ($how_long == NULL || !is_numeric($how_long))
+    $how_long = 5;
+
+  $timeout = variable_get("google_weather_timeout", 20);
+
+  $api = "http://www.google.com/ig/api?hl=" . $language->language . "&weather=";
+
+  $url = $api . urlencode($location);
+
+  $cv = @curl_version();
+  if (!is_array($cv)) {
+    watchdog('google weather', "Required cURL for download information about weather forecast from Google.", array(), WATCHDOG_ERROR);
+    return $error_message;
+  }
+
+  $ch = @curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_HEADER, 0);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+  curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+
+  $data = @curl_exec($ch);
+  $encoding = array_pop(explode('charset=', curl_getinfo($ch, CURLINFO_CONTENT_TYPE)));
+  curl_close($ch);
+
+  if ($encoding != 'UTF-8') $data = @iconv($encoding, "UTF-8", $data);
+
+  $xml = @simplexml_load_string($data);
+
+  if ($xml) {
+    if ($xml->weather->problem_cause) {
+      $blad = $xml->weather->problem_cause->attributes()->data;
+      return $blad;
+    }
+
+    $handler = $xml->weather;
+
+    $content = array();
+    $content['info'] = array(
+      'location' => (string) $handler->forecast_information->postal_code->attributes()->data,
+      'date' => (string) $handler->forecast_information->forecast_date->attributes()->data,
+    );
+
+    if ($handler->forecast_information->unit_system->attributes()->data != variable_get('google_weather_units', 'SI')) {
+      $convert_to = variable_get('google_weather_units', 'SI');
+    }
+
+    $today = &$handler->current_conditions;
+    $condition = (string) $today->condition->attributes()->data;
+    
+    $unit = google_weather_get_unit($convert_to);
+    
+    $icon_src = (string) $today->icon->attributes()->data;
+    $content['current'] = array(
+      'temp' => $convert_to == 'SI' ? (string) $today->temp_c->attributes()->data . $unit : (string) $today->temp_f->attributes()->data . $unit,
+      'humidity' => (string) $today->humidity->attributes()->data,
+      'icon' => theme('image', 'http://www.google.com' . $icon_src, $condition, $condition, NULL, FALSE),
+      'condition' => $condition,
+      'wind_condition' => (string) $today->wind_condition->attributes()->data,
+    );
+
+    if (empty($icon_src)) {
+      $content['current']['icon'] = '<div class="spacer"></div>';
+    }
+
+    $i = 0;
+    $content['forecast'] = array();
+
+    foreach ($handler->forecast_conditions as $nextdays) {
+      $i++;
+      if ($i >= $how_long) continue;
+      $condition = (string) $nextdays->condition->attributes()->data;
+      $content['forecast'][$i] = array(
+        'day' => ($i == 1) ? t("Today") : ucwords((string) $nextdays->day_of_week->attributes()->data),
+        'low_temp' => (string) google_weather_convert($nextdays->low->attributes()->data, $convert_to) . $unit,
+        'high_temp' => (string) google_weather_convert($nextdays->high->attributes()->data, $convert_to) . $unit,
+        'icon' => theme('image', 'http://www.google.com' . (string) $nextdays->icon->attributes()->data, $condition, $condition, NULL, FALSE),
+        'condition' => $condition,
+      );
+      $icon_src = (string) $nextdays->icon->attributes()->data;
+      if (empty($icon_src)) {
+        $content['current']['icon'] = '<div class="spacer"></div>';
+      }
+    }
+
+    $content['forecast_header'] = t("Weather forecast");
+
+    drupal_add_css(drupal_get_path('module', 'google_weather') . '/google_weather.css');
+
+    return theme('google_weather_block', $content);
+  }
+  else {
+    return $error_message;
+  }  
+}
+
+/**
+ * Helper function for getting and theming forecast.
+ *
+ * @param $delta
+ *  integer Which block to return - index of google weather block.
+ *
+ * @return
+ *  string This function return themed content for block.
+ */
+function google_weather_get_content($delta) {
+  $error_message = t("Error. Couldn't get information from Google");
+
+  if (!isset($delta) || !is_numeric($delta)) {
+    return $error_message;
+  }
+
+  $location = variable_get("google_weather_location_{$delta}", "London");
+  $how_long = variable_get("google_weather_days_{$delta}", 3);
+  
+  return google_weather_show($location, $how_long);
+}
+
+/**
+ * Helper function for convert units.
+ */
+function google_weather_convert($value, $convert_to) {
+  if (is_null($convert_to)) {
+    return $value;
+  } 
+  elseif ($convert_to == "SI") {
+    return round(($value-32)*5/9);
+  } 
+  else {
+    return round($value*9/5+32);
+  }
+}
+
+function google_weather_get_unit($convert_to = NULL) {
+  if (is_null($convert_to))
+    $convert_to = variable_get('google_weather_units', 'SI');
+  
+  if ($convert_to == "SI")
+    return '°C';
+  else
+    return '°F';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function google_weather_theme() {
+  return array(
+    'google_weather_block' => array(
+      'template' => 'google_weather-block',
+      'arguments' => array('content' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function google_weather_form_block_admin_display_form_alter(&$form, $form_state) {
+  module_load_include('inc', 'google_weather', 'google_weather.admin');
+  google_weather_block_list_alter($form, $form_state);
+}

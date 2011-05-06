@@ -1,0 +1,11 @@
+; $Id: weather.info,v 1.3 2008/02/24 17:01:07 toddy Exp $
+name = Weather
+description = Displays METAR weather data
+core = 6.x
+
+; Information added by drupal.org packaging script on 2010-12-16
+version = "6.x-5.18"
+core = "6.x"
+project = "weather"
+datestamp = "1292519148"
+

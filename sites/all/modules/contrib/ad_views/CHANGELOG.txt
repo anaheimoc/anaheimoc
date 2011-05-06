@@ -1,0 +1,40 @@
+// $Id: CHANGELOG.txt,v 1.1.2.5 2010/10/10 04:53:32 milesgillham Exp $
+
+Ad Views 6.x-1.0-BETA2, 2010-10-10
+----------------------------------
+ - Opened up relationships with node and users tables
+ - Numerous bug fixes
+
+Ad Views 6.x-1.0-BETA1, 2009-09-21
+----------------------------------
+ - Taxonomy support stable
+ - Fields added for Ad External and Ad HTML
+
+Ad Views 6.x-1.0-ALPHA5, 2009-09-09
+-----------------------------------
+ - Default view provided (single random advertisement)
+ - Ad Flash support
+ - Ad Image support complete
+
+Ad Views 6.x-1.0-ALPHA4, 2009-09-07
+-----------------------------------
+ - A new Advertisement row type is available that will display any Advertisement ad.
+
+Ad Views 6.x-1.0-ALPHA3, 2009-07-21
+-----------------------------------
+ - added support for ad_statistics and ad_clicks
+ - fixed typo in user relationships that meant they were hidden
+ - partially completed Ad Image support (ad_image table only)
+
+Ad Views 6.x-1.0-ALPHA2, 2009-07-11
+-----------------------------------
+Initial support for:
+ - Ad Module
+ - Ad Text Module
+
+Ad Views 6.x-HEAD, 2008-05-31
+-----------------------------
+ - ad_views.inc
+ - ad_views.info
+ - ad_views.module
+    o Module created, files extracted from Ad module.

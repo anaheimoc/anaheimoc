@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Domain Access Alias Redirect primary module file
+ * This module will let the user decide if a particular url is what will be used
+ * instead of the main site domain.
+ * This makes it useful for site migrations when you may want content to have a
+ * staging domain url until move to a production site whereby you can then
+ * change it to use the primary domain record, change to another alias, or uninstall
+ * the module for core domain access functionality.
+ */
+
+
+/**
+ * Implementation of hook_menu()
+ */
+function domain_access_alias_redirect_menu() {
+  $items = array();
+  
+  $items['admin/build/domain/alias/redirect/path'] = array(
+    'title' => 'Edit domain path',
+    'description' => 'Alter the path of the domain - useful for content migration towards another domain.',
+    'type' => MENU_LOCAL_TASK,
+    'access arguments' => array('administer domains'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('domain_access_alias_redirect_path_form'),
+    'file' => 'domain_access_alias_redirect.admin.inc',
+  );
+  
+  return $items;
+}
+
+/**
+ * Implementation of hook_domainload().
+ */
+function domain_access_alias_redirect_domainload(&$domain) {
+  $new_domain_path = variable_get('domain-access-alias-redirect-path-'. $domain['domain_id'], $subdomain);
+  // Save the original subdomain in case there are any issues
+  $domain['original_subdomain'] = $subdomain;
+  $domain['original_path'] = $domain['path'];
+  if ($new_domain_path !== $domain['subdomain']) {
+    if ($domain['path']) {
+      $domain['path'] = str_replace($domain['subdomain'], $new_domain_path, $domain['path']);
+    }
+  }
+}

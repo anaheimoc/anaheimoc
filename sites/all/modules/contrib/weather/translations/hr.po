@@ -1,0 +1,968 @@
+# Translation of Weather to Croatian
+#
+# This file is part of the Drupal Weather module.
+#
+# Weather is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# Weather is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Weather; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+# Copyright ©
+# Mihaela Jurkovic <mihaela@prkos.hr>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: weather.module\n"
+"POT-Creation-Date: 2010-05-03 14:44+0200\n"
+"PO-Revision-Date: 2009-09-14 02:16+0200\n"
+"Last-Translator: Mihaela Jurkovic <mihaela@prkos.hr>\n"
+"Language-Team: Croatian <mihaela@prkos.hr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: weather.tpl.php:10
+msgid "Temperature: !temperature1, feels like !temperature2"
+msgstr "Temperatura: !temperature1, osjeti se kao !temperature2"
+
+#: weather.tpl.php:15
+msgid "Temperature: !temperature"
+msgstr "Temperatura: !temperature"
+
+#: weather.tpl.php:20
+msgid "Wind: !wind"
+msgstr "Vjetar: !wind"
+
+#: weather.tpl.php:24
+msgid "Pressure: !pressure"
+msgstr "Tlak zraka: !pressure"
+
+#: weather.tpl.php:28
+msgid "Rel. Humidity: !rel_humidity"
+msgstr "Rel. vlažnost: !rel_humidity"
+
+#: weather.tpl.php:32
+msgid "Visibility: !visibility"
+msgstr "Vidljivost: !visibility"
+
+#: weather.tpl.php:42
+msgid "METAR data: !metar"
+msgstr "Podaci sustava METAR: !metar"
+
+#: weather.tpl.php:48
+msgid "Location of this weather station:"
+msgstr "Lokacija ove vremenske postaje:"
+
+#: weather.tpl.php:55
+msgid "Reported on:"
+msgstr "Izmjereno:"
+
+#: weather.module:160
+msgid ""
+"You can add, edit, and delete locations from system-wide weather blocks. "
+"Moreover, you can specify default values for newly created locations."
+msgstr ""
+"U globalnim blokovima za vrijeme (koji vrijede za cijeli sustav) možete "
+"dodavati, editirati i brisati lokacije.Štoviše, možete odrediti uobičajene "
+"vrijednosti za novokreirane lokacije."
+
+#: weather.module:165
+msgid "You can add, edit, and delete locations from your custom weather block."
+msgstr ""
+"Možete dodavati, editirati i brisati lokacije iz svog prilagođenog "
+"vremenskog bloka."
+
+#: weather.module:167
+msgid ""
+"Please note that the block will not be shown until you configure at least "
+"one location."
+msgstr ""
+"Obratite pažnju na to da se blok neće moći prikazati dok ne podesite "
+"najmanje jednu lokaciju."
+
+#: weather.module:226
+msgid "Weather: custom user"
+msgstr "Vrijeme: prilagođeno korisniku"
+
+#: weather.module:227
+msgid "Weather: location of nodes (requires Location or Node Map module)"
+msgstr ""
+"Vrijeme: lokacija čvorova (zahtijeva module Lokacija (Location) i Karta "
+"(Map))"
+
+#: weather.module:233
+msgid "Weather: system-wide !number"
+msgstr "Vrijeme: globalni !number"
+
+#: weather.module:246;298
+msgid "Current weather"
+msgstr "Trenutna prognoza"
+
+#: weather.module:290
+msgid "Current weather nearby"
+msgstr "Trenutna prognoza u blizini"
+
+#: weather.module:384
+msgid "No sunrise today"
+msgstr "Danas izlazak Sunca nije vidljiv"
+
+#: weather.module:387
+msgid "No sunset today"
+msgstr "Danas zalazak Sunca nije vidljiv"
+
+#: weather.module:426
+msgid "Sunrise: !sunrise"
+msgstr "Izlazak Sunca: !sunrise"
+
+#: weather.module:428
+msgid "Sunset: !sunset"
+msgstr "Zalazak Sunca: !sunset"
+
+#: weather.module:538
+msgid "Real name"
+msgstr "Pravo ime"
+
+#: weather.module:539;592;904
+msgid "Weight"
+msgstr "Težina"
+
+#: weather.module:540;593
+msgid "Operations"
+msgstr "Operacije"
+
+#: weather.module:552;604
+msgid "edit"
+msgstr "editiraj"
+
+#: weather.module:553;605
+msgid "delete"
+msgstr "obriši"
+
+#: weather.module:560
+msgid "There are currently no locations."
+msgstr "Trenutno nema lokacija"
+
+#: weather.module:572
+msgid "Create new location"
+msgstr "Kreiraj novu lokaciju"
+
+#: weather.module:591
+msgid "System-wide block !number"
+msgstr "Globalni blok !number"
+
+#: weather.module:615
+msgid "Create new location in block !number"
+msgstr "Kreiraj novu lokaciju u bloku !number"
+
+#: weather.module:623
+msgid "Create new system-wide block"
+msgstr "Kreiraj novi globalni blok"
+
+#: weather.module:627
+msgid "Configure the default location"
+msgstr "Konfiguriraj uobičajenu lokaciju"
+
+#: weather.module:641
+msgid "Use cron to clear the cache once per hour"
+msgstr "Obriši priručnu memoriju jednom na sat pomoću Cron funkcije"
+
+#: weather.module:642
+msgid ""
+"If you use Drupal's cache, the system weather blocks will not be updated for "
+"anonymous users unless the cache is cleared. This happens e.g. when new "
+"nodes are created. If you want the system weather blocks to be updated when "
+"new weather data is available, you can clear the cache once per hour. Please "
+"note that this might slow down your site."
+msgstr ""
+"Ako koristite Drupalovu priručnu memoriju globalni blokovi za vrijeme neće "
+"biti ažurirani za neprijavljene korisnike ako se priručna memorija ne "
+"isprazni. To se događa kad se npr. kreiraju novi čvorovi. Ako želite da se "
+"globalni blokovi za vrijeme ažuriraju kada su novi vremenski podaci budu "
+"dostupni obrišite priručnu memoriju jednom na sat. Molimo da obratite pažnju "
+"da to može usporiti vašu stranicu."
+
+#: weather.module:647
+msgid "Directory for custom images"
+msgstr ""
+
+#: weather.module:648
+msgid ""
+"Override the default image directory. This directory must be a subdirectory "
+"of the Drupal 'files' path."
+msgstr ""
+
+#: weather.module:653;918
+msgid "Save configuration"
+msgstr "Sačuvaj konfiguraciju"
+
+#: weather.module:672
+msgid "The configuration has been saved."
+msgstr "Konfiguracija je sačuvana."
+
+#: weather.module:728;772
+msgid "Place"
+msgstr "Mjesto"
+
+#: weather.module:729;773
+msgid "Select a place in that country for the weather display."
+msgstr "Odaberite mjesto iz te države za prikaz vremenske prognoze."
+
+#: weather.module:760
+msgid "Country"
+msgstr "Država"
+
+#: weather.module:761
+msgid "Select a country to narrow down your search."
+msgstr "Odaberite državu radi sužavanja potrage."
+
+#: weather.module:779
+msgid "ICAO code"
+msgstr "Kod ICAO"
+
+#: weather.module:781
+msgid ""
+"Enter the 4-letter ICAO code of the weather station. If you first need to "
+"look up the code, you can use !url_1 or !url_2. Please note that not all "
+"stations listed at those URLs are providing weather data and thus may not be "
+"supported by this module."
+msgstr ""
+"Unesite četveroslovni ICAO kod vremeske postaje. Ako prvo morate potražiti "
+"kod možete koristiti !url_1 ili !url_2. Molimo da obratite pažnju da ne nude "
+"sve stanice navedene na tim stranicama podatke za vremensku prognozu pa ih "
+"možda ovaj modul ne podržava."
+
+#: weather.module:792
+msgid "Real name for the selected place"
+msgstr "Pravo ime odabranog mjesta"
+
+#: weather.module:794
+msgid "You may enter another name for the place selected above."
+msgstr "Možete unijeti drugo ime za gore odabrano mjesto."
+
+#: weather.module:800
+msgid "Display units"
+msgstr "Jedinice za prikaz"
+
+#: weather.module:801
+msgid "You can specify which units should be used for displaying the data."
+msgstr "Možete odrediti koje jedinice koristiti za prikaz podataka."
+
+#: weather.module:808
+msgid "Temperature"
+msgstr "Temperatura"
+
+#: weather.module:810
+msgid "Celsius"
+msgstr "°C"
+
+#: weather.module:810
+msgid "Fahrenheit"
+msgstr "Fahrenheita"
+
+#: weather.module:811
+msgid "Celsius / Fahrenheit"
+msgstr "Celzija/Fahrenheita"
+
+#: weather.module:812
+msgid "Fahrenheit / Celsius"
+msgstr "Fahrenheita/Celsiusa"
+
+#: weather.module:813;821;828;834;841
+msgid "Don't display"
+msgstr "Nemoj prikazati"
+
+#: weather.module:817
+msgid "Wind speed"
+msgstr "Brzina vjetra"
+
+#: weather.module:819
+msgid "km/h"
+msgstr "km/h"
+
+#: weather.module:819
+msgid "mph"
+msgstr "mph"
+
+#: weather.module:819
+msgid "Knots"
+msgstr "Čvorova"
+
+#: weather.module:820
+msgid "meter/s"
+msgstr "m/s"
+
+#: weather.module:820
+msgid "Beaufort"
+msgstr "Beauforta"
+
+#: weather.module:825
+msgid "Pressure"
+msgstr "Tlak zraka"
+
+#: weather.module:827
+msgid "hPa"
+msgstr "hPa"
+
+#: weather.module:827
+msgid "kPa"
+msgstr "kPa"
+
+#: weather.module:827
+msgid "inHg"
+msgstr "in Hg"
+
+#: weather.module:827
+msgid "mmHg"
+msgstr "mm Hg"
+
+#: weather.module:832
+msgid "Rel. Humidity"
+msgstr "Rel. vlažnost"
+
+#: weather.module:834
+msgid "Display"
+msgstr "Prikaži"
+
+#: weather.module:838
+msgid "Visibility"
+msgstr "Vidljivost"
+
+#: weather.module:840
+msgid "kilometers"
+msgstr "kilometara"
+
+#: weather.module:840
+msgid "UK miles"
+msgstr "UK milja"
+
+#: weather.module:845
+msgid "Display settings"
+msgstr "Postavke za prikaz"
+
+#: weather.module:846
+msgid "You can customize the display of the block."
+msgstr "Možete prilagoditi prikaz bloka."
+
+#: weather.module:853
+msgid "Show windchill temperature"
+msgstr "Pokaži temperaturu ekvivalentu vremenu bez vjetra"
+
+#: weather.module:855
+msgid ""
+"Calculates the temperature resulting from windchill. This is how the "
+"temperature <q>feels like</q>."
+msgstr ""
+"Računa temperaturu nastalu zbog utjecaja vjetra. To je kakva se temperatura "
+"<q>osjeti</q>."
+
+#: weather.module:859
+msgid "Show unconverted METAR data"
+msgstr "Pokaži nepretvorene podatke METAR"
+
+#: weather.module:861
+msgid "Displays the original data of the METAR report."
+msgstr "Prikaži originalne podatke izvještaja METAR."
+
+#: weather.module:865
+msgid "Show abbreviated wind directions"
+msgstr "Pokaži skraćenice za smjerove vjetra"
+
+#: weather.module:867
+msgid ""
+"Displays abbreviated wind directions like N, SE, or W instead of North, "
+"Southeast, or West."
+msgstr ""
+"Prikazuje skraćenice za smjerove vjetra kao što su S, SI ili Z umjesto "
+"Sjever, Sjeveroistok ili Zapad."
+
+#: weather.module:871
+msgid "Show degrees of wind directions"
+msgstr "Pokaži smjer vjetra u stupnjevima"
+
+#: weather.module:873
+msgid "Displays the degrees of wind directions, e.g. North (20°)."
+msgstr "Prikazuje smjer vjetra u stupnjevima, npr. Sjever (20°)."
+
+#: weather.module:877
+msgid "Show time of sunrise and sunset"
+msgstr "Pokaži vrijeme izlaska i zalaska Sunca"
+
+#: weather.module:879
+msgid "Displays the time of sunrise and sunset."
+msgstr "Prikaži vrijeme izlaska i zalaska Sunca."
+
+#: weather.module:882
+msgid "GMT"
+msgstr "GMT"
+
+#: weather.module:882
+msgid "Drupal"
+msgstr "Drupal"
+
+#: weather.module:891
+msgid "Timezone for sunrise and sunset"
+msgstr "Vremenska zona za izlazak i zalazak Sunca"
+
+#: weather.module:893
+msgid ""
+"Choose either Greenwich Mean Time (GMT), Drupal's standard timezone as set "
+"in the configuration, or a custom timezone."
+msgstr ""
+"Odaberite srednje vrijeme po Greenwichu (GMT), standardnu vremensku zonu "
+"postavljenu u Drupalu ili posebno podešenu vremesku zonu."
+
+#: weather.module:898
+msgid "Show compact block"
+msgstr "Prikaži kompaktni blok"
+
+#: weather.module:900
+msgid ""
+"Displays only the name, condition, and temperature of the weather station."
+msgstr "Prikaži samo ime, stanje i temperaturu vremenske postaje."
+
+#: weather.module:906
+msgid ""
+"Optional. In the block, the heavier locations will sink and the lighter "
+"locations will be positioned nearer the top. Locations with equal weights "
+"are sorted alphabetically."
+msgstr ""
+"Neobavezno. U bloku će teže lokacije tonuti a lakše lokacije će biti "
+"postavljene bliže vrhu. Lokacije jednakih težina su razvrstane abecednim "
+"redom."
+
+#: weather.module:931
+msgid "The ICAO code is not supported by this module."
+msgstr "Ovaj modul ne podržava ICAO kod."
+
+#: weather.module:960
+msgid "The default configuration has been saved."
+msgstr "Uobičajena konfiguracija je pohranjena."
+
+#: weather.module:963
+msgid "The location has been saved."
+msgstr "Lokacija je pohranjena."
+
+#: weather.module:1003
+msgid "Are you sure you want to delete the location %name?"
+msgstr "Jeste li sigurni da želite obrisati lokaciju %name?"
+
+#: weather.module:1006
+msgid "This action cannot be undone."
+msgstr "Ova radnja se ne može opozvati."
+
+#: weather.module:1007
+msgid "Delete"
+msgstr "Izbrišite"
+
+#: weather.module:1008
+msgid "Cancel"
+msgstr "Poništite"
+
+#: weather.module:1022
+msgid "The location has been deleted."
+msgstr "Lokacija je izbrisana. "
+
+#: weather.module:1059;1153
+msgid "The string to search for must be between 3 and 64 characters."
+msgstr "Izraz koji tražite mora imati između 3 i 64 znaka."
+
+#: weather.module:1093
+msgid "Your search did not return any results."
+msgstr "Vaša potraga nema rezultata."
+
+#: weather.module:1116
+msgid "Search results for <q>@search</q>"
+msgstr "Rezultati potrage za <q>@search</q>"
+
+#: weather.module:1134
+msgid "Search for a location"
+msgstr "Traži lokaciju"
+
+#: weather.module:1135
+msgid ""
+"Type in an ICAO code, a name, or a country to search for weather conditions "
+"at that location."
+msgstr ""
+"Upišite kod ICAO, ime ili državu da dobijete vremeske uvjete na toj lokaciji."
+
+#: weather.module:1140
+msgid "Search"
+msgstr "Tražite"
+
+#: weather.module:1339
+msgid "No data"
+msgstr "Nema podataka"
+
+#: weather.module:1344
+msgid "Clear sky"
+msgstr "Vedro"
+
+#: weather.module:1345
+msgid "Few clouds"
+msgstr "Pretežno vedro"
+
+#: weather.module:1346
+msgid "Scattered clouds"
+msgstr "Umjereno oblačno"
+
+#: weather.module:1347
+msgid "Broken clouds"
+msgstr "Pretežno oblačno"
+
+#: weather.module:1348
+msgid "Overcast"
+msgstr "Potpuno oblačno"
+
+#: weather.module:1349
+msgid "No significant clouds"
+msgstr "Nema značajne naoblake"
+
+#: weather.module:1354
+msgid "mist"
+msgstr "sumaglica"
+
+#: weather.module:1359
+msgid "shallow fog"
+msgstr "magla uz tlo"
+
+#: weather.module:1362
+msgid "partial fog"
+msgstr "djelomična magla"
+
+#: weather.module:1365
+msgid "patches of fog"
+msgstr "magla u krpama"
+
+#: weather.module:1368
+msgid "fog"
+msgstr "magla"
+
+#: weather.module:1372
+msgid "smoke"
+msgstr "dim"
+
+#: weather.module:1380
+msgid "light rain showers"
+msgstr "slabi pljuskovi kiše"
+
+#: weather.module:1383
+msgid "light freezing rain"
+msgstr "slab pljusak prehladne kiše"
+
+#: weather.module:1386
+msgid "light rain"
+msgstr "slaba kiša"
+
+#: weather.module:1391
+msgid "heavy rain showers"
+msgstr "jaki pljuskovi kiše"
+
+#: weather.module:1394
+msgid "heavy freezing rain"
+msgstr "jaka prehladna kiša"
+
+#: weather.module:1397
+msgid "heavy rain"
+msgstr "jaka kiša"
+
+#: weather.module:1402
+msgid "rain showers"
+msgstr "pljuskovi kiše"
+
+#: weather.module:1405
+msgid "freezing rain"
+msgstr "prehladna kiša"
+
+#: weather.module:1408
+msgid "rain"
+msgstr "kiša"
+
+#: weather.module:1416
+msgid "light freezing drizzle"
+msgstr "slaba prehladna rosulja"
+
+#: weather.module:1419
+msgid "light drizzle"
+msgstr "slaba rosulja"
+
+#: weather.module:1424
+msgid "heavy freezing drizzle"
+msgstr "jaka prehladna rosulja"
+
+#: weather.module:1427
+msgid "heavy drizzle"
+msgstr "jaka rosulja"
+
+#: weather.module:1432
+msgid "freezing drizzle"
+msgstr "prehladna rosulja"
+
+#: weather.module:1435
+msgid "drizzle"
+msgstr "rosulja"
+
+#: weather.module:1443
+msgid "light blowing snow"
+msgstr "slaba visoka snježna vijavica"
+
+#: weather.module:1446
+msgid "light low drifting snow"
+msgstr "slaba niska snježna vijavica"
+
+#: weather.module:1449
+#, fuzzy
+msgid "light snow showers"
+msgstr "slabi pljuskovi kiše"
+
+#: weather.module:1452
+msgid "light snow"
+msgstr "slab snijeg"
+
+#: weather.module:1457
+msgid "heavy blowing snow"
+msgstr "jaka visoka snježna vijavica"
+
+#: weather.module:1460
+msgid "heavy low drifting snow"
+msgstr "jaka niska snježna vijavica"
+
+#: weather.module:1463
+#, fuzzy
+msgid "heavy snow showers"
+msgstr "jaki pljuskovi kiše"
+
+#: weather.module:1466
+msgid "heavy snow"
+msgstr "jak snijeg"
+
+#: weather.module:1471
+msgid "blowing snow"
+msgstr "visoka snježna vijavica"
+
+#: weather.module:1474
+msgid "low drifting snow"
+msgstr "niska snježna vijavica"
+
+#: weather.module:1477
+#, fuzzy
+msgid "snow showers"
+msgstr "pljuskovi kiše"
+
+#: weather.module:1480
+msgid "snow"
+msgstr "snijeg"
+
+#: weather.module:1514;1543
+msgid "!temperature&thinsp;°F"
+msgstr "!temperature&thinsp;°F"
+
+#: weather.module:1519;1547
+msgid "!temperature_c&thinsp;°C / !temperature_f&thinsp;°F"
+msgstr "!temperature_c&thinsp;°C / !temperature_f&thinsp;°F"
+
+#: weather.module:1528;1555
+msgid "!temperature_f&thinsp;°F / !temperature_c&thinsp;°C"
+msgstr "!temperature_f&thinsp;°F / !temperature_c&thinsp;°C"
+
+#: weather.module:1537;1564
+msgid "!temperature&thinsp;°C"
+msgstr "!temperature&thinsp;°C"
+
+#: weather.module:1584
+msgid "Calm"
+msgstr "Bez vjetra"
+
+#: weather.module:1607;1623
+msgid "Variable from !direction_a (!degree_a°) to !direction_b (!degree_b°)"
+msgstr ""
+"Promjenjiv iz smjera !direction_a (!degree_a°) prema !direction_bu (!degree_b"
+"°)"
+
+#: weather.module:1615;1631
+msgid "Variable from !direction_a to !direction_b"
+msgstr "Promjenjiv iz smjera !direction_a prema !direction_bu"
+
+#: weather.module:1639
+msgid "Variable"
+msgstr "Promjenjiv"
+
+#: weather.module:1646;1656
+msgid "!direction (!degree°)"
+msgstr "!direction (!degree°)"
+
+#: weather.module:1671;1672
+msgid "!speed&thinsp;mph"
+msgstr "!speed&thinsp;mph"
+
+#: weather.module:1675;1676
+msgid "!speed&thinsp;knots"
+msgstr "!speed&thinsp;knots"
+
+#: weather.module:1679;1680
+msgid "!speed&thinsp;meter/s"
+msgstr "!speed&thinsp;m/s"
+
+#: weather.module:1683;1684
+msgid "Beaufort !number"
+msgstr "!number Beauforta"
+
+#: weather.module:1688;1689
+msgid "!speed&thinsp;km/h"
+msgstr "!speed&thinsp;km/h"
+
+#: weather.module:1694
+msgid "gusts up to !speed"
+msgstr "naleti vjetra do brzine od !speed"
+
+#: weather.module:1712
+msgid "!pressure&thinsp;inHg"
+msgstr "!pressure&thinsp;inHg"
+
+#: weather.module:1716
+msgid "!pressure&thinsp;mmHg"
+msgstr "!pressure&thinsp;mmHg"
+
+#: weather.module:1720
+msgid "!pressure&thinsp;kPa"
+msgstr "!pressure&thinsp;kPa"
+
+#: weather.module:1725
+msgid "!pressure&thinsp;hPa"
+msgstr "!pressure&thinsp;hPa"
+
+#: weather.module:1743
+msgid "!rel_humidity&thinsp;%"
+msgstr "!rel_humidity&thinsp;%"
+
+#: weather.module:1756
+msgid "!visibility&thinsp;mi"
+msgstr "!visibility&thinsp;mi"
+
+#: weather.module:1761
+msgid "!visibility&thinsp;km"
+msgstr "!visibility&thinsp;km"
+
+#: weather.module:1788
+msgid "!distance&thinsp;mi !direction (!degree°)"
+msgstr "!distance&thinsp;mi !direction (!degree°)"
+
+#: weather.module:1796
+msgid "!distance&thinsp;mi !direction"
+msgstr "!distance&thinsp;mi !direction"
+
+#: weather.module:1806
+msgid "!distance&thinsp;km !direction (!degree°)"
+msgstr "!distance&thinsp;km !direction (!degree°)"
+
+#: weather.module:1814
+msgid "!distance&thinsp;km !direction"
+msgstr "!distance&thinsp;km !direction"
+
+#: weather.module:1851
+msgid "North"
+msgstr "Sjever"
+
+#: weather.module:1852
+msgid "North-Northeast"
+msgstr "Sjever-sjeveroistok"
+
+#: weather.module:1853
+msgid "Northeast"
+msgstr "Sjeveroistok"
+
+#: weather.module:1854
+msgid "East-Northeast"
+msgstr "Istok-sjeveroistok"
+
+#: weather.module:1855
+msgid "East"
+msgstr "Istok"
+
+#: weather.module:1856
+msgid "East-Southeast"
+msgstr "Istok-jugoistok"
+
+#: weather.module:1857
+msgid "Southeast"
+msgstr "Jugoistok"
+
+#: weather.module:1858
+msgid "South-Southeast"
+msgstr "Jug-jugoistok"
+
+#: weather.module:1859
+msgid "South"
+msgstr "Jug"
+
+#: weather.module:1860
+msgid "South-Southwest"
+msgstr "Jug-jugozapad"
+
+#: weather.module:1861
+msgid "Southwest"
+msgstr "Jugozapad"
+
+#: weather.module:1862
+msgid "West-Southwest"
+msgstr "Zapad-jugozapad"
+
+#: weather.module:1863
+msgid "West"
+msgstr "Zapad"
+
+#: weather.module:1864
+msgid "West-Northwest"
+msgstr "Zapad-sjeverozapad"
+
+#: weather.module:1865
+msgid "Northwest"
+msgstr "Sjeverozapad"
+
+#: weather.module:1866
+msgid "North-Northwest"
+msgstr "Sjever-sjeverozapad"
+
+#: weather.module:1871
+msgid "N"
+msgstr "S"
+
+#: weather.module:1872
+msgid "NNE"
+msgstr "SSI"
+
+#: weather.module:1873
+msgid "NE"
+msgstr "SI"
+
+#: weather.module:1874
+msgid "ENE"
+msgstr "ISI"
+
+#: weather.module:1875
+msgid "E"
+msgstr "I"
+
+#: weather.module:1876
+msgid "ESE"
+msgstr "IJI"
+
+#: weather.module:1877
+msgid "SE"
+msgstr "JI"
+
+#: weather.module:1878
+msgid "SSE"
+msgstr "JJI"
+
+#: weather.module:1879
+msgid "S"
+msgstr "J"
+
+#: weather.module:1880
+msgid "SSW"
+msgstr "JJZ"
+
+#: weather.module:1881
+msgid "SW"
+msgstr "JZ"
+
+#: weather.module:1882
+msgid "WSW"
+msgstr "ZJZ"
+
+#: weather.module:1883
+msgid "W"
+msgstr "Z"
+
+#: weather.module:1884
+msgid "WNW"
+msgstr "ZSZ"
+
+#: weather.module:1885
+msgid "NW"
+msgstr "SZ"
+
+#: weather.module:1886
+msgid "NNW"
+msgstr "SSZ"
+
+#: weather.module:2136
+msgid "Download location for METAR data is not accessible."
+msgstr "Lokacija za preuzimanje podataka METAR sustava nije dostupna."
+
+#: weather.module:59
+msgid "administer custom weather block"
+msgstr "uredite prilagođeni blok za vrijeme"
+
+#: weather.module:60
+msgid "access weather pages"
+msgstr "pristup stranicama za vrijeme"
+
+#: weather.module:71;135 weather.info:0
+msgid "Weather"
+msgstr "Vrijeme"
+
+#: weather.module:72
+msgid ""
+"Configure system-wide weather blocks and the default configuration for new "
+"locations."
+msgstr ""
+"Podesite globalni blok za vrijeme i uobičajenu postavu za nove lokacije."
+
+#: weather.module:78;111
+msgid "Edit location"
+msgstr "Uredite lokaciju"
+
+#: weather.module:79
+msgid "Configure a system-wide weather block."
+msgstr "Podesite globalni blok za vrijeme."
+
+#: weather.module:86;120
+msgid "Delete location"
+msgstr "Izbrišite lokaciju"
+
+#: weather.module:87
+msgid "Delete a location from a system-wide weather block."
+msgstr "Izbrišite lokaciju iz globalnog bloka za vrijeme."
+
+#: weather.module:94
+msgid "Default configuration"
+msgstr "Uobičajene postavke"
+
+#: weather.module:95
+msgid "Setup the default configuration for new locations."
+msgstr "Podesite uobičajene postavke za nove lokacije."
+
+#: weather.module:102
+msgid "My weather"
+msgstr "Moje vrijeme"
+
+#: weather.module:103;112
+msgid "Configure your custom weather block."
+msgstr "Podesite svoj prilagođeni blok za vrijeme."
+
+#: weather.module:121
+msgid "Delete a location from your custom weather block."
+msgstr "Izbrišite lokaciju iz svog prilagođenog bloka za vrijeme."
+
+#: weather.module:136
+msgid "Search for locations and display their current weather."
+msgstr "Traži lokacije i prikaži njihove trenutne vremenske uvjete."
+
+#: weather.module:0
+msgid "weather"
+msgstr "vremenska prognoza"
+
+#: weather.info:0
+msgid "Displays METAR weather data"
+msgstr "Prikazuj vremenske podatke sustava METAR"

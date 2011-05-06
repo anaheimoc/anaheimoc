@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implementation of hook_install().
+ */
+function domain_access_alias_redirect_install() {
+  $domain_weight = max(0, db_result(db_query("SELECT weight FROM {system} WHERE name='domain'")));
+  db_query("UPDATE {system} SET weight = %d WHERE name='domain_access_alias_redirect'", $domain_weight + 1);
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function domain_access_alias_redirect_uninstall() {
+  db_query("DELETE FROM {variable} WHERE name LIKE 'domain-access-alias-redirect-path%%'");
+}
