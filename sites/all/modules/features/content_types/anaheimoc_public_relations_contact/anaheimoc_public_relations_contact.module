@@ -1,0 +1,3 @@
+<?php
+
+include_once('anaheimoc_public_relations_contact.features.inc');

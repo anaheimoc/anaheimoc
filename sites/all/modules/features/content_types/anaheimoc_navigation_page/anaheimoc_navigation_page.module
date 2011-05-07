@@ -1,0 +1,3 @@
+<?php
+
+include_once('anaheimoc_navigation_page.features.inc');

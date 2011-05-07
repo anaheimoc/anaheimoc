@@ -1,0 +1,7 @@
+core = "6.x"
+description = "Travel Pro Discounts Content Type"
+features[node][] = "travel_trade_pro_discounts"
+name = "Travel pro discounts"
+package = "Features"
+project = "anaheimoc_travel_pro_discounts"
+version = "6.x-1.0-beta1"

@@ -1,0 +1,7 @@
+core = "6.x"
+description = "Public Relations Content Type"
+features[node][] = "pr_contact"
+name = "Public relations contact"
+package = "Features"
+project = "anaheimoc_public_relations_contact"
+version = "6.x-1.0-beta1"
