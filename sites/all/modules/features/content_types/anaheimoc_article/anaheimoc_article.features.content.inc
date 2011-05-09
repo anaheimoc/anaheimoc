@@ -52,7 +52,7 @@ function anaheimoc_article_content_default_fields() {
     'description_field' => '1',
     'widget' => array(
       'file_extensions' => 'png gif jpg jpeg',
-      'file_path' => '',
+      'file_path' => 'assets/article/images',
       'progress_indicator' => 'bar',
       'max_filesize_per_file' => '',
       'max_filesize_per_node' => '',
