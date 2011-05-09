@@ -1,5 +1,4 @@
 <?php
-// $Id: upload.inc,v 1.1.2.6 2010/01/11 06:07:16 deciphered Exp $
 /**
  * @file
  * Provides FileField Paths integration with the Upload module.

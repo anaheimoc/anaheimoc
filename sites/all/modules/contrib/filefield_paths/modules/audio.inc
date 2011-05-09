@@ -1,5 +1,4 @@
 <?php
-// $Id: audio.inc,v 1.1.2.4 2010/01/11 06:07:16 deciphered Exp $
 /**
  * @file
  * Provides FileField Paths integration with the Audio module.

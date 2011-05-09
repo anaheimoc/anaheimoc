@@ -1,5 +1,4 @@
 <?php
-// $Id: filefield_paths.install,v 1.6.2.6 2010/01/11 06:07:16 deciphered Exp $
 /**
  * @file
  * Install, update and uninstall functions for the FileField Paths module.

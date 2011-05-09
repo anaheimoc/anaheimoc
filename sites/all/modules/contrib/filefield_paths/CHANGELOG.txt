@@ -1,4 +1,9 @@
-// $Id: CHANGELOG.txt,v 1.1.2.19 2010/01/11 06:07:16 deciphered Exp $
+FileField Paths 6.x-1.x-dev, xxxx-xx-xx (Developmental release)
+-----------------------------------
+
+- #877578 by tomgf: Fixed Pathauto support.
+- #635854 by hefox: Fixed cache issue.
+- #578442 by szantog, deciphered: Added features support.
 
 FileField Paths 6.x-1.4, 2010-01-11
 -----------------------------------
