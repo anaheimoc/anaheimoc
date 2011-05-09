@@ -52,7 +52,7 @@ function anaheimoc_podcast_content_default_fields() {
     'description_field' => '0',
     'widget' => array(
       'file_extensions' => 'png gif jpg jpeg',
-      'file_path' => '',
+      'file_path' => 'assets/podcast/images',
       'progress_indicator' => 'bar',
       'max_filesize_per_file' => '',
       'max_filesize_per_node' => '',
@@ -128,7 +128,7 @@ function anaheimoc_podcast_content_default_fields() {
     'description_field' => '0',
     'widget' => array(
       'file_extensions' => 'txt mp3 wav',
-      'file_path' => '',
+      'file_path' => 'assets/podcast/audio',
       'progress_indicator' => 'bar',
       'max_filesize_per_file' => '',
       'max_filesize_per_node' => '',

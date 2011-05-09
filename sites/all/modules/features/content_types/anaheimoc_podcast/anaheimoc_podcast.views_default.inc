@@ -1063,6 +1063,7 @@ function anaheimoc_podcast_views_default_views() {
     0 => 'full',
   ));
   $handler->override_option('argument_mode', 'nid');
+  $handler->override_option('default_argument', '');
 
   $views[$view->name] = $view;
 
