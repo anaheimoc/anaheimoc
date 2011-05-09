@@ -11,7 +11,7 @@ function anaheimoc_partner_spotlight_content_default_fields() {
     'field_name' => 'field_article_image',
     'type_name' => 'partner_spotlight',
     'display_settings' => array(
-      'weight' => '-4',
+      'weight' => '-3',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -21,7 +21,7 @@ function anaheimoc_partner_spotlight_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'article_image_default',
+        'format' => 'partner_spotlight_image_default',
         'exclude' => 0,
       ),
       '4' => array(
@@ -87,7 +87,7 @@ function anaheimoc_partner_spotlight_content_default_fields() {
     'field_name' => 'field_article_image_additional',
     'type_name' => 'partner_spotlight',
     'display_settings' => array(
-      'weight' => '-3',
+      'weight' => '-2',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -163,7 +163,7 @@ function anaheimoc_partner_spotlight_content_default_fields() {
     'field_name' => 'field_partner_reference',
     'type_name' => 'partner_spotlight',
     'display_settings' => array(
-      'weight' => '-4',
+      'weight' => 0,
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -272,7 +272,7 @@ function anaheimoc_partner_spotlight_content_default_fields() {
     'field_name' => 'field_video_embed',
     'type_name' => 'partner_spotlight',
     'display_settings' => array(
-      'weight' => '1',
+      'weight' => '-1',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',

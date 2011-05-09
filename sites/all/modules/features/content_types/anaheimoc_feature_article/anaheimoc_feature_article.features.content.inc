@@ -21,7 +21,7 @@ function anaheimoc_feature_article_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'article_image_default',
+        'format' => 'feature_article_image_default',
         'exclude' => 0,
       ),
       '4' => array(
@@ -65,6 +65,11 @@ function anaheimoc_feature_article_content_default_fields() {
       'title_type' => 'textfield',
       'default_image' => NULL,
       'use_default_image' => 0,
+      'filefield_sources' => NULL,
+      'filefield_source_attach_path' => NULL,
+      'filefield_source_attach_absolute' => NULL,
+      'filefield_source_attach_mode' => NULL,
+      'filefield_source_autocomplete' => NULL,
       'label' => 'Article image',
       'weight' => '-3',
       'description' => '',
@@ -78,16 +83,17 @@ function anaheimoc_feature_article_content_default_fields() {
     'field_name' => 'field_article_weight',
     'type_name' => 'feature_article',
     'display_settings' => array(
+      'weight' => '11',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       '4' => array(

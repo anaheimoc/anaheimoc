@@ -5,8 +5,8 @@
  */
 function anaheimoc_staff_profile_imagecache_default_presets() {
   $items = array(
-    '220x220' => array(
-      'presetname' => '220x220',
+    'staff_profile_image' => array(
+      'presetname' => 'staff_profile_image',
       'actions' => array(
         '0' => array(
           'weight' => '0',

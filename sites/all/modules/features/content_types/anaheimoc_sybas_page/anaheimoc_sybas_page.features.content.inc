@@ -21,7 +21,7 @@ function anaheimoc_sybas_page_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'article_image_default',
+        'format' => 'sybas_page_image_default',
         'exclude' => 0,
       ),
       '4' => array(

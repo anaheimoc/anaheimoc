@@ -21,7 +21,7 @@ function anaheimoc_article_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'image_plain',
+        'format' => 'article_article_image_default',
         'exclude' => 0,
       ),
       '4' => array(
@@ -172,12 +172,12 @@ function anaheimoc_article_content_default_fields() {
         'format' => 'above',
       ),
       'teaser' => array(
-        'format' => 'default',
-        'exclude' => 0,
+        'format' => 'hidden',
+        'exclude' => 1,
       ),
       'full' => array(
-        'format' => 'default',
-        'exclude' => 0,
+        'format' => 'hidden',
+        'exclude' => 1,
       ),
       '4' => array(
         'format' => 'default',

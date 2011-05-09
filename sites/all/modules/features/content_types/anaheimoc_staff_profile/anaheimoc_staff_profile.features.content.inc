@@ -11,9 +11,10 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_global_email',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => '-1',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -63,9 +64,10 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_global_phone',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => '-2',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -118,7 +120,7 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_profile_image',
     'type_name' => 'staff_profile',
     'display_settings' => array(
-      'weight' => '-1',
+      'weight' => '-3',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -128,7 +130,7 @@ function anaheimoc_staff_profile_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => '220x220_default',
+        'format' => 'staff_profile_image_default',
         'exclude' => 0,
       ),
       '4' => array(
@@ -185,9 +187,10 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_staff_department',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => 0,
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -247,9 +250,10 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_staff_job_title',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => '-4',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -304,9 +308,10 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_staff_recommendation',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => '1',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',

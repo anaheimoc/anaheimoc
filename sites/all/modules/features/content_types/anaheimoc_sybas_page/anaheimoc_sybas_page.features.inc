@@ -5,8 +5,8 @@
  */
 function anaheimoc_sybas_page_imagecache_default_presets() {
   $items = array(
-    'article_image' => array(
-      'presetname' => 'article_image',
+    'sybas_page_image' => array(
+      'presetname' => 'sybas_page_image',
       'actions' => array(
         '0' => array(
           'weight' => '0',
@@ -14,7 +14,7 @@ function anaheimoc_sybas_page_imagecache_default_presets() {
           'action' => 'smartcrop_scale_and_crop',
           'data' => array(
             'width' => '616',
-            'height' => '240',
+            'height' => '216',
             'upscale' => 0,
           ),
         ),

@@ -21,7 +21,7 @@ function anaheimoc_blogger_profile_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => '220x220_default',
+        'format' => 'blogger_profile_image_default',
         'exclude' => 0,
       ),
       '4' => array(
