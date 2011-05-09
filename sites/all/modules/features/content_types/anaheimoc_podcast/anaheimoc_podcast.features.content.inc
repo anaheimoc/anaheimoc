@@ -18,10 +18,10 @@ function anaheimoc_podcast_content_default_fields() {
       ),
       'teaser' => array(
         'format' => 'image_plain',
-        'exclude' => 0,
+        'exclude' => 1,
       ),
       'full' => array(
-        'format' => '140x140_default',
+        'format' => 'podcast_image_default',
         'exclude' => 0,
       ),
       '4' => array(
@@ -94,7 +94,7 @@ function anaheimoc_podcast_content_default_fields() {
       ),
       'teaser' => array(
         'format' => 'hidden',
-        'exclude' => 0,
+        'exclude' => 1,
       ),
       'full' => array(
         'format' => 'hidden',
