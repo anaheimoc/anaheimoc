@@ -1,0 +1,10 @@
+; $Id: pullquote.info,v 1.1 2010/09/07 21:40:19 stuckagain Exp $
+name = Pullquote
+description = Duplicates marked-up node body text, as seperately CSS formatted quotation
+core = 6.x
+; Information added by drupal.org packaging script on 2010-09-08
+version = "6.x-1.x-dev"
+core = "6.x"
+project = "pullquote"
+datestamp = "1283904975"
+

@@ -1,0 +1,4 @@
+name = Anaheim/OC Custom Mods
+description = Various Modifications for www.anaheimoc.org
+package = Custom
+core = 6.x

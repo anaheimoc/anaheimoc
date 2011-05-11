@@ -1,0 +1,3 @@
+<?php
+
+include_once('anaheimoc_travel_pro_discounts.features.inc');

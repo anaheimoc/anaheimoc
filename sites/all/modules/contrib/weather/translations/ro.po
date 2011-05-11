@@ -1,0 +1,998 @@
+# Translation of Weather to Romanian
+#
+# This file is part of the Drupal Weather module.
+#
+# Weather is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# Weather is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Weather; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+# Copyright ©
+# Füleki Miklós <info@privnet.biz>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: weather.module\n"
+"POT-Creation-Date: 2010-05-03 14:44+0200\n"
+"PO-Revision-Date: 2008-08-22 08:58+0200\n"
+"Last-Translator: Füleki Miklós <info@privnet.biz>\n"
+"Language-Team: Romanian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: weather.tpl.php:10
+#, fuzzy
+msgid "Temperature: !temperature1, feels like !temperature2"
+msgstr "Temperatură: !temperature"
+
+#: weather.tpl.php:15
+msgid "Temperature: !temperature"
+msgstr "Temperatură: !temperature"
+
+#: weather.tpl.php:20
+msgid "Wind: !wind"
+msgstr "Vânt: !wind"
+
+#: weather.tpl.php:24
+msgid "Pressure: !pressure"
+msgstr "Presiune: !pressure"
+
+#: weather.tpl.php:28
+msgid "Rel. Humidity: !rel_humidity"
+msgstr "Umiditate: !rel_humidity"
+
+#: weather.tpl.php:32
+msgid "Visibility: !visibility"
+msgstr "Vizibilitate: !visibility"
+
+#: weather.tpl.php:42
+msgid "METAR data: !metar"
+msgstr "Date METAR: !metar"
+
+#: weather.tpl.php:48
+msgid "Location of this weather station:"
+msgstr "Locaţia acestei staţii meteo:"
+
+#: weather.tpl.php:55
+msgid "Reported on:"
+msgstr "Raportat la:"
+
+#: weather.module:160
+#, fuzzy
+msgid ""
+"You can add, edit, and delete locations from system-wide weather blocks. "
+"Moreover, you can specify default values for newly created locations."
+msgstr ""
+"Este posibilă adăugarea, editarea şi ştergerea locaţiilor din blocul sistem "
+"al stării vremii. În plus, se pot specifica valori implicite pentru noile "
+"locaţii create."
+
+#: weather.module:165
+msgid "You can add, edit, and delete locations from your custom weather block."
+msgstr ""
+"Este posibilă adăugarea, editarea şi ştergerea locaţiilor din blocul "
+"personalizat al stării vremii."
+
+#: weather.module:167
+msgid ""
+"Please note that the block will not be shown until you configure at least "
+"one location."
+msgstr ""
+"Observaţie: blocul nu va fi afişat până nu va fi configurată cel puţin o "
+"locaţie."
+
+#: weather.module:226
+msgid "Weather: custom user"
+msgstr "Starea vremii: personalizat"
+
+#: weather.module:227
+#, fuzzy
+msgid "Weather: location of nodes (requires Location or Node Map module)"
+msgstr "Starea vremii: amplasarea nodurilor (solicită modulul Location)"
+
+#: weather.module:233
+#, fuzzy
+msgid "Weather: system-wide !number"
+msgstr "Starea vremii: sistem"
+
+#: weather.module:246;298
+msgid "Current weather"
+msgstr "Starea vremii"
+
+#: weather.module:290
+msgid "Current weather nearby"
+msgstr "Starea vremii din această zonă"
+
+#: weather.module:384
+msgid "No sunrise today"
+msgstr "Fără răsărit astăzi"
+
+#: weather.module:387
+msgid "No sunset today"
+msgstr "Fără apus astăzi"
+
+#: weather.module:426
+msgid "Sunrise: !sunrise"
+msgstr "Răsărit Soare: !sunrise"
+
+#: weather.module:428
+msgid "Sunset: !sunset"
+msgstr "Apus Soare: !sunset"
+
+#: weather.module:538
+msgid "Real name"
+msgstr "Nume real"
+
+#: weather.module:539;592;904
+msgid "Weight"
+msgstr "Greutate"
+
+#: weather.module:540;593
+msgid "Operations"
+msgstr "Operaţii"
+
+#: weather.module:552;604
+msgid "edit"
+msgstr "editează"
+
+#: weather.module:553;605
+msgid "delete"
+msgstr "şterge"
+
+#: weather.module:560
+msgid "There are currently no locations."
+msgstr "Deocamdată, nu sunt locaţii."
+
+#: weather.module:572
+msgid "Create new location"
+msgstr "Creează o locaţie nouă"
+
+#: weather.module:591
+msgid "System-wide block !number"
+msgstr ""
+
+#: weather.module:615
+#, fuzzy
+msgid "Create new location in block !number"
+msgstr "Creează o locaţie nouă"
+
+#: weather.module:623
+#, fuzzy
+msgid "Create new system-wide block"
+msgstr "Setează blocul sistem al stării vremii."
+
+#: weather.module:627
+msgid "Configure the default location"
+msgstr "Setează locaţia implicită"
+
+#: weather.module:641
+msgid "Use cron to clear the cache once per hour"
+msgstr "Folosiţi cron pentru golirea cache o dată pe oră"
+
+#: weather.module:642
+#, fuzzy
+msgid ""
+"If you use Drupal's cache, the system weather blocks will not be updated for "
+"anonymous users unless the cache is cleared. This happens e.g. when new "
+"nodes are created. If you want the system weather blocks to be updated when "
+"new weather data is available, you can clear the cache once per hour. Please "
+"note that this might slow down your site."
+msgstr ""
+"Dacă folosiţi Drupal cache, blocul sistem nu va fi actualizat pentru "
+"utilizatorii anonimi doar dacă cache este gol. Acest lucru se întâmplă de "
+"ex. la crearea unor noduri noi. Dacă doriţi ca blocul sistem să fie "
+"actualizat atunci când sunt disponibile date noi despre vreme, puteţi goli "
+"cache o dată pe oră. Observaţie: golirea cache poate scădea performanţa "
+"siteului."
+
+#: weather.module:647
+msgid "Directory for custom images"
+msgstr ""
+
+#: weather.module:648
+msgid ""
+"Override the default image directory. This directory must be a subdirectory "
+"of the Drupal 'files' path."
+msgstr ""
+
+#: weather.module:653;918
+msgid "Save configuration"
+msgstr "Salvează setările"
+
+#: weather.module:672
+msgid "The configuration has been saved."
+msgstr "Setările au fost salvate."
+
+#: weather.module:728;772
+msgid "Place"
+msgstr "Localitate"
+
+#: weather.module:729;773
+msgid "Select a place in that country for the weather display."
+msgstr "Alegeţi o locaţie din acea ţară pentru vizualizarea stării vremii."
+
+#: weather.module:760
+msgid "Country"
+msgstr "Ţară"
+
+#: weather.module:761
+msgid "Select a country to narrow down your search."
+msgstr "Alegeţi o ţară pentru restrângerea căutării."
+
+#: weather.module:779
+msgid "ICAO code"
+msgstr "Cod ICAO"
+
+#: weather.module:781
+msgid ""
+"Enter the 4-letter ICAO code of the weather station. If you first need to "
+"look up the code, you can use !url_1 or !url_2. Please note that not all "
+"stations listed at those URLs are providing weather data and thus may not be "
+"supported by this module."
+msgstr ""
+"Introduceţi codul ICAO al staţiei meteorologice compus din 4 caractere. Dacă "
+"mai întâi trebuie sa aflaţi codul, puteţi folosi linkurile !url_1 sau !"
+"url_2. Observaţie: Nu toate staţiile listate oferă date meteorologice, deci "
+"este posibil să nu fie suportate de acest modul."
+
+#: weather.module:792
+msgid "Real name for the selected place"
+msgstr "Numele real al localităţii selectate"
+
+#: weather.module:794
+msgid "You may enter another name for the place selected above."
+msgstr ""
+"Este posibilă introducerea unui alt nume pentru loclitatea selectată mai sus."
+
+#: weather.module:800
+msgid "Display units"
+msgstr "Afişează unităţi"
+
+#: weather.module:801
+msgid "You can specify which units should be used for displaying the data."
+msgstr "Puteţi specifica care unităţi să fie folosite pentru afişarea datelor"
+
+#: weather.module:808
+msgid "Temperature"
+msgstr "Temperatură"
+
+#: weather.module:810
+msgid "Celsius"
+msgstr "Celsius"
+
+#: weather.module:810
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: weather.module:811
+#, fuzzy
+msgid "Celsius / Fahrenheit"
+msgstr "Fahrenheit"
+
+#: weather.module:812
+#, fuzzy
+msgid "Fahrenheit / Celsius"
+msgstr "Fahrenheit"
+
+#: weather.module:813;821;828;834;841
+msgid "Don't display"
+msgstr ""
+
+#: weather.module:817
+msgid "Wind speed"
+msgstr "Viteza vântului"
+
+#: weather.module:819
+msgid "km/h"
+msgstr "km/h"
+
+#: weather.module:819
+msgid "mph"
+msgstr "mph"
+
+#: weather.module:819
+msgid "Knots"
+msgstr "Noduri"
+
+#: weather.module:820
+msgid "meter/s"
+msgstr "m/s"
+
+#: weather.module:820
+msgid "Beaufort"
+msgstr "Beaufort"
+
+#: weather.module:825
+msgid "Pressure"
+msgstr "Presiune"
+
+#: weather.module:827
+msgid "hPa"
+msgstr "hPa"
+
+#: weather.module:827
+#, fuzzy
+msgid "kPa"
+msgstr "hPa"
+
+#: weather.module:827
+msgid "inHg"
+msgstr "inHg"
+
+#: weather.module:827
+msgid "mmHg"
+msgstr "mmHg"
+
+#: weather.module:832
+#, fuzzy
+msgid "Rel. Humidity"
+msgstr "!rel_humidity%"
+
+#: weather.module:834
+#, fuzzy
+msgid "Display"
+msgstr "Afişează unităţi"
+
+#: weather.module:838
+msgid "Visibility"
+msgstr "Vizibilitate"
+
+#: weather.module:840
+msgid "kilometers"
+msgstr "km"
+
+#: weather.module:840
+msgid "UK miles"
+msgstr "mile UK"
+
+#: weather.module:845
+msgid "Display settings"
+msgstr "Setările afişării"
+
+#: weather.module:846
+msgid "You can customize the display of the block."
+msgstr "Modul de afișare al blocului poate fi personalizat."
+
+#: weather.module:853
+msgid "Show windchill temperature"
+msgstr ""
+
+#: weather.module:855
+msgid ""
+"Calculates the temperature resulting from windchill. This is how the "
+"temperature <q>feels like</q>."
+msgstr ""
+
+#: weather.module:859
+msgid "Show unconverted METAR data"
+msgstr "Afişează datele METAR neconvertite"
+
+#: weather.module:861
+msgid "Displays the original data of the METAR report."
+msgstr "Afişează datele originale ale raportului METAR."
+
+#: weather.module:865
+msgid "Show abbreviated wind directions"
+msgstr "Afişează direcţia vântului cu abrevieri"
+
+#: weather.module:867
+msgid ""
+"Displays abbreviated wind directions like N, SE, or W instead of North, "
+"Southeast, or West."
+msgstr ""
+"Afişează direcţiile vântului folosind abrevieri ca N, SE, sau V în loc la "
+"Nord, Sud-est, sau Vest."
+
+#: weather.module:871
+msgid "Show degrees of wind directions"
+msgstr "Afişează direcţia vântului în grade"
+
+#: weather.module:873
+msgid "Displays the degrees of wind directions, e.g. North (20°)."
+msgstr "Afişează direcţia vântului în grade, de ex. Nord (20°)."
+
+#: weather.module:877
+msgid "Show time of sunrise and sunset"
+msgstr "Afişează ora răsăritului şi apusului Soarelui"
+
+#: weather.module:879
+#, fuzzy
+msgid "Displays the time of sunrise and sunset."
+msgstr "Afişează ora răsăritului şi apusului Soarelui"
+
+#: weather.module:882
+msgid "GMT"
+msgstr ""
+
+#: weather.module:882
+msgid "Drupal"
+msgstr ""
+
+#: weather.module:891
+#, fuzzy
+msgid "Timezone for sunrise and sunset"
+msgstr "Afişează ora răsăritului şi apusului Soarelui"
+
+#: weather.module:893
+msgid ""
+"Choose either Greenwich Mean Time (GMT), Drupal's standard timezone as set "
+"in the configuration, or a custom timezone."
+msgstr ""
+
+#: weather.module:898
+msgid "Show compact block"
+msgstr "Afişează blocul compactat"
+
+#: weather.module:900
+msgid ""
+"Displays only the name, condition, and temperature of the weather station."
+msgstr ""
+"Afişează doar numele, starea, şi temperatura furnizată de staţia "
+"meteorologică."
+
+#: weather.module:906
+msgid ""
+"Optional. In the block, the heavier locations will sink and the lighter "
+"locations will be positioned nearer the top. Locations with equal weights "
+"are sorted alphabetically."
+msgstr ""
+"Opţional: În bloc, locaţiile cu greutate mai mare se vor poziţiona spre "
+"sfârşit, iar cele cu greutate mai mică, la începutul blocului. Locaţiile cu "
+"greutăţi egale se vor sorta în ordine alfabetică."
+
+#: weather.module:931
+msgid "The ICAO code is not supported by this module."
+msgstr "Acest cod ICAO nu este suportat de către acest modul."
+
+#: weather.module:960
+msgid "The default configuration has been saved."
+msgstr "Setarea implicită a fost salvată."
+
+#: weather.module:963
+msgid "The location has been saved."
+msgstr "Locaţia a fost salvată."
+
+#: weather.module:1003
+msgid "Are you sure you want to delete the location %name?"
+msgstr "Sigur doriţi ştergerea locaţiei %name?"
+
+#: weather.module:1006
+msgid "This action cannot be undone."
+msgstr "După comitere această acţiune nu se poate anula."
+
+#: weather.module:1007
+msgid "Delete"
+msgstr "Şterge"
+
+#: weather.module:1008
+msgid "Cancel"
+msgstr "Anulare"
+
+#: weather.module:1022
+msgid "The location has been deleted."
+msgstr "Locaţia a fost ştearsă."
+
+#: weather.module:1059;1153
+msgid "The string to search for must be between 3 and 64 characters."
+msgstr ""
+
+#: weather.module:1093
+msgid "Your search did not return any results."
+msgstr ""
+
+#: weather.module:1116
+msgid "Search results for <q>@search</q>"
+msgstr ""
+
+#: weather.module:1134
+#, fuzzy
+msgid "Search for a location"
+msgstr "Creează o locaţie nouă"
+
+#: weather.module:1135
+msgid ""
+"Type in an ICAO code, a name, or a country to search for weather conditions "
+"at that location."
+msgstr ""
+
+#: weather.module:1140
+msgid "Search"
+msgstr ""
+
+#: weather.module:1339
+msgid "No data"
+msgstr "Nu sunt date"
+
+#: weather.module:1344
+msgid "Clear sky"
+msgstr "Cer senin"
+
+#: weather.module:1345
+msgid "Few clouds"
+msgstr "Câteva nori"
+
+#: weather.module:1346
+msgid "Scattered clouds"
+msgstr "Nori împrăştiaţi"
+
+#: weather.module:1347
+msgid "Broken clouds"
+msgstr "Nori răzleţi"
+
+#: weather.module:1348
+msgid "Overcast"
+msgstr "Cer înnorat"
+
+#: weather.module:1349
+msgid "No significant clouds"
+msgstr "Nori nesemnificativi"
+
+#: weather.module:1354
+msgid "mist"
+msgstr ""
+
+#: weather.module:1359
+msgid "shallow fog"
+msgstr ""
+
+#: weather.module:1362
+msgid "partial fog"
+msgstr ""
+
+#: weather.module:1365
+msgid "patches of fog"
+msgstr ""
+
+#: weather.module:1368
+msgid "fog"
+msgstr ""
+
+#: weather.module:1372
+msgid "smoke"
+msgstr ""
+
+#: weather.module:1380
+msgid "light rain showers"
+msgstr "Plouă uşor"
+
+#: weather.module:1383
+msgid "light freezing rain"
+msgstr "Plouă răsleţ cu stropi reci"
+
+#: weather.module:1386
+msgid "light rain"
+msgstr "Plouă uşor"
+
+#: weather.module:1391
+msgid "heavy rain showers"
+msgstr "Plouă abundent"
+
+#: weather.module:1394
+msgid "heavy freezing rain"
+msgstr "Plouă abundent cu stropi reci"
+
+#: weather.module:1397
+msgid "heavy rain"
+msgstr "Plouă abundent"
+
+#: weather.module:1402
+msgid "rain showers"
+msgstr "Plouă puţin"
+
+#: weather.module:1405
+msgid "freezing rain"
+msgstr "Plouă rece"
+
+#: weather.module:1408
+msgid "rain"
+msgstr "Plouă"
+
+#: weather.module:1416
+#, fuzzy
+msgid "light freezing drizzle"
+msgstr "Plouă răsleţ cu stropi reci"
+
+#: weather.module:1419
+#, fuzzy
+msgid "light drizzle"
+msgstr "Plouă uşor"
+
+#: weather.module:1424
+#, fuzzy
+msgid "heavy freezing drizzle"
+msgstr "Plouă abundent cu stropi reci"
+
+#: weather.module:1427
+#, fuzzy
+msgid "heavy drizzle"
+msgstr "Plouă abundent"
+
+#: weather.module:1432
+#, fuzzy
+msgid "freezing drizzle"
+msgstr "Plouă rece"
+
+#: weather.module:1435
+msgid "drizzle"
+msgstr ""
+
+#: weather.module:1443
+#, fuzzy
+msgid "light blowing snow"
+msgstr "Plouă uşor"
+
+#: weather.module:1446
+#, fuzzy
+msgid "light low drifting snow"
+msgstr "Plouă uşor"
+
+#: weather.module:1449
+#, fuzzy
+msgid "light snow showers"
+msgstr "Plouă uşor"
+
+#: weather.module:1452
+#, fuzzy
+msgid "light snow"
+msgstr "Plouă uşor"
+
+#: weather.module:1457
+#, fuzzy
+msgid "heavy blowing snow"
+msgstr "Plouă abundent"
+
+#: weather.module:1460
+#, fuzzy
+msgid "heavy low drifting snow"
+msgstr "Plouă abundent"
+
+#: weather.module:1463
+#, fuzzy
+msgid "heavy snow showers"
+msgstr "Plouă abundent"
+
+#: weather.module:1466
+#, fuzzy
+msgid "heavy snow"
+msgstr "Plouă abundent"
+
+#: weather.module:1471
+msgid "blowing snow"
+msgstr ""
+
+#: weather.module:1474
+msgid "low drifting snow"
+msgstr ""
+
+#: weather.module:1477
+#, fuzzy
+msgid "snow showers"
+msgstr "Plouă puţin"
+
+#: weather.module:1480
+msgid "snow"
+msgstr ""
+
+#: weather.module:1514;1543
+msgid "!temperature&thinsp;°F"
+msgstr "!temperature&thinsp;°F"
+
+#: weather.module:1519;1547
+#, fuzzy
+msgid "!temperature_c&thinsp;°C / !temperature_f&thinsp;°F"
+msgstr "!temperature&thinsp;°F"
+
+#: weather.module:1528;1555
+#, fuzzy
+msgid "!temperature_f&thinsp;°F / !temperature_c&thinsp;°C"
+msgstr "!temperature&thinsp;°F"
+
+#: weather.module:1537;1564
+msgid "!temperature&thinsp;°C"
+msgstr "!temperature&thinsp;°C"
+
+#: weather.module:1584
+msgid "Calm"
+msgstr "Vreme liniştită"
+
+#: weather.module:1607;1623
+msgid "Variable from !direction_a (!degree_a°) to !direction_b (!degree_b°)"
+msgstr "Variind între !direction_a (!degree_a°) şi !direction_b (!degree_b°)"
+
+#: weather.module:1615;1631
+msgid "Variable from !direction_a to !direction_b"
+msgstr "Variind între !direction_a şi !direction_b"
+
+#: weather.module:1639
+msgid "Variable"
+msgstr "Variabil"
+
+#: weather.module:1646;1656
+msgid "!direction (!degree°)"
+msgstr "!direction (!degree°)"
+
+#: weather.module:1671;1672
+msgid "!speed&thinsp;mph"
+msgstr "!speed&thinsp;mph"
+
+#: weather.module:1675;1676
+msgid "!speed&thinsp;knots"
+msgstr "!speed&thinsp;noduri"
+
+#: weather.module:1679;1680
+msgid "!speed&thinsp;meter/s"
+msgstr "!speed&thinsp;m/s"
+
+#: weather.module:1683;1684
+msgid "Beaufort !number"
+msgstr "Beaufort !number"
+
+#: weather.module:1688;1689
+msgid "!speed&thinsp;km/h"
+msgstr "!speed&thinsp;km/h"
+
+#: weather.module:1694
+msgid "gusts up to !speed"
+msgstr "urcă până la !speed"
+
+#: weather.module:1712
+msgid "!pressure&thinsp;inHg"
+msgstr "!pressure&thinsp;inHg"
+
+#: weather.module:1716
+#, fuzzy
+msgid "!pressure&thinsp;mmHg"
+msgstr "!pressure inHg"
+
+#: weather.module:1720
+#, fuzzy
+msgid "!pressure&thinsp;kPa"
+msgstr "!pressure hPa"
+
+#: weather.module:1725
+msgid "!pressure&thinsp;hPa"
+msgstr "!pressure&thinsp;hPa"
+
+#: weather.module:1743
+msgid "!rel_humidity&thinsp;%"
+msgstr "!rel_humidity&thinsp;%"
+
+#: weather.module:1756
+msgid "!visibility&thinsp;mi"
+msgstr "!visibility&thinsp;mile"
+
+#: weather.module:1761
+#, fuzzy
+msgid "!visibility&thinsp;km"
+msgstr "!visibility mile"
+
+#: weather.module:1788
+msgid "!distance&thinsp;mi !direction (!degree°)"
+msgstr "!distance&thinsp;mile !direction (!degree°)"
+
+#: weather.module:1796
+msgid "!distance&thinsp;mi !direction"
+msgstr "!distance&thinsp;mile !direction"
+
+#: weather.module:1806
+#, fuzzy
+msgid "!distance&thinsp;km !direction (!degree°)"
+msgstr "!distance mile !direction (!degree°)"
+
+#: weather.module:1814
+#, fuzzy
+msgid "!distance&thinsp;km !direction"
+msgstr "!distance mile !direction"
+
+#: weather.module:1851
+msgid "North"
+msgstr "Nord"
+
+#: weather.module:1852
+msgid "North-Northeast"
+msgstr "Nord-Nord-est"
+
+#: weather.module:1853
+msgid "Northeast"
+msgstr "Nord-est"
+
+#: weather.module:1854
+msgid "East-Northeast"
+msgstr "Est-Nord-est"
+
+#: weather.module:1855
+msgid "East"
+msgstr "Est"
+
+#: weather.module:1856
+msgid "East-Southeast"
+msgstr "Est-Sud-est"
+
+#: weather.module:1857
+msgid "Southeast"
+msgstr "Sud-est"
+
+#: weather.module:1858
+msgid "South-Southeast"
+msgstr "Sud-Sud-est"
+
+#: weather.module:1859
+msgid "South"
+msgstr "Sud"
+
+#: weather.module:1860
+msgid "South-Southwest"
+msgstr "Sud-Sud-vest"
+
+#: weather.module:1861
+msgid "Southwest"
+msgstr "Sud-vest"
+
+#: weather.module:1862
+msgid "West-Southwest"
+msgstr "Vest-Sud-vest"
+
+#: weather.module:1863
+msgid "West"
+msgstr "Vest"
+
+#: weather.module:1864
+msgid "West-Northwest"
+msgstr "Vest-Nord-vest"
+
+#: weather.module:1865
+msgid "Northwest"
+msgstr "Nord-vest"
+
+#: weather.module:1866
+msgid "North-Northwest"
+msgstr "Nord-Nord-vest"
+
+#: weather.module:1871
+msgid "N"
+msgstr "N"
+
+#: weather.module:1872
+msgid "NNE"
+msgstr "NNE"
+
+#: weather.module:1873
+msgid "NE"
+msgstr "NE"
+
+#: weather.module:1874
+msgid "ENE"
+msgstr "ENE"
+
+#: weather.module:1875
+msgid "E"
+msgstr "E"
+
+#: weather.module:1876
+msgid "ESE"
+msgstr "ESE"
+
+#: weather.module:1877
+msgid "SE"
+msgstr "SE"
+
+#: weather.module:1878
+msgid "SSE"
+msgstr "SSE"
+
+#: weather.module:1879
+msgid "S"
+msgstr "S"
+
+#: weather.module:1880
+msgid "SSW"
+msgstr "SSV"
+
+#: weather.module:1881
+msgid "SW"
+msgstr "SV"
+
+#: weather.module:1882
+msgid "WSW"
+msgstr "VSV"
+
+#: weather.module:1883
+msgid "W"
+msgstr "V"
+
+#: weather.module:1884
+msgid "WNW"
+msgstr "VNV"
+
+#: weather.module:1885
+msgid "NW"
+msgstr "NV"
+
+#: weather.module:1886
+msgid "NNW"
+msgstr "NNV"
+
+#: weather.module:2136
+msgid "Download location for METAR data is not accessible."
+msgstr "Interfaţa de download ale datelor METAR nu este accesibil."
+
+#: weather.module:59
+msgid "administer custom weather block"
+msgstr "administrează blocul personalizat al stării vremii"
+
+#: weather.module:60
+msgid "access weather pages"
+msgstr ""
+
+#: weather.module:71;135 weather.info:0
+msgid "Weather"
+msgstr "Starea vremii"
+
+#: weather.module:72
+#, fuzzy
+msgid ""
+"Configure system-wide weather blocks and the default configuration for new "
+"locations."
+msgstr ""
+"Setează blocul sistem al stării vremii şi valorile implicite pentru "
+"locaţiile noi."
+
+#: weather.module:78;111
+msgid "Edit location"
+msgstr "Editează locaţia"
+
+#: weather.module:79
+#, fuzzy
+msgid "Configure a system-wide weather block."
+msgstr "Setează blocul sistem al stării vremii."
+
+#: weather.module:86;120
+msgid "Delete location"
+msgstr "Şterge locaţia"
+
+#: weather.module:87
+#, fuzzy
+msgid "Delete a location from a system-wide weather block."
+msgstr "Şterge o locaţie din blocul sistem al stării vremii."
+
+#: weather.module:94
+msgid "Default configuration"
+msgstr "Setări implicite"
+
+#: weather.module:95
+msgid "Setup the default configuration for new locations."
+msgstr "Setează valorile implicite pentru locaţii noi."
+
+#: weather.module:102
+msgid "My weather"
+msgstr "Vremea"
+
+#: weather.module:103;112
+msgid "Configure your custom weather block."
+msgstr "Setează blocul personalizat al stării vremii."
+
+#: weather.module:121
+msgid "Delete a location from your custom weather block."
+msgstr "Şterge o locaţie din blocul personalizat al stării vremii."
+
+#: weather.module:136
+msgid "Search for locations and display their current weather."
+msgstr ""
+
+#: weather.module:0
+msgid "weather"
+msgstr "weather"
+
+#: weather.info:0
+msgid "Displays METAR weather data"
+msgstr ""

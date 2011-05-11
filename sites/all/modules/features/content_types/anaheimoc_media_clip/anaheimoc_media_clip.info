@@ -1,0 +1,7 @@
+core = "6.x"
+description = "Media Clip Content Type"
+features[node][] = "media_clipping"
+name = "Media clip"
+package = "Features"
+project = "anaheimoc_media_clip"
+version = "6.x-1.0-beta1"

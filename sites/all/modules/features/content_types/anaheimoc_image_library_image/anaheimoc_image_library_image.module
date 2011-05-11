@@ -1,0 +1,3 @@
+<?php
+
+include_once('anaheimoc_image_library_image.features.inc');

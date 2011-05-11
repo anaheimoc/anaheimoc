@@ -1,0 +1,2416 @@
+<?php
+/* $Id: weather.module,v 1.205.2.27 2010/12/16 16:58:13 toddy Exp $
+ *
+ * Copyright © 2006-2010 Tobias Quathamer <t.quathamer@gmx.net>
+ *
+ * This file is part of the Drupal Weather module.
+ *
+ * It was inspired by the Weather module which was written in 2004 by
+ * Gerard Ryan <gerardryan@canada.com>.
+ *
+ * Weather is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * Weather is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Weather; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+
+
+/**
+ * @file
+ * Display <acronym title="METeorological Aerodrome Report">METAR</acronym>
+ * weather data from anywhere in the world
+ *
+ * The module is compatible with Drupal 6.x
+ *
+ * @author Tobias Quathamer
+ */
+
+
+
+// Define the start of block deltas for system-wide blocks
+define('SYSTEM_BLOCK_DELTA_START', 3);
+
+// Include the parser for METAR data
+require_once drupal_get_path('module', 'weather') .'/weather_parser.inc';
+
+
+
+/*********************************************************************
+ * General Drupal hooks for registering the module
+ ********************************************************************/
+
+
+
+/**
+ * Implementation of hook_perm().
+ */
+function weather_perm() {
+  return array(
+    'administer custom weather block',
+    'access weather pages'
+  );
+}
+
+
+
+/**
+ * Implementation of hook_menu().
+ */
+function weather_menu() {
+  $items['admin/settings/weather'] = array(
+    'title' => 'Weather',
+    'description' => 'Configure system-wide weather blocks and the default configuration for new locations.',
+    'page callback' => 'weather_admin_main_page',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['admin/settings/weather/edit/%/%'] = array(
+    'title' => 'Edit location',
+    'description' => 'Configure a system-wide weather block.',
+    'page callback' => 'weather_custom_block',
+    'page arguments' => array(4, 5),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['admin/settings/weather/delete/%/%'] = array(
+    'title' => 'Delete location',
+    'description' => 'Delete a location from a system-wide weather block.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('weather_custom_block_delete_confirm', 4, 5),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['admin/settings/weather/default'] = array(
+    'title' => 'Default configuration',
+    'description' => 'Setup the default configuration for new locations.',
+    'page callback' => 'weather_custom_block',
+    'page arguments' => array('0'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['user/%/weather'] = array(
+    'title' => 'My weather',
+    'description' => 'Configure your custom weather block.',
+    'page callback' => 'weather_user_main_page',
+    'page arguments' => array(1),
+    'access callback' => 'weather_custom_block_access',
+    'access arguments' => array(1),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['user/%/weather/edit/%'] = array(
+    'title' => 'Edit location',
+    'description' => 'Configure your custom weather block.',
+    'page callback' => 'weather_custom_block',
+    'page arguments' => array(1, 4),
+    'access callback' => 'weather_custom_block_access',
+    'access arguments' => array(1),
+    'type' => MENU_CALLBACK,
+  );
+  $items['user/%/weather/delete/%'] = array(
+    'title' => 'Delete location',
+    'description' => 'Delete a location from your custom weather block.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('weather_custom_block_delete_confirm',
+      1, 4),
+    'access callback' => 'weather_custom_block_access',
+    'access arguments' => array(1),
+    'type' => MENU_CALLBACK,
+  );
+  $items['weather/js'] = array(
+    'page callback' => 'weather_js',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['weather'] = array(
+    'title' => 'Weather',
+    'description' => 'Search for locations and display their current weather.',
+    'page callback' => 'weather_search_location',
+    'access arguments' => array('access weather pages'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['weather/autocomplete'] = array(
+    'page callback' => 'weather_search_autocomplete',
+    'access arguments' => array('access weather pages'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+
+
+/**
+ * Implementation of hook_help().
+ */
+function weather_help($path, $arg) {
+  $output = '';
+
+  switch ($path) {
+    case 'admin/settings/weather':
+      $output .= '<p>';
+      $output .= t('You can add, edit, and delete locations from system-wide weather blocks. Moreover, you can specify default values for newly created locations.');
+      $output .= '</p>';
+      break;
+    case 'user/%/weather':
+      $output = '<p>';
+      $output .= t('You can add, edit, and delete locations from your custom weather block.');
+      $output .= "\n";
+      $output .= t('Please note that the block will not be shown until you configure at least one location.');
+      $output .= '</p>';
+      break;
+  }
+
+  return $output;
+}
+
+
+
+/*********************************************************************
+ * General Drupal hooks for maintenance tasks
+ ********************************************************************/
+
+
+
+/**
+ * Implementation of hook_cron().
+ *
+ * If the site uses caching for anonymous users, the cached weather
+ * blocks are not updated until the page cache is flushed.
+ * We rely on cron to perform necessary updates (and flushing the cache)
+ * for anonymous users. In order to not clear the cache for user-defined
+ * weather blocks (which are not shown to anonymous users), we only
+ * check for system weather blocks.
+ */
+function weather_cron() {
+  if (variable_get('weather_use_cron', FALSE)) {
+    $sql = "SELECT * FROM {weather} LEFT JOIN {weather_config}
+      ON {weather}.icao={weather_config}.icao
+      WHERE {weather_config}.uid < 0 ORDER BY next_update_on ASC";
+    $result = db_query($sql);
+    $row = db_fetch_array($result);
+    if (isset($row['next_update_on'])) {
+      if ($row['next_update_on'] <= time()) {
+        cache_clear_all();
+      }
+    }
+  }
+}
+
+
+
+/*********************************************************************
+ * Drupal hooks for the block content
+ ********************************************************************/
+
+
+
+/**
+ * Generate HTML for the weather block
+ * @param op operation from the URL
+ * @param delta offset
+ * @returns block HTML
+ */
+function weather_block($op='list', $delta=0) {
+  global $user;
+
+  if ($op == 'list') {
+    $block[0]['info'] = t('Weather: custom user');
+    $block[1]['info'] = t('Weather: location of nodes (requires Location or Node Map module)');
+    $current_blocks = _weather_get_blocks_in_use();
+    if (!empty($current_blocks)) {
+      foreach ($current_blocks as $block_id) {
+        // $block_id is at least 1, so make sure the delta is at least 2
+        $block[SYSTEM_BLOCK_DELTA_START + $block_id - 1]['info'] =
+          t('Weather: system-wide !number', array('!number' => $block_id));
+      }
+    }
+    return $block;
+  }
+  else if ($op == 'view') {
+    if ($delta == 0 and weather_custom_block_access()) {
+      // Show the user's custom weather block, if there is already
+      // a location configured. Otherwise, do not show the block.
+      $configs_in_use = _weather_get_configs_in_use($user->uid);
+      if (count($configs_in_use) == 0) {
+        return;
+      }
+      $block['subject'] = t('Current weather');
+      $block['content'] = '';
+      foreach ($configs_in_use as $index) {
+        $config = _weather_get_config($user->uid, $index['cid']);
+        $metar = weather_get_metar($config['icao']);
+        $block['content'] .= theme('weather_theming', $config, $metar);
+      }
+      return $block;
+    }
+    else if ($delta == 1 and user_access('access content')) {
+      // show the node location weather block
+      if (arg(0) == 'node' and is_numeric(arg(1))) {
+        $node = node_load(arg(1));
+        $block['content'] = '';
+        // This checks the location module
+        if (isset($node->locations)) {
+          // Iterate through all available locations and check
+          // for lat/long information. If there is no information,
+          // the location module return 0.0/0.0 instead of NULL values
+          foreach ($node->locations as $location) {
+            if (($location['latitude'] != 0) or ($location['longitude'] != 0)) {
+              $nearest_station = weather_get_icao_from_lat_lon(
+                $location['latitude'], $location['longitude']);
+              $config = _weather_get_config(0, 1);
+              $config = array_merge($config, $nearest_station);
+              $config['real_name'] = $config['name'];
+              $metar = weather_get_metar($config['icao']);
+              $block['content'] .= theme('weather_theming', $config, $metar);
+            }
+          }
+        }
+        // Handle CCK location fields
+        // First, determine all names of location fields
+        $sql = "SELECT field_name FROM {content_node_field} WHERE type='location'";
+        $result = db_query($sql);
+        // Cycle through all found field names.
+        while ($field_name = db_result($result)) {
+          // Iterate through all available locations and check
+          // for lat/long information. If there is no information,
+          // the location module return 0.0/0.0 instead of NULL values
+          foreach ($node->$field_name as $location) {
+            if (($location['latitude'] != 0) or ($location['longitude'] != 0)) {
+              $nearest_station = weather_get_icao_from_lat_lon(
+                $location['latitude'], $location['longitude']);
+              $config = _weather_get_config(0, 1);
+              $config = array_merge($config, $nearest_station);
+              $config['real_name'] = $config['name'];
+              $metar = weather_get_metar($config['icao']);
+              $block['content'] .= theme('weather_theming', $config, $metar);
+            }
+          }
+        }
+        // Handle nodemap module
+        if (isset($node->nodemap_latitude_field)
+          and isset($node->nodemap_longitude_field)
+          and ($node->nodemap_latitude_field != 0 or $node->nodemap_longitude_field != 0)) {
+          $nearest_station = weather_get_icao_from_lat_lon(
+            $node->nodemap_latitude_field, $node->nodemap_longitude_field);
+          $config = _weather_get_config(0, 1);
+          $config = array_merge($config, $nearest_station);
+          $config['real_name'] = $config['name'];
+          $metar = weather_get_metar($config['icao']);
+          $block['content'] .= theme('weather_theming', $config, $metar);
+        }
+        // Do not show block if no lat/long information has been found
+        if ($block['content'] != '') {
+          $block['subject'] = t('Current weather nearby');
+          return $block;
+        }
+      }
+    }
+    else if ($delta >= SYSTEM_BLOCK_DELTA_START and user_access('access content')) {
+      // show a system-wide weather block
+      $system_block_id = SYSTEM_BLOCK_DELTA_START - $delta - 1;
+      $block['subject'] = t('Current weather');
+      $block['content'] = '';
+      $configs_in_use = _weather_get_configs_in_use($system_block_id);
+      if (count($configs_in_use) == 0) {
+        $configs_in_use[] = array('cid' => 1);
+      }
+      foreach ($configs_in_use as $index) {
+        $config = _weather_get_config($system_block_id, $index['cid']);
+        $metar = weather_get_metar($config['icao']);
+        $block['content'] .= theme('weather_theming', $config, $metar);
+      }
+      return $block;
+    }
+  }
+}
+
+
+
+/**
+ * Check whether the user has access to their own custom weather block
+ */
+function weather_custom_block_access($uid=NULL) {
+  global $user;
+  // If $uid is not set, just check for the access permission
+  if (is_null($uid) || $user->uid == $uid) {
+    return user_access('administer custom weather block');
+  }
+  return FALSE;
+}
+
+
+
+/**
+ * Implementation of hook_theme().
+ */
+function weather_theme() {
+  return array(
+    // Custom theme function for preprocessing variables
+    'weather_theming' => array(
+      'arguments' => array('config' => NULL, 'metar' => NULL),
+    ),
+    // Default block layout
+    'weather' => array(
+      'template' => 'weather',
+      'arguments' => array('weather' => NULL),
+    ),
+    // Compact block layout
+    'weather_compact' => array(
+      'template' => 'weather_compact',
+      'arguments' => array('weather' => NULL),
+    ),
+  );
+}
+
+
+
+/**
+ * Custom theme function for preprocessing the weather block output
+ */
+function theme_weather_theming($config, $metar) {
+  // Set up variables which might be needed in the templates
+  $weather['real_name'] = check_plain($config['real_name']);
+  $weather['condition'] = _weather_format_condition($metar);
+  $weather['image'] = _weather_get_image($metar);
+  if (isset($metar['temperature']) and $config['units']['temperature'] != 'dont-display') {
+    $weather = array_merge($weather, _weather_format_temperature(
+      $metar['temperature'], $metar['wind'], $config['units'], $config['settings']
+    ));
+  }
+  if (isset($metar['wind']) and $config['units']['windspeed'] != 'dont-display') {
+    $weather['wind'] = _weather_format_wind($metar['wind'], $config['units'],
+      $config['settings']);
+  }
+  if (isset($metar['pressure']) and $config['units']['pressure'] != 'dont-display') {
+    $weather['pressure'] = _weather_format_pressure($metar['pressure'], $config['units']);
+  }
+  if (isset($metar['temperature']) and isset($metar['dewpoint'])
+    and $config['units']['humidity'] != 'dont-display') {
+    $weather['rel_humidity'] = _weather_format_relative_humidity($metar['temperature'], $metar['dewpoint']);
+  }
+  if (isset($metar['visibility']['kilometers']) and $config['units']['visibility'] != 'dont-display') {
+    $weather['visibility'] = _weather_format_visibility($metar['visibility'], $config['units']);
+  }
+  if ($config['settings']['show_sunrise_sunset']) {
+    // Check if there is a sunrise or sunset
+    if ($metar['daytime']['no_sunrise']) {
+      $weather['sunrise'] = t('No sunrise today');
+    }
+    else if ($metar['daytime']['no_sunset']) {
+      $weather['sunset'] = t('No sunset today');
+    }
+    else {
+      // Set up timezone with a sensible default value
+      $timezone = $config['settings']['sunrise_sunset_timezone'];
+      // If the timezone is numeric, just use that value
+      if (!is_numeric($timezone)) {
+        if ($timezone == 'drupal') {
+          // Use Drupal's default timezone or user's timezone
+          $timezone = NULL;
+        }
+        else {
+          // Fall back to using GMT
+          $timezone = 0;
+        }
+      }
+      // Try to extract a time format from the system wide date format
+      $date_format_short = variable_get('date_format_short', 'm/d/Y - H:i');
+      preg_match("/[GgHh].*?i(.*?[Aa])?/", $date_format_short, $matches);
+      if (isset($matches[0])) {
+        $format = $matches[0];
+      }
+      else {
+        $format = 'G:i';
+      }
+      // If the selected timezone is "drupal", just show the time.
+      // Otherwise, we append either "GMT" or the current GMT offset.
+      if (is_null($timezone)) {
+        // This is Drupal's default timezone, so do nothing.
+      }
+      else if ($timezone == 0) {
+        // This is GMT
+        $format .= ' T';
+      }
+      else {
+        // Append the GMT offset
+        $format .= ' O';
+      }
+      $text = format_date($metar['daytime']['sunrise_on'], 'custom', $format, $timezone);
+      $weather['sunrise'] = t('Sunrise: !sunrise', array('!sunrise' => $text));
+      $text = format_date($metar['daytime']['sunset_on'], 'custom', $format, $timezone);
+      $weather['sunset'] = t('Sunset: !sunset', array('!sunset' => $text));
+    }
+  }
+  if (isset($metar['#raw']) and $config['settings']['show_unconverted_metar']) {
+    $weather['metar'] = $metar['#raw'];
+  }
+  // If this is displayed as location block, show information about
+  // which METAR station has been used for weather data
+  if (isset($config['distance'])) {
+    $weather['location'] = _weather_format_closest_station($config['distance'],
+      $config['units'], $config['settings']);
+  }
+  if (isset($metar['reported_on'])) {
+    $weather['reported_on'] = format_date($metar['reported_on']);
+  }
+
+  // Use compact block, if desired
+  if ($config['settings']['show_compact_block']) {
+    return theme('weather_compact', $weather);
+  }
+  else {
+    return theme('weather', $weather);
+  }
+}
+
+
+
+function _weather_get_image($metar) {
+  // is there any data available?
+  if (!isset($metar['condition_text'])) {
+    $name = 'nodata';
+  }
+  else {
+    // handle special case: NSC, we just use few for the display
+    if ($metar['condition_text'] == 'no-significant-clouds') {
+      $metar['condition_text'] = 'few';
+    }
+    // calculate the sunrise and sunset times for day/night images
+    $name = $metar['daytime']['condition'] .'-'. $metar['condition_text'];
+
+    // Use fog image, if needed
+    if (isset($metar['phenomena']['#mist'])
+      or isset($metar['phenomena']['fog'])
+      or isset($metar['phenomena']['#smoke'])) {
+      $name .= '-fog';
+    }
+
+    // handle rain images
+    if (isset($metar['phenomena']['rain'])) {
+      $rain = $metar['phenomena']['rain'];
+    }
+    else if (isset($metar['phenomena']['drizzle'])) {
+      $rain = $metar['phenomena']['drizzle'];
+    }
+    // handle snow images
+    else if (isset($metar['phenomena']['snow'])) {
+      $snow = $metar['phenomena']['snow'];
+    }
+    if (isset($rain)) {
+      if (isset($rain['#light'])) {
+        $name .= '-light-rain';
+      }
+      else if (isset($rain['#heavy'])) {
+        $name .= '-heavy-rain';
+      }
+      else {
+        $name .= '-moderate-rain';
+      }
+    }
+    if (isset($snow)) {
+      if (isset($snow['#light'])) {
+        $name .= '-light-snow';
+      }
+      else if (isset($snow['#heavy'])) {
+        $name .= '-heavy-snow';
+      }
+      else {
+        $name .= '-moderate-snow';
+      }
+    }
+  }
+
+  // Support a custom image directory. If the variable is not set or the specified
+  // file is not available, fall back to the default images of the module.
+  $path = variable_get('weather_image_directory', '');
+  $filename = file_directory_path() .'/'. $path .'/'. $name .'.png';
+  if (!is_readable($filename)) {
+    $filename = drupal_get_path('module', 'weather') .'/images/'. $name .'.png';
+  }
+
+  // Set up final return array
+  $image['filename'] = base_path() . $filename;
+  $size = getimagesize($filename);
+  $image['size'] = $size[3];
+  return $image;
+}
+
+
+
+/*********************************************************************
+ * Internal functions for custom weather blocks
+ ********************************************************************/
+
+
+
+/**
+ * Show an overview of configured locations
+ */
+function weather_user_main_page($uid) {
+  $header = array(
+    t('Real name'),
+    t('Weight'),
+    array('data' => t('Operations'), 'colspan' => 2),
+  );
+
+  $path = 'user/'. $uid .'/weather/';
+  $rows = array();
+  $sql = "SELECT * FROM {weather_config}
+    WHERE uid=%d ORDER BY weight ASC, real_name ASC";
+  $result = db_query($sql, $uid);
+  while ($row = db_fetch_array($result)) {
+    $rows[] = array(
+      $row['real_name'],
+      $row['weight'],
+      l(t('edit'), $path .'edit/'. $row['cid']),
+      l(t('delete'), $path .'delete/'. $row['cid']),
+    );
+  }
+
+  if (count($rows) == 0) {
+    $rows[] = array(
+      array(
+        'data' => '<em>'. t('There are currently no locations.') .'</em>',
+        'colspan' => 4
+      )
+    );
+  }
+
+  $output = theme('table', $header, $rows);
+  if (isset($form['pager']['#value'])) {
+    $output .= drupal_render($form['pager']);
+  }
+
+  $free_cid = _weather_get_free_config($uid);
+  $output .= '<p>'. l(t('Create new location'),
+    $path .'edit/'. $free_cid) .'</p>';
+
+  return $output;
+}
+
+
+
+/**
+ * Show an overview of configured locations and the default location
+ */
+function weather_admin_main_page() {
+  $output = '';
+  $blocks = _weather_get_blocks_in_use();
+  $path = 'admin/settings/weather/';
+
+  if (!empty($blocks)) {
+    foreach ($blocks as $block_id) {
+      $header = array(
+        t('System-wide block !number', array('!number' => $block_id)),
+        t('Weight'),
+        array('data' => t('Operations'), 'colspan' => 2),
+      );
+
+      $rows = array();
+      $sql = "SELECT * FROM {weather_config}
+        WHERE uid=%d ORDER BY weight ASC, real_name ASC";
+      $result = db_query($sql, -$block_id);
+      while ($row = db_fetch_array($result)) {
+        $rows[] = array(
+          $row['real_name'],
+          $row['weight'],
+          l(t('edit'), $path .'edit/'. -$block_id .'/'. $row['cid']),
+          l(t('delete'), $path .'delete/'. -$block_id .'/'. $row['cid']),
+        );
+      }
+
+      $output .= theme('table', $header, $rows);
+      if (isset($form['pager']['#value'])) {
+        $output .= drupal_render($form['pager']);
+      }
+
+      $free_cid = _weather_get_free_config(-$block_id);
+      $output .= '<p>'. l(t('Create new location in block !number',
+        array('!number' => $block_id)),
+        $path .'edit/'. -$block_id .'/'. $free_cid) .'</p>';
+    }
+  }
+
+  // Allow creation of another system-wide block
+  $free_block_id = _weather_get_free_block_id();
+  $output .= '<p>'. l(t('Create new system-wide block'),
+    $path .'edit/'. $free_block_id .'/1') .'</p>';
+
+  // Add the default location
+  $output .= '<p>'. l(t('Configure the default location'),
+    $path .'default') .'</p>';
+  $output .= drupal_get_form('weather_main_page_form');
+  return $output;
+}
+
+
+
+/**
+ * Construct a form for general settings of the Weather module
+ */
+function weather_main_page_form() {
+  $form['use_cron'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Use cron to clear the cache once per hour'),
+    '#description' => t('If you use Drupal\'s cache, the system weather blocks will not be updated for anonymous users unless the cache is cleared. This happens e.g. when new nodes are created. If you want the system weather blocks to be updated when new weather data is available, you can clear the cache once per hour. Please note that this might slow down your site.'),
+    '#default_value' => variable_get('weather_use_cron', FALSE),
+  );
+  $form['weather_image_directory'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Directory for custom images'),
+    '#description' => t('Override the default image directory. This directory must be a subdirectory of the Drupal \'files\' path.'),
+    '#default_value' => variable_get('weather_image_directory', ''),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save configuration'),
+  );
+
+  return $form;
+}
+
+
+
+/**
+ * Handle the submission for general settings of the Weather module
+ */
+function weather_main_page_form_submit($form, &$form_state) {
+  variable_set('weather_use_cron', $form_state['values']['use_cron']);
+  $directory = $form_state['values']['weather_image_directory'];
+  // Remove whitespace and directory separators from the string.
+  $directory = trim(trim($directory, '/\\'));
+  // Replace Windows-style directory separators with Unix separators
+  $directory = implode('/', explode('\\', $directory));
+  variable_set('weather_image_directory', $directory);
+  drupal_set_message(t('The configuration has been saved.'));
+}
+
+
+
+/**
+ * Show a configuration page for a custom weather block
+ */
+function weather_custom_block($uid, $cid=0) {
+  // Include a nice Javascript which makes the settings easier
+  drupal_add_js(drupal_get_path('module', 'weather') .'/helper.js');
+
+  // if there's no configuration id provided, we get the first in use or 1
+  if ($cid == 0) {
+    $cid = _weather_get_first_valid_config($uid);
+  }
+
+  // if the provided config id is not currently used, we want the lowest
+  // free configuration id. This avoid cases like 56271 for config ids
+  $config_in_use = _weather_get_configs_in_use($uid);
+  $cid_found = FALSE;
+  foreach ($config_in_use as $index) {
+    if ($index['cid'] == $cid) {
+      $cid_found = TRUE;
+      break;
+    }
+  }
+  if (!$cid_found) {
+    $cid = _weather_get_free_config($uid);
+  }
+  // get the previously determined configuration
+  $config = _weather_get_config($uid, $cid);
+
+  $config['country'] = weather_get_country_from_icao($config['icao']);
+  $config['countries'] = weather_get_countries();
+  $config['places'] = weather_get_places($config['country']);
+
+  $output = drupal_get_form('weather_custom_block_form', $uid, $cid, $config);
+
+  return $output;
+}
+
+
+
+/**
+ * Return a new place selection box based on the country selection
+ */
+function weather_js() {
+  // Get the current selected country for the new places
+  $form_state = array('values' => $_POST);
+  $new_places = weather_get_places($form_state['values']['country']);
+
+  // Get form from cache and store modified place selection
+  $form = form_get_cache($_POST['form_build_id'], $form_state);
+  $form['place'] = array(
+    '#type' => 'select',
+    '#title' => t('Place'),
+    '#description' => t('Select a place in that country for the weather display.'),
+    '#options' => $new_places,
+  );
+  form_set_cache($_POST['form_build_id'], $form, $form_state);
+  $form += array(
+    '#post' => $_POST,
+    '#programmed' => FALSE,
+  );
+
+  // Rebuild the form.
+  $form_state = array('submitted' => FALSE);
+  $form = form_builder('weather_custom_block_form', $form, $form_state);
+
+  // Render the new output.
+  $output = theme('status_messages') . drupal_render($form['place']);
+
+  // Don't call drupal_json(). ahah.js uses an iframe and
+  // the header output by drupal_json() causes problems in some browsers.
+  print drupal_to_js(array('status' => TRUE, 'data' => $output));
+  exit;
+}
+
+
+
+/**
+ * Construct the configuration form for a weather block
+ */
+function weather_custom_block_form($dummy, $uid, $cid, $config) {
+  // set up a selection box with all countries
+  $form['country'] = array(
+    '#type' => 'select',
+    '#title' => t('Country'),
+    '#description' => t('Select a country to narrow down your search.'),
+    '#default_value' => $config['country'],
+    '#options' => drupal_map_assoc($config['countries']),
+    '#ahah' => array(
+      'path' => 'weather/js',
+      'wrapper' => 'edit-place-wrapper',
+    ),
+  );
+  // set up a selection box with all place names of the selected country
+  $form['place'] = array(
+    '#type' => 'select',
+    '#title' => t('Place'),
+    '#description' => t('Select a place in that country for the weather display.'),
+    '#default_value' => $config['icao'],
+    '#options' => $config['places'],
+  );
+  $form['icao'] = array(
+    '#type' => 'textfield',
+    '#title' => t('ICAO code'),
+    '#default_value' => $config['icao'],
+    '#description' => t('Enter the 4-letter ICAO code of the weather station. If you first need to look up the code, you can use !url_1 or !url_2. Please note that not all stations listed at those URLs are providing weather data and thus may not be supported by this module.',
+      array(
+        '!url_1' => l('airlinecodes.co.uk', 'http://www.airlinecodes.co.uk/aptcodesearch.asp'),
+        '!url_2' => l('notams.jcs.mil', 'https://www.notams.jcs.mil/common/icao/index.html')
+      )
+    ),
+    '#required' => true,
+    '#size' => '5',
+  );
+  $form['real_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Real name for the selected place'),
+    '#default_value' => $config['real_name'],
+    '#description' => t('You may enter another name for the place selected above.'),
+    '#required' => true,
+    '#size' => '30'
+  );
+  $form['units'] = array(
+   '#type' => 'fieldset',
+   '#title' => t('Display units'),
+   '#description' => t('You can specify which units should be used for displaying the data.'),
+   '#collapsible' => TRUE,
+   '#collapsed' => FALSE,
+   '#tree' => TRUE,
+  );
+  $form['units']['temperature'] = array(
+    '#type' => 'select',
+    '#title' => t('Temperature'),
+    '#default_value' => $config['units']['temperature'],
+    '#options' => array('celsius' => t('Celsius'), 'fahrenheit' => t('Fahrenheit'),
+      'celsiusfahrenheit' => t('Celsius / Fahrenheit'),
+      'fahrenheitcelsius' => t('Fahrenheit / Celsius'),
+      'dont-display' => t('Don\'t display')),
+  );
+  $form['units']['windspeed'] = array(
+    '#type' => 'select',
+    '#title' => t('Wind speed'),
+    '#default_value' => $config['units']['windspeed'],
+    '#options' => array('kmh' => t('km/h'), 'mph' => t('mph'), 'knots' => t('Knots'),
+      'mps' => t('meter/s'), 'beaufort' => t('Beaufort'),
+      'dont-display' => t('Don\'t display')),
+  );
+  $form['units']['pressure'] = array(
+    '#type' => 'select',
+    '#title' => t('Pressure'),
+    '#default_value' => $config['units']['pressure'],
+    '#options' => array('hpa' => t('hPa'), 'kpa' => t('kPa'), 'inhg' => t('inHg'), 'mmhg' => t('mmHg'),
+      'dont-display' => t('Don\'t display')),
+  );
+  $form['units']['humidity'] = array(
+    '#type' => 'select',
+    '#title' => t('Rel. Humidity'),
+    '#default_value' => $config['units']['humidity'],
+    '#options' => array('display' => t('Display'), 'dont-display' => t('Don\'t display')),
+  );
+  $form['units']['visibility'] = array(
+    '#type' => 'select',
+    '#title' => t('Visibility'),
+    '#default_value' => $config['units']['visibility'],
+    '#options' => array('kilometers' => t('kilometers'), 'miles' => t('UK miles'),
+      'dont-display' => t('Don\'t display')),
+  );
+  $form['settings'] = array(
+   '#type' => 'fieldset',
+   '#title' => t('Display settings'),
+   '#description' => t('You can customize the display of the block.'),
+   '#collapsible' => TRUE,
+   '#collapsed' => TRUE,
+   '#tree' => TRUE,
+  );
+  $form['settings']['show_windchill'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show windchill temperature'),
+    '#default_value' => $config['settings']['show_windchill'],
+    '#description' => t('Calculates the temperature resulting from windchill. This is how the temperature <q>feels like</q>.'),
+  );
+  $form['settings']['show_unconverted_metar'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show unconverted METAR data'),
+    '#default_value' => $config['settings']['show_unconverted_metar'],
+    '#description' => t('Displays the original data of the METAR report.'),
+  );
+  $form['settings']['show_abbreviated_directions'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show abbreviated wind directions'),
+    '#default_value' => $config['settings']['show_abbreviated_directions'],
+    '#description' => t('Displays abbreviated wind directions like N, SE, or W instead of North, Southeast, or West.'),
+  );
+  $form['settings']['show_directions_degree'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show degrees of wind directions'),
+    '#default_value' => $config['settings']['show_directions_degree'],
+    '#description' => t('Displays the degrees of wind directions, e.g. North (20°).'),
+  );
+  $form['settings']['show_sunrise_sunset'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show time of sunrise and sunset'),
+    '#default_value' => $config['settings']['show_sunrise_sunset'],
+    '#description' => t('Displays the time of sunrise and sunset.'),
+  );
+  // Construct timezones
+  $timezones = array('gmt' => t('GMT'), 'drupal' => t('Drupal'));
+  $system_timezones = _system_zonelist();
+  foreach ($system_timezones as $seconds_offset => $date) {
+    $timezones[$seconds_offset] = sprintf("%+03d:%02d",
+      $seconds_offset / 3600,
+      abs($seconds_offset % 3600) / 60);
+  }
+  $form['settings']['sunrise_sunset_timezone'] = array(
+    '#type' => 'select',
+    '#title' => t('Timezone for sunrise and sunset'),
+    '#default_value' => $config['settings']['sunrise_sunset_timezone'],
+    '#description' => t('Choose either Greenwich Mean Time (GMT), Drupal\'s standard timezone as set in the configuration, or a custom timezone.'),
+    '#options' => $timezones,
+  );
+  $form['settings']['show_compact_block'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show compact block'),
+    '#default_value' => $config['settings']['show_compact_block'],
+    '#description' => t('Displays only the name, condition, and temperature of the weather station.'),
+  );
+  $form['weight'] = array(
+    '#type' => 'weight',
+    '#title' => t('Weight'),
+    '#default_value' => $config['weight'],
+    '#description' => t('Optional. In the block, the heavier locations will sink and the lighter locations will be positioned nearer the top. Locations with equal weights are sorted alphabetically.'),
+  );
+  $form['uid'] = array(
+    '#type' => 'value',
+    '#value' => $uid,
+  );
+  $form['cid'] = array(
+    '#type' => 'value',
+    '#value' => $cid,
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save configuration'),
+  );
+
+  return $form;
+}
+
+
+
+/**
+ * Check the submission of the custom weather block
+ */
+function weather_custom_block_form_validate($form, &$form_state) {
+  if (weather_get_country_from_icao($form_state['values']['icao']) == '') {
+    form_set_error('icao', t('The ICAO code is not supported by this module.'));
+  }
+}
+
+
+
+/**
+ * Handle the submission of the custom weather block
+ */
+function weather_custom_block_form_submit($form, &$form_state) {
+  // delete the previous entry
+  $sql = "DELETE FROM {weather_config} WHERE uid=%d AND cid=%d";
+  db_query($sql, $form_state['values']['uid'], $form_state['values']['cid']);
+
+  // insert the new configuration values into the DB
+  $sql = "INSERT INTO {weather_config}
+    (uid, cid, icao, real_name, units, settings, weight)
+    VALUES(%d, %d, '%s', '%s', '%s', '%s', %d)";
+  db_query($sql,
+    $form_state['values']['uid'],
+    $form_state['values']['cid'],
+    strtoupper($form_state['values']['icao']),
+    $form_state['values']['real_name'],
+    serialize($form_state['values']['units']),
+    serialize($form_state['values']['settings']),
+    $form_state['values']['weight']
+  );
+
+  if ($form_state['values']['uid'] == 0) {
+    drupal_set_message(t('The default configuration has been saved.'));
+  }
+  else {
+    drupal_set_message(t('The location has been saved.'));
+  }
+
+  if ($form_state['values']['uid'] <= 0) {
+    // go back to the administration of the system weather block,
+    // if this is the default configuration or a system-wide block
+    $form_state['redirect'] = 'admin/settings/weather';
+    /** TODO
+     * Rehashing is not needed on every submission, only if the block
+     * is newly created. On the other hand, this happens only
+     * rarely and surely is not a performance bottleneck.
+     */
+    _block_rehash();
+  }
+  else {
+    $form_state['redirect'] = 'user/'. $form_state['values']['uid'] .'/weather';
+  }
+}
+
+
+
+/**
+ * Confirmation page before deleting a location
+ */
+function weather_custom_block_delete_confirm($form, $uid, $cid) {
+  if ($uid < 0) {
+    $abort_path = 'admin/settings/weather';
+  }
+  else {
+    $abort_path = 'user/'. $uid .'/weather';
+  }
+
+  $sql = "SELECT * FROM {weather_config} WHERE uid=%d and cid=%d";
+  $result = db_query($sql, $uid, $cid);
+  $row = db_fetch_array($result);
+
+  $form = array();
+  $form['uid'] = array('#type' => 'hidden', '#value' => $uid);
+  $form['cid'] = array('#type' => 'hidden', '#value' => $cid);
+  return confirm_form($form,
+    t('Are you sure you want to delete the location %name?',
+      array('%name' => $row['real_name'])),
+    $abort_path,
+    t('This action cannot be undone.'),
+    t('Delete'),
+    t('Cancel')
+  );
+}
+
+
+
+/**
+ * Handle the deletion of a location
+ */
+function weather_custom_block_delete_confirm_submit($form, &$form_state) {
+  // delete the entry
+  $sql = "DELETE FROM {weather_config} WHERE uid=%d AND cid=%d";
+  db_query($sql, $form_state['values']['uid'], $form_state['values']['cid']);
+
+  drupal_set_message(t('The location has been deleted.'));
+
+  if ($form_state['values']['uid'] < 0) {
+    // go back to the administration of system-wide weather blocks
+    $form_state['redirect'] = 'admin/settings/weather';
+    /** TODO
+     * Rehashing is not needed on every submission, only if the block
+     * is totally empty. On the other hand, this happens only
+     * rarely and surely is not a performance bottleneck.
+     */
+    _block_rehash();
+  }
+  else {
+    $form_state['redirect'] = 'user/'. $form_state['values']['uid'] .'/weather';
+  }
+}
+
+
+
+/**
+ * Searches for the specified location, whether it is a place name or
+ * an ICAO code. For example, weather/fuhlsbüttel will display the weather
+ * for Hamburg-Fuhlsbüttel.
+ *
+ * @param string The argument passed in the URL that specifies the
+ *               location which should be searched for.
+ */
+function weather_search_location($search = NULL) {
+  if ($search == NULL) {
+    // The user did not enter a search string in the URL, so just
+    // display the search form.
+    return drupal_get_form('weather_search_form');
+  }
+  else {
+    $search = urldecode($search);
+    // Do some sanity checks first
+    if ((strlen($search) < 3) || (strlen($search) > 64)) {
+      drupal_set_message(t('The string to search for must be between 3 and 64 characters.'), 'error');
+      drupal_goto('weather');
+    }
+
+    // Try to match the ICAO code
+    if (strlen($search) == 4) {
+      $sql = "SELECT icao, country, name FROM {weather_icao} WHERE icao = '%s'";
+      $result = db_query($sql, strtoupper($search));
+      if ($location = db_fetch_object($result)) {
+        // Use the default configuration for display
+        $config = _weather_get_config(0, 0);
+        $config['icao'] = $location->icao;
+        $config['real_name'] = $location->name;
+        $metar = weather_get_metar($location->icao);
+        $output = theme('weather_theming', $config, $metar);
+        $output .= drupal_get_form('weather_search_form');
+        return $output;
+      }
+    }
+
+    // Try to match on icao, name, or country
+    $locations = array();
+    $sql = "SELECT icao, country, name FROM {weather_icao}
+      WHERE icao LIKE UPPER('%%%s%%')
+      OR UPPER(country) LIKE UPPER('%%%s%%')
+      OR UPPER(name) LIKE UPPER('%%%s%%')
+      ORDER BY name ASC";
+    $result = db_query($sql, $search, $search, $search);
+    while ($location = db_fetch_object($result)) {
+      $locations[] = $location;
+    }
+
+    // If there are no results, notify user
+    if (empty($locations)) {
+      drupal_set_message(t('Your search did not return any results.'), 'error');
+      drupal_goto('weather');
+    }
+    else {
+      if (count($locations) == 1) {
+        $location = $locations[0];
+        // There's only one search result, so show the weather directly
+        // using the default configuration for display
+        $config = _weather_get_config(0, 0);
+        $config['icao'] = $location->icao;
+        $config['real_name'] = $location->name;
+        $metar = weather_get_metar($location->icao);
+        $output = theme('weather_theming', $config, $metar);
+        $output .= drupal_get_form('weather_search_form');
+        return $output;
+      }
+      else {
+        // There is more than one result, so show all of them
+        // to let the user decide
+        $links = array();
+        foreach ($locations as $location) {
+          $links[] = l($location->name, 'weather/' . $location->icao);
+        }
+        $title = t('Search results for <q>@search</q>', array('@search' => $search));
+        $output = theme('item_list', $links, $title);
+        $output .= drupal_get_form('weather_search_form');
+        return $output;
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Display a form for the user to search for weather locations.
+ */
+function weather_search_form() {
+  $form = array();
+  $form['search'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Search for a location'),
+    '#description' => t('Type in an ICAO code, a name, or a country to search for weather conditions at that location.'),
+    '#autocomplete_path' => 'weather/autocomplete',
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+  );
+  return $form;
+}
+
+
+
+/**
+ * Validate the input from the weather search form
+ */
+function weather_search_form_validate($form, &$form_state) {
+  if ((strlen($form_state['values']['search']) < 3)
+    || (strlen($form_state['values']['search']) > 64)) {
+    form_set_error('search', t('The string to search for must be between 3 and 64 characters.'));
+  }
+}
+
+
+
+/**
+ * Submission handler for the weather search form.
+ *
+ * Just redirect the user to the weather URL with the search term stuffed
+ * on the end of it. We've been through validation but make sure the
+ * search contains no dodgy characters here.
+ */
+function weather_search_form_submit($form, &$form_state) {
+  drupal_goto('weather/' . urlencode($form_state['values']['search']));
+}
+
+
+
+/**
+ * Given a partial string, search for a location or ICAO code matching that
+ * string.
+ *
+ * @param string $input The partial text to search for.
+ */
+function weather_search_autocomplete($input) {
+  $matches = array();
+  // In this query we search for ICAO code, country, and name of locations.
+  $sql = "SELECT icao, country, name FROM {weather_icao}
+    WHERE icao LIKE UPPER('%%%s%%')
+    OR UPPER(country) LIKE UPPER('%%%s%%')
+    OR UPPER(name) LIKE UPPER('%%%s%%')
+    ORDER BY name ASC";
+  $result = db_query_range($sql, $input, $input, $input, 0, 10);
+  while ($match = db_fetch_object($result)) {
+    $matches[$match->icao] = check_plain(
+      sprintf("%s, %s (%s)", $match->name, $match->country, $match->icao)
+    );
+  }
+  print drupal_to_js($matches);
+  exit();
+}
+
+
+
+/**
+ * Return the configuration for the given user id.
+ *
+ * If there is no configuration yet, get the default
+ * configuration instead.
+ */
+function _weather_get_config($uid, $cid) {
+  $sql = "SELECT * FROM {weather_config} WHERE uid=%d AND cid=%d";
+  $result = db_query($sql, $uid, $cid);
+  $config = db_fetch_array($result);
+  if (!isset($config['icao'])) {
+    // There was no configuration found. See if there is a custom
+    // default configuration.
+    $sql = "SELECT * FROM {weather_config} WHERE uid=%d AND cid=%d";
+    $result = db_query($sql, 0, 1);
+    $config = db_fetch_array($result);
+    if (!isset($config['icao'])) {
+      // There is no custom default configuration, provide the
+      // module's default
+      $config['icao'] = 'EDDH';
+      $config['real_name'] = 'Hamburg-Fuhlsbüttel';
+      $config['units'] = array(
+        'temperature' => 'celsius',
+        'windspeed' => 'kmh',
+        'pressure' => 'hpa',
+        'humidity' => 'display',
+        'visibility' => 'kilometers',
+      );
+      $config['settings'] = array(
+        'show_windchill' => FALSE,
+        'show_unconverted_metar' => FALSE,
+        'show_abbreviated_directions' => FALSE,
+        'show_directions_degree' => FALSE,
+        'show_sunrise_sunset' => FALSE,
+        'sunrise_sunset_timezone' => 'gmt',
+        'show_compact_block' => FALSE,
+      );
+      $config['weight'] = 0;
+    }
+    else {
+      // get the custom default configuration
+      $config['units'] = unserialize($config['units']);
+      $config['settings'] = unserialize($config['settings']);
+    }
+  }
+  else {
+    // get the user's configuration
+    $config['units'] = unserialize($config['units']);
+    $config['settings'] = unserialize($config['settings']);
+  }
+  return $config;
+}
+
+
+
+/**
+ * Return the first valid configuration or 1 if there is none
+ */
+function _weather_get_first_valid_config($uid) {
+  $sql = 'SELECT cid FROM {weather_config} WHERE uid=%d ORDER BY weight ASC, real_name ASC';
+  return max(db_result(db_query($sql, $uid)), 1);
+}
+
+
+
+/**
+ * Return the first unused configuration number
+ */
+function _weather_get_free_config($uid) {
+  $result = db_query("SELECT * FROM {weather_config}
+    WHERE uid=%d
+    ORDER BY cid ASC", $uid);
+  $free_config = 1;
+  while ($config = db_fetch_array($result)) {
+    if ($config['cid'] > $free_config) break;
+    $free_config++;
+  }
+  return $free_config;
+}
+
+
+
+/**
+ * Return the first unused sytem-wide block id
+ */
+function _weather_get_free_block_id() {
+  $result = db_query("SELECT DISTINCT uid FROM {weather_config}
+    WHERE uid < 0 ORDER BY uid DESC");
+  $free_block_id = -1;
+  while ($block_id = db_fetch_array($result)) {
+    if ($block_id['uid'] < $free_block_id) break;
+    $free_block_id--;
+  }
+  return $free_block_id;
+}
+
+
+
+/**
+ * Determine how many configurations exist for the given user id.
+ */
+function _weather_get_configs_in_use($uid) {
+  $configs = array();
+  $result = db_query("SELECT * FROM {weather_config}
+    WHERE uid=%d
+    ORDER BY weight ASC, real_name ASC", $uid);
+  while ($row = db_fetch_array($result)) {
+    $configs[] = array('cid' => $row['cid'], 'real_name' => $row['real_name']);
+  }
+  return $configs;
+}
+
+
+
+/**
+ * Return a list of current blocks in use
+ */
+function _weather_get_blocks_in_use() {
+  $blocks = array();
+  $result = db_query("SELECT DISTINCT uid FROM {weather_config} WHERE uid < 0
+    ORDER BY uid DESC");
+  while ($row = db_fetch_array($result)) {
+    // Convert negative UIDs to positive
+    $blocks[] = abs($row['uid']);
+  }
+  return $blocks;
+}
+
+
+
+/*********************************************************************
+ * Internal functions for converting data
+ ********************************************************************/
+
+
+
+/**
+ * Format the weather condition and phenomena (rain, drizzle, snow, ...)
+ */
+function _weather_format_condition($metar) {
+  if (!isset($metar) or !isset($metar['condition_text'])) {
+    return t('No data');
+  }
+
+  // sky conditions
+  switch ($metar['condition_text']) {
+    case 'clear': $result[] = t('Clear sky'); break;
+    case 'few': $result[] = t('Few clouds'); break;
+    case 'scattered': $result[] = t('Scattered clouds'); break;
+    case 'broken': $result[] = t('Broken clouds'); break;
+    case 'overcast': $result[] = t('Overcast'); break;
+    case 'no-significant-clouds': $result[] = t('No significant clouds'); break;
+  }
+
+  // weather phenomena, obscuration
+  if (isset($metar['phenomena']['#mist'])) {
+    $result[] = t('mist');
+  }
+  if (isset($metar['phenomena']['fog'])) {
+    $fog = $metar['phenomena']['fog'];
+    if (isset($fog['#shallow'])) {
+      $result[] = t('shallow fog');
+    }
+    else if (isset($fog['#partial'])) {
+      $result[] = t('partial fog');
+    }
+    else if (isset($fog['#patches'])) {
+      $result[] = t('patches of fog');
+    }
+    else {
+      $result[] = t('fog');
+    }
+  }
+  if (isset($metar['phenomena']['#smoke'])) {
+    $result[] = t('smoke');
+  }
+
+  // weather phenomena, precipitation
+  if (isset($metar['phenomena']['rain'])) {
+    $rain = $metar['phenomena']['rain'];
+    if (isset($rain['#light'])) {
+      if (isset($rain['#showers'])) {
+        $result[] = t('light rain showers');
+      }
+      else if (isset($rain['#freezing'])) {
+        $result[] = t('light freezing rain');
+      }
+      else {
+        $result[] = t('light rain');
+      }
+    }
+    else if (isset($rain['#heavy'])) {
+      if (isset($rain['#showers'])) {
+        $result[] = t('heavy rain showers');
+      }
+      else if (isset($rain['#freezing'])) {
+        $result[] = t('heavy freezing rain');
+      }
+      else {
+        $result[] = t('heavy rain');
+      }
+    }
+    else {
+      if (isset($rain['#showers'])) {
+        $result[] = t('rain showers');
+      }
+      else if (isset($rain['#freezing'])) {
+        $result[] = t('freezing rain');
+      }
+      else {
+        $result[] = t('rain');
+      }
+    }
+  }
+  else if (isset($metar['phenomena']['drizzle'])) {
+    $drizzle = $metar['phenomena']['drizzle'];
+    if (isset($drizzle['#light'])) {
+      if (isset($drizzle['#freezing'])) {
+        $result[] = t('light freezing drizzle');
+      }
+      else {
+        $result[] = t('light drizzle');
+      }
+    }
+    else if (isset($drizzle['#heavy'])) {
+      if (isset($drizzle['#freezing'])) {
+        $result[] = t('heavy freezing drizzle');
+      }
+      else {
+        $result[] = t('heavy drizzle');
+      }
+    }
+    else {
+      if (isset($drizzle['#freezing'])) {
+        $result[] = t('freezing drizzle');
+      }
+      else {
+        $result[] = t('drizzle');
+      }
+    }
+  }
+  else if (isset($metar['phenomena']['snow'])) {
+    $snow = $metar['phenomena']['snow'];
+    if (isset($snow['#light'])) {
+      if (isset($snow['#blowing'])) {
+        $result[] = t('light blowing snow');
+      }
+      else if (isset($snow['#low_drifting'])) {
+        $result[] = t('light low drifting snow');
+      }
+      else if (isset($snow['#showers'])) {
+        $result[] = t('light snow showers');
+      }
+      else {
+        $result[] = t('light snow');
+      }
+    }
+    else if (isset($snow['#heavy'])) {
+      if (isset($snow['#blowing'])) {
+        $result[] = t('heavy blowing snow');
+      }
+      else if (isset($snow['#low_drifting'])) {
+        $result[] = t('heavy low drifting snow');
+      }
+      else if (isset($snow['#showers'])) {
+        $result[] = t('heavy snow showers');
+      }
+      else {
+        $result[] = t('heavy snow');
+      }
+    }
+    else {
+      if (isset($snow['#blowing'])) {
+        $result[] = t('blowing snow');
+      }
+      else if (isset($snow['#low_drifting'])) {
+        $result[] = t('low drifting snow');
+      }
+      else if (isset($snow['#showers'])) {
+        $result[] = t('snow showers');
+      }
+      else {
+        $result[] = t('snow');
+      }
+    }
+  }
+
+  return join(", ", $result);
+}
+
+
+
+/**
+ * Convert temperatures and calculate wind chill
+ *
+ * Windchill temperature is only defined for temperatures at or below 50 °F
+ * and wind speeds above 3 mph. Bright sunshine may increase the wind chill
+ * temperature by 10 to 18 degrees F.
+ * @link http://www.weather.gov/os/windchill/windchillglossary.shtml
+ *
+ * @param array Temperature data
+ * @param array Wind data
+ * @param array The unit to be returned (celsius, fahrenheit)
+ * @param array The display setting, whether to show windchill
+ * @return array Formatted representation, either in celsius or fahrenheit
+ *               with the wind chill calculated
+ */
+function _weather_format_temperature($temperature, $wind, $unit, $settings) {
+  if (isset($settings['show_windchill']) and $settings['show_windchill'] == TRUE
+    and ($temperature['fahrenheit'] <= 50) and ($wind['speed_mph'] >= 3)) {
+    // Calculate windchill (in degree Fahrenheit)
+    $windchill['fahrenheit'] = round(35.74 + 0.6215 * $temperature['fahrenheit'] -
+      35.75 * pow($wind['speed_mph'], 0.16) +
+      0.4275 * $temperature['fahrenheit'] * pow($wind['speed_mph'], 0.16), 1);
+    $windchill['celsius'] = round(($windchill['fahrenheit'] - 32) * 5/9, 1);
+    if ($unit['temperature'] == 'fahrenheit') {
+      $result['temperature_windchill'] = t('!temperature&thinsp;°F',
+        array('!temperature' => $windchill['fahrenheit']));
+    }
+    elseif ($unit['temperature'] == 'celsiusfahrenheit') {
+      $result['temperature_windchill'] =
+        t('!temperature_c&thinsp;°C / !temperature_f&thinsp;°F',
+        array(
+          '!temperature_c' => $windchill['celsius'],
+          '!temperature_f' => $windchill['fahrenheit']
+        )
+      );
+    }
+    elseif ($unit['temperature'] == 'fahrenheitcelsius') {
+      $result['temperature_windchill'] =
+        t('!temperature_f&thinsp;°F / !temperature_c&thinsp;°C',
+        array(
+          '!temperature_f' => $windchill['fahrenheit'],
+          '!temperature_c' => $windchill['celsius']
+        )
+      );
+    }
+    else {
+      // default to metric units
+      $result['temperature_windchill'] =  t('!temperature&thinsp;°C',
+        array('!temperature' => $windchill['celsius']));
+    }
+  }
+  // Format the temperature
+  if ($unit['temperature'] == 'fahrenheit') {
+    $result['temperature'] = t('!temperature&thinsp;°F',
+      array('!temperature' => $temperature['fahrenheit']));
+  }
+  elseif ($unit['temperature'] == 'celsiusfahrenheit') {
+    $result['temperature'] =  t('!temperature_c&thinsp;°C / !temperature_f&thinsp;°F',
+      array(
+        '!temperature_c' => $temperature['celsius'],
+        '!temperature_f' => $temperature['fahrenheit']
+      )
+    );
+  }
+  elseif ($unit['temperature'] == 'fahrenheitcelsius') {
+    $result['temperature'] =  t('!temperature_f&thinsp;°F / !temperature_c&thinsp;°C',
+      array(
+        '!temperature_f' => $temperature['fahrenheit'],
+        '!temperature_c' => $temperature['celsius']
+      )
+    );
+  }
+  else {
+    // default to metric units
+    $result['temperature'] =  t('!temperature&thinsp;°C',
+      array('!temperature' => $temperature['celsius']));
+  }
+  return preg_replace("/([^ ]*)&thinsp;([^ ]*)/",
+    '<span style="white-space:nowrap;">\1&thinsp;\2</span>', $result);
+}
+
+
+
+/**
+ * Convert wind
+ *
+ * @param int Wind
+ * @param string The unit to be returned (km/h, knots, meter/s, mph)
+ * @param array Settings, used for abbreviated wind directions
+ * @return string Formatted representation
+ */
+function _weather_format_wind($wind, $unit, $settings) {
+  // shortcut for a special case
+  if ($wind['direction'] == 0 and $wind['speed_kmh'] == 0) {
+    return t('Calm');
+  }
+
+  $wind['direction_text'] = weather_bearing_to_text($wind['direction']);
+  $wind['direction_text_short'] = weather_bearing_to_text($wind['direction'], TRUE);
+  if (isset($wind['variable_start'])) {
+    $wind['variable_start_text'] =
+      weather_bearing_to_text($wind['variable_start']);
+    $wind['variable_start_text_short'] =
+      weather_bearing_to_text($wind['variable_start'], TRUE);
+  }
+  if (isset($wind['variable_end'])) {
+    $wind['variable_end_text'] =
+      weather_bearing_to_text($wind['variable_end']);
+    $wind['variable_end_text_short'] =
+      weather_bearing_to_text($wind['variable_end'], TRUE);
+  }
+
+  // handle variable wind directions
+  if ($wind['direction'] == 'VRB' or isset($wind['variable_start'])) {
+    if (isset($wind['variable_start'])) {
+      if ($settings['show_abbreviated_directions']) {
+        if ($settings['show_directions_degree']) {
+          $result[] = t('Variable from !direction_a (!degree_a°) to !direction_b (!degree_b°)',
+            array('!direction_a' => $wind['variable_start_text_short'],
+              '!degree_a' => $wind['variable_start'],
+              '!direction_b' => $wind['variable_end_text_short'],
+              '!degree_b' => $wind['variable_end'],
+            ));
+        }
+        else {
+          $result[] = t('Variable from !direction_a to !direction_b',
+            array('!direction_a' => $wind['variable_start_text_short'],
+              '!direction_b' => $wind['variable_end_text_short']
+            ));
+        }
+      }
+      else {
+        if ($settings['show_directions_degree']) {
+          $result[] = t('Variable from !direction_a (!degree_a°) to !direction_b (!degree_b°)',
+            array('!direction_a' => $wind['variable_start_text'],
+              '!degree_a' => $wind['variable_start'],
+              '!direction_b' => $wind['variable_end_text'],
+              '!degree_b' => $wind['variable_end'],
+            ));
+        }
+        else {
+          $result[] = t('Variable from !direction_a to !direction_b',
+            array('!direction_a' => $wind['variable_start_text'],
+              '!direction_b' => $wind['variable_end_text']
+            ));
+        }
+      }
+    }
+    else {
+      $result[] = t('Variable');
+    }
+  }
+  else {
+    // no variable wind direction, but an exact one
+    if ($settings['show_abbreviated_directions']) {
+      if ($settings['show_directions_degree']) {
+        $result[] = t('!direction (!degree°)',
+          array('!direction' => $wind['direction_text_short'],
+            '!degree' => $wind['direction']));
+      }
+      else {
+        $result[] = $wind['direction_text_short'];
+      }
+    }
+    else {
+      if ($settings['show_directions_degree']) {
+        $result[] = t('!direction (!degree°)',
+          array('!direction' => $wind['direction_text'],
+            '!degree' => $wind['direction']));
+      }
+      else {
+        $result[] = $wind['direction_text'];
+      }
+    }
+  }
+
+  // Set up the wind speed
+  // In order to reduce the number of strings to translate, the
+  // gust speed is converted here as well. Later on, we just need
+  // to set up the gust translation.
+  if ($unit['windspeed'] == 'mph') {
+    $result[] = t('!speed&thinsp;mph', array('!speed' => $wind['speed_mph']));
+    $gust_speed = t('!speed&thinsp;mph', array('!speed' => $wind['gusts_mph']));
+  }
+  else if ($unit['windspeed'] == 'knots') {
+    $result[] = t('!speed&thinsp;knots', array('!speed' => $wind['speed_knots']));
+    $gust_speed = t('!speed&thinsp;knots', array('!speed' => $wind['gusts_knots']));
+  }
+  else if ($unit['windspeed'] == 'mps') {
+    $result[] = t('!speed&thinsp;meter/s', array('!speed' => $wind['speed_mps']));
+    $gust_speed = t('!speed&thinsp;meter/s', array('!speed' => $wind['gusts_mps']));
+  }
+  else if ($unit['windspeed'] == 'beaufort') {
+    $result[] = t('Beaufort !number', array('!number' => $wind['speed_beaufort']));
+    $gust_speed = t('Beaufort !number', array('!number' => $wind['gusts_beaufort']));
+  }
+  else {
+    // default to metric units
+    $result[] = t('!speed&thinsp;km/h', array('!speed' => $wind['speed_kmh']));
+    $gust_speed = t('!speed&thinsp;km/h', array('!speed' => $wind['gusts_kmh']));
+  }
+
+  // set up gusts, if applicable
+  if ($wind['gusts_kmh'] > 0) {
+    $result[] = t('gusts up to !speed', array('!speed' => $gust_speed));
+  }
+  $tmp = preg_replace("/([^ ]*)&thinsp;([^ ]*)/",
+    '<span style="white-space:nowrap;">\1&thinsp;\2</span>', $result);
+  return join(', ', $tmp);
+}
+
+
+
+/**
+ * Convert pressure
+ *
+ * @param int Pressure
+ * @param string The unit to be returned (inHg, mmHg, hPa)
+ * @return string Formatted representation
+ */
+function _weather_format_pressure($pressure, $unit) {
+  if ($unit['pressure'] == 'inhg') {
+    $result = t('!pressure&thinsp;inHg',
+      array('!pressure' => $pressure['inHg']));
+  }
+  else if ($unit['pressure'] == 'mmhg') {
+    $result = t('!pressure&thinsp;mmHg',
+      array('!pressure' => $pressure['mmHg']));
+  }
+  else if ($unit['pressure'] == 'kpa') {
+    $result = t('!pressure&thinsp;kPa',
+      array('!pressure' => $pressure['kPa']));
+  }
+  else {
+    // default to metric units
+    $result = t('!pressure&thinsp;hPa', array('!pressure' => $pressure['hPa']));
+  }
+  return preg_replace("/([^ ]*)&thinsp;([^ ]*)/",
+    '<span style="white-space:nowrap;">\1&thinsp;\2</span>', $result);
+}
+
+
+
+/**
+ * Calculate the relative humidity
+ *
+ * @param float Temperature (must be Celsius)
+ * @param float Dewpoint (must be Celsius)
+ * @return string Formatted representation
+ */
+function _weather_format_relative_humidity($temperature, $dewpoint) {
+  $e = 6.11 * pow(10, (7.5 * $dewpoint['celsius'] / (237.7 + $dewpoint['celsius'])));
+  $es = 6.11 * pow(10, (7.5 * $temperature['celsius'] / (237.7 + $temperature['celsius'])));
+  $result = t('!rel_humidity&thinsp;%',
+    array('!rel_humidity' => max(0, min(100, round(100 * ($e / $es), 0)))));
+  return preg_replace("/([^ ]*)&thinsp;([^ ]*)/",
+    '<span style="white-space:nowrap;">\1&thinsp;\2</span>', $result);
+}
+
+
+
+/**
+ * Convert the visibility
+ */
+function _weather_format_visibility($visibility, $unit) {
+  if ($unit['visibility'] == 'miles') {
+    $result = t('!visibility&thinsp;mi',
+      array('!visibility' => $visibility['miles']));
+  }
+  else {
+    // default to metric units
+    $result = t('!visibility&thinsp;km',
+      array('!visibility' => $visibility['kilometers']));
+  }
+  return preg_replace("/([^ ]*)&thinsp;([^ ]*)/",
+    '<span style="white-space:nowrap;">\1&thinsp;\2</span>', $result);
+}
+
+
+
+/**
+ * Convert information about nearest METAR station in the location block
+ */
+function _weather_format_closest_station($distance, $unit, $settings) {
+  while ($distance['direction'] < 0) {
+    $distance['direction'] += 360;
+  }
+  while ($distance['direction'] >= 360) {
+    $distance['direction'] -= 360;
+  }
+  if ($settings['show_abbreviated_directions']) {
+    $direction = weather_bearing_to_text($distance['direction'], TRUE);
+  }
+  else {
+    $direction = weather_bearing_to_text($distance['direction']);
+  }
+  if ($unit['visibility'] == 'miles') {
+    if ($settings['show_directions_degree']) {
+      $result = t('!distance&thinsp;mi !direction (!degree°)',
+        array(
+          '!distance' => $distance['miles'],
+          '!direction' => $direction,
+          '!degree' => $distance['direction'],
+        ));
+    }
+    else {
+      $result = t('!distance&thinsp;mi !direction',
+        array(
+          '!distance' => $distance['miles'],
+          '!direction' => $direction,
+        ));
+    }
+  }
+  else {
+    // default to metric units
+    if ($settings['show_directions_degree']) {
+      $result = t('!distance&thinsp;km !direction (!degree°)',
+        array(
+          '!distance' => $distance['kilometers'],
+          '!direction' => $direction,
+          '!degree' => $distance['direction'],
+        ));
+    }
+    else {
+      $result = t('!distance&thinsp;km !direction',
+        array(
+          '!distance' => $distance['kilometers'],
+          '!direction' => $direction,
+        ));
+    }
+  }
+  return preg_replace("/([^ ]*)&thinsp;([^ ]*)/",
+    '<span style="white-space:nowrap;">\1&thinsp;\2</span>', $result);
+}
+
+
+
+/**
+ * Converts a compass bearing to a text direction (e.g. 0° North,
+ * 86° East, ...)
+ *
+ * @param int Compass bearing in degrees
+ * @param boolean If true, return abbreviated directions (N, NNW)
+ *                instead of full text (North, North-Northwest)
+ *                Defaults to full text directions
+ * @return string The translated text direction
+ */
+function weather_bearing_to_text($bearing, $abbreviated=FALSE) {
+  // Ensure the bearing to be from 0° to 359°
+  while ($bearing < 0) {
+    $bearing += 360;
+  }
+  while ($bearing >= 360) {
+    $bearing -= 360;
+  }
+  // Determine the sector. This works for 0° up to 348.75°
+  // If the bearing was greater than 348.75°, perform a wrap (%16)
+  $sector = floor(($bearing + 11.25) / 22.5) % 16;
+
+  if (!$abbreviated) {
+    $direction = array(
+      t('North'),
+      t('North-Northeast'),
+      t('Northeast'),
+      t('East-Northeast'),
+      t('East'),
+      t('East-Southeast'),
+      t('Southeast'),
+      t('South-Southeast'),
+      t('South'),
+      t('South-Southwest'),
+      t('Southwest'),
+      t('West-Southwest'),
+      t('West'),
+      t('West-Northwest'),
+      t('Northwest'),
+      t('North-Northwest')
+    );
+  }
+  else {
+    $direction = array(
+      t('N'),
+      t('NNE'),
+      t('NE'),
+      t('ENE'),
+      t('E'),
+      t('ESE'),
+      t('SE'),
+      t('SSE'),
+      t('S'),
+      t('SSW'),
+      t('SW'),
+      t('WSW'),
+      t('W'),
+      t('WNW'),
+      t('NW'),
+      t('NNW')
+    );
+  }
+  return $direction[$sector];
+}
+
+
+
+/*********************************************************************
+ * Internal function for retrieving data
+ ********************************************************************/
+
+
+
+function weather_get_countries() {
+  $sql = "SELECT country FROM {weather_icao}\n";
+  $sql .= "GROUP BY country ORDER BY country ASC";
+  $result = db_query($sql);
+  while ($row = db_fetch_array($result)) {
+    $countries[] = $row['country'];
+  }
+  return $countries;
+}
+
+
+
+function weather_get_places($country) {
+  $sql = "SELECT icao, name FROM {weather_icao}\n";
+  $sql .= "WHERE country='%s' ORDER BY name ASC";
+  $result = db_query($sql, $country);
+  while ($row = db_fetch_array($result)) {
+    $places[$row['icao']] = $row['name'];
+  }
+  return $places;
+}
+
+
+
+function weather_get_country_from_icao($wanted_icao) {
+  $sql = "SELECT country FROM {weather_icao} WHERE icao='%s'";
+  $result = db_query($sql, $wanted_icao);
+  $row = db_fetch_array($result);
+  return $row['country'];
+}
+
+
+
+function weather_get_latitude_longitude($wanted_icao) {
+  $sql = "SELECT latitude, longitude FROM {weather_icao} WHERE icao='%s'";
+  $result = db_query($sql, $wanted_icao);
+  $row = db_fetch_array($result);
+  return $row;
+}
+
+
+
+/**
+ * Return ICAO code of the nearest weather station.
+ *
+ * The distance calculation is based on the spherical law of cosines.
+ * The bearing is converted from radians to degress and normalized to
+ * be between 0 and 360 degress. The returned value will range from
+ * -180° to 180°.
+ * All angles must be passed in radians for the trigonometry functions.
+ *
+ * R = Earth's radius (using a mean radius of 6371 km)
+ * distance = R * acos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(long2 - long1))
+ * bearing = atan2(sin(long2 - long1) * cos(lat2), cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(long2- long1))
+ *
+ * @param Latitude to be searched.
+ * @param Longitude to be searched.
+ *
+ * @return array METAR station with two additional fields (distance and
+ *               direction)
+ */
+function weather_get_icao_from_lat_lon($latitude, $longitude) {
+  $sql = "SELECT icao, name,
+    ROUND(6371 *
+      ACOS(
+        SIN(RADIANS(%f)) * SIN(RADIANS(latitude)) +
+        COS(RADIANS(%f)) * COS(RADIANS(latitude)) * COS(RADIANS(longitude - %f))
+      ),
+    1) AS distance_in_km,
+    MOD(
+      ROUND(
+        DEGREES(
+          ATAN2(
+            SIN(RADIANS(longitude - %f)) * COS(RADIANS(latitude)),
+            COS(RADIANS(%f)) * SIN(RADIANS(latitude)) - SIN(RADIANS(%f)) * COS(RADIANS(latitude)) * COS(RADIANS(longitude - %f))
+          )
+        )
+      ) + 360, 360
+    ) AS bearing
+    FROM {weather_icao} ORDER BY distance_in_km";
+  $result = db_query($sql, array($latitude, $latitude, $longitude, $longitude, $latitude, $latitude, $longitude));
+  $station = db_fetch_array($result);
+  $station['distance']['kilometers'] = $station['distance_in_km'];
+  $station['distance']['miles'] = round($station['distance_in_km'] / 1.609344, 1);
+  $station['distance']['direction'] = $station['bearing'];
+  return $station;
+}
+
+
+
+/**
+ * Fetches the latest METAR data from the database or internet
+ */
+function weather_get_metar($icao) {
+  // See if there's a report in the database
+  $icao = strtoupper($icao);
+
+  $sql = "SELECT * FROM {weather} WHERE icao='%s'";
+  $result = db_query($sql, $icao);
+  $data = db_fetch_array($result);
+
+  // If there is no report, initialize the array
+  if (!isset($data['next_update_on'])) {
+    $data['next_update_on'] = 0;
+  }
+
+  // If the time has come, try to download again
+  if ($data['next_update_on'] <= time()) {
+    $metar_raw = _weather_retrieve_data($icao);
+    if ($metar_raw) {
+      $metar = weather_parse_metar($metar_raw);
+      // Calculate the next scheduled update. Use 62 minutes after the
+      // reported timestamp, to allow the data to propagate to the server.
+      $data['next_update_on'] = $metar['reported_on'] + 62 * 60;
+      // However, if the current time is more than 62 minutes
+      // over the reported timestamp, do not download on every page request.
+      // Therefore, we use 3, 6, 12, and 24 hours to check for updates.
+      // From then on, we check once a day for updates.
+      if ($data['next_update_on'] < time()) {
+        $last_update = $metar['reported_on'];
+        $hours = 3 * 60 * 60;
+        while (($last_update + $hours + 120) < time()) {
+          if ($hours < 86400) {
+            $hours = $hours * 2;
+          }
+          else {
+            $hours = $hours + 86400;
+          }
+        }
+        // Add 2 minutes to allow the data to propagate to the server.
+        $data['next_update_on'] = $last_update + $hours + 120;
+      }
+      weather_store_metar($metar, $data['next_update_on']);
+    }
+    else {
+      // The download has not been successful. Calculate the time of next update
+      // according to last tries.
+      if (empty($data['metar_raw'])) {
+        // There is no entry yet, so this is the first download attempt.
+        // Create a new entry and store the current time in the #raw column.
+        $metar['icao'] = $icao;
+        $metar['#raw'] = time();
+        $next_update_on = time() + 10 * 60;
+        weather_store_metar($metar, $next_update_on);
+      }
+      else {
+        // There has been at least one download attempt. Increase the time of
+        // next update to not download every few minutes.
+        // If 24 hours are reached, we check once a day for updates.
+        // This way, we gracefully handle ICAO codes which do no longer exist.
+        // The time of the last download attempt is stored in the #raw column.
+        $last_update = $data['metar_raw'];
+        $hours = 3 * 60 * 60;
+        while (($last_update + $hours + 120) < time()) {
+          if ($hours < 86400) {
+            $hours = $hours * 2;
+          }
+          else {
+            $hours = $hours + 86400;
+          }
+        }
+        // Add 2 minutes to allow the data to propagate to the server.
+        $next_update_on = $last_update + $hours + 120;
+        $metar['icao'] = $icao;
+        $metar['#raw'] = $data['metar_raw'];
+        weather_store_metar($metar, $next_update_on);
+      }
+    }
+  }
+  else {
+    $metar = weather_parse_metar($data['metar_raw']);
+  }
+
+  return $metar;
+}
+
+
+
+/**
+ * Stores parsed METAR data in the database
+ */
+function weather_store_metar($metar, $next_update_on) {
+  // If there's already a record in the database with the same ICAO
+  // overwrite it
+  $sql = "DELETE FROM {weather} WHERE icao='%s'";
+  db_query($sql, $metar['icao']);
+
+  // Insert the new data
+  $sql = "INSERT INTO {weather}
+    (icao, next_update_on, metar_raw)
+    VALUES ('%s', %d, '%s')";
+
+  db_query($sql, $metar['icao'], $next_update_on, $metar['#raw']);
+}
+
+
+
+/**
+ * Retrieve data from weather.noaa.gov
+ */
+function _weather_retrieve_data($icao) {
+  $icao = strtoupper($icao);
+  $metar_raw = FALSE;
+  // Specify timeout in seconds
+  $timeout = 10;
+
+  // get information about the last successful data download
+  //
+  // we want to fetch via FTP, because it's much less bandwidth
+  // for downloads. if the FTP access did not work, we use
+  // HTTP POST instead.
+  $fetch = variable_get('weather_fetch', 'FTP');
+
+  // try alternative methods for fetching the METAR data via FTP
+  if ($fetch == 'FTP') {
+    $url = 'ftp://tgftp.nws.noaa.gov/data/observations/metar/stations/';
+    $url .= $icao .'.TXT';
+    if (function_exists('file_get_contents') and ini_get('allow_url_fopen')) {
+      // Create a stream context to be able to use timeouts
+      $context = stream_context_create(array('http' => array('timeout' => $timeout)));
+      $metar_raw = file_get_contents($url, FALSE, $context);
+    }
+    else if (function_exists('curl_init')) {
+      $curl = curl_init($url);
+      curl_setopt($curl, CURLOPT_TRANSFERTEXT, TRUE);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+      curl_setopt($curl, CURLOPT_TIMEOUT, $timeout);
+      $metar_raw = curl_exec($curl);
+      curl_close($curl);
+    }
+    else if (function_exists('exec')) {
+      exec("wget --quiet --timeout $timeout -O- $url", $output, $return_val);
+      if ($return_val == 0 and is_array($output)) {
+        $metar_raw = join("\n", $output);
+      }
+    }
+
+    // if we had success, store the method
+    if ($metar_raw !== FALSE) {
+      variable_set('weather_fetch', 'FTP');
+    }
+  }
+
+  // If the FTP access does not work, try via HTTP.
+  if ($metar_raw === FALSE) {
+    $url = 'http://weather.noaa.gov/mgetmetar.php?cccc=' . $icao;
+    $response = weather_drupal_http_request($url, array(), 'GET', NULL, 3, $timeout);
+    // Extract the valid METAR data from the received webpage.
+    if (preg_match("/([0-9]{4}\/[0-9]{2}\/[0-9]{2}\s+[0-9]{2}:[0-9]{2}\n$icao [0-9]{6}Z .+)/m", $response->data, $matches)) {
+      $metar_raw = $matches[1];
+      // store the method
+      variable_set('weather_fetch', 'HTTP');
+    }
+  }
+
+  // check on errors
+  if ($metar_raw === FALSE) {
+    // Make an entry about this error into the watchdog table.
+    watchdog('content', 'Download location for METAR data is not accessible.',
+      array(), WATCHDOG_ERROR);
+    // Reset the fetch method to try again FTP if HTTP didn't work either
+    variable_set('weather_fetch', 'FTP');
+    // Show a message to users with administration priviledges
+    if (user_access('administer custom weather block') or user_access('administer site configuration')) {
+      drupal_set_message(t('Download location for METAR data is not accessible.'), 'error');
+    }
+  }
+
+  return $metar_raw;
+}
+
+/**
+ * Error code indicating that the request made by drupal_http_request() exceeded
+ * the specified timeout.
+ */
+define('HTTP_REQUEST_TIMEOUT', 1);
+
+/**
+ * Perform an HTTP request.
+ *
+ * This is a flexible and powerful HTTP client implementation. Correctly handles
+ * GET, POST, PUT or any other HTTP requests. Handles redirects.
+ *
+ * This function is a modified copy of the original Drupal function,
+ * which lacks a timeout parameter. See [#967646]
+ * The code is from CVS version 1.756.2.101 and includes the patch
+ * #29 from issue [#156582].
+ *
+ * @param $url
+ *   A string containing a fully qualified URI.
+ * @param $headers
+ *   An array containing an HTTP header => value pair.
+ * @param $method
+ *   A string defining the HTTP request to use.
+ * @param $data
+ *   A string containing data to include in the request.
+ * @param $retry
+ *   An integer representing how many times to retry the request in case of a
+ *   redirect.
+ * @param $timeout
+ *   A float representing the maximum number of seconds the function call may
+ *   take. The default is 10 seconds. If a timeout occurs, the error code is set
+ *   to the HTTP_REQUEST_TIMEOUT constant.
+ * @return
+ *   An object containing the HTTP request headers, response code, protocol,
+ *   status message, headers, data and redirect status.
+ */
+function weather_drupal_http_request($url, $headers = array(), $method = 'GET', $data = NULL, $retry = 3, $timeout = 10) {
+  global $db_prefix;
+
+  $result = new stdClass();
+
+  // Parse the URL and make sure we can handle the schema.
+  $uri = parse_url($url);
+
+  if ($uri == FALSE) {
+    $result->error = 'unable to parse URL';
+    $result->code = -1001;
+    return $result;
+  }
+
+  if (!isset($uri['scheme'])) {
+    $result->error = 'missing schema';
+    $result->code = -1002;
+    return $result;
+  }
+
+  timer_start(__FUNCTION__);
+
+  switch ($uri['scheme']) {
+    case 'http':
+    case 'feed':
+      $port = isset($uri['port']) ? $uri['port'] : 80;
+      $host = $uri['host'] . ($port != 80 ? ':'. $port : '');
+      $fp = @fsockopen($uri['host'], $port, $errno, $errstr, $timeout);
+      break;
+    case 'https':
+      // Note: Only works for PHP 4.3 compiled with OpenSSL.
+      $port = isset($uri['port']) ? $uri['port'] : 443;
+      $host = $uri['host'] . ($port != 443 ? ':'. $port : '');
+      $fp = @fsockopen('ssl://'. $uri['host'], $port, $errno, $errstr, $timeout);
+      break;
+    default:
+      $result->error = 'invalid schema '. $uri['scheme'];
+      $result->code = -1003;
+      return $result;
+  }
+
+  // Make sure the socket opened properly.
+  if (!$fp) {
+    // When a network error occurs, we use a negative number so it does not
+    // clash with the HTTP status codes.
+    $result->code = -$errno;
+    $result->error = trim($errstr);
+
+    // Mark that this request failed. This will trigger a check of the web
+    // server's ability to make outgoing HTTP requests the next time that
+    // requirements checking is performed.
+    // @see system_requirements()
+    variable_set('drupal_http_request_fails', TRUE);
+
+    return $result;
+  }
+
+  // Construct the path to act on.
+  $path = isset($uri['path']) ? $uri['path'] : '/';
+  if (isset($uri['query'])) {
+    $path .= '?'. $uri['query'];
+  }
+
+  // Create HTTP request.
+  $defaults = array(
+    // RFC 2616: "non-standard ports MUST, default ports MAY be included".
+    // We don't add the port to prevent from breaking rewrite rules checking the
+    // host that do not take into account the port number.
+    'Host' => "Host: $host",
+    'User-Agent' => 'User-Agent: Drupal (+http://drupal.org/)',
+  );
+
+  // Only add Content-Length if we actually have any content or if it is a POST
+  // or PUT request. Some non-standard servers get confused by Content-Length in
+  // at least HEAD/GET requests, and Squid always requires Content-Length in
+  // POST/PUT requests.
+  $content_length = strlen($data);
+  if ($content_length > 0 || $method == 'POST' || $method == 'PUT') {
+    $defaults['Content-Length'] = 'Content-Length: '. $content_length;
+  }
+
+  // If the server url has a user then attempt to use basic authentication
+  if (isset($uri['user'])) {
+    $defaults['Authorization'] = 'Authorization: Basic '. base64_encode($uri['user'] . (!empty($uri['pass']) ? ":". $uri['pass'] : ''));
+  }
+
+  // If the database prefix is being used by SimpleTest to run the tests in a copied
+  // database then set the user-agent header to the database prefix so that any
+  // calls to other Drupal pages will run the SimpleTest prefixed database. The
+  // user-agent is used to ensure that multiple testing sessions running at the
+  // same time won't interfere with each other as they would if the database
+  // prefix were stored statically in a file or database variable.
+  if (is_string($db_prefix) && preg_match("/^simpletest\d+$/", $db_prefix, $matches)) {
+    $defaults['User-Agent'] = 'User-Agent: ' . $matches[0];
+  }
+
+  foreach ($headers as $header => $value) {
+    $defaults[$header] = $header .': '. $value;
+  }
+
+  $request = $method .' '. $path ." HTTP/1.0\r\n";
+  $request .= implode("\r\n", $defaults);
+  $request .= "\r\n\r\n";
+  $request .= $data;
+
+  $result->request = $request;
+
+  fwrite($fp, $request);
+
+  // Fetch response.
+  $response = '';
+  while (!feof($fp)) {
+    // Calculate how much time is left of the original timeout value.
+    $time_left = $timeout - timer_read(__FUNCTION__) / 1000;
+    if ($time_left <= 0) {
+      $result->code = HTTP_REQUEST_TIMEOUT;
+      $result->error = 'request timed out';
+      return $result;
+    }
+    stream_set_timeout($fp, floor($time_left), floor(1000000 * fmod($time_left, 1)));
+    $chunk = fread($fp, 1024);
+    $response .= $chunk;
+  }
+  fclose($fp);
+
+  // Parse response.
+  list($split, $result->data) = explode("\r\n\r\n", $response, 2);
+  $split = preg_split("/\r\n|\n|\r/", $split);
+
+  list($protocol, $code, $status_message) = explode(' ', trim(array_shift($split)), 3);
+  $result->protocol = $protocol;
+  $result->status_message = $status_message;
+
+  $result->headers = array();
+
+  // Parse headers.
+  while ($line = trim(array_shift($split))) {
+    list($header, $value) = explode(':', $line, 2);
+    if (isset($result->headers[$header]) && $header == 'Set-Cookie') {
+      // RFC 2109: the Set-Cookie response header comprises the token Set-
+      // Cookie:, followed by a comma-separated list of one or more cookies.
+      $result->headers[$header] .= ','. trim($value);
+    }
+    else {
+      $result->headers[$header] = trim($value);
+    }
+  }
+
+  $responses = array(
+    100 => 'Continue', 101 => 'Switching Protocols',
+    200 => 'OK', 201 => 'Created', 202 => 'Accepted', 203 => 'Non-Authoritative Information', 204 => 'No Content', 205 => 'Reset Content', 206 => 'Partial Content',
+    300 => 'Multiple Choices', 301 => 'Moved Permanently', 302 => 'Found', 303 => 'See Other', 304 => 'Not Modified', 305 => 'Use Proxy', 307 => 'Temporary Redirect',
+    400 => 'Bad Request', 401 => 'Unauthorized', 402 => 'Payment Required', 403 => 'Forbidden', 404 => 'Not Found', 405 => 'Method Not Allowed', 406 => 'Not Acceptable', 407 => 'Proxy Authentication Required', 408 => 'Request Time-out', 409 => 'Conflict', 410 => 'Gone', 411 => 'Length Required', 412 => 'Precondition Failed', 413 => 'Request Entity Too Large', 414 => 'Request-URI Too Large', 415 => 'Unsupported Media Type', 416 => 'Requested range not satisfiable', 417 => 'Expectation Failed',
+    500 => 'Internal Server Error', 501 => 'Not Implemented', 502 => 'Bad Gateway', 503 => 'Service Unavailable', 504 => 'Gateway Time-out', 505 => 'HTTP Version not supported'
+  );
+  // RFC 2616 states that all unknown HTTP codes must be treated the same as the
+  // base code in their class.
+  if (!isset($responses[$code])) {
+    $code = floor($code / 100) * 100;
+  }
+
+  switch ($code) {
+    case 200: // OK
+    case 304: // Not modified
+      break;
+    case 301: // Moved permanently
+    case 302: // Moved temporarily
+    case 307: // Moved temporarily
+      $location = $result->headers['Location'];
+      $timeout -= timer_read(__FUNCTION__) / 1000;
+      if ($timeout <= 0) {
+        $result->code = HTTP_REQUEST_TIMEOUT;
+        $result->error = 'request timed out';
+      }
+      elseif ($retry) {
+        $result = weather_drupal_http_request($result->headers['Location'], $headers, $method, $data, --$retry, $timeout);
+        $result->redirect_code = $result->code;
+      }
+      $result->redirect_url = $location;
+
+      break;
+    default:
+      $result->error = $status_message;
+  }
+
+  $result->code = $code;
+  return $result;
+}

@@ -1,0 +1,5 @@
+; $Id$
+name = Image Library Registration Terms
+description = Adds a terms of use text block and checkbox validation before users can register to use the Anaheim/OC Image Library
+package = Custom
+core = 6.x

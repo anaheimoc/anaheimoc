@@ -1,0 +1,33 @@
+<?php
+
+function anaheimoc_mods_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL){
+}
+
+/**
+* Implementation of hook_form_FORM_ID_alter
+* This implemenation modifies the views exposed form
+**/
+
+function anaheimoc_mods_form_views_exposed_form_alter(&$form, &$form_state){
+	//dpm($form);
+ 	// Make the default size of the search box bigger
+	$form['search']['#size'] = 27;
+	
+  //Change the date format of the date popup widget on exposed forms
+	  $form['date_start']['value']['#date_format'] = 'F d, Y';
+	  $form['date_end']['value']['#date_format'] = 'F d, Y';
+}
+
+function anaheimoc_mods_twitter_pull_blocks() {
+  return array(
+    0 => (object) array(
+      'delta' => 'anaheimoc_mods_twitter_block_0',
+      'tweetkey' => '@anaheim_oc',
+      'title' => 'Anaheim/OC on Twitter',
+      'name'  => 'Anaheim/OC Tweets',   
+      'number_of_items' => 5,
+      'theme_key' => 'twitter_pull_listing',   
+    )
+  );
+ 
+}

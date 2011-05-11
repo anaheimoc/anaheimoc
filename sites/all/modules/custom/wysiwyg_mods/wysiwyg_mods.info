@@ -1,0 +1,4 @@
+name = WYSIWYG Mods
+description = A small module to override some Wysiwyg settings.
+package = Custom
+core = 6.x
