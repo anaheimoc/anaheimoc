@@ -53,3 +53,12 @@ function anaheimoc_event_node_info() {
   );
   return $items;
 }
+
+/**
+ * Implementation of hook_views_api().
+ */
+function anaheimoc_event_views_api() {
+  return array(
+    'api' => '2',
+  );
+}

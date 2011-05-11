@@ -173,8 +173,8 @@ function anaheimoc_event_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'hidden',
-        'exclude' => 1,
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'default',
@@ -215,7 +215,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Admission',
-      'weight' => '7',
+      'weight' => '5',
       'description' => '',
       'type' => 'text_textfield',
       'module' => 'text',
@@ -237,8 +237,8 @@ function anaheimoc_event_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'hidden',
-        'exclude' => 1,
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'default',
@@ -273,7 +273,7 @@ function anaheimoc_event_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Event description',
-      'weight' => '2',
+      'weight' => '1',
       'description' => '',
       'type' => 'text_textarea',
       'module' => 'text',
@@ -296,7 +296,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'full' => array(
         'format' => 'hidden',
-        'exclude' => 0,
+        'exclude' => 1,
       ),
       '4' => array(
         'format' => 'default',
@@ -354,8 +354,8 @@ function anaheimoc_event_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'hidden',
-        'exclude' => 1,
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'default',
@@ -388,7 +388,7 @@ function anaheimoc_event_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Public Information Phone',
-      'weight' => '6',
+      'weight' => '4',
       'description' => '',
       'type' => 'phone_textfield',
       'module' => 'phone',
@@ -410,8 +410,8 @@ function anaheimoc_event_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'hidden',
-        'exclude' => 1,
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'default',
@@ -451,7 +451,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Event type',
-      'weight' => 0,
+      'weight' => '8',
       'description' => '',
       'type' => 'content_taxonomy_options',
       'module' => 'content_taxonomy_options',
@@ -473,8 +473,8 @@ function anaheimoc_event_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'hidden',
-        'exclude' => 1,
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'default',
@@ -509,7 +509,7 @@ function anaheimoc_event_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Hours',
-      'weight' => '5',
+      'weight' => '3',
       'description' => '',
       'type' => 'text_textfield',
       'module' => 'text',
@@ -531,8 +531,8 @@ function anaheimoc_event_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'hidden',
-        'exclude' => 1,
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'default',
@@ -575,7 +575,7 @@ function anaheimoc_event_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Website',
-      'weight' => '8',
+      'weight' => '6',
       'description' => '',
       'type' => 'link',
       'module' => 'link',
@@ -661,14 +661,14 @@ function anaheimoc_event_content_default_fields() {
       'weight' => '3',
       'parent' => '',
       'label' => array(
-        'format' => 'hidden',
+        'format' => 'above',
       ),
       'teaser' => array(
         'format' => 'hidden',
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'hidden',
+        'format' => 'default',
         'exclude' => 0,
       ),
       '4' => array(
@@ -1115,7 +1115,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Location/Address',
-      'weight' => '3',
+      'weight' => '2',
       'description' => '',
       'type' => 'location',
       'module' => 'location_cck',
@@ -1224,7 +1224,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Partner reference',
-      'weight' => '16',
+      'weight' => '15',
       'description' => '',
       'type' => 'nodereference_autocomplete',
       'module' => 'nodereference',
@@ -1247,7 +1247,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'full' => array(
         'format' => 'hidden',
-        'exclude' => 0,
+        'exclude' => 1,
       ),
       '4' => array(
         'format' => 'default',
@@ -1302,7 +1302,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Video',
-      'weight' => '9',
+      'weight' => '7',
       'description' => '',
       'type' => 'emvideo_textfields',
       'module' => 'emvideo',
