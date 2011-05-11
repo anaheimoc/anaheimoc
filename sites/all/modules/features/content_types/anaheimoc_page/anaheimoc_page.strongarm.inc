@@ -75,14 +75,14 @@ function anaheimoc_page_strongarm() {
   $strongarm->value = array(
     'title' => '-5',
     'body_field' => '-2',
-    'revision_information' => '0',
-    'author' => '1',
-    'options' => '2',
-    'comment_settings' => '4',
+    'revision_information' => '1',
+    'author' => '2',
+    'options' => '3',
+    'comment_settings' => '5',
     'menu' => '-4',
-    'path' => '5',
-    'attachments' => '3',
-    'domain' => '-1',
+    'path' => '6',
+    'attachments' => '4',
+    'domain' => '0',
   );
 
   $export['content_extra_weights_anaheimoc_page'] = $strongarm;
