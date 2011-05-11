@@ -1,7 +1,0 @@
-; $Id $
-name = "Domain Alias Redirect"
-description = "Provide domain redirection to an alias - useful for development/stage switches"
-core = 6.x
-package = Domain Access
-dependencies[] = domain
-dependencies[] = domain_alias

@@ -1,4 +1,0 @@
-name = Taxonomy Path
-description = A small module to add a custom field to the taxonomy form
-package = Custom
-core = 6.x
