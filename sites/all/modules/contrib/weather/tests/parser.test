@@ -1,0 +1,143 @@
+<?php
+/* $Id: parser.test,v 1.1.2.9 2010/02/06 07:38:55 toddy Exp $
+ *
+ * Copyright © 2008-2010 Tobias Quathamer <t.quathamer@gmx.net>
+ *
+ * This file is part of the Drupal Weather module.
+ *
+ * Weather is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * Weather is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Weather; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+
+
+class WeatherParserTestCase extends DrupalWebTestCase {
+  function getInfo() {
+    return array(
+      'name' => t('Parser'),
+      'description' => t('Tests parsing of raw METAR data.'),
+      'group' => t('Weather'),
+    );
+  }
+
+
+
+  /**
+   * Set up testing environment
+   */
+  function setUp() {
+    parent::setUp('weather');
+  }
+
+
+
+  /**
+   * Test the parser with normal data.
+   */
+  function testNormalMETAR() {
+    // This user is allowed to access the weather pages
+    $user = $this->drupalCreateUser(array(
+      'access content', 'access weather pages'
+    ));
+    $this->drupalLogin($user);
+    $data = array(
+      'EDDH' => array(
+        'raw' => "2008/12/07 12:50\nEDDH 071250Z 27005KT 9999 -SHRA BKN025 07/04 Q1021 NOSIG",
+        'expected' => array("Hamburg-Fuhlsbüttel", "Broken clouds, light rain showers",
+          "Temperature: 7&thinsp;°C", "Wind: West, 9.3&thinsp;km/h", "Pressure: 1021&thinsp;hPa",
+          "Rel. Humidity: 81&thinsp;%", "Visibility: 10&thinsp;km"
+        )
+      ),
+      'EDDH' => array(
+        'raw' => "2008/11/29 11:20\nEDDH 291120Z 15004KT 1200 R23/1600N R15/1500N SN VV/// 01/M00 Q0995 NOSIG",
+        'expected' => array("Hamburg-Fuhlsbüttel", "Overcast, snow",
+          "Temperature: 1&thinsp;°C", "Wind: South-Southeast, 7.4&thinsp;km/h",
+          "Pressure: 995&thinsp;hPa", "Rel. Humidity: 93&thinsp;%", "Visibility: 1.2&thinsp;km"
+        )
+      ),
+      'LICF' => array(
+        'raw' => "2008/12/04 02:55\nLICF 040255Z 02014G31KT 6000 RA BKN008 BKN080 OVC090 12/11 Q0994 RMK OVC QUK / QUL / VIS MAR 6 KM MON INVIS NC VIS MIN 6000",
+        'expected' => array("Messina", "Overcast, rain", "Temperature: 12&thinsp;°C",
+          "Wind: North-Northeast, 25.9&thinsp;km/h, gusts up to 57.4&thinsp;km/h",
+          "Pressure: 994&thinsp;hPa", "Rel. Humidity: 94&thinsp;%", "Visibility: 6&thinsp;km"
+        )
+      ),
+      'CYYZ' => array(
+        'raw' => "2008/12/07 14:00\nCYYZ 071400Z 31026G33KT 15SM FEW030 FEW120 FEW210 M09/M15 A2984 RMK CU2AC1CI1 CI TR SLP114",
+        'expected' => array("Toronto Pearson Int&#039;l. Ont.", "Few clouds",
+          "Temperature: -9&thinsp;°C",
+          "Wind: Northwest, 48.2&thinsp;km/h, gusts up to 61.1&thinsp;km/h",
+          "Pressure: 1010&thinsp;hPa", "Rel. Humidity: 62&thinsp;%",
+          "Visibility: 24.1&thinsp;km"
+        )
+      ),
+      'FACT' => array(
+        'raw' => "2008/12/07 14:00\nFACT 071400Z 20016KT CAVOK 24/17 Q1013 NOSIG",
+        'expected' => array("Cape Town, Cape Town International Airport", "Clear sky",
+          "Temperature: 24&thinsp;°C", "Wind: South-Southwest, 29.6&thinsp;km/h",
+          "Pressure: 1013&thinsp;hPa", "Rel. Humidity: 65&thinsp;%",
+          "Visibility: 10&thinsp;km"
+        )
+      ),
+      'ULLI' => array(
+        'raw' => "2008/12/22 19:30\nULLI 221930Z 14006MPS 9999 OVC006 DZ M03/M04 Q0997 10520545 NOSIG RMK OBST OBSC",
+        'expected' => array("St. Peterburg", "Overcast, drizzle",
+          "Temperature: -3&thinsp;°C", "Wind: Southeast, 21.6&thinsp;km/h",
+          "Pressure: 997&thinsp;hPa", "Rel. Humidity: 93&thinsp;%",
+          "Visibility: 10&thinsp;km"
+        )
+      ),
+      'EGPL' => array(
+        'raw' => "2008/12/22 20:20\nEGPL 222020Z AUTO 21012KT 7000NDV FEW006/// SCT010/// BKN014/// 09/08 Q1026",
+        'expected' => array("Benbecula", "Broken clouds",
+          "Temperature: 9&thinsp;°C", "Wind: South-Southwest, 22.2&thinsp;km/h",
+          "Pressure: 1026&thinsp;hPa", "Rel. Humidity: 93&thinsp;%",
+          "Visibility: 7&thinsp;km"
+        )
+      ),
+      'EGUB' => array(
+        'raw' => "2008/12/22 19:50\nEGUB 221950Z AUTO 18003KT 5000NDV BR OVC013/// 10/09 Q1035",
+        'expected' => array("Benson", "Overcast, mist",
+          "Temperature: 10&thinsp;°C", "Wind: South, 5.6&thinsp;km/h",
+          "Pressure: 1035&thinsp;hPa", "Rel. Humidity: 94&thinsp;%",
+          "Visibility: 5&thinsp;km"
+        )
+      ),
+      'EPGD' => array(
+        'raw' => "2010/01/30 20:30\nEPGD 302030Z 27013KT 9999 -SHSN BKN013 M02/M04 Q0984 R11/490236",
+        'expected' => array("Gdańsk-Rębiechowo", "Broken clouds, light snow showers",
+          "Temperature: -2&thinsp;°C", "Wind: West, 24.1&thinsp;km/h",
+          "Pressure: 984&thinsp;hPa", "Rel. Humidity: 86&thinsp;%",
+          "Visibility: 10&thinsp;km"
+        )
+      ),
+    );
+    // Disable updates by using five minutes in the future
+    $next_update_on = time() + 300;
+    foreach ($data as $icao => $metar) {
+      $res = db_query("DELETE FROM {weather} WHERE icao = '%s'", $icao);
+      $this->assertTrue($res);
+      $res = db_query("INSERT INTO {weather} (icao, next_update_on, metar_raw)
+        VALUES ('%s', %d, '%s')", $icao, $next_update_on, $metar['raw']);
+      $this->assertTrue($res);
+      $this->drupalGet('weather/'. $icao);
+      foreach ($metar['expected'] as $text) {
+        $this->assertText($text);
+      }
+      $res = db_query("DELETE FROM {weather} WHERE icao = '%s'", $icao);
+      $this->assertTrue($res);
+    }
+    $this->drupalLogout();
+  }
+}

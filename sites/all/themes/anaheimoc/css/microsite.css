@@ -1,0 +1,83 @@
+/*  MICROSITE CSS
+********************************************* */
+
+/* SPECIAL SUBNAVIGATION LINKS
+********************************************* */
+body.node-type-microsite .preface-top .view-display-id-block_4 div.item-list ul{
+margin: 0;
+}
+
+body.node-type-microsite .preface-top .view-display-id-block_4 div.item-list ul li{
+display: block;
+float: left;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+body.node-type-microsite .preface-top .view-display-id-block_4 div.item-list ul li a:link,
+body.node-type-microsite .preface-top .view-display-id-block_4 div.item-list ul li a:visited{
+padding: 10px;
+}
+
+/* MICROSITE DATE FIELD
+********************************************** */
+body.node-type-microsite div.field-field-microsite-conf-dates{
+margin: 10px 0;
+}
+
+/* SHOW YOUR BADGE AND SAVE NODE CONTENT VIEW
+********************************************* */
+
+.view-id-microsite_blocks.view-display-id-node_content_1 table.views-view-grid{
+table-layout: fixed;
+}
+
+.view-id-microsite_blocks.view-display-id-node_content_1 table.views-view-grid td{
+padding: 0;
+padding-right: 20px;
+width: 160px;
+}
+
+.view-id-microsite_blocks.view-display-id-node_content_1 table.views-view-grid td.col-last{
+width: 140px;
+}
+
+
+/* MICROSITE COUNTDOWN WIDGET
+******************************************** */
+.view-id-microsite_blocks .views-field-field-microsite-conf-countdown-value{
+font-size: 14px;
+line-height: 150%;
+text-align: center;
+}
+
+/* MICROSITE SOCIAL MEDIA ICONS
+******************************************** */
+
+body.node-type-microsite .sidebar-first-inner ul.links li a.twitter-icon,
+body.node-type-microsite .sidebar-first-inner ul.links li a.facebook-icon,
+body.node-type-microsite .sidebar-first-inner ul.links li a.youtube-icon,
+body.node-type-microsite .sidebar-first-inner ul.links li a.linked-icon{
+display: block;
+float: left;
+height: 25px; width: 25px;
+text-indent: -9999px;
+padding: 5px;
+}
+
+body.node-type-microsite .sidebar-first-inner ul.links li a.twitter-icon{
+background: url(img/twitter_25.png) no-repeat center center;
+}
+
+body.node-type-microsite .sidebar-first-inner ul.links li a.facebook-icon{
+background: url(img/facebook_25.png) no-repeat center center;	
+}
+
+body.node-type-microsite .sidebar-first-inner ul.links li a.youtube-icon{
+background: url(img/youtube_25.png) no-repeat center center;
+}
+
+body.node-type-microsite .sidebar-first-inner ul.links li a.linked-icon{
+background: url(img/linkedin_25.png) no-repeat center center;
+}

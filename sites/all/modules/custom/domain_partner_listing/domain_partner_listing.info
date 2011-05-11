@@ -1,0 +1,4 @@
+name = Domain Partner Listing
+description = Custom Module to create partner listing content type actions
+package = Custom
+core = 6.x

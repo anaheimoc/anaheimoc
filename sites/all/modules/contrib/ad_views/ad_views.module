@@ -1,0 +1,39 @@
+<?php
+// $Id: ad_views.module,v 1.1.2.3 2009/09/20 01:45:43 milesgillham Exp $
+
+/**
+ * @file
+ * Integrate the Views module with:
+ *   Ad Module (ad)
+ */
+
+/*
+ * Implements hook_views_api()
+ */
+
+function ad_views_views_api() {
+  return array('api' => 2);
+}
+
+/**
+* Theme preprocess function for ad-views-view-row-ad.tpl.php
+*/
+function template_preprocess_ad_views_view_row_ad(&$vars) {
+  // Offload to ad module for rendering, using preferred display method
+  $vars['content'] = ad(FALSE, 1, array('nids' => $vars['row']->aid, 'ad_display' => $vars['options']['ad_display']));
+}
+
+
+/**
+ * Implementation of hook_help().
+ */
+function ad_views_help($path, $arg) {
+  $output = '';
+  switch ($path) {
+    case 'admin/help#ad_views':
+      $output = '<p>'. t('The ad_views module uses the ad and views modules to provide Views support for Ads') .'</p>';
+      break;
+  }
+  return $output;
+}
+

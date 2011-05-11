@@ -1,0 +1,29 @@
+$Id: CHANGELOG.txt,v 1.3 2009/12/05 18:35:24 sfyn Exp $
+
+=== Slideshare 6.x-1.x-dev ===
+
+2009-12-05
+- sfyn: Added parsing for all embed formats, updated URL parsing, and added input checking functions to the extract hook
+
+2009-11-25
+- bug report #476646 by Steel Rat: Slideshare embed responds to custom
+  dimensions.
+
+2009-11-23
+- bug report #639514 by sfyn: Fixed bug introduced by original patch preventing
+  other providers from functioning
+
+2009-11-22
+- Upgrading INSTALL.txt
+- Right API link: http://www.slideshare.net/developers/applyforapi
+- bug report #639478 by sfyn: providers/slideshare.inc has an outdated link to
+  apply for the api keys
+- bug report #639514 by sfyn: SlideShare does not accept url arguments
+
+2009-04-06
+- #425054 by bohz: Slideshare.inc - Call-time pass-by-reference deprecated 
+  problem corrected
+
+2009-03-07
+- Initial commit of slideshare module. Slideshare integration with emvideo 
+  module.

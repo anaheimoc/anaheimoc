@@ -1,0 +1,589 @@
+<?php
+// $Id: yahoo_weather_forecast.module,v 1.1.2.10 2010/02/04 16:17:34 pl2 Exp $
+
+/**
+ * @file
+ * Yahoo weather forecast module.
+ *
+ * Provides a block with the weather for a city.
+ */
+
+/**
+ * Implementation of hook_perm().
+ */
+function yahoo_weather_forecast_perm() {
+  return array('administer yahoo weather', 'use yahoo weather');
+}
+
+/**
+ * Implementation of hook_block().
+ */
+function yahoo_weather_forecast_block($op = 'list', $delta = 0, $edit = array()) {
+  if ($op == 'list') {
+    $result = db_query("SELECT * FROM {yahoo_weather_forecast_blocks} ORDER BY delta ASC");
+
+    while ($item = db_fetch_object($result)) {
+      $blocks[$item->delta] = array('info' => t('Yahoo weather forecast city !city', array('!city' => $item->name_city)));
+    }
+    return $blocks;
+  }
+
+  if ($op == 'save') {
+    yahoo_weather_forecast_settings_edit_form_save($edit);
+  }
+
+  if ($op == 'configure') {
+    return yahoo_weather_forecast_settings_edit_form($delta);
+  }
+
+  if ($op == 'view') {
+    return yahoo_weather_forecast_content_block($delta);
+  }
+}
+
+/**
+ * Generate content for block weather
+ */
+function yahoo_weather_forecast_content_block($delta) {
+  $block = array();
+  $data = db_fetch_array(db_query("SELECT * FROM {yahoo_weather_forecast_blocks} WHERE delta = %d", $delta));
+
+  $block['subject'] = t('Weather for %city', array('%city' => $data['name_city']));
+  $block['content'] = theme('yahoo_weather_forecast_content', $data);
+
+  return $block;
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function yahoo_weather_forecast_menu() {
+  $items = array();
+
+  $items['admin/settings/yahoo-weather'] = array(
+    'title' => 'Yahoo weather forecast',
+    'page callback' => 'yahoo_weather_forecast_settings_page',
+    'access arguments' => array('administer yahoo weather'),
+  );
+
+  $items['admin/settings/yahoo-weather/delete/%yahoo_weather_forecast_block'] = array(
+    'title' => 'Yahoo weather forecast',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('yahoo_weather_forecast_delete_block_form', 4),
+    'access arguments' => array('administer yahoo weather'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Loads a block instance.
+ */
+function yahoo_weather_forecast_block_load($delta) {
+  return db_fetch_object(db_query("SELECT name_city, delta FROM {yahoo_weather_forecast_blocks} WHERE delta = %d", $delta));
+}
+
+function yahoo_weather_forecast_delete_block_form($form_state, $block) {
+  $form = array();
+
+  $form['delta'] = array(
+    '#type' => 'hidden',
+    '#value' => $block->delta,
+  );
+  $form['name_city'] = array(
+    '#type' => 'hidden',
+    '#value' => $block->name_city,
+  );
+
+  return confirm_form($form, t('Are you sure deletethe block for the city %city?', array('%city' => $block->name_city)), 'admin/settings/yahoo-weather');
+}
+
+function yahoo_weather_forecast_delete_block_form_submit($form, $form_state) {
+  $delta = $form_state['values']['delta'];
+  $name_city = $form_state['values']['name_city'];
+
+  db_query("DELETE FROM {yahoo_weather_forecast_blocks} WHERE delta = %d", $delta);
+  db_query("DELETE FROM {blocks} WHERE module = 'yahoo_weather_forecast' AND delta = %d", $delta);
+  _block_rehash();
+  drupal_set_message(t('Delete successful city %city', array('%city' => $name_city)), 'status');
+  drupal_goto('admin/settings/yahoo-weather');
+}
+
+function yahoo_weather_forecast_settings_page() {
+  $rows = array();
+  $headers = array(
+    t('Name city'),
+    t('Zip code'),
+    array('data' => t('Ops'), 'colspan' => 2),
+  );
+  $output = '';
+  $count = db_result(db_query("SELECT COUNT(*) FROM {yahoo_weather_forecast_blocks}"));
+  $result = db_query("SELECT * FROM {yahoo_weather_forecast_blocks} ORDER BY delta DESC");
+
+  if (!$count) {
+    $output .= '<p>'. t('There are no blocks created. Please use the form below to create it.') .'</p>';
+  }
+  else {
+    $show_message = FALSE;
+    while ($item = db_fetch_object($result)) {
+      $region = db_result(db_query("SELECT region FROM {blocks} WHERE module='yahoo_weather_forecast' AND delta=%d", $item->delta));
+      $rows[] = array(
+        $item->name_city,
+        $item->zip_code,
+        $actions,
+        l(t('Config block'), 'admin/build/block/configure/yahoo_weather_forecast/'. $item->delta, array('query' => drupal_get_destination())),
+        l(t('Delete'), 'admin/settings/yahoo-weather/delete/'. $item->delta),
+      );
+
+      if (!$region) {
+        $show_message = TRUE;
+      }
+    }
+    $output .= theme('table', $headers, $rows);
+  }
+
+  //Show message that have a new block
+   if ($show_message && empty($_SESSION['messages']['status'])) {
+     drupal_set_message(t('There are not any Yahoo weather block placed in any region. Place the blocks in the <a href="!url">block config page</a>', array('!url' => url('admin/build/block'))), 'status');
+  }
+
+  //Add new item
+  $output .= drupal_get_form('yahoo_weather_forecast_settings_form');
+
+  return $output;
+}
+
+/**
+ * Implementation of hook_cron().
+ */
+function yahoo_weather_forecast_cron() {
+  $result = db_query("SELECT delta FROM {yahoo_weather_forecast_blocks}");
+
+  while ($item = db_fetch_object($result)) {
+    yahoo_weather_forecast_update_weather_info($item->delta);
+  }
+}
+
+/**
+ * yahoo_weather_forecast_update_weather_info
+ *
+ * @access public
+ * @return void
+ */
+function yahoo_weather_forecast_update_weather_info($delta) {
+  $weather_info = serialize(_yahoo_weather_forecast_process_xml($delta));
+
+  db_query("UPDATE {yahoo_weather_forecast_blocks} SET data = '%s' WHERE delta = %d", $weather_info, $delta);
+}
+
+/**
+ * Settings form
+ *
+ * @access public
+ * @return form array
+ */
+function yahoo_weather_forecast_settings_form() {
+  $form = array();
+
+  $form['ywf'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Add new item'),
+  );
+  $form['ywf']['city_code'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Yahoo city code'),
+    '#description' => t('To get this code go to !link and look up a city, the code will appear in the url.', array('!link' => l('Yahoo weather', 'http://weather.yahoo.com', array('attributes' => array('target' => '_new'))))),
+    '#default_value' => '',
+    '#required' => TRUE,
+  );
+
+  $form['ywf']['city_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Name of the city'),
+    '#description' => t('Used fot the block title.'),
+  );
+
+  $form['ywf']['unit'] = array(
+    '#type' => 'select',
+    '#title' => t('Temperature units'),
+    '#options' => array('f' => t('Fahrenheit'), 'c' => t('Celsius')),
+    '#default_value' => 'c',
+    '#description' => t('Other measurement units will be automatically set acording to this one.'),
+  );
+
+  $form['ywf']['show_display'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Display options'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+  $show_options = array(
+    'current' => t('Show current'),
+    'temperature' => t('Show temperature'),
+    'wind' => t('Show wind'),
+    'feels_like' => t('Show feels like'),
+    'humidity' => t('Show humidity'),
+    'visibility' => t('Show visibility'),
+    'pressure' => t('Show pressure'),
+    'sunrise_sunset' => t('Show sunrise/sunset'),
+    'forecast' => t('Show forecast'),
+    'forecast_description' => t('Show forecast description'),
+  );
+
+  $form['ywf']['show_display']['show_options'] = array(
+    '#type' => 'checkboxes',
+    '#options' => $show_options,
+    '#default_value' => yahoo_weather_forecast_get_defaults('show_options'),
+  );
+
+  $form['ywf']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Add'),
+  );
+
+  return $form;
+}
+
+/**
+ * yahoo_weather_forecast_settings_form_submit
+ *
+ * @param mixed $form
+ * @param mixed $form_state
+ * @access public
+ * @return void
+ */
+function yahoo_weather_forecast_settings_form_submit($form, &$form_state) {
+  $values = $form_state['values'];
+  $options = serialize($values['show_options']);
+
+  db_query("INSERT INTO {yahoo_weather_forecast_blocks} (zip_code, name_city, units, display_options) VALUES('%s', '%s', '%s', '%s')", $values['city_code'], $values['city_name'], $values['unit'], $options);
+  $delta = db_result(db_query("SELECT delta FROM {yahoo_weather_forecast_blocks} ORDER BY delta DESC LIMIT 1"));
+
+  drupal_set_message(t('New block created'), 'status');
+  yahoo_weather_forecast_update_weather_info($delta);
+
+  cache_clear_all();
+}
+
+/**
+ * Settings edit form block
+ *
+ * @access public
+ * @return form array
+ */
+function yahoo_weather_forecast_settings_edit_form($delta) {
+  $form = array();
+
+  $data = db_fetch_object(db_query("SELECT * FROM {yahoo_weather_forecast_blocks} WHERE delta=%d", $delta));
+  $data->display_options = unserialize($data->display_options);
+
+  $form['ywf'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Edit data'),
+  );
+  $form['ywf']['city_code'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Yahoo city code'),
+    '#description' => t('To get this code go to !link and look up a city, the code will appear in the url.', array('!link' => l('Yahoo weather', 'http://weather.yahoo.com', array('attributes' => array('target' => '_new'))))),
+    '#default_value' => $data->zip_code,
+    '#required' => TRUE,
+  );
+
+  $form['ywf']['city_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Name of the city'),
+    '#default_value' => $data->name_city,
+    '#description' => t('Used fot the block title.'),
+  );
+
+  $form['ywf']['unit'] = array(
+    '#type' => 'select',
+    '#title' => t('Temperature units'),
+    '#options' => array('f' => t('Fahrenheit'), 'c' => t('Celsius')),
+    '#default_value' => $data->units,
+    '#description' => t('Other measurement units will be automatically set acording to this one.'),
+  );
+
+  $form['ywf']['show_display'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Display options'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+  $show_options = array(
+    'current' => t('Show current'),
+    'temperature' => t('Show temperature'),
+    'wind' => t('Show wind'),
+    'feels_like' => t('Show feels like'),
+    'humidity' => t('Show humidity'),
+    'visibility' => t('Show visibility'),
+    'pressure' => t('Show pressure'),
+    'sunrise_sunset' => t('Show sunrise/sunset'),
+    'forecast' => t('Show forecast'),
+    'forecast_description' => t('Show forecast description'),
+  );
+  $form['ywf']['show_display']['show_options'] = array(
+    '#type' => 'checkboxes',
+    '#options' => $show_options,
+    '#default_value' => $data->display_options,
+  );
+  $form['delta'] = array(
+    '#type' => 'hidden',
+    '#value' => $delta,
+  );
+
+  return $form;
+}
+
+/**
+ * yahoo_weather_forecast_settings_form_save
+ *
+ * @param mixed $form
+ * @param mixed $form_state
+ * @access public
+ * @return void
+ */
+function yahoo_weather_forecast_settings_edit_form_save($values) {
+  $options = serialize($values['show_options']);
+
+  db_query("UPDATE {yahoo_weather_forecast_blocks} SET zip_code = '%s', name_city ='%s', units = '%s', display_options = '%s' WHERE delta = %d", $values['city_code'], $values['city_name'], $values['unit'], $options, $values['delta']);
+  yahoo_weather_forecast_update_weather_info($values['delta']);
+}
+
+
+/**
+ * Get variable default values
+ *
+ * @param mixed $var variable name
+ * @access public
+ * @return variable default value
+ */
+function yahoo_weather_forecast_get_defaults($var) {
+  $defaults = array(
+    'show_options' => array(
+      'current' => 'current',
+      'temperature' => 'temperature',
+      'wind' => 'wind',
+      'feels_like' => 'feels_like',
+      'humidity' => 'humidity',
+      'visibility' => 'visibility',
+      'pressure' => 'pressure',
+      'sunrise_sunset' => 'sunrise_sunset',
+      'forecast' => 'forecast',
+      'forecast_description' => 'forecast_description',
+    ),
+  );
+
+  return $defaults[$var];
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function yahoo_weather_forecast_theme() {
+  return array(
+    'yahoo_weather_forecast_content' => array(
+      'arguments' => array('weather_info' => array()),
+      'template' => 'yahoo-weather-forecast-content',
+    ),
+  );
+}
+
+/**
+ * Preprocess variables for weather block
+ *
+ * @param mixed $vars
+ * @access public
+ * @return void
+ */
+function template_preprocess_yahoo_weather_forecast_content(&$vars) {
+  module_load_include('inc', 'yahoo_weather_forecast');
+
+  drupal_add_css(drupal_get_path('module', 'yahoo_weather_forecast') .'/yahoo_weather_forecast.css');
+
+  $weather_info = $vars['weather_info'];
+
+  if (!is_array($weather_info)) {
+    return;
+  }
+
+  $show_options = unserialize($weather_info['display_options']);
+  $weather_info['data'] = unserialize($weather_info['data']);
+  $sunrise = explode(' ', $weather_info['data']['astronomy']['sunrise']);
+  $sunset = explode(' ', $weather_info['data']['astronomy']['sunset']);
+  $date_location = strtotime($weather_info['data']['condition']['date']);
+
+  if (strlen($sunrise[0]) < 5) {
+    $sunrise[0] = '0'. $sunrise[0];
+  }
+
+  $date_loc_str = date('h:i', $date_location);
+  $date_loc_ampm = date('a', $date_location);
+  if (($sunrise[0] < $date_loc_str && $date_loc_ampm == 'am') || ($sunset[0] > $date_loc_str && $date_loc_ampm == 'pm')) {
+    $daylight = 'day';
+  }
+  else {
+    $daylight = 'night';
+  }
+
+  $vars['daylight'] = $daylight;
+
+  if ($show_options['current']) {
+    $img = yahoo_weather_forecast_img_associate($weather_info['data']['condition']['code']);
+
+    if (!(($weather_info['data']['condition']['code'] >= 27 && $weather_info['data']['condition']['code'] <= 34) || $weather_info['data']['condition']['code'] == 3200)) {
+      $prefix = "$daylight-";
+    }
+
+    $src = drupal_get_path('module', 'yahoo_weather_forecast') .'/images/'. $prefix . $img['file'];
+    $vars['current_image'] = theme('image', $src, '', $img['title'], $img['title']);
+  }
+
+  if ($show_options['temperature']) {
+    $vars['temperature'] = $weather_info['data']['condition']['temp'];
+    $vars['temperature_units'] = $weather_info['data']['units']['temperature'];
+  }
+
+  if ($show_options['current']) {
+    $vars['current'] = t($weather_info['data']['condition']['text']);
+  }
+
+  if ($show_options['wind']) {
+    $compass = array('N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N');
+    $direction = $weather_info['wind']['direction'];
+    $wind_direction = $compass[round($direction / 22.5)];
+    $vars['wind_direction'] = $wind_direction;
+    $vars['wind_speed'] = $weather_info['data']['wind']['speed'];
+    $vars['speed_units'] = $weather_info['data']['units']['speed'];
+  }
+
+  if ($show_options['feels_like']) {
+    $vars['feels_like'] = $weather_info['data']['wind']['chill'];
+  }
+
+  if ($show_options['humidity']) {
+    $vars['humidity'] = $weather_info['data']['atmosphere']['humidity'];
+  }
+
+  if ($show_options['visibility']) {
+    $vars['visibility'] = $weather_info['data']['atmosphere']['visibility'];
+    $vars['distance_units'] = $weather_info['data']['units']['distance'];
+  }
+
+  if ($show_options['pressure']) {
+    $vars['pressure'] = $weather_info['data']['atmosphere']['pressure'];
+    $vars['pressure_units'] = $weather_info['data']['units']['pressure'];
+  }
+
+  if ($show_options['sunrise_sunset']) {
+    $vars['sunrise'] = $weather_info['data']['astronomy']['sunrise'];
+    $vars['sunset'] = $weather_info['data']['astronomy']['sunset'];
+  }
+
+
+  $vars['forecasts'] = array();
+  if ($show_options['forecast']) {
+    foreach ($weather_info['data']['forecasts'] as $key => $value) {
+      $img = yahoo_weather_forecast_img_associate($value['code']);
+      $prefix = '';
+      if (!(($value['code'] >= 27 && $value['code'] <= 34) || $value['code'] == 3200)) {
+        $prefix = "$daylight-";
+      }
+
+      $src = drupal_get_path('module', 'yahoo_weather_forecast') . "/images/$prefix". $img['file'];
+      $image = theme('image', $src, $img['title'], $img['title']);
+      $vars['forecasts'][$key]['image'] = $image;
+
+      if ($show_options['forecast_description']) {
+        $vars['forecasts'][$key]['text'] = $value['text'];
+        $vars['forecasts'][$key]['label'] = (($key == 0) ? t('Today') : t('Tomorrow'));
+      }
+
+      $vars['forecasts'][$key]['high'] = $value['high'];
+      $vars['forecasts'][$key]['low'] = $value['low'];
+    }
+  }
+}
+
+/**
+ * Get weather info from Yahoo weather API.
+ *
+ * @access protected
+ * @return void
+ */
+function _yahoo_weather_forecast_process_xml($delta) {
+  $data = db_fetch_object(db_query("SELECT zip_code, name_city, units FROM {yahoo_weather_forecast_blocks} WHERE delta=%d", $delta));
+  $code = $data->zip_code;
+  $units = $data->units;
+  $url = "http://weather.yahooapis.com/forecastrss?w=$code&u=$units";
+  $file = file_get_contents($url);
+  $xml = simplexml_load_string($file);
+  $ns = $xml->getNamespaces(TRUE);
+  $xml->registerXPathNamespace('c', $ns['yweather']);
+
+  if (!isset($xml->channel->link)) {
+    return t('City not found');
+  }
+
+  $element_units = $xml->xpath('//c:units');
+  $element_wind = $xml->xpath('//c:wind');
+  $element_atmosphere = $xml->xpath('//c:atmosphere');
+  $element_astronomy =  $xml->xpath('//c:astronomy');
+  $element_condition = $xml->xpath('//c:condition');
+  $element_forecast = $xml->xpath('//c:forecast');
+
+  //units
+  $units = array();
+  foreach ($element_units[0]->attributes() as $a => $b) {
+    $units[$a] = (string)$b;
+  }
+
+  //wind
+  $wind = array();
+  foreach ($element_wind[0]->attributes() as $a => $b) {
+    $wind[$a] = (string)$b;
+  }
+
+  //atmosphere
+  $atmosphere = array();
+  foreach ($element_atmosphere[0]->attributes() as $a => $b) {
+    $atmosphere[$a] = (string)$b;
+  }
+
+  //astronomy
+  $astronomy = array();
+  foreach ($element_astronomy[0]->attributes() as $a => $b) {
+    $astronomy[$a] = (string)$b;
+  }
+
+  //condition
+  $condition = array();
+  foreach ($element_condition[0]->attributes() as $a => $b) {
+    $condition[$a] = (string)$b;
+  }
+
+  //forecast
+  $forecasts = array();
+  foreach ($element_forecast as $key => $value) {
+    $aux = array();
+    foreach ($element_forecast[$key]->attributes() as $a => $b) {
+      $aux[$a] = (string)$b;
+    }
+    $forecasts[] = $aux;
+  }
+
+  $weather_info = array(
+    'units' => $units,
+    'wind' => $wind,
+    'atmosphere' => $atmosphere,
+    'astronomy' => $astronomy,
+    'condition' => $condition,
+    'forecasts' => $forecasts,
+  );
+
+  return $weather_info;
+}
+

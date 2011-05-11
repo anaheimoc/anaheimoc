@@ -1,0 +1,973 @@
+# Translation of Weather to Hungarian
+#
+# This file is part of the Drupal Weather module.
+#
+# Weather is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# Weather is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Weather; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+# Copyright ©
+# Zsolt Rohberg <airzsolt@freemail.hu>, 2007.
+# FEHÉR János <feher.janos@mindworks.hu>, 2007.
+# Füleki Miklós <info@privnet.biz>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: weather.module\n"
+"POT-Creation-Date: 2010-05-03 14:44+0200\n"
+"PO-Revision-Date: 2008-10-10 10:01+0200\n"
+"Last-Translator: Füleki Miklós <info@privnet.biz>\n"
+"Language-Team: Drupal.hu Fordítási Csapat <forditas@drupal.hu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: weather.tpl.php:10
+msgid "Temperature: !temperature1, feels like !temperature2"
+msgstr "Hőmérséklet: !temperature1, érzet: !temperature2"
+
+#: weather.tpl.php:15
+msgid "Temperature: !temperature"
+msgstr "Hőmérséklet: !temperature"
+
+#: weather.tpl.php:20
+msgid "Wind: !wind"
+msgstr "Szél: !wind"
+
+#: weather.tpl.php:24
+msgid "Pressure: !pressure"
+msgstr "Légnyomás: !pressure"
+
+#: weather.tpl.php:28
+msgid "Rel. Humidity: !rel_humidity"
+msgstr "Rel. páratartalom: !rel_humidity"
+
+#: weather.tpl.php:32
+msgid "Visibility: !visibility"
+msgstr "Látási viszonyok: !visibility"
+
+#: weather.tpl.php:42
+msgid "METAR data: !metar"
+msgstr "METAR adat: !metar"
+
+#: weather.tpl.php:48
+msgid "Location of this weather station:"
+msgstr "Az időjárási állomás helyszíne:"
+
+#: weather.tpl.php:55
+msgid "Reported on:"
+msgstr "Készült:"
+
+#: weather.module:160
+msgid ""
+"You can add, edit, and delete locations from system-wide weather blocks. "
+"Moreover, you can specify default values for newly created locations."
+msgstr ""
+"Lehet helyszíneket hozzáadni, törölni vagy módosítani a webhelyszintű "
+"időjárási blokkokban. Sőt, beállíthatóak az alapértelmezés szerinti értékek "
+"is az újonnan hozzáadott helyszínekhez."
+
+#: weather.module:165
+msgid "You can add, edit, and delete locations from your custom weather block."
+msgstr ""
+"Lehet helyszíneket hozzáadni, törölni vagy módosítani a saját, egyedi "
+"időjárási blokkban."
+
+#: weather.module:167
+msgid ""
+"Please note that the block will not be shown until you configure at least "
+"one location."
+msgstr ""
+"Ez a blokk mindaddig nem fog megjelenni, amíg nincs legalább egy helyszín "
+"beállítva."
+
+#: weather.module:226
+msgid "Weather: custom user"
+msgstr "Időjárás: egyedi felhasználó"
+
+#: weather.module:227
+msgid "Weather: location of nodes (requires Location or Node Map module)"
+msgstr ""
+"Időjárás: tartalmak helyszíne (A Location vagy a Node Map modul szükséges "
+"hozzá)"
+
+#: weather.module:233
+msgid "Weather: system-wide !number"
+msgstr "Időjárás: webhelyszintű !number"
+
+#: weather.module:246;298
+msgid "Current weather"
+msgstr "Jelenlegi időjárás"
+
+#: weather.module:290
+msgid "Current weather nearby"
+msgstr "A környék jelenlegi időjárása"
+
+#: weather.module:384
+msgid "No sunrise today"
+msgstr "Ma nincs napkelte"
+
+#: weather.module:387
+msgid "No sunset today"
+msgstr "Ma nincs napnyugta"
+
+#: weather.module:426
+msgid "Sunrise: !sunrise"
+msgstr "Napkelte: !sunrise"
+
+#: weather.module:428
+msgid "Sunset: !sunset"
+msgstr "Napnyugta: !sunset"
+
+#: weather.module:538
+msgid "Real name"
+msgstr "Valódi név"
+
+#: weather.module:539;592;904
+msgid "Weight"
+msgstr "Súly"
+
+#: weather.module:540;593
+msgid "Operations"
+msgstr "Műveletek"
+
+#: weather.module:552;604
+msgid "edit"
+msgstr "szerkesztés"
+
+#: weather.module:553;605
+msgid "delete"
+msgstr "törlés"
+
+#: weather.module:560
+msgid "There are currently no locations."
+msgstr "Jelenleg nincsenek helyszínek."
+
+#: weather.module:572
+msgid "Create new location"
+msgstr "Új helyszín hozzáadása"
+
+#: weather.module:591
+msgid "System-wide block !number"
+msgstr "Webhelyszintű blokk !number"
+
+#: weather.module:615
+msgid "Create new location in block !number"
+msgstr "Új helyszín hozzáadása !number blokkban"
+
+#: weather.module:623
+msgid "Create new system-wide block"
+msgstr "Webhelyszintű időjárási blokk hozzáadása"
+
+#: weather.module:627
+msgid "Configure the default location"
+msgstr "Alapértelmezés szerinti helyszín beállítása"
+
+#: weather.module:641
+msgid "Use cron to clear the cache once per hour"
+msgstr "Használja az időzített feladatokat a gyorstár óránkénti ürítéséhez"
+
+#: weather.module:642
+msgid ""
+"If you use Drupal's cache, the system weather blocks will not be updated for "
+"anonymous users unless the cache is cleared. This happens e.g. when new "
+"nodes are created. If you want the system weather blocks to be updated when "
+"new weather data is available, you can clear the cache once per hour. Please "
+"note that this might slow down your site."
+msgstr ""
+"A Drupal gyorstárát használva a rendszer időjárási blokkjai nem frissülnek a "
+"be nem jelentkezett látogatók számára, amíg a gyorstár nincs törölve. Ez "
+"például egy új tartalom mentésekor történik meg. Ha az szükséges, hogy a "
+"rendszerben az időjárási blokkok akkor frissüljenek, amikor az új adatok "
+"elérhetővé válnak, akkor a gyorstárat óránként törölni kell. Ez azonban le "
+"is lassíthatja a webhely működését."
+
+#: weather.module:647
+msgid "Directory for custom images"
+msgstr ""
+
+#: weather.module:648
+msgid ""
+"Override the default image directory. This directory must be a subdirectory "
+"of the Drupal 'files' path."
+msgstr ""
+
+#: weather.module:653;918
+msgid "Save configuration"
+msgstr "Beállítások mentése"
+
+#: weather.module:672
+msgid "The configuration has been saved."
+msgstr "A beállítások mentése megtörtént."
+
+#: weather.module:728;772
+msgid "Place"
+msgstr "Hely"
+
+#: weather.module:729;773
+msgid "Select a place in that country for the weather display."
+msgstr ""
+"Ki kell választani egy helyet az országon belül az időjárás megjelenítéséhez."
+
+#: weather.module:760
+msgid "Country"
+msgstr "Ország"
+
+#: weather.module:761
+msgid "Select a country to narrow down your search."
+msgstr "Egy ország kiválasztásával tovább szűkíthető keresés."
+
+#: weather.module:779
+msgid "ICAO code"
+msgstr "ICAO kód"
+
+#: weather.module:781
+msgid ""
+"Enter the 4-letter ICAO code of the weather station. If you first need to "
+"look up the code, you can use !url_1 or !url_2. Please note that not all "
+"stations listed at those URLs are providing weather data and thus may not be "
+"supported by this module."
+msgstr ""
+"Meg kell adni az időjárási állomás négyjegyű ICAO-kódját. Ehhez használható "
+"webcímek: !url_1 vagy !url_2. Azonban nem minden időjárási adatot "
+"szolgáltató állomás van felsorolva ezeken a webcímeken, illetve nem "
+"feltétlenül mindet támogatja ez a modul."
+
+#: weather.module:792
+msgid "Real name for the selected place"
+msgstr "A kiválasztott hely valódi neve"
+
+#: weather.module:794
+msgid "You may enter another name for the place selected above."
+msgstr "Megadható a fent kiválasztott helynek egy másik név."
+
+#: weather.module:800
+msgid "Display units"
+msgstr "Mértékegységek megjelenítése"
+
+#: weather.module:801
+msgid "You can specify which units should be used for displaying the data."
+msgstr "Itt adható meg, hogy milyen mértékegységben jelenjenek meg az adatok."
+
+#: weather.module:808
+msgid "Temperature"
+msgstr "Hőmérséklet"
+
+#: weather.module:810
+msgid "Celsius"
+msgstr "Celsius"
+
+#: weather.module:810
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: weather.module:811
+msgid "Celsius / Fahrenheit"
+msgstr "Celsius / Fahrenheit"
+
+#: weather.module:812
+msgid "Fahrenheit / Celsius"
+msgstr "Fahrenheit / Celsius"
+
+#: weather.module:813;821;828;834;841
+msgid "Don't display"
+msgstr "Ne jelenítse meg"
+
+#: weather.module:817
+msgid "Wind speed"
+msgstr "Szélsebesség"
+
+#: weather.module:819
+msgid "km/h"
+msgstr "km/h"
+
+#: weather.module:819
+msgid "mph"
+msgstr "mph"
+
+#: weather.module:819
+msgid "Knots"
+msgstr "Csomó"
+
+#: weather.module:820
+msgid "meter/s"
+msgstr "m/s"
+
+#: weather.module:820
+msgid "Beaufort"
+msgstr "Beaufort"
+
+#: weather.module:825
+msgid "Pressure"
+msgstr "Légnyomás"
+
+#: weather.module:827
+msgid "hPa"
+msgstr "hPa"
+
+#: weather.module:827
+msgid "kPa"
+msgstr "kPa"
+
+#: weather.module:827
+msgid "inHg"
+msgstr "inHg"
+
+#: weather.module:827
+msgid "mmHg"
+msgstr "Hgmm"
+
+#: weather.module:832
+msgid "Rel. Humidity"
+msgstr "Rel. páratartalom"
+
+#: weather.module:834
+msgid "Display"
+msgstr "Megjelenítés"
+
+#: weather.module:838
+msgid "Visibility"
+msgstr "Láthatóság"
+
+#: weather.module:840
+msgid "kilometers"
+msgstr "kilométer"
+
+#: weather.module:840
+msgid "UK miles"
+msgstr "angol mérföld"
+
+#: weather.module:845
+msgid "Display settings"
+msgstr "Megjelenítési beállítások"
+
+#: weather.module:846
+msgid "You can customize the display of the block."
+msgstr "A blokk megjelenítésének testreszabása"
+
+#: weather.module:853
+msgid "Show windchill temperature"
+msgstr "Hőmérsékletérzet mutatása"
+
+#: weather.module:855
+msgid ""
+"Calculates the temperature resulting from windchill. This is how the "
+"temperature <q>feels like</q>."
+msgstr ""
+"Kiszámolja a széllel kombinált hőmérsékletet. Ez a ténylegesen <q>érzett</q> "
+"hőmérséklet."
+
+#: weather.module:859
+msgid "Show unconverted METAR data"
+msgstr "Nyers METAR adatok megjelenítése"
+
+#: weather.module:861
+msgid "Displays the original data of the METAR report."
+msgstr "A METAR jelentés eredeti adatait jeleníti meg."
+
+#: weather.module:865
+msgid "Show abbreviated wind directions"
+msgstr "Szélirány megjelenítése rövidített égtájnevekkel"
+
+#: weather.module:867
+msgid ""
+"Displays abbreviated wind directions like N, SE, or W instead of North, "
+"Southeast, or West."
+msgstr ""
+"A szélirány rövidített égtájnevekkel jelenik meg, azaz észak, délkelet, vagy "
+"nyugat helyett É, DK, vagy NY fog látszani."
+
+#: weather.module:871
+msgid "Show degrees of wind directions"
+msgstr "A szélirány mutatása fokokban"
+
+#: weather.module:873
+msgid "Displays the degrees of wind directions, e.g. North (20°)."
+msgstr "Szélirány megjelenítése fokokban, például észak (20°)."
+
+#: weather.module:877
+msgid "Show time of sunrise and sunset"
+msgstr "A napkelte és a napnyugta idejének mutatása."
+
+#: weather.module:879
+msgid "Displays the time of sunrise and sunset."
+msgstr "A napkelte és a napnyugta idejét jeleníti meg."
+
+#: weather.module:882
+msgid "GMT"
+msgstr "GMT"
+
+#: weather.module:882
+msgid "Drupal"
+msgstr "Drupal"
+
+#: weather.module:891
+msgid "Timezone for sunrise and sunset"
+msgstr "A napkelte és a napnyugta időzónája"
+
+#: weather.module:893
+msgid ""
+"Choose either Greenwich Mean Time (GMT), Drupal's standard timezone as set "
+"in the configuration, or a custom timezone."
+msgstr ""
+"Ki kell választani egyet a greenwichi középidő (GMT), a Drupal beállításában "
+"megadott általános időzóna, vagy egy egyedi időzóna közül."
+
+#: weather.module:898
+msgid "Show compact block"
+msgstr "Tömörített blokk mutatása"
+
+#: weather.module:900
+msgid ""
+"Displays only the name, condition, and temperature of the weather station."
+msgstr ""
+"Csak az időjárási állomás nevét, az időjárási körülményeket és a hőmérséklet "
+"jeleníti meg."
+
+#: weather.module:906
+msgid ""
+"Optional. In the block, the heavier locations will sink and the lighter "
+"locations will be positioned nearer the top. Locations with equal weights "
+"are sorted alphabetically."
+msgstr ""
+"Nem kötelező. A nagyobb súlyú helyek lesüllyednek, a kisebb súlyúak pedig "
+"feljebb kerülnek az időjárási blokkban. Az azonos súlyú helyszínek ABC "
+"sorrendben lesznek rendezve."
+
+#: weather.module:931
+msgid "The ICAO code is not supported by this module."
+msgstr "Az ICAO kódot nem támogatja ez a modul."
+
+#: weather.module:960
+msgid "The default configuration has been saved."
+msgstr "Az alapértelmezés szerinti beállítás mentése megtörtént."
+
+#: weather.module:963
+msgid "The location has been saved."
+msgstr "A helyszín mentése megtörtént."
+
+#: weather.module:1003
+msgid "Are you sure you want to delete the location %name?"
+msgstr "%name hely biztosan törölhető?"
+
+#: weather.module:1006
+msgid "This action cannot be undone."
+msgstr "A művelet nem vonható vissza."
+
+#: weather.module:1007
+msgid "Delete"
+msgstr "Törlés"
+
+#: weather.module:1008
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: weather.module:1022
+msgid "The location has been deleted."
+msgstr "A helyszín törölve lett."
+
+#: weather.module:1059;1153
+msgid "The string to search for must be between 3 and 64 characters."
+msgstr ""
+"A keresendő karaktersorozat hosszának 3 és 64 karakter közé kell esnie."
+
+#: weather.module:1093
+msgid "Your search did not return any results."
+msgstr "A keresésnek nincs eredménye."
+
+#: weather.module:1116
+msgid "Search results for <q>@search</q>"
+msgstr "<q>@search</q> keresési eredményei"
+
+#: weather.module:1134
+msgid "Search for a location"
+msgstr "Helyszín keresése"
+
+#: weather.module:1135
+msgid ""
+"Type in an ICAO code, a name, or a country to search for weather conditions "
+"at that location."
+msgstr ""
+"Meg kell adni egy ICAO kódot, egy nevet, vagy egy országot az ottani "
+"időjárási viszonyok kereséséhez"
+
+#: weather.module:1140
+msgid "Search"
+msgstr "Keresés"
+
+#: weather.module:1339
+msgid "No data"
+msgstr "Nincs adat"
+
+#: weather.module:1344
+msgid "Clear sky"
+msgstr "Felhőtlen"
+
+#: weather.module:1345
+msgid "Few clouds"
+msgstr "Kissé felhős"
+
+#: weather.module:1346
+msgid "Scattered clouds"
+msgstr "Közepesen felhős"
+
+#: weather.module:1347
+msgid "Broken clouds"
+msgstr "Erősen felhős"
+
+#: weather.module:1348
+msgid "Overcast"
+msgstr "Borult"
+
+#: weather.module:1349
+msgid "No significant clouds"
+msgstr "Nincs jelentős felhő"
+
+#: weather.module:1354
+msgid "mist"
+msgstr "pára"
+
+#: weather.module:1359
+msgid "shallow fog"
+msgstr "enyhe köd"
+
+#: weather.module:1362
+msgid "partial fog"
+msgstr "részleges köd"
+
+#: weather.module:1365
+msgid "patches of fog"
+msgstr "ködfoltok"
+
+#: weather.module:1368
+msgid "fog"
+msgstr "köd"
+
+#: weather.module:1372
+msgid "smoke"
+msgstr "füst"
+
+#: weather.module:1380
+msgid "light rain showers"
+msgstr "gyenge záporeső"
+
+#: weather.module:1383
+msgid "light freezing rain"
+msgstr "gyenge fagyott eső"
+
+#: weather.module:1386
+msgid "light rain"
+msgstr "gyenge eső"
+
+#: weather.module:1391
+msgid "heavy rain showers"
+msgstr "erős záporeső"
+
+#: weather.module:1394
+msgid "heavy freezing rain"
+msgstr "erős fagyott eső"
+
+#: weather.module:1397
+msgid "heavy rain"
+msgstr "erős eső"
+
+#: weather.module:1402
+msgid "rain showers"
+msgstr "záporeső"
+
+#: weather.module:1405
+msgid "freezing rain"
+msgstr "fagyott eső"
+
+#: weather.module:1408
+msgid "rain"
+msgstr "eső"
+
+#: weather.module:1416
+msgid "light freezing drizzle"
+msgstr "enyhe jégszitálás"
+
+#: weather.module:1419
+msgid "light drizzle"
+msgstr "enyhe szitálás"
+
+#: weather.module:1424
+msgid "heavy freezing drizzle"
+msgstr "heves jégszitálás"
+
+#: weather.module:1427
+msgid "heavy drizzle"
+msgstr "heves szitálás"
+
+#: weather.module:1432
+msgid "freezing drizzle"
+msgstr "jégszitálás"
+
+#: weather.module:1435
+msgid "drizzle"
+msgstr "szitálás"
+
+#: weather.module:1443
+msgid "light blowing snow"
+msgstr "gyenge hófúvás"
+
+#: weather.module:1446
+msgid "light low drifting snow"
+msgstr "gyenge talajközeli hófúvás"
+
+#: weather.module:1449
+msgid "light snow showers"
+msgstr "gyenge havaseső"
+
+#: weather.module:1452
+msgid "light snow"
+msgstr "gyenge havazás"
+
+#: weather.module:1457
+msgid "heavy blowing snow"
+msgstr "heves hófúvás"
+
+#: weather.module:1460
+msgid "heavy low drifting snow"
+msgstr "heves talajközeli hófúvás"
+
+#: weather.module:1463
+msgid "heavy snow showers"
+msgstr "heves havaseső"
+
+#: weather.module:1466
+msgid "heavy snow"
+msgstr "heves havazás"
+
+#: weather.module:1471
+msgid "blowing snow"
+msgstr "hófúvás"
+
+#: weather.module:1474
+msgid "low drifting snow"
+msgstr "talajközeli hófúvás"
+
+#: weather.module:1477
+msgid "snow showers"
+msgstr "havaseső"
+
+#: weather.module:1480
+msgid "snow"
+msgstr "havazás"
+
+#: weather.module:1514;1543
+msgid "!temperature&thinsp;°F"
+msgstr "!temperature&thinsp;°F"
+
+#: weather.module:1519;1547
+msgid "!temperature_c&thinsp;°C / !temperature_f&thinsp;°F"
+msgstr "!temperature_c&thinsp;°C / !temperature_f&thinsp;°F"
+
+#: weather.module:1528;1555
+msgid "!temperature_f&thinsp;°F / !temperature_c&thinsp;°C"
+msgstr "!temperature_f&thinsp;°F / !temperature_c&thinsp;°C"
+
+#: weather.module:1537;1564
+msgid "!temperature&thinsp;°C"
+msgstr "!temperature&thinsp;°C"
+
+#: weather.module:1584
+msgid "Calm"
+msgstr "Szélcsend"
+
+#: weather.module:1607;1623
+msgid "Variable from !direction_a (!degree_a°) to !direction_b (!degree_b°)"
+msgstr ""
+"!direction_a (!degree_a°) és !direction_b (!degree_b°) között váltakozó "
+"irányú"
+
+#: weather.module:1615;1631
+msgid "Variable from !direction_a to !direction_b"
+msgstr "!direction_a és !direction_b között váltakozó irányú"
+
+#: weather.module:1639
+msgid "Variable"
+msgstr "Változó"
+
+#: weather.module:1646;1656
+msgid "!direction (!degree°)"
+msgstr "!direction (!degree°)"
+
+#: weather.module:1671;1672
+msgid "!speed&thinsp;mph"
+msgstr "!speed&thinsp;mph"
+
+#: weather.module:1675;1676
+msgid "!speed&thinsp;knots"
+msgstr "!speed&thinsp;csomó"
+
+#: weather.module:1679;1680
+msgid "!speed&thinsp;meter/s"
+msgstr "!speed&thinsp;m/s"
+
+#: weather.module:1683;1684
+msgid "Beaufort !number"
+msgstr "Beaufort !number"
+
+#: weather.module:1688;1689
+msgid "!speed&thinsp;km/h"
+msgstr "!speed&thinsp;km/h"
+
+#: weather.module:1694
+msgid "gusts up to !speed"
+msgstr "szélrohamok akár !speed"
+
+#: weather.module:1712
+msgid "!pressure&thinsp;inHg"
+msgstr "!pressure&thinsp;inHg"
+
+#: weather.module:1716
+msgid "!pressure&thinsp;mmHg"
+msgstr "!pressure&thinsp;mmHg"
+
+#: weather.module:1720
+msgid "!pressure&thinsp;kPa"
+msgstr "!pressure&thinsp;kPa"
+
+#: weather.module:1725
+msgid "!pressure&thinsp;hPa"
+msgstr "!pressure&thinsp;hPa"
+
+#: weather.module:1743
+msgid "!rel_humidity&thinsp;%"
+msgstr "!rel_humidity&thinsp;%"
+
+#: weather.module:1756
+msgid "!visibility&thinsp;mi"
+msgstr "!visibility&thinsp;mérföld"
+
+#: weather.module:1761
+msgid "!visibility&thinsp;km"
+msgstr "!visibility&thinsp;km"
+
+#: weather.module:1788
+msgid "!distance&thinsp;mi !direction (!degree°)"
+msgstr "!distance&thinsp;mérföld !direction (!degree°)"
+
+#: weather.module:1796
+msgid "!distance&thinsp;mi !direction"
+msgstr "!distance&thinsp;mérföld !direction"
+
+#: weather.module:1806
+msgid "!distance&thinsp;km !direction (!degree°)"
+msgstr "!distance&thinsp;km !direction (!degree°)"
+
+#: weather.module:1814
+msgid "!distance&thinsp;km !direction"
+msgstr "!distance&thinsp;km !direction"
+
+#: weather.module:1851
+msgid "North"
+msgstr "észak"
+
+#: weather.module:1852
+msgid "North-Northeast"
+msgstr "észak-északkelet"
+
+#: weather.module:1853
+msgid "Northeast"
+msgstr "északkelet"
+
+#: weather.module:1854
+msgid "East-Northeast"
+msgstr "kelet-északkelet"
+
+#: weather.module:1855
+msgid "East"
+msgstr "kelet"
+
+#: weather.module:1856
+msgid "East-Southeast"
+msgstr "kelet-délkelet"
+
+#: weather.module:1857
+msgid "Southeast"
+msgstr "délkelet"
+
+#: weather.module:1858
+msgid "South-Southeast"
+msgstr "dél-délkelet"
+
+#: weather.module:1859
+msgid "South"
+msgstr "dél"
+
+#: weather.module:1860
+msgid "South-Southwest"
+msgstr "dél-délnyugat"
+
+#: weather.module:1861
+msgid "Southwest"
+msgstr "délnyugat"
+
+#: weather.module:1862
+msgid "West-Southwest"
+msgstr "nyugat-délnyugat"
+
+#: weather.module:1863
+msgid "West"
+msgstr "nyugat"
+
+#: weather.module:1864
+msgid "West-Northwest"
+msgstr "nyugat-északnyugat"
+
+#: weather.module:1865
+msgid "Northwest"
+msgstr "északnyugat"
+
+#: weather.module:1866
+msgid "North-Northwest"
+msgstr "észak-északnyugat"
+
+#: weather.module:1871
+msgid "N"
+msgstr "É"
+
+#: weather.module:1872
+msgid "NNE"
+msgstr "É-ÉK"
+
+#: weather.module:1873
+msgid "NE"
+msgstr "ÉK"
+
+#: weather.module:1874
+msgid "ENE"
+msgstr "K-ÉK"
+
+#: weather.module:1875
+msgid "E"
+msgstr "K"
+
+#: weather.module:1876
+msgid "ESE"
+msgstr "K-DK"
+
+#: weather.module:1877
+msgid "SE"
+msgstr "DK"
+
+#: weather.module:1878
+msgid "SSE"
+msgstr "D-DK"
+
+#: weather.module:1879
+msgid "S"
+msgstr "D"
+
+#: weather.module:1880
+msgid "SSW"
+msgstr "D-DNY"
+
+#: weather.module:1881
+msgid "SW"
+msgstr "DNY"
+
+#: weather.module:1882
+msgid "WSW"
+msgstr "NY-DNY"
+
+#: weather.module:1883
+msgid "W"
+msgstr "NY"
+
+#: weather.module:1884
+msgid "WNW"
+msgstr "NY-ÉNY"
+
+#: weather.module:1885
+msgid "NW"
+msgstr "ÉNY"
+
+#: weather.module:1886
+msgid "NNW"
+msgstr "É-ÉNY"
+
+#: weather.module:2136
+msgid "Download location for METAR data is not accessible."
+msgstr "A METAR adatok letöltési helye nem érhető el."
+
+#: weather.module:59
+msgid "administer custom weather block"
+msgstr "egyedi időjárási blokk adminisztrációja"
+
+#: weather.module:60
+msgid "access weather pages"
+msgstr "időjárási oldalak elérése"
+
+#: weather.module:71;135 weather.info:0
+msgid "Weather"
+msgstr "Időjárás"
+
+#: weather.module:72
+msgid ""
+"Configure system-wide weather blocks and the default configuration for new "
+"locations."
+msgstr ""
+"Webhelyszintű időjárási blokk beállítása és az új helyszínek alapértelmezés "
+"szerinti beállítása."
+
+#: weather.module:78;111
+msgid "Edit location"
+msgstr "Helyszín módosítása"
+
+#: weather.module:79
+msgid "Configure a system-wide weather block."
+msgstr "Webhelyszintű időjárási blokk beállítása."
+
+#: weather.module:86;120
+msgid "Delete location"
+msgstr "Helyszín törlése"
+
+#: weather.module:87
+msgid "Delete a location from a system-wide weather block."
+msgstr "Egy helyszín törlése a webhelyszintű időjárási blokkból."
+
+#: weather.module:94
+msgid "Default configuration"
+msgstr "Alapértelmezés szerinti beállítás"
+
+#: weather.module:95
+msgid "Setup the default configuration for new locations."
+msgstr "Az új helyszínek alapértelmezés szerinti értékeinek beállítása."
+
+#: weather.module:102
+msgid "My weather"
+msgstr "Saját időjárás"
+
+#: weather.module:103;112
+msgid "Configure your custom weather block."
+msgstr "Saját, egyedi időjárási blokk beállítása."
+
+#: weather.module:121
+msgid "Delete a location from your custom weather block."
+msgstr "Helyszín törlése az alapértelmezés szerinti időjárási blokkból."
+
+#: weather.module:136
+msgid "Search for locations and display their current weather."
+msgstr "Helyszínek keresése és az ottani aktuális időjárás megjelenítése."
+
+#: weather.module:0
+#, fuzzy
+msgid "weather"
+msgstr "Saját időjárás"
+
+#: weather.info:0
+msgid "Displays METAR weather data"
+msgstr "Megjeleníti a METAR időjárási adatokat"
