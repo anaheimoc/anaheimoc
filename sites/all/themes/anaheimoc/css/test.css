@@ -1,5 +1,30 @@
 /* TEST LESS CSS FILE */
 /* USING FOR MINOR ADJUSTMENTS TO BE COMMITTED TO LOCAL.CSS AT A LATER DATE - BOBBY */
+/* HOMEPAGE SLIDESHOW CSS
+********************************************** */
+div.view.hero-slideshow {
+  position: relative;
+}
+div.view.hero-slideshow .views-field-view-node {
+  color: #fff;
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  width: 460px;
+}
+div.view.hero-slideshow .views-field-view-node h2 {
+  color: #fff;
+}
+div.view.hero-slideshow .views-field-view-node a {
+  color: #fff;
+}
+div.view.hero-slideshow .views-field-view-node a:visited {
+  color: #fff;
+}
+div.view.hero-slideshow .views-field-view-node a:hover {
+  text-decoration: none;
+}
 /* CALENDAR OF EVENTS (LEISURE EVENTS) CSS
 ********************************************** */
 table.views-view-grid {
@@ -26,25 +51,4 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
   margin: 10px 0 10px 10px;
   padding: 10px;
   width: 40%;
-}
-
-.not-front .sidebar-first{
-margin-top: 10px;
-}
-img.imagecache-article_image,
-a.imagecache-140x140 img,
-img.imagecache-140x140{
-border: 2px solid #F2F2F3;
-}
-div.view.article-attachment .views-row{
-background: #efefef;
-clear: both;
-margin: 20px 0;
-padding: 10px;
-}
-
-div.view.article-attachment .views-field-field-article-image-fid{
-float: left;
-margin-right: 20px;
-margin-bottom: 20px;
 }
