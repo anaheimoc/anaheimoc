@@ -509,8 +509,8 @@ function anaheimoc_page_views_default_views() {
     'field_anaheimoc_page_hero_image_data' => array(
       'label' => '',
       'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
+        'alter_text' => 1,
+        'text' => '<h2>[field_anaheimoc_page_hero_image_data]</h2>',
         'make_link' => 0,
         'path' => '',
         'absolute' => 0,
@@ -533,7 +533,7 @@ function anaheimoc_page_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 1,
       'data_key' => 'title',
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'field_anaheimoc_page_hero_image_data',
       'table' => 'node_data_field_anaheimoc_page_hero_image',
       'field' => 'field_anaheimoc_page_hero_image_data',
@@ -569,7 +569,7 @@ function anaheimoc_page_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 1,
       'data_key' => 'description',
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'field_anaheimoc_page_hero_image_data_1',
       'table' => 'node_data_field_anaheimoc_page_hero_image',
       'field' => 'field_anaheimoc_page_hero_image_data',
@@ -581,8 +581,8 @@ function anaheimoc_page_views_default_views() {
     'edit_node' => array(
       'label' => '',
       'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
+        'alter_text' => 1,
+        'text' => '<span>| [edit_node]</span>',
         'make_link' => 0,
         'path' => '',
         'absolute' => 0,
@@ -603,18 +603,25 @@ function anaheimoc_page_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'text' => '',
-      'exclude' => 0,
+      'text' => 'Edit',
+      'exclude' => 1,
       'id' => 'edit_node',
       'table' => 'node',
       'field' => 'edit_node',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
     'view_node' => array(
       'label' => '',
       'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
+        'alter_text' => 1,
+        'text' => '<div class="hero-slideshow-text">
+  <div class="hero-title">[field_anaheimoc_page_hero_image_data]</div>
+  <div class="hero-description">[field_anaheimoc_page_hero_image_data_1]</div>
+  <div class="hero-extra-info"><span>[view_node] </span>[edit_node]</div>
+</div>',
         'make_link' => 0,
         'path' => '',
         'absolute' => 0,
@@ -641,6 +648,9 @@ function anaheimoc_page_views_default_views() {
       'table' => 'node',
       'field' => 'view_node',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
   ));
   $handler->override_option('arguments', array());
@@ -700,6 +710,7 @@ function anaheimoc_page_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
+  $handler->override_option('css_class', 'hero-slideshow');
   $handler->override_option('style_plugin', 'slideshow');
   $handler->override_option('style_options', array(
     'mode' => 'views_slideshow_singleframe',
@@ -913,6 +924,14 @@ function anaheimoc_page_views_default_views() {
     ),
   ));
   $handler->override_option('block_description', 'Hero Feature (Slideshow) - Block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Anaheim/OC Page (Featured Content) - Block', 'block_2');
+  $handler->override_option('arguments', array());
+  $handler->override_option('block_description', 'Anaheim/OC Page (Featured Content) - Block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Anaheim/OC Page (Popular Content) - Block', 'block_3');
+  $handler->override_option('arguments', array());
+  $handler->override_option('block_description', 'Anaheim/OC Page (Popular Content) - Block');
   $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;

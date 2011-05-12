@@ -74,16 +74,16 @@ function anaheimoc_page_strongarm() {
   $strongarm->name = 'content_extra_weights_anaheimoc_page';
   $strongarm->value = array(
     'title' => '-5',
-    'body_field' => '0',
-    'revision_information' => '3',
-    'author' => '4',
-    'options' => '5',
+    'body_field' => '-2',
+    'revision_information' => '1',
+    'author' => '3',
+    'options' => '0',
     'comment_settings' => '7',
-    'menu' => '-4',
-    'taxonomy' => '-3',
+    'menu' => '2',
+    'taxonomy' => '5',
     'path' => '8',
     'attachments' => '6',
-    'domain' => '2',
+    'domain' => '4',
     'anaheimoc_page_node_content_1' => '11',
   );
 
