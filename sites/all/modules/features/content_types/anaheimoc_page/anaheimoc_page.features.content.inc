@@ -6,12 +6,88 @@
 function anaheimoc_page_content_default_fields() {
   $fields = array();
 
+  // Exported field: field_anaheimoc_page_hero_image
+  $fields['anaheimoc_page-field_anaheimoc_page_hero_image'] = array(
+    'field_name' => 'field_anaheimoc_page_hero_image',
+    'type_name' => 'anaheimoc_page',
+    'display_settings' => array(
+      'weight' => '-1',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 1,
+      ),
+      'full' => array(
+        'format' => 'hidden',
+        'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '1',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => '',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '940x290',
+      'min_resolution' => '940x290',
+      'alt' => '',
+      'custom_alt' => 1,
+      'title' => '',
+      'custom_title' => 1,
+      'title_type' => 'textfield',
+      'default_image' => NULL,
+      'use_default_image' => 0,
+      'filefield_sources' => array(
+        'remote' => 0,
+        'reference' => 0,
+        'attach' => 0,
+      ),
+      'filefield_source_attach_path' => 'file_attach',
+      'filefield_source_attach_absolute' => '0',
+      'filefield_source_attach_mode' => 'move',
+      'filefield_source_autocomplete' => '0',
+      'label' => 'Hero feature image',
+      'weight' => '-1',
+      'description' => 'Upload an image to use in the home page slideshow (if applicable).  Image must be 940x290 pixels.',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
+    ),
+  );
+
   // Exported field: field_anaheimoc_page_reference
   $fields['anaheimoc_page-field_anaheimoc_page_reference'] = array(
     'field_name' => 'field_anaheimoc_page_reference',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '8',
+      'weight' => '10',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -109,7 +185,7 @@ function anaheimoc_page_content_default_fields() {
       'fallback' => 'leave_blank',
       'edit_fallback' => 0,
       'label' => 'Page reference',
-      'weight' => '8',
+      'weight' => '10',
       'description' => '',
       'type' => 'nodereference_url',
       'module' => 'nodereference_url',
@@ -121,7 +197,7 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_anaheimoc_page_weight',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '-1',
+      'weight' => '1',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -187,7 +263,7 @@ function anaheimoc_page_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Page weight',
-      'weight' => '-1',
+      'weight' => '1',
       'description' => 'Use this field to order children pages when attached to their parent page.',
       'type' => 'optionwidgets_select',
       'module' => 'optionwidgets',
@@ -199,7 +275,7 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_article_image',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '-3',
+      'weight' => '-2',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -263,7 +339,7 @@ function anaheimoc_page_content_default_fields() {
       'filefield_source_attach_mode' => 'move',
       'filefield_source_autocomplete' => '0',
       'label' => 'Main image',
-      'weight' => '-3',
+      'weight' => '-2',
       'description' => '',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -275,7 +351,7 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_partner_list_builder',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '7',
+      'weight' => '9',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -329,7 +405,7 @@ function anaheimoc_page_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Partner category/city',
-      'weight' => '7',
+      'weight' => '9',
       'description' => 'This field accepts two arguments separated by a /.  The first argument is the category ID.  This argument supports multiple category IDs (ex: 6450+6521+6520).  The second argument (optional) accepts the name of a city.  This argument filters category results by city.  Here are a couple of examples of a full entry: 6520/buena-park - OR - 6520 - OR - 6520+6521/fullerton.',
       'type' => 'text_textfield',
       'module' => 'text',
@@ -338,6 +414,7 @@ function anaheimoc_page_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Hero feature image');
   t('Main image');
   t('Page reference');
   t('Page weight');
