@@ -74,18 +74,27 @@ function anaheimoc_page_strongarm() {
   $strongarm->name = 'content_extra_weights_anaheimoc_page';
   $strongarm->value = array(
     'title' => '-5',
-    'body_field' => '-2',
-    'revision_information' => '1',
-    'author' => '2',
-    'options' => '3',
-    'comment_settings' => '5',
+    'body_field' => '0',
+    'revision_information' => '3',
+    'author' => '4',
+    'options' => '5',
+    'comment_settings' => '7',
     'menu' => '-4',
-    'path' => '6',
-    'attachments' => '4',
-    'domain' => '0',
+    'taxonomy' => '-3',
+    'path' => '8',
+    'attachments' => '6',
+    'domain' => '2',
+    'anaheimoc_page_node_content_1' => '11',
   );
 
   $export['content_extra_weights_anaheimoc_page'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ffp_anaheimoc_page_field_anaheimoc_page_hero_image';
+  $strongarm->value = 0;
+
+  $export['ffp_anaheimoc_page_field_anaheimoc_page_hero_image'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
