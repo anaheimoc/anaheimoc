@@ -1,5 +1,4 @@
 <?php
-// $Id: conditional_fields.rules.inc,v 1.1.2.1 2010/02/17 15:06:08 peterpoe Exp $
 
 /**
  * @file
