@@ -11,8 +11,8 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_anaheimoc_page_hero_image',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '-1',
-      'parent' => '',
+      'weight' => '1',
+      'parent' => 'group_hero_feature_options',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -75,10 +75,69 @@ function anaheimoc_page_content_default_fields() {
       'filefield_source_attach_mode' => 'move',
       'filefield_source_autocomplete' => '0',
       'label' => 'Hero feature image',
-      'weight' => '-1',
+      'weight' => '1',
       'description' => 'Upload an image to use in the home page slideshow (if applicable).  Image must be 940x290 pixels.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
+    ),
+  );
+
+  // Exported field: field_anaheimoc_page_hero_tax
+  $fields['anaheimoc_page-field_anaheimoc_page_hero_tax'] = array(
+    'field_name' => 'field_anaheimoc_page_hero_tax',
+    'type_name' => 'anaheimoc_page',
+    'display_settings' => array(
+      'weight' => 0,
+      'parent' => 'group_hero_feature_options',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 1,
+      ),
+      'full' => array(
+        'format' => 'hidden',
+        'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 0,
+    'vid' => '25',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Hero feature',
+      'weight' => 0,
+      'description' => '',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
     ),
   );
 
@@ -87,7 +146,7 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_anaheimoc_page_reference',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '10',
+      'weight' => '12',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -197,7 +256,7 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_anaheimoc_page_weight',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '1',
+      'weight' => '3',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -263,7 +322,7 @@ function anaheimoc_page_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Page weight',
-      'weight' => '1',
+      'weight' => '-1',
       'description' => 'Use this field to order children pages when attached to their parent page.',
       'type' => 'optionwidgets_select',
       'module' => 'optionwidgets',
@@ -339,7 +398,7 @@ function anaheimoc_page_content_default_fields() {
       'filefield_source_attach_mode' => 'move',
       'filefield_source_autocomplete' => '0',
       'label' => 'Main image',
-      'weight' => '-2',
+      'weight' => '-4',
       'description' => '',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -351,7 +410,7 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_partner_list_builder',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '9',
+      'weight' => '11',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -414,6 +473,7 @@ function anaheimoc_page_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Hero feature');
   t('Hero feature image');
   t('Main image');
   t('Page reference');
