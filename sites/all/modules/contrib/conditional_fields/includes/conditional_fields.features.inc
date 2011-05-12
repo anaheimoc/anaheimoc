@@ -1,5 +1,4 @@
 <?php
-// $Id: conditional_fields.features.inc,v 1.1.2.1 2010/10/29 15:10:03 peterpoe Exp $
 
 /**
  * Implementation of hook_features_export_options().
