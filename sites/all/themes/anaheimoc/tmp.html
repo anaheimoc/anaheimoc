@@ -2,38 +2,48 @@
 <body>
 
 <div class="coupon-wrapper">
- <a href="[redirect]">
-  <div class="member-logo">[field_mem_logo_fid]</div>
-  <div class="coupon-offer">[field_coupon_offer_value]</div>
-  <div class="coupon-subhead">[field_coupon_subhead_value]</div>
-  <div class="coupon-offer-details">[field_coupon_details_value]</div>
-  <div class="coupon-offer-terms">[field_coupon_terms_value]</div>
-  <div class="coupon-offer-legal">[field_coupon_legal_value]</div>
-  <div class="coupon-dates">Coupon Expires: [field_coupon_run_dates_value]</div>
-  <div class="coupon-address">[street], [city], [province] [postal_code]</div>
- </a>
+	<h3 class="coupon-partner-title">[title_1]</h3>
+	<div class="coupon-section-left">
+		<div class="coupon-partner-logo">[field_mem_logo_fid]</div>
+		<div class="coupon-print">Print</div>
+	</div>
+	<div class="coupon-section-right">
+	  <div class="coupon-offer"><h4>[field_coupon_offer_value]</h4></div>
+	  <div class="coupon-subhead"><h5>[field_coupon_subhead_value]</h5></div>
+	  <div class="coupon-details"><p>[field_coupon_details_value]</p></div>
+	  <div class="coupon-supplemental-img">[field_coupon_sup_image_fid]</div>
+	  <div class="coupon-terms"><p>[field_coupon_terms_value]</p></div>
+	  <div class="coupon-legal"><p>[field_coupon_legal_value]</p></div>
+	  <div class="coupon-address">
+	    <span class="address-street">[street]</span>, <span class="address-city">[city]</span>, <span class="address-state">[province]</span>, <span class="address-zip">[postal_code]</span> <span class="address-phone">Phone:[field_mem_phone_main_value]</span>
+	  </div>
+	</div>
+<div class="clearfix"></div>
 </div>
 
 
 
-    [field_coupon_offer_value] == Content: Coupon offer (field_coupon_offer)
-    [field_coupon_subhead_value] == Content: Coupon subhead (field_coupon_subhead)
-    [title] == Node: Title
-    [url] == Ad Image: URL
-    [redirect] == Ad: Redirect URL
-    [field_coupon_details_value] == Content: Coupon details (field_coupon_details)
-    [field_coupon_legal_value] == Content: Coupon legal (field_coupon_legal)
-    [field_coupon_run_dates_value] == Content: Coupon run dates (field_coupon_run_dates) - From date
-    [field_coupon_valid_dates_value] == Content: Coupon valid dates (field_coupon_valid_dates) - From date
-    [field_coupon_member_reference_nid] == Content: Member reference (field_coupon_member_reference)
-    [field_coupon_terms_value] == Content: Terms and conditions (field_coupon_terms)
-    [field_mem_logo_fid] == Content: Partner logo (field_mem_logo)
-    [aid] == Ad: Aid
-    [city] == Location: City
-    [postal_code] == Location: Postal Code
-    [province] == Location: Province
-    [street] == Location: Street
-    [nothing] == Global: Custom text
+[title_1] == Node: Title
+[field_coupon_offer_value] == Content: Coupon offer (field_coupon_offer)
+[field_coupon_subhead_value] == Content: Coupon subhead (field_coupon_subhead)
+[title] == Node: Title
+[url] == Ad Image: URL
+[redirect] == Ad: Redirect URL
+[field_coupon_details_value] == Content: Coupon details (field_coupon_details)
+[field_coupon_legal_value] == Content: Coupon legal (field_coupon_legal)
+[field_coupon_run_dates_value] == Content: Coupon run dates (field_coupon_run_dates) - From date
+[field_coupon_valid_dates_value] == Content: Coupon valid dates (field_coupon_valid_dates) - From date
+[field_coupon_member_reference_nid] == Broken/missing handler
+[field_coupon_terms_value] == Content: Terms and conditions (field_coupon_terms)
+[field_mem_logo_fid] == Content: Partner logo (field_mem_logo)
+[aid] == Ad: Aid
+[city] == Location: City
+[postal_code] == Location: Postal Code
+[province] == Location: Province
+[street] == Location: Street
+[field_coupon_sup_image_fid]
+[nothing] == Global: Custom text
+[field_mem_phone_main_value]
 
 
 

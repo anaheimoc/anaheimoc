@@ -1,32 +1,109 @@
-.coupon-wrapper{
-border: 3px dashed #00a5e5;
-margin: 20px 0;
-padding: 10px;
+div.coupon-preview-wrapper{
+width:600px;
+padding:10px;
 }
+
+div.coupon-preview-wrapper h3.coupon-preview-partner-title{
+color:#ffffff;
+background-color:#00a4e4;
+padding:8px;
+margin:0;
+}
+
+div.coupon-preview-wrapper div.coupon-preview-left{
+width:140px;
+float:left;
+display:block;
+padding:10px 10px 0 0;
+position: relative;
+}
+
+div.coupon-preview-wrapper div.coupon-preview-left .coupon-preview-more-info a{
+width:120px;
+float:left;
+display:block;
+padding:10px;
+text-align:center;
+color:#ffffff;
+background-color:#58d558;
+font-weight:bold;
+font-size:18px;
+position: absolute;
+bottom:0;
+}
+
+div.coupon-preview-wrapper div.coupon-preview-right{
+width:440px;
+float:left;
+display:block;
+padding:10px 10px 0 0;
+}
+
+div.coupon-preview-wrapper div.coupon-preview-right .coupon-preview-offer h4{
+font-size:60px;
+line-height:60px;
+color:#00a4e4;
+text-transform:uppercase;
+font-family: Helvetica, Arial, sans-serif;
+margin:0;
+}
+
+div.coupon-preview-wrapper div.coupon-preview-right .coupon-preview-subhead h5{
+font-size:14px;
+line-height:14px;
+color:#58d558;
+text-transform:uppercase;
+font-family: Helvetica, Arial, sans-serif;
+margin:0;
+}
+
+div.coupon-preview-wrapper div.coupon-preview-right .coupon-preview-details p{
+font-size:12px;
+line-height:16px;
+color:#333333;
+}
+
+
+
+/* ---------------- */
+
+.coupon-wrapper{
+border: 8px dashed #00a5e5;
+margin: 20px 10px;
+padding: 10px;
+width:580px;
+float:left;
+}
+
+.coupon-wrapper .aocvcb-logo{
+float:left;
+display:block;
+clear:both;
+}
+
 .coupon-wrapper .member-logo{
-/*float: left;
 margin-right: 20px;
 height:;
 width: 140px;
-padding: 100px 0;*/
+padding: 0;
 }
 
 .coupon-wrapper .coupon-offer{
-/*font-family: Helvetica, Arial, sans-serif;
+font-family: Helvetica, Arial, sans-serif;
 font-size: 56px;
 font-weight: bold;
 line-height: 1em;
-margin: 10px 0 0;*/
+margin: 10px 0 0;
 }
 
 .coupon-wrapper .coupon-subhead{
-/*color: #b1d83d;
+color: #b1d83d;
 font-family: Helvetica, Arial, sans-serif;
 font-size: 12px;
 font-weight: normal;
 line-height: 1em;
 margin: 0px 0;	
-text-transform: uppercase;*/
+text-transform: uppercase;
 }
 
 .coupon-wrapper .coupon-offer,
@@ -36,8 +113,7 @@ text-transform: uppercase;*/
 .coupon-wrapper .coupon-offer-legal,
 .coupon-wrapper .coupon-dates,
 .coupon-wrapper .coupon-address{
-/*float: left;
-width: 740px;	*/
+float: left;
 }
 
 .coupon-wrapper .coupon-offer-details,
@@ -45,17 +121,17 @@ width: 740px;	*/
 .coupon-wrapper .coupon-offer-legal,
 .coupon-wrapper .coupon-dates,
 .coupon-wrapper .coupon-address{
-/*color: #000;
+color: #000;
 font-size: 10px;
-margin: 5px 0;*/
+margin: 5px 0;
 }
 
 .coupon-wrapper .coupon-print.btn{
-/*background: #b1d83d;
+background: #b1d83d;
 color: #fff;
 float: right;
 font-size: 16px;
-padding: 8px 12px 8px 14px;*/
+padding: 8px 12px 8px 14px;
 }
 
 div#block-views-coupons-block_1{
