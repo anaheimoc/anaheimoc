@@ -84,6 +84,7 @@ function anaheimoc_page_strongarm() {
     'path' => '8',
     'attachments' => '6',
     'domain' => '4',
+    'flag' => '0',
     'anaheimoc_page_node_content_1' => '11',
   );
 

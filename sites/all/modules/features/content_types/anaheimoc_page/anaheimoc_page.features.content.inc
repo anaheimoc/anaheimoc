@@ -141,6 +141,83 @@ function anaheimoc_page_content_default_fields() {
     ),
   );
 
+  // Exported field: field_anaheimoc_page_hero_weight
+  $fields['anaheimoc_page-field_anaheimoc_page_hero_weight'] = array(
+    'field_name' => 'field_anaheimoc_page_hero_weight',
+    'type_name' => 'anaheimoc_page',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'number_integer',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'number',
+    'active' => '1',
+    'prefix' => '',
+    'suffix' => '',
+    'min' => '',
+    'max' => '',
+    'allowed_values' => '-10
+-9
+-8
+-7
+-6
+-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Hero feature image weight',
+      'weight' => '2',
+      'description' => '',
+      'type' => 'optionwidgets_select',
+      'module' => 'optionwidgets',
+    ),
+  );
+
   // Exported field: field_anaheimoc_page_reference
   $fields['anaheimoc_page-field_anaheimoc_page_reference'] = array(
     'field_name' => 'field_anaheimoc_page_reference',
@@ -185,7 +262,6 @@ function anaheimoc_page_content_default_fields() {
     'referenceable_types' => array(
       'anaheimoc_page' => 'anaheimoc_page',
       'ad' => 0,
-      'article' => 0,
       'partner_listing_associate' => 0,
       'basic_profile' => 0,
       'blog_article' => 0,
@@ -194,7 +270,6 @@ function anaheimoc_page_content_default_fields() {
       'coupon' => 0,
       'event_leisure' => 0,
       'feed_fast' => 0,
-      'feature_article' => 0,
       'gallery' => 0,
       'front_slideshow' => 0,
       'gallery_image' => 0,
@@ -208,7 +283,6 @@ function anaheimoc_page_content_default_fields() {
       'microsite' => 0,
       'page' => 0,
       'multichoice' => 0,
-      'navigation_page' => 0,
       'oc_specialist_updates' => 0,
       'partner_event' => 0,
       'partner_listing' => 0,
@@ -241,8 +315,8 @@ function anaheimoc_page_content_default_fields() {
         'hover_title' => '',
         'destination' => 'node',
       ),
-      'fallback' => 'leave_blank',
-      'edit_fallback' => 0,
+      'fallback' => 'autocomplete',
+      'edit_fallback' => 1,
       'label' => 'Page reference',
       'weight' => '10',
       'description' => '',
@@ -475,6 +549,7 @@ function anaheimoc_page_content_default_fields() {
   // Included for use with string extractors like potx.
   t('Hero feature');
   t('Hero feature image');
+  t('Hero feature image weight');
   t('Main image');
   t('Page reference');
   t('Page weight');
