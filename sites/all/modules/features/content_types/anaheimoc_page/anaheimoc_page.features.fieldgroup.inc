@@ -51,6 +51,7 @@ function anaheimoc_page_fieldgroup_default_groups() {
     'fields' => array(
       '0' => 'field_anaheimoc_page_hero_tax',
       '1' => 'field_anaheimoc_page_hero_image',
+      '2' => 'field_anaheimoc_page_hero_weight',
     ),
   );
 
