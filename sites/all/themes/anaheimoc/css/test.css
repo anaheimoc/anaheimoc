@@ -1,5 +1,25 @@
 /* TEST LESS CSS FILE */
 /* USING FOR MINOR ADJUSTMENTS TO BE COMMITTED TO LOCAL.CSS AT A LATER DATE - BOBBY */
+/* PAGE ATTACHMENT CSS
+********************************************** */
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row {
+  background: #f1f1f1;
+  margin: 10px 0;
+  padding: 10px;
+}
+.view-anaheimoc-page.view-display-id-node_content_1 .views-field-edit-node,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-field-edit-node a:link,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-field-edit-node a:visited,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-field-delete-node,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-field-delete-node a:link,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-field-delete-node a:visited,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-field-field-anaheimoc-page-weight-value {
+  font-size: 10px;
+  color: #aaa;
+}
+.view-anaheimoc-page.view-display-id-node_content_1 .views-field-edit-node a:hover, .view-anaheimoc-page.view-display-id-node_content_1 .views-field-delete-node a:hover {
+  color: #000;
+}
 /* HOMEPAGE SLIDESHOW CSS
 ********************************************** */
 div.view.hero-slideshow {
