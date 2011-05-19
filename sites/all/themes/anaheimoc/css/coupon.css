@@ -3,14 +3,23 @@ width:600px;
 padding:10px;
 }
 
-div.coupon-preview-wrapper h3.coupon-preview-partner-title{
+div.coupon-wrapper{
+width:600px;
+border: 5px dashed #00a5e5;
+padding:5px;
+}
+
+
+div.coupon-preview-wrapper h3.coupon-preview-partner-title,
+div.coupon-wrapper h3.coupon-partner-title{
 color:#ffffff;
 background-color:#00a4e4;
 padding:8px;
 margin:0;
 }
 
-div.coupon-preview-wrapper div.coupon-preview-left{
+div.coupon-preview-wrapper div.coupon-preview-left,
+div.coupon-wrapper div.coupon-section-left{
 width:140px;
 float:left;
 display:block;
@@ -18,7 +27,8 @@ padding:10px 10px 0 0;
 position: relative;
 }
 
-div.coupon-preview-wrapper div.coupon-preview-left .coupon-preview-more-info a{
+div.coupon-preview-wrapper div.coupon-preview-left .coupon-preview-more-info a,
+div.coupon-wrapper div.coupon-section-left .coupon-print a{
 width:120px;
 float:left;
 display:block;
@@ -28,18 +38,19 @@ color:#ffffff;
 background-color:#58d558;
 font-weight:bold;
 font-size:18px;
-position: absolute;
-bottom:0;
+text-decoration:none;
 }
 
-div.coupon-preview-wrapper div.coupon-preview-right{
+div.coupon-preview-wrapper div.coupon-preview-right,
+div.coupon-wrapper div.coupon-section-right{
 width:440px;
 float:left;
 display:block;
 padding:10px 10px 0 0;
 }
 
-div.coupon-preview-wrapper div.coupon-preview-right .coupon-preview-offer h4{
+div.coupon-preview-wrapper div.coupon-preview-right .coupon-preview-offer h4,
+div.coupon-wrapper div.coupon-section-right .coupon-offer h4{
 font-size:60px;
 line-height:60px;
 color:#00a4e4;
@@ -48,7 +59,8 @@ font-family: Helvetica, Arial, sans-serif;
 margin:0;
 }
 
-div.coupon-preview-wrapper div.coupon-preview-right .coupon-preview-subhead h5{
+div.coupon-preview-wrapper div.coupon-preview-right .coupon-preview-subhead h5,
+div.coupon-wrapper div.coupon-section-right .coupon-subhead h5{
 font-size:14px;
 line-height:14px;
 color:#58d558;
@@ -57,15 +69,23 @@ font-family: Helvetica, Arial, sans-serif;
 margin:0;
 }
 
-div.coupon-preview-wrapper div.coupon-preview-right .coupon-preview-details p{
+div.coupon-preview-wrapper div.coupon-preview-right .coupon-preview-details p,
+div.coupon-wrapper div.coupon-section-right .coupon-details p{
 font-size:12px;
-line-height:16px;
+line-height:14px;
+color:#333333;
+}
+
+div.coupon-wrapper div.coupon-section-right .coupon-terms p,
+div.coupon-wrapper div.coupon-section-right .coupon-legal p,
+div.coupon-wrapper div.coupon-section-right .coupon-address address{
+font-size:10px;
+line-height:12px;
 color:#333333;
 }
 
 
-
-/* ---------------- */
+/*
 
 .coupon-wrapper{
 border: 8px dashed #00a5e5;
@@ -137,3 +157,4 @@ padding: 8px 12px 8px 14px;
 div#block-views-coupons-block_1{
 display: none;
 }
+*/
