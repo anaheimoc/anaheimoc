@@ -316,6 +316,7 @@ font-weight: bold;
 }
 
 
+
 /* PARTNER LOGO/CONTACT/ADDRESS
 *************************** */
 
@@ -929,4 +930,66 @@ font-size:26px;
 font-weight:normal;
 color:#414141;
 line-height:26px;
+}
+
+/* Calendar of Events */
+
+.view.view-event-leisure-page.view-id-event_leisure_page.view-display-id-attachment_1.view-dom-id-1 .views-field-field-event-leisure-image-fid  .field-content .imagecache.imagecache-event_listing_image_featured img, 
+.view.view-event-leisure-page.view-id-event_leisure_page.view-display-id-page_1.view-dom-id-2 .view-content .views-row.views-row-1.views-row-odd.views-row-first.views-row-last .views-field-field-event-leisure-image-fid .field-content  .imagecache.imagecache-event_listing_image img{
+float: left;
+margin: 0 12px 12px 0;
+display: block;
+}
+
+.view.view-event-leisure-page.view-id-event_leisure_page.view-display-id-attachment_1.view-dom-id-1 .views-field-title .field-content h3, .view.view-event-leisure-page.view-id-event_leisure_page.view-display-id-attachment_1.view-dom-id-1 .views-field-address .field-content .location.vcard .adr div{
+float:left;
+display:block;
+}
+
+.views_slideshow_singleframe_teaser_section div{
+width:600px;
+}
+
+/* Calendar of Events Slideshow */
+.views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed{
+width:600px;
+height:160px;
+margin:8px 0;
+padding:10px;
+background-color: #eeeeee;
+}
+
+.views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views_slideshow_singleframe_teaser_section{
+}
+
+.views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views-field-title .field-content h3 a, 
+.views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views-field-address{
+float: left;
+display: block;
+width:360px;
+}
+
+.views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views-field-title .field-content h3 a{
+font-size: 22px;
+line-height:24px;
+float: left;
+display: block;
+}
+
+.view.view-event-leisure-page.view-id-event_leisure_page.view-display-id-page_1.view-dom-id-2 .view-content .views-row.views-row-1.views-row-odd.views-row-first.views-row-last{
+width:600px;
+height:120px;
+margin:8px 0;
+padding:10px;
+background-color: #eeeeee;
+overflow:none;
+}
+
+.view.view-event-leisure-page.view-id-event_leisure_page.view-display-id-page_1.view-dom-id-2 .view-content .views-row.views-row-1.views-row-odd.views-row-first.views-row-last .views-field-title .field-content h3 a{
+float: left;
+display: block;
+width:440px;
+font-size:12px;
+line-height:14px;
+margin:0;
 }
