@@ -1513,7 +1513,7 @@ function anaheimoc_coupon_views_default_views() {
 	<h3 class="coupon-partner-title">[title_1]</h3>
 	<div class="coupon-section-left">
 		<div class="coupon-partner-logo">[field_mem_logo_fid]</div>
-		<div class="coupon-print"><a href="/">Print</a></div>
+		<div class="coupon-print">Print</div>
 	</div>
 	<div class="coupon-section-right">
 	  <div class="coupon-offer"><h4>[field_coupon_offer_value]</h4></div>
@@ -1522,9 +1522,8 @@ function anaheimoc_coupon_views_default_views() {
 	  <div class="coupon-supplemental-img">[field_coupon_sup_image_fid]</div>
 	  <div class="coupon-terms"><p>[field_coupon_terms_value]</p></div>
 	  <div class="coupon-legal"><p>[field_coupon_legal_value]</p></div>
-	  <div class="coupon-address">
-	    <span class="address-street">[street]</span>, <span class="address-city">[city]</span>, <span class="address-state">[province]</span>, <span class="address-zip">[postal_code]</span> <span class="address-phone">Phone:[field_mem_phone_main_value]</span>
-	  </div>
+	  <address>[street], [city], [province], [postal_code]</address>
+          <div class="coupon-phone">Phone: [field_mem_phone_main_value]</div>
 	</div>
 <div class="clearfix"></div>
 </div>',
