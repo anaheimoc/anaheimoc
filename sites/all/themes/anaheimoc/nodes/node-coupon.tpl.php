@@ -40,7 +40,8 @@
     <div id="node-bottom-inner" class="node-bottom-inner inner">
       <?php print $node_bottom; ?>
       <div class="coupon-print"><a href="#" onclick="window.print(); return false;">Print</a></div>
-      <div class="social-share-buttons">Share This Coupon: <?php print $social_share; ?></div>
+      <h4>Share This Coupon:</h4>
+      <div class="social-share-buttons"><?php print $social_share; ?></div>
     </div><!-- /node-bottom-inner -->
   </div><!-- /node-bottom -->
 </div><!-- /node-<?php print $node->nid; ?> -->
