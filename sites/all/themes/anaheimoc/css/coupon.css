@@ -27,8 +27,13 @@ padding:10px 10px 0 0;
 position: relative;
 }
 
+div.node-bottom.row.nested div.node-bottom-inner.inner{
+width:620px;
+}
+
 div.coupon-preview-wrapper div.coupon-preview-left .coupon-preview-more-info a,
-div.coupon-wrapper div.coupon-section-left .coupon-print a{
+div.coupon-wrapper div.coupon-section-left .coupon-print a,
+div.node-bottom.row.nested div.node-bottom-inner.inner div.coupon-print a{
 width:120px;
 float:left;
 display:block;
@@ -39,6 +44,17 @@ background-color:#58d558;
 font-weight:bold;
 font-size:18px;
 text-decoration:none;
+}
+div.node-bottom-inner.inner h4{
+float:left;
+padding: 0 12px;
+position: relative;
+left: 228px;
+}
+
+div.node-bottom-inner.inner div.social-share-buttons ul.links{
+float:right;
+display: inline-block;
 }
 
 div.coupon-preview-wrapper div.coupon-preview-right,
