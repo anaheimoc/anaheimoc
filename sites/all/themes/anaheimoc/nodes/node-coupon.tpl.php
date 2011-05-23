@@ -27,8 +27,7 @@
     <div class="content clearfix">
       <?php print $content ?>
     </div>
-		<div><a href="#" onclick="window.print(); return false;">Print</a></div>
-    <div>Share This Coupon:</div>
+		
     <?php if ($links): ?>
     <div class="links">
       <?php print $links; ?>
@@ -37,14 +36,11 @@
     
     
   </div><!-- /inner -->
-  
-  
-
-  <?php if ($node_bottom && !$teaser): ?>
   <div id="node-bottom" class="node-bottom row nested">
     <div id="node-bottom-inner" class="node-bottom-inner inner">
       <?php print $node_bottom; ?>
+      <div><a href="#" onclick="window.print(); return false;">Print</a></div>
+      <div>Share This Coupon: <?php print $social_share; ?></div>
     </div><!-- /node-bottom-inner -->
   </div><!-- /node-bottom -->
-  <?php endif; ?>  
 </div><!-- /node-<?php print $node->nid; ?> -->

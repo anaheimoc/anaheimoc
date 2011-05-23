@@ -87,6 +87,18 @@ function anaheimoc_preprocess_node(&$variables, $hook) {
   $variables['update_day'] = format_date($node->changed, 'custom', 'j');
   $variables['update_month'] = format_date($node->changed, 'custom', 'F');
   $variables['update_year'] = format_date($node->changed, 'custom', 'Y');
+  
+  //SHARE LINKS
+  if (module_exists('service_links')) {
+    if (user_access('access service links') && service_links_show($variables['node'])) {
+      $variables['social_share'] = theme('links', array(
+      $variables['node']->service_links['service-links-twitter'],
+      $variables['node']->service_links['service-links-facebook'],
+      $variables['node']->service_links['service-links-linkedin'],
+      $variables['node']->service_links['service-links-google']
+      ));
+    }
+  }
 }
 
 function anaheimoc_preprocess_node_image_library_img(&$variables) {
