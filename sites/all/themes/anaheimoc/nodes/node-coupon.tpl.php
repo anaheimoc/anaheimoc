@@ -39,7 +39,7 @@
   <div id="node-bottom" class="node-bottom row nested">
     <div id="node-bottom-inner" class="node-bottom-inner inner">
       <?php print $node_bottom; ?>
-      <div><a href="#" onclick="window.print(); return false;">Print</a></div>
+      <div class="coupon-print"><a href="#" onclick="window.print(); return false;">Print</a></div>
       <div>Share This Coupon: <?php print $social_share; ?></div>
     </div><!-- /node-bottom-inner -->
   </div><!-- /node-bottom -->
