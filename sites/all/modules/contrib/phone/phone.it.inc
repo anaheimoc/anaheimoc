@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.it.inc,v 1.30 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.it.inc,v 1.31 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,7 +9,7 @@
 function phone_it_metadata() {
   // These strings are translated using t() on output.
   return array(
-    'label' => 'Italian Phone Numbers',
+    'label' => 'Phone Numbers - Italy',
     'error' => '"%value" is not a valid Italian phone number<br>Italian phone numbers should only ...',
   );
 }

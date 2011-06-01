@@ -134,7 +134,7 @@ function filefield_sources_field_process($element, $edit, &$form_state, $form) {
 
   // If not a recognized field instance, do not process.
   if (!isset($element['#field_name']) || !($field = content_fields($element['#field_name'], $element['#type_name']))) {
-    return;
+    return $element;
   }
 
   // Do all processing as needed by each source.

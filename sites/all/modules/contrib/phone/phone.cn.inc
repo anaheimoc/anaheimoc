@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.cn.inc,v 1.1 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.cn.inc,v 1.2 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,7 +9,7 @@
 function phone_cn_metadata() {
   // These strings are translated using t() on output.
   return array(
-    'label' => 'China Phone Numbers',
+    'label' => 'Phone Numbers - China',
     'error' => '"%value" is not a valid Chinese phone number!<br>Chinese phone numbers should ...',
   );
 }

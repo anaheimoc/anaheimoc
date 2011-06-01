@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.ca.inc,v 1.37 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.ca.inc,v 1.38 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -8,7 +8,7 @@
 
 function phone_ca_metadata() {
   return array(
-    'label' => 'US & Canadian Phone Numbers',
+    'label' => 'Phone Numbers - US & Canada',
     'error' => '"%value" is not a valid North American phone number<br>North American Phone numbers should only contain numbers and + and - and ( and ) and spaces and be like 999-999-9999. Please enter a valid ten-digit phone number with optional extension.',
   );
 }

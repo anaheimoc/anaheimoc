@@ -14,8 +14,10 @@ class BEPhoneNumberTestCase extends DrupalWebTestCase {
   }
 
   public function testPhoneBEValid() {
-    $this->assertTrue(valid_phone_number('be', '023456789'), t('Test valid'));
-    $this->assertTrue(valid_phone_number('be', '0478990011'), t('Test valid'));
+    $this->assertTrue(valid_phone_number('be', '023456789'), '"023456789" should be valid');
+    $this->assertTrue(valid_phone_number('be', '0478990011'), '"0478990011" should be  valid');
+    $this->assertTrue(valid_phone_number('be', '01 234 56 78'), '"01 234 56 78" should be  valid');
+    $this->assertTrue(valid_phone_number('be', '+32 12345678'), '"+32 12345678" should be  valid');    
   }
 
   public function testPhoneBEInvalid() {

@@ -1,5 +1,4 @@
 <?php
-//$Id: nodequeue_handler_filter_in_queue.inc,v 1.1 2008/09/06 15:42:05 ezrag Exp $
 /**
  * Handler to filter for nodes that are not in a queue.
  */

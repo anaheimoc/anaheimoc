@@ -1,4 +1,3 @@
-// $Id: nodequeue.js,v 1.5 2009/01/11 16:18:31 ezrag Exp $
 
 /**
  * Nodequeue object

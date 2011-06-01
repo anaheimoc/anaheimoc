@@ -14,7 +14,7 @@ class ILPhoneNumberTestCase extends DrupalWebTestCase {
   }
 
   public function testPhoneILValid() {
-    //$this->assertTrue(valid_phone_number('il', '04 476 0000'), t('Test valid'));
+    $this->assertTrue(valid_phone_number('il', '1800 999 999'), '"1800 999 999" should be valid');    
   }
 
   public function testPhoneILInvalid() {
@@ -22,6 +22,6 @@ class ILPhoneNumberTestCase extends DrupalWebTestCase {
   }
 
   public function testPhoneILFormatting() {
-    //$this->assertEqual(format_phone_number('il', '+6421123456', null), '+64 21 123 456', t('Check international mobile format'));
+    $this->assertEqual(format_phone_number('il', '1800 999 999', null), '1800 999 999', 'Formatting OK "1800 999 999" --> "1800 999 999"');
   }
 }

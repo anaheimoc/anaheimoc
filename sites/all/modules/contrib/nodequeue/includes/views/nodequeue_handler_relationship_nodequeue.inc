@@ -1,5 +1,4 @@
 <?php
-//$Id: nodequeue_handler_relationship_nodequeue.inc,v 1.2 2010/01/31 23:17:53 ezrag Exp $
 /**
  * Specialized relationship handler to add nodequeues.
  */

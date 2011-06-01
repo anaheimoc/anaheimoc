@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.int.inc,v 1.12 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.int.inc,v 1.13 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * Verifies that $phonenumber is a valid international phone number as per ITU or,
@@ -41,16 +41,26 @@ function valid_int_phone_number($phonenumber) {
     );
     return FALSE;
   }
+  
+  //drupal_set_message('langue cc = ' . $cc, 'error');
+
   // TODO: Check if parentheses/brackets add up.
   // TODO: Validate the number against the country rules.
-  // Module needs a conversion table from numeric country codes to 2-letter codes.
-  // For now, validate against UK, US and Canada.
+  // For now, validate only against a limited number of countries.
+
   $countrycode = phone_country_code_convert($cc);
-  $valid_phone_function = 'valid_'. $countrycode . '_phone_number';
-  module_load_include('inc', 'phone', 'phone.'. $countrycode);
-  if (function_exists($valid_phone_function)) {
-    return $valid_phone_function($phonenumber, $field);
+  //drupal_set_message('langue countrycode = ' . $countrycode, 'error');
+  if (!empty($countrycode)) {
+      $valid_phone_function = 'valid_'. $countrycode . '_phone_number';
+      module_load_include('inc', 'phone', 'phone.'. $countrycode);
+      if (function_exists($valid_phone_function)) {
+        return $valid_phone_function($phonenumber, $field);
+      }
+      else {
+      	return TRUE; 
+      }
   }
+  
   return FALSE;
 }
 
@@ -118,8 +128,8 @@ function _normalize_country_code($phonenumber, $field = array()) {
  *   Converted country code
  */
 function phone_country_code_convert($code, $input_type = 'digits') {
-//   static $codes;
-//   if (!$codes) {
+   static $codes;
+   if (!$codes) {
     $codes = array(    
       '1' => 'ca',
       '1' => 'us',
@@ -328,9 +338,9 @@ function phone_country_code_convert($code, $input_type = 'digits') {
       '996' => 'kg',
       '998' => 'uz',      
     );
-//   }
+   }
 
-  if ($input_type == 'aplha') {
+  if ($input_type == 'alpha') {
     $codes = array_flip($codes);
   }
   return isset($codes[$code]) ? $codes[$code] : FALSE;

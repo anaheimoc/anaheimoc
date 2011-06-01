@@ -1,5 +1,4 @@
 <?php
-//$Id: nodequeue_handler_field_links.inc,v 1.3 2010/03/13 21:51:06 ezrag Exp $
 /**
  * Views field handler for the nodequeue queue links
  */

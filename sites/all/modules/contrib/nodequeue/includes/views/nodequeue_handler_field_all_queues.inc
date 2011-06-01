@@ -1,21 +1,18 @@
 <?php
-//$Id: nodequeue_handler_field_all_queues.inc,v 1.1 2008/09/06 15:42:05 ezrag Exp $
   /**
  * Field handler for all queues.
  *
  * @ingroup views_field_handlers
  */
 class nodequeue_handler_field_all_queues extends views_handler_field_prerender_list {
-  /**
-   * Provide meaningful defaults
-   */
-  function options(&$options) {
-    parent::options($options);
-    $options['link_to_queue'] = TRUE;
-    $options['limit'] = FALSE;
-    $options['qids'] = array();
+  function option_definition() {
+    $options = parent::option_definition();
+    $options['link_to_queue'] = array('default' => TRUE);
+    $options['limit'] = array('default' => FALSE);
+    $options['qids'] = array('default' => array());
+    return $options;
   }
-
+  
   /**
    * Provide "link to term" option.
    */

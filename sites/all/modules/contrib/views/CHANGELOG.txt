@@ -122,6 +122,8 @@ Views 2.x-dev
     o #1019826 by penguin25: Respect contact page access overrides when displaying contact link.
     o #534452 by dereine: Remove non-functional "optional" setting on string filters.
     o #747782 by dereine: Improve jump menu grouping.
+    o #1096548 by dww: Fix convert of taxonomy fields.
+    o #1096366 by jamsilver: Role access plugin: Replacing array_unshift() with reset().
 
   New features
     o #841260: Introduce a field to evaluate math expressions. Relies on CTools 1.7 (not yet released).
@@ -145,6 +147,8 @@ Views 2.x-dev
     o #970514 by moshe, dereine: Provide basic drush integration for views.
     o #962564 by joshuajabbour: Allow link attributes to be rewritten (internally).
     o #1054272 by dagmar: String filters are non optional anymore.
+    o #1079178 by Manuel Garcia: Provide a views revert drush command.
+    o #1096834 by dww: Allow importing views code that starts with '<?php'
 
 Views 2.11 (Jun 16, 2010)
   Bug fixes:

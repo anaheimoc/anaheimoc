@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.se.inc,v 1.6 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.se.inc,v 1.7 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,7 +9,7 @@
 function phone_se_metadata() {
   // These strings are translated using t() on output.
   return array(
-    'label' => 'Sweden Phone Numbers',
+    'label' => 'Phone Numbers - Sweden',
     'error' => '"%value" is not a valid Swedish mobile phone number<br>Swedish phone numbers should only ...',
   );
 }

@@ -1,3 +1,10 @@
+/*
+ * Change Log for views_slideshow_ddblock module
+ */
+
+2011-04-22
+#1001756 by ppblaauw: add text module as dependency to example module
+
 2010-07-20
 #781204 by SweeneyTodd: Fixed pager position not saved and only valid options
 

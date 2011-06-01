@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.au.inc,v 1.31 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.au.inc,v 1.32 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -8,7 +8,7 @@
 
  function phone_au_metadata() {
    return array(
-     'label' => 'Australian Phone Numbers',
+     'label' => 'Phone Numbers - Australia',
      'error' => '"%value" is not a valid Australian phone number<br>Australian phone numbers should contain only numbers with an optional prefix of "+61"',
    );
  }

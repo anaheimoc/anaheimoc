@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.be.inc,v 1.6 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.be.inc,v 1.7 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,7 +9,7 @@
 function phone_be_metadata() {
   // These strings are translated using t() on output.
   return array(
-    'label' => 'Belgian Phone Numbers',
+    'label' => 'Phone Numbers - Belgium',
     'error' => '"%value" is not a valid Belgian phone number<br>Belgian phone numbers should only ...',
   );
 }
@@ -22,8 +22,10 @@ function phone_be_metadata() {
  */
 function valid_be_phone_number($phonenumber) {
   // define regular expression
-  $regex = "/^0[1-9]\d{7,8}$/i";
+  $regex = "/^(\+32|0)[1-9]\d{7,8}$/i";
 
+
+  $phonenumber  = str_replace(array(' ','-','(',')'), '', $phonenumber);
   // return true if valid, false otherwise
   return (bool) preg_match($regex, $phonenumber);
 }
@@ -36,16 +38,13 @@ function valid_be_phone_number($phonenumber) {
  */
 function format_be_phone_number($phonenumber, $field) {
 
-  //$phonenumber = trim($phonenumber);
+  $phonenumber = trim($phonenumber);
 
-   // do some formatting on the phone number
-
-/* ==> to be done ==> add the country code 
    if ($field['phone_country_code']) {
-      if ($matches[1] != "+39") {
-  	$phonenumber = "+39" . " " . $phonenumber;
+      if ($matches[1] != "+32") {
+  	$phonenumber = "+32" . " " . $phonenumber;
       }
    }
-*/ 
+   
    return $phonenumber;
 }

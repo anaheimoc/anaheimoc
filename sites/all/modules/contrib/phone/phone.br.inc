@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.br.inc,v 1.12 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.br.inc,v 1.13 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -10,7 +10,7 @@ define('PHONE_BR_REGEX', "/^(\+|0{2}|)?(55|0|)[ -.]?((\(0?[1-9][0-9]\))|(0?[1-9]
 
 function phone_br_metadata() {
   return array(
-    'label' => 'Brazilian Phone Numbers',
+    'label' => ' Phone Numbers - Brazil',
     'error' => '"%value" is not a valid Brazilian phone number<br>Brazilian phone numbers should contain only numbers and spaces and - and be like 099 9999-9999 or 99 9999-9999 with an optional prefix of "+55".',
   );
 }

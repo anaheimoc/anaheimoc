@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.el.inc,v 1.1 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.el.inc,v 1.2 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,7 +9,7 @@
 function phone_el_metadata() {
   // These strings are translated using t() on output.
   return array(
-    'label' => 'Greek Phone Numbers',
+    'label' => 'Phone Numbers - Greece',
     'error' => '"%value" is not a valid Greek phone number<br>Greek phone numbers should only ...',
   );
 }

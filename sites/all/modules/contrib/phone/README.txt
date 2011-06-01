@@ -1,4 +1,4 @@
-$Id: README.txt,v 1.31 2010/07/19 22:34:08 thierrygd Exp $
+$Id: README.txt,v 1.32 2011/01/03 14:40:44 thierrygd Exp $
 
 Copyright 2010 http://www.arvoriad.com
 

@@ -1,4 +1,3 @@
-// $Id: nodequeue_dragdrop.js,v 1.2 2009/08/17 21:37:06 ezrag Exp $
 
 Drupal.behaviors.nodequeueDrag = function(context) {
   var tableDrag = Drupal.tableDrag['nodequeue-dragdrop'];
@@ -7,6 +6,8 @@ Drupal.behaviors.nodequeueDrag = function(context) {
     $('td.position').each(function(i){
       $(this).html(i + 1);
     });
+    
+    nodequeueUpdateNodePositions();
   }
 }
 
@@ -17,12 +18,7 @@ Drupal.behaviors.nodequeueReverse = function(context) {
       $('.nodequeue-dragdrop tbody').prepend(this);
     });
 
-    // ...and update node positions
-    var size = $('.node-position').size();
-    $('.node-position').each(function(i){
-      var val = $(this).val();
-      $(this).val(size - val + 1);
-    });
+    nodequeueUpdateNodePositions();
 
     nodequeueInsertChangedWarning();
     nodequeueRestripeTable();
@@ -40,15 +36,7 @@ Drupal.behaviors.nodequeueShuffle = function(context) {
       $('.nodequeue-dragdrop tbody').prepend(this);
     });
 
-    var reverse = Drupal.settings.nodequeue.reverse;
- 
-    // ...and update node positions
-    var size = reverse ? $('.node-position').size() : 1;
-    $('.node-position').each(function(i){
-      var val = $(this).val();
-      $(this).val(size);
-      reverse ? size-- : size++;
-    });
+    nodequeueUpdateNodePositions();
 
     nodequeueInsertChangedWarning();
     nodequeueRestripeTable();
@@ -111,6 +99,24 @@ Drupal.behaviors.nodequeueClearTitle = function(context) {
 }
 
 /**
+ * Updates node positions after nodequeue has been rearranged. It cares about the
+ * reverse order and populates nodes the other way round.
+ * @return
+ */
+function nodequeueUpdateNodePositions() {
+   
+  var reverse = Drupal.settings.nodequeue.reverse; //check if reverse option is set
+  
+  var size = reverse ? $('.node-position').size() : 1;
+  $('.node-position').each(function(i){
+    var val = $(this).val();
+    $(this).val(size);
+    reverse ? size-- : size++;
+  });	
+	
+}
+
+/**
  * Restripe the nodequeue table after removing an element or changing the
  * order of the elements.
  */
@@ -132,7 +138,7 @@ function nodequeueRestripeTable() {
  * Add a row to the nodequeue table explaining that the queue is empty.
  */
 function nodequeuePrependEmptyMessage() {
-  $('.nodequeue-dragdrop tbody').prepend('<tr class="odd"><td colspan="6">No nodes in this queue.</td></tr>');
+  $('.nodequeue-dragdrop tbody').prepend('<tr class="odd"><td colspan="6">'+Drupal.t('No nodes in this queue.')+'</td></tr>');
 }
 
 /**

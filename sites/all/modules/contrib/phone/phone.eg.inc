@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.eg.inc,v 1.10 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.eg.inc,v 1.11 2011/01/03 14:40:32 thierrygd Exp $
 
 /* 2009/10/24, Ahmad Gharbeia: initial release
 
@@ -68,7 +68,7 @@ define('TELEPHONE_REGEX', "
 function phone_eg_metadata() {
   // These strings are translated using t() on output.
   return array(
-    'label' => 'Egypt\'s telephone numbers',
+    'label' => 'Phone numbers - Egypt',
     'error' => '"%value" is not a valid phone number in Egypt. Telephone numbers in Egypt have the format +20 (#[#]) 1234567[8], where the digts between ( ) is the area or network code, without a leading zero; and digits between [ ] are optional',
   );
 

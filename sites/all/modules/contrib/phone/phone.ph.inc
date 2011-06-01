@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.ph.inc,v 1.9 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.ph.inc,v 1.10 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,7 +9,7 @@
  function phone_ph_metadata() {
    // These strings are translated using t() on output.
    return array(
-     'label' => 'Philippine Phone Numbers',
+     'label' => 'Phone Numbers - The Philippines',
      'error' => '"%value" is not a valid Philippine phone number<br />Example of valid Philippine phone numbers: +63 (2) 123-4567 or +63 (2) 123-4567 loc. 123	or mobile +63 (919) 123-4567',
    );
  }

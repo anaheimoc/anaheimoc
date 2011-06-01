@@ -261,7 +261,10 @@ Drupal.jstimer.countdown_auto_attach = function (jstimer_active_widgets) {
 
   // Call .attach() on the active widget items.
   for (var i in jstimer_active_widgets) {
-    jstimer_active_widgets[i].attach();
+  	// IE bug where twitter javascript adds functions into this array.
+    if ( typeof(jstimer_active_widgets[i]) != 'function' ) {
+      jstimer_active_widgets[i].attach();
+    }
   }
 
   // If you have any widget items, start the timing loop.

@@ -89,6 +89,7 @@ function node_views_data() {
       'group' => t('Node'), // The group it appears in on the UI. Could be left out.
       'handler' => 'views_handler_field_node',
       'click sortable' => TRUE,
+      'link_to_node default' => TRUE,
      ),
     'sort' => array(
       'handler' => 'views_handler_sort',
@@ -526,8 +527,8 @@ function node_views_data() {
   // revision timestamp
   // changed field
   $data['node_revisions']['timestamp'] = array(
-    'title' => t('Created date'), // The item it appears as on the UI,
-    'help' => t('The date the node revision was created.'), // The help that appears on the UI,
+    'title' => t('Updated date'), // The item it appears as on the UI,
+    'help' => t('The date the node was last updated.'), // The help that appears on the UI,
     'field' => array(
       'handler' => 'views_handler_field_date',
       'click sortable' => TRUE,

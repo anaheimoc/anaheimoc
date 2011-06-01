@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.za.inc,v 1.3 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.za.inc,v 1.4 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,8 +9,8 @@
 function phone_za_metadata() {
   // These strings are translated using t() on output.
   return array(
-    'label' => 'South African Phone Numbers',
-    'error' => '"%value" is not a valid South African phone number!<br>Czech phone numbers should ...',
+    'label' => 'Phone Numbers - South Africa',
+    'error' => '"%value" is not a valid South African phone number!<br>South African phone numbers should ...',
   );
 }
 
@@ -44,12 +44,23 @@ function format_za_phone_number($phonenumber, $field) {
 
   // get digits of phone number
   preg_match($regex, $phonenumber, $matches);
+  
+/*
+  drupal_set_message('$matches[1] = ' . $matches[1], 'error');
+  drupal_set_message('$matches[2] = ' . $matches[2], 'error');
+  drupal_set_message('$matches[3] = ' . $matches[3], 'error');
+  drupal_set_message('$matches[4] = ' . $matches[4], 'error');
+  drupal_set_message('$matches[5] = ' . $matches[5], 'error');
+  drupal_set_message('$matches[6] = ' . $matches[6], 'error');
+  drupal_set_message('$matches[7] = ' . $matches[7], 'error');
+  drupal_set_message('$matches[8] = ' . $matches[8], 'error');
+*/
 
   if ($field['phone_country_code']) {
-    	$phonenumber = '+27' . ' ' . $matches[2] .'-'. $matches[3] .'-'. $matches[4];
+    	$phonenumber = '+27' . ' ' . $matches[3] .'-'. $matches[5] .'-'. $matches[7];
   }
   else {
-  	$phonenumber = $matches[2] .'-'. $matches[3] .'-'. $matches[4];
+  	$phonenumber = $matches[3] .'-'. $matches[5] .'-'. $matches[7];
   }
 
   return $phonenumber;

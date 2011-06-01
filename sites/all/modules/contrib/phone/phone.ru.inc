@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.ru.inc,v 1.29 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.ru.inc,v 1.30 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,7 +9,7 @@
 function phone_ru_metadata() {
   // These strings are translated using t() on output.
   return array(
-    'label' => 'Russian Phone Numbers',
+    'label' => 'Phone Numbers - Russia',
     'error' => '"%value" is not a valid Russian phone number<br>Russian Phone numbers should .... ',
   );
 }

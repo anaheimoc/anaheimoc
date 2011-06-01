@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.cr.inc,v 1.24 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.cr.inc,v 1.25 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,7 +9,7 @@
  function phone_cr_metadata() {
    // These strings are translated using t() on output.
    return array(
-     'label' => 'Costa Rican Phone Numbers',
+     'label' => 'Phone Numbers - Costa Rica',
      'error' => '"%value" is not a valid Costa Rican phone number!<br>Costa Rican phone numbers should contain only numbers and spaces be like 99 99 99 99 with an optional prefix of "+506" or "00506".',
    );
  }

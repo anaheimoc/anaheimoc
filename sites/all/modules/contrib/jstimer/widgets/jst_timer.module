@@ -162,7 +162,6 @@ Drupal.jstimer.jst_timer_item = function(ele) {
       outhtml = outhtml.replace(/%hours% hours/,  Drupal.formatPlural(duration.hours, "1 hour", "@count hours"));
       outhtml = outhtml.replace(/%mins% minutes/, Drupal.formatPlural(duration.minutes, "1 minute", "@count minutes"));
       outhtml = outhtml.replace(/%secs% seconds/, Drupal.formatPlural(duration.seconds, "1 second", "@count seconds"));
-      // New replacements Oct 26/2010
       outhtml = outhtml.replace(/%months% months/, Drupal.formatPlural(duration.months, "1 month", "@count months"));
       outhtml = outhtml.replace(/%tot_months% months/, Drupal.formatPlural(duration.tot_months, "1 month", "@count months"));
     }
@@ -180,7 +179,6 @@ Drupal.jstimer.jst_timer_item = function(ele) {
     outhtml = outhtml.replace(/%hours_nopad%/, duration.hours);
     outhtml = outhtml.replace(/%mins_nopad%/, duration.minutes);
     outhtml = outhtml.replace(/%secs_nopad%/, duration.seconds);
-    // New replacements Oct 26/2010
     outhtml = outhtml.replace(/%sign%/, duration.sign < 0 ? '-' : '+');
     outhtml = outhtml.replace(/%months%/, duration.months);
     outhtml = outhtml.replace(/%tot_months%/, duration.tot_months);
@@ -384,4 +382,23 @@ function jst_timer_show($widget_args) {
  */
 function jst_timer_enable() {
   jstimer_build_js_cache();
+}
+
+
+/**
+ * This allows for translation of replacement strings.
+ * Since this module uses dynamic javascript, the js file is not available
+ * for localize.drupal.org to translate.
+ * @return
+ *   Nothing
+ */
+function translate_replacements() {
+  $translate = array(
+    t('1 year'), t('@count years'),
+    t('1 day'), t('@count days'),
+    t('1 hour'), t('@count hours'),
+    t('1 minute'), t('@count minutes'),
+    t('1 second'), t('@count seconds'),
+    t('1 month'), t('@count months'),
+  );
 }

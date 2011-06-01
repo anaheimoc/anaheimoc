@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.pa.inc,v 1.7 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.pa.inc,v 1.8 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -28,7 +28,7 @@ define('PHONE_PA_REGEX', '/((00|\+)?[0-9]{3}[\s])?([0-9]{3,4})[\s|-]?([0-9]{4})/
 function phone_pa_metadata() {
    // These strings are translated using t() on output.
    return array(
-     'label' => 'Panamenian Phone Numbers',
+     'label' => 'Phone Numbers - Panama',
      'error' => '"%value" is not a valid Panamanian phone number!<br>Panamanian phone numbers should contain only numbers, spaces and dashes be like 9999-999, 9999 999 or 9999999 with an optional prefix of "+507" or "00507".',
    );
  }

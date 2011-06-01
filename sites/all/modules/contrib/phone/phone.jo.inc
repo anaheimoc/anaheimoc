@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.jo.inc,v 1.11 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.jo.inc,v 1.12 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * This plugin is contributed by Untitled Web http://untitledstudios.com
@@ -11,7 +11,7 @@
 function phone_jo_metadata(){
   // These strings are translated using t() on output.
   return array(
-    'value' => 'Jordanian Phone Numbers',
+    'value' => 'Phone Numbers - Jordany',
     'error' => '"%value" is not a valid Jordanian phone number, Please check the spaces and dashes in your number.',
   );
 }

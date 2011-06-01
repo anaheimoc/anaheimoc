@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.cl.inc,v 1.6 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.cl.inc,v 1.7 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,8 +9,8 @@
 function phone_cl_metadata() {
   // These strings are translated using t() on output.
   return array(
-    'label' => 'Chili Phone Numbers',
-    'error' => '"%value" is not a valid Chilian mobile phone number<br>Chili phone numbers should only ...',
+    'label' => 'Phone Numbers - Chili',
+    'error' => '"%value" is not a valid Chilean mobile phone number<br>Chili phone numbers should only ...',
   );
 }
 

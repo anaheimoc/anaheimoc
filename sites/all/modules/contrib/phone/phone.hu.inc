@@ -1,5 +1,5 @@
 <?php
-// $Id: phone.hu.inc,v 1.24 2010/07/19 22:34:08 thierrygd Exp $
+// $Id: phone.hu.inc,v 1.25 2011/01/03 14:40:32 thierrygd Exp $
 
 /**
  * @file
@@ -9,7 +9,7 @@
 function phone_hu_metadata() {
   // These strings are translated using t() on output.
   return array(
-    'label' => 'Hungarian Phone Numbers',
+    'label' => 'Phone Numbers - Hungary',
     'error' => '"%value" is not a valid Hungarian phone number!<br>Hungarian phone numbers should contain only numbers and spaces be like 70 999 9999 with an optional prefix of "+36" or "06".',
   );
 }

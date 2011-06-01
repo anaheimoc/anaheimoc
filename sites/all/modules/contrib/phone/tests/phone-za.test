@@ -7,7 +7,7 @@ class ZAPhoneNumberTestCase extends DrupalWebTestCase {
    */
   public static function getInfo() {
     return array(
-      'name' => t('South African Phone number test'),
+      'name' => t('South Africa Phone number test'),
       'description' => t('Tests various valid and invalid South African phone numbers for validity'),
       'group' => t('Phone')
     );
@@ -23,11 +23,13 @@ class ZAPhoneNumberTestCase extends DrupalWebTestCase {
     $this->assertTrue(valid_phone_number('za', '011 123 1234'), t('Test valid - 011 123 1234'));
     $this->assertTrue(valid_phone_number('za', '011-123-1234'), t('Test valid - 011-123-1234'));
     $this->assertTrue(valid_phone_number('za', '0821231234'), t('Test valid - 0821231234'));
+    $this->assertTrue(valid_phone_number('za', '082 123 1234'), t('Test valid - 082 123 1234'));
     $this->assertTrue(valid_phone_number('za', '+27821231234'), t('Test valid - +27821231234'));
     $this->assertTrue(valid_phone_number('za', '+2782-123-1234'), t('Test valid - +2782-123-1234'));
     $this->assertTrue(valid_phone_number('za', '+2782 123 1234'), t('Test valid - +2782 123 1234'));
     $this->assertTrue(valid_phone_number('za', '27111231234'), t('Test valid - 27111231234'));
     $this->assertTrue(valid_phone_number('za', '2711 123 1234'), t('Test valid - 2711 123 1234'));
+    $this->assertTrue(valid_phone_number('za', '082 123 1234'), t('Test valid - 082 123 1234'));
   }
 
   public function testPhoneZAInvalid() {
@@ -39,6 +41,6 @@ class ZAPhoneNumberTestCase extends DrupalWebTestCase {
   }
 
   public function testPhoneZAFormatting() {
-    //$this->assertEqual(format_phone_number('za', '+6421123456', null), '+64 21 123 456', t('Check international mobile format'));
+    $this->assertEqual(format_phone_number('za', '082 123 1234', null), '082 123 1234', 'Formatting OK "082 123 1234" --> "082 123 1234"');
   }
 }

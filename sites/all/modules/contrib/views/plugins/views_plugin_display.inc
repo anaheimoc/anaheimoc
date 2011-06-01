@@ -983,7 +983,6 @@ class views_plugin_display extends views_plugin {
           '#description' => t("This will display the more link even if there are no more items to display."),
           '#default_value' => $this->get_option('use_more_always'),
         );
-        $form['#title'] .= t('Text to use for the more link.');
         $form['use_more_text'] = array(
           '#type' => 'textfield',
           '#title' => t('More link text'),
@@ -1477,6 +1476,11 @@ class views_plugin_display extends views_plugin {
    */
   function options_validate(&$form, &$form_state) {
     switch ($form_state['section']) {
+      case 'display_title':
+        if (empty($form_state['values']['display_title'])) {
+          form_error($form['display_title'], t('Display title may not be empty.'));
+        }
+        break;
       case 'css_class':
         $css_class = $form_state['values']['css_class'];
         if (preg_match('/[^a-zA-Z0-9- ]/', $css_class)) {
