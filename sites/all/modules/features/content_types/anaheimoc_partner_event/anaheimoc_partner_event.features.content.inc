@@ -21,7 +21,7 @@ function anaheimoc_partner_event_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'article_image_default',
+        'format' => 'partner_event_article_image_default',
         'exclude' => 0,
       ),
       '4' => array(
@@ -87,7 +87,7 @@ function anaheimoc_partner_event_content_default_fields() {
     'field_name' => 'field_global_date',
     'type_name' => 'partner_event',
     'display_settings' => array(
-      'weight' => '-3',
+      'weight' => '-1',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -158,7 +158,7 @@ function anaheimoc_partner_event_content_default_fields() {
     'field_name' => 'field_location_address',
     'type_name' => 'partner_event',
     'display_settings' => array(
-      'weight' => '-2',
+      'weight' => '1',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -540,7 +540,7 @@ function anaheimoc_partner_event_content_default_fields() {
     'field_name' => 'field_partner_reference',
     'type_name' => 'partner_event',
     'display_settings' => array(
-      'weight' => '-4',
+      'weight' => '2',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',

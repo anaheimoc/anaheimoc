@@ -15,8 +15,8 @@ function anaheimoc_partner_event_ctools_plugin_api() {
  */
 function anaheimoc_partner_event_imagecache_default_presets() {
   $items = array(
-    'article_image' => array(
-      'presetname' => 'article_image',
+    'partner_event_article_image' => array(
+      'presetname' => 'partner_event_article_image',
       'actions' => array(
         '0' => array(
           'weight' => '0',
