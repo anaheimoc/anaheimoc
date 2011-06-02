@@ -842,8 +842,20 @@ function anaheimoc_convention_calendar_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
+  $handler->override_option('access', array(
+    'type' => 'role',
+    'role' => array(
+      3 => 3,
+      28 => 28,
+      29 => 29,
+      31 => 31,
+    ),
+  ));
   $handler->override_option('title', 'Anaheim/Orange County Convention Calendar - Hotel Partners');
-  $handler->override_option('path', 'convention-calendar/hotel-partners');
+  $handler->override_option('header', 'The Anaheim/Orange County Visitor and Convention Bureau\'s Hotel Partner Convention Calendar is an 3 year overview of upcoming meetings, conferences, tradeshows and other events at the Anaheim Convention Center.  The convention calendar is a great resource for our partners because it prepares you for the influx of visitors to the region at any given time, allowing you to plan for staffing, promotions and other considerations.');
+  $handler->override_option('header_format', '1');
+  $handler->override_option('header_empty', 0);
+  $handler->override_option('path', 'partner-events/convention-calendar/hotel-partners');
   $handler->override_option('menu', array(
     'type' => 'none',
     'title' => '',
