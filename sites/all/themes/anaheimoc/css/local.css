@@ -985,11 +985,12 @@ background-color: #eeeeee;
 overflow:none;
 }
 
-.view.view-event-leisure-page.view-id-event_leisure_page.view-display-id-page_1.view-dom-id-2 .view-content .views-row.views-row-1.views-row-odd.views-row-first.views-row-last .views-field-title .field-content h3 a{
+.view.view-event-leisure-page.view-id-event_leisure_page.view-display-id-page_1.view-dom-id-2 .view-content .views-row.views-row-1.views-row-odd.views-row-first.views-row-last span.views-field-title span.field-content h3 a{
 float: left;
 display: block;
 width:440px;
 font-size:12px;
 line-height:14px;
 margin:0;
+padding:0;
 }
