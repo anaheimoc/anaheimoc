@@ -858,6 +858,10 @@ function anaheimoc_convention_calendar_views_default_views() {
     'weight' => 0,
     'name' => 'navigation',
   ));
+  $handler = $view->new_display('block', 'Convention Calendar (default) - block', 'block_1');
+  $handler->override_option('use_ajax', TRUE);
+  $handler->override_option('block_description', 'Convention Calendar (default) - block');
+  $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;
 
