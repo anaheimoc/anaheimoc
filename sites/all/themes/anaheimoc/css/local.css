@@ -946,12 +946,12 @@ float:left;
 display:block;
 }
 
-.views_slideshow_singleframe_teaser_section div{
+.view-id-event_leisure_page.view-display-id-page_1 .views_slideshow_singleframe_teaser_section div{
 width:600px;
 }
 
 /* Calendar of Events Slideshow */
-.views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed{
+.view-id-event_leisure_page.view-display-id-page_1 .views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed{
 width:600px;
 height:160px;
 margin:8px 0;
@@ -959,17 +959,17 @@ padding:10px;
 background-color: #eeeeee;
 }
 
-.views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views_slideshow_singleframe_teaser_section{
+.view-id-event_leisure_page.view-display-id-page_1 .views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views_slideshow_singleframe_teaser_section{
 }
 
-.views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views-field-title .field-content h3 a, 
-.views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views-field-address{
+.view-id-event_leisure_page.view-display-id-page_1 .views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views-field-title .field-content h3 a, 
+.view-id-event_leisure_page.view-display-id-page_1 .views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views-field-address{
 float: left;
 display: block;
 width:360px;
 }
 
-.views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views-field-title .field-content h3 a{
+.view-id-event_leisure_page.view-display-id-page_1 .views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views-field-title .field-content h3 a{
 font-size: 22px;
 line-height:24px;
 float: left;
