@@ -28,12 +28,6 @@
 		    <?php print $variables['field_pr_subheadline'][0]['value']; ?>
 		  </div>
 		<?php endif; ?>  
-		
-    <?php if ($terms): ?>
-	    <div class="field">
-	      <div class="field-label-inline-first">Category:</div> <?php print $terms; ?>
-	    </div>
-    <?php endif;?>
     
 	  <div class="content clearfix">
       <?php print $content ?>
