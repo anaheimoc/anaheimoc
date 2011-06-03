@@ -146,9 +146,10 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_anaheimoc_page_hero_weight',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
+      'weight' => '2',
+      'parent' => 'group_hero_feature_options',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -223,7 +224,7 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_anaheimoc_page_reference',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '12',
+      'weight' => '15',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -318,7 +319,7 @@ function anaheimoc_page_content_default_fields() {
       'fallback' => 'autocomplete',
       'edit_fallback' => 1,
       'label' => 'Page reference',
-      'weight' => '10',
+      'weight' => '15',
       'description' => '',
       'type' => 'nodereference_url',
       'module' => 'nodereference_url',
@@ -330,7 +331,7 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_anaheimoc_page_weight',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '3',
+      'weight' => '-1',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -408,7 +409,7 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_article_image',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '-2',
+      'weight' => '-4',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -484,7 +485,7 @@ function anaheimoc_page_content_default_fields() {
     'field_name' => 'field_partner_list_builder',
     'type_name' => 'anaheimoc_page',
     'display_settings' => array(
-      'weight' => '11',
+      'weight' => '14',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -538,8 +539,134 @@ function anaheimoc_page_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Partner category/city',
-      'weight' => '9',
+      'weight' => '14',
       'description' => 'This field accepts two arguments separated by a /.  The first argument is the category ID.  This argument supports multiple category IDs (ex: 6450+6521+6520).  The second argument (optional) accepts the name of a city.  This argument filters category results by city.  Here are a couple of examples of a full entry: 6520/buena-park - OR - 6520 - OR - 6520+6521/fullerton.',
+      'type' => 'text_textfield',
+      'module' => 'text',
+    ),
+  );
+
+  // Exported field: field_partner_m_list_builder
+  $fields['anaheimoc_page-field_partner_m_list_builder'] = array(
+    'field_name' => 'field_partner_m_list_builder',
+    'type_name' => 'anaheimoc_page',
+    'display_settings' => array(
+      'weight' => '12',
+      'parent' => '',
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => 5,
+      'size' => '60',
+      'default_value' => array(
+        '0' => array(
+          'value' => 'none/none',
+          '_error_element' => 'default_value_widget][field_partner_m_list_builder][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Meetings partner list builder',
+      'weight' => '12',
+      'description' => '',
+      'type' => 'text_textfield',
+      'module' => 'text',
+    ),
+  );
+
+  // Exported field: field_partner_v_list_builder
+  $fields['anaheimoc_page-field_partner_v_list_builder'] = array(
+    'field_name' => 'field_partner_v_list_builder',
+    'type_name' => 'anaheimoc_page',
+    'display_settings' => array(
+      'weight' => '10',
+      'parent' => '',
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => 5,
+      'size' => '60',
+      'default_value' => array(
+        '0' => array(
+          'value' => 'none/none',
+          '_error_element' => 'default_value_widget][field_partner_v_list_builder][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Visitors partner list builder',
+      'weight' => '10',
+      'description' => 'Format: partner visitor taxonomy term ID/city name.  Example: 797+803/anaheim.  See the partner category term id reference page to see the acceptable term ids.',
       'type' => 'text_textfield',
       'module' => 'text',
     ),
@@ -551,9 +678,11 @@ function anaheimoc_page_content_default_fields() {
   t('Hero feature image');
   t('Hero feature image weight');
   t('Main image');
+  t('Meetings partner list builder');
   t('Page reference');
   t('Page weight');
   t('Partner category/city');
+  t('Visitors partner list builder');
 
   return $fields;
 }
