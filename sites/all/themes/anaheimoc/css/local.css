@@ -938,7 +938,7 @@ line-height:26px;
 padding: 10px;
 }
 
-.view.view-event-leisure-page.view-id-event_leisure_page .view-content .views-field-field-event-leisure-image-fid{
+.view.view-event-leisure-page.view-id-event_leisure_page .view-content .views-field-field-article-image-fid{
 float: left;
 margin-right: 10px;	
 }
@@ -969,7 +969,7 @@ background: #eee;
 padding: 10px;
 width: 600px;
 }
-.attachment-before .view.view-event-leisure-page.view-display-id-attachment_1 .views-field-field-event-leisure-image-fid{
+.attachment-before .view.view-event-leisure-page.view-display-id-attachment_1 .views-field-field-article-image-fid{
 float: left;
 height: 160px; width: 220px;
 margin-right: 10px;

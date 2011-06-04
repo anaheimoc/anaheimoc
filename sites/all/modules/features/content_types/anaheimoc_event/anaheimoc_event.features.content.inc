@@ -11,7 +11,7 @@ function anaheimoc_event_content_default_fields() {
     'field_name' => 'field_article_image',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => '-2',
+      'weight' => '-4',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -21,7 +21,7 @@ function anaheimoc_event_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'event_image_default',
+        'format' => 'calendar_event_main_image_default',
         'exclude' => 0,
       ),
       '4' => array(
@@ -52,12 +52,12 @@ function anaheimoc_event_content_default_fields() {
     'description_field' => '1',
     'widget' => array(
       'file_extensions' => 'png gif jpg jpeg',
-      'file_path' => 'assets/event_leisure/images',
+      'file_path' => '',
       'progress_indicator' => 'bar',
       'max_filesize_per_file' => '',
       'max_filesize_per_node' => '',
       'max_resolution' => '1240x920',
-      'min_resolution' => '620x460',
+      'min_resolution' => '620x240',
       'alt' => '',
       'custom_alt' => 1,
       'title' => '',
@@ -75,86 +75,392 @@ function anaheimoc_event_content_default_fields() {
       'filefield_source_attach_mode' => 'move',
       'filefield_source_autocomplete' => '0',
       'label' => 'Main image',
-      'weight' => '-2',
+      'weight' => '-4',
       'description' => '',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
     ),
   );
 
-  // Exported field: field_article_image_additional
-  $fields['event_leisure-field_article_image_additional'] = array(
-    'field_name' => 'field_article_image_additional',
+  // Exported field: field_event_leisure_address
+  $fields['event_leisure-field_event_leisure_address'] = array(
+    'field_name' => 'field_event_leisure_address',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => '-1',
+      'weight' => 0,
       'parent' => '',
       'label' => array(
-        'format' => 'hidden',
+        'format' => 'inline',
       ),
       'teaser' => array(
         'format' => 'hidden',
-        'exclude' => 1,
+        'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'hidden',
-        'exclude' => 1,
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '4' => array(
-        'format' => 'image_plain',
+        'format' => 'default',
         'exclude' => 0,
       ),
       '2' => array(
-        'format' => 'image_plain',
+        'format' => 'default',
         'exclude' => 0,
       ),
       '3' => array(
-        'format' => 'image_plain',
+        'format' => 'default',
         'exclude' => 0,
       ),
       'token' => array(
-        'format' => 'image_plain',
+        'format' => 'default',
         'exclude' => 0,
       ),
     ),
     'widget_active' => '1',
-    'type' => 'filefield',
+    'type' => 'location',
     'required' => '0',
-    'multiple' => '1',
-    'module' => 'filefield',
+    'multiple' => '0',
+    'module' => 'location_cck',
     'active' => '1',
-    'list_field' => '0',
-    'list_default' => 1,
-    'description_field' => '1',
-    'widget' => array(
-      'file_extensions' => 'png gif jpg jpeg',
-      'file_path' => 'assets/event_leisure/images',
-      'progress_indicator' => 'bar',
-      'max_filesize_per_file' => '',
-      'max_filesize_per_node' => '',
-      'max_resolution' => '1600x1600',
-      'min_resolution' => '0',
-      'alt' => '',
-      'custom_alt' => 1,
-      'title' => '',
-      'custom_title' => 1,
-      'title_type' => 'textfield',
-      'default_image' => NULL,
-      'use_default_image' => 0,
-      'filefield_sources' => array(
-        'remote' => 0,
-        'reference' => 0,
-        'attach' => 0,
+    'location_settings' => array(
+      'form' => array(
+        'fields' => array(
+          'name' => array(
+            'collect' => '1',
+            'default' => '',
+            'weight' => '2',
+          ),
+          'street' => array(
+            'collect' => '1',
+            'default' => '',
+            'weight' => '4',
+          ),
+          'additional' => array(
+            'collect' => '1',
+            'default' => '',
+            'weight' => '6',
+          ),
+          'city' => array(
+            'collect' => '1',
+            'default' => '',
+            'weight' => '8',
+          ),
+          'province' => array(
+            'collect' => '4',
+            'default' => 'CA',
+            'weight' => '10',
+          ),
+          'postal_code' => array(
+            'collect' => '1',
+            'default' => '',
+            'weight' => '12',
+          ),
+          'country' => array(
+            'collect' => '4',
+            'default' => 'us',
+            'weight' => '14',
+          ),
+          'locpick' => array(
+            'collect' => '0',
+            'weight' => '20',
+          ),
+        ),
       ),
-      'filefield_source_attach_path' => 'file_attach',
-      'filefield_source_attach_absolute' => '0',
-      'filefield_source_attach_mode' => 'move',
-      'filefield_source_autocomplete' => '0',
-      'label' => 'Additional images',
-      'weight' => '-1',
+      'display' => array(
+        'hide' => array(
+          'country' => 'country',
+          'country_name' => 'country_name',
+          'map_link' => 'map_link',
+          'coords' => 'coords',
+          'name' => 0,
+          'street' => 0,
+          'additional' => 0,
+          'city' => 0,
+          'province' => 0,
+          'postal_code' => 0,
+          'locpick' => 0,
+          'province_name' => 0,
+        ),
+      ),
+    ),
+    'gmap_macro' => '[gmap ]',
+    'gmap_marker' => 'small red',
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'name' => '',
+          'street' => '',
+          'additional' => '',
+          'city' => '',
+          'province' => 'CA',
+          'postal_code' => '',
+          'cck_preview_in_progress' => TRUE,
+          'location_settings' => array(
+            'form' => array(
+              'fields' => array(
+                'name' => array(
+                  'default' => '',
+                  'collect' => '1',
+                  'weight' => '2',
+                ),
+                'street' => array(
+                  'default' => '',
+                  'collect' => '1',
+                  'weight' => '4',
+                ),
+                'additional' => array(
+                  'default' => '',
+                  'collect' => '1',
+                  'weight' => '6',
+                ),
+                'city' => array(
+                  'default' => '',
+                  'collect' => '1',
+                  'weight' => '8',
+                ),
+                'province' => array(
+                  'default' => 'CA',
+                  'collect' => '4',
+                  'weight' => '10',
+                ),
+                'postal_code' => array(
+                  'default' => '',
+                  'collect' => '1',
+                  'weight' => '12',
+                ),
+                'country' => array(
+                  'default' => 'us',
+                  'collect' => '4',
+                  'weight' => '14',
+                ),
+                'locpick' => array(
+                  'default' => FALSE,
+                  'collect' => '0',
+                  'weight' => '20',
+                  'nodiff' => TRUE,
+                ),
+                'cck_preview_in_progress' => array(
+                  'default' => TRUE,
+                ),
+                'location_settings' => array(
+                  'default' => array(
+                    'form' => array(
+                      'fields' => array(
+                        'name' => array(
+                          'default' => '',
+                          'collect' => '1',
+                          'weight' => '2',
+                        ),
+                        'street' => array(
+                          'default' => '',
+                          'collect' => '1',
+                          'weight' => '4',
+                        ),
+                        'additional' => array(
+                          'default' => '',
+                          'collect' => '1',
+                          'weight' => '6',
+                        ),
+                        'city' => array(
+                          'default' => '',
+                          'collect' => '1',
+                          'weight' => '8',
+                        ),
+                        'province' => array(
+                          'default' => 'CA',
+                          'collect' => '4',
+                          'weight' => '10',
+                        ),
+                        'postal_code' => array(
+                          'default' => '',
+                          'collect' => '1',
+                          'weight' => '12',
+                        ),
+                        'country' => array(
+                          'default' => 'us',
+                          'collect' => '4',
+                          'weight' => '14',
+                        ),
+                        'locpick' => array(
+                          'default' => FALSE,
+                          'collect' => '0',
+                          'weight' => '20',
+                          'nodiff' => TRUE,
+                        ),
+                        'cck_preview_in_progress' => array(
+                          'default' => TRUE,
+                        ),
+                        'location_settings' => array(
+                          'default' => array(
+                            'form' => array(
+                              'fields' => array(
+                                'name' => array(
+                                  'default' => '',
+                                  'collect' => '1',
+                                  'weight' => '2',
+                                ),
+                                'street' => array(
+                                  'default' => '',
+                                  'collect' => '1',
+                                  'weight' => '4',
+                                ),
+                                'additional' => array(
+                                  'default' => '',
+                                  'collect' => '1',
+                                  'weight' => '6',
+                                ),
+                                'city' => array(
+                                  'default' => '',
+                                  'collect' => '1',
+                                  'weight' => '8',
+                                ),
+                                'province' => array(
+                                  'default' => 'CA',
+                                  'collect' => '4',
+                                  'weight' => '10',
+                                ),
+                                'postal_code' => array(
+                                  'default' => '',
+                                  'collect' => '1',
+                                  'weight' => '12',
+                                ),
+                                'country' => array(
+                                  'default' => 'us',
+                                  'collect' => '4',
+                                  'weight' => '14',
+                                ),
+                                'locpick' => array(
+                                  'default' => FALSE,
+                                  'collect' => '0',
+                                  'weight' => '20',
+                                  'nodiff' => TRUE,
+                                ),
+                                'lid' => array(
+                                  'default' => FALSE,
+                                ),
+                                'latitude' => array(
+                                  'default' => 0,
+                                ),
+                                'longitude' => array(
+                                  'default' => 0,
+                                ),
+                                'source' => array(
+                                  'default' => 0,
+                                ),
+                                'is_primary' => array(
+                                  'default' => 0,
+                                ),
+                                'delete_location' => array(
+                                  'default' => FALSE,
+                                  'nodiff' => TRUE,
+                                ),
+                              ),
+                            ),
+                            'display' => array(
+                              'hide' => array(
+                                'name' => 0,
+                                'street' => 0,
+                                'additional' => 0,
+                                'city' => 0,
+                                'province' => 0,
+                                'postal_code' => 0,
+                                'country' => 0,
+                                'locpick' => 0,
+                                'province_name' => 0,
+                                'country_name' => 0,
+                                'map_link' => 0,
+                                'coords' => 0,
+                              ),
+                            ),
+                          ),
+                        ),
+                        'lid' => array(
+                          'default' => FALSE,
+                        ),
+                        'latitude' => array(
+                          'default' => 0,
+                        ),
+                        'longitude' => array(
+                          'default' => 0,
+                        ),
+                        'source' => array(
+                          'default' => 0,
+                        ),
+                        'is_primary' => array(
+                          'default' => 0,
+                        ),
+                        'delete_location' => array(
+                          'default' => FALSE,
+                          'nodiff' => TRUE,
+                        ),
+                      ),
+                    ),
+                    'display' => array(
+                      'hide' => array(
+                        'country' => 'country',
+                        'coords' => 'coords',
+                        'name' => 0,
+                        'street' => 0,
+                        'additional' => 0,
+                        'city' => 0,
+                        'province' => 0,
+                        'postal_code' => 0,
+                        'locpick' => 0,
+                        'province_name' => 0,
+                        'country_name' => 0,
+                        'map_link' => 0,
+                      ),
+                    ),
+                  ),
+                ),
+                'lid' => array(
+                  'default' => FALSE,
+                ),
+                'latitude' => array(
+                  'default' => 0,
+                ),
+                'longitude' => array(
+                  'default' => 0,
+                ),
+                'source' => array(
+                  'default' => 0,
+                ),
+                'is_primary' => array(
+                  'default' => 0,
+                ),
+                'delete_location' => array(
+                  'default' => FALSE,
+                  'nodiff' => TRUE,
+                ),
+              ),
+            ),
+            'display' => array(
+              'hide' => array(
+                'country' => 'country',
+                'country_name' => 'country_name',
+                'coords' => 'coords',
+                'name' => 0,
+                'street' => 0,
+                'additional' => 0,
+                'city' => 0,
+                'province' => 0,
+                'postal_code' => 0,
+                'locpick' => 0,
+                'province_name' => 0,
+                'map_link' => 0,
+              ),
+            ),
+          ),
+          'country' => 'us',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Event address',
+      'weight' => 0,
       'description' => '',
-      'type' => 'imagefield_widget',
-      'module' => 'imagefield',
+      'type' => 'location',
+      'module' => 'location_cck',
     ),
   );
 
@@ -163,7 +469,7 @@ function anaheimoc_event_content_default_fields() {
     'field_name' => 'field_event_leisure_admission',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => '7',
+      'weight' => '1',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -215,7 +521,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Admission',
-      'weight' => '5',
+      'weight' => '1',
       'description' => '',
       'type' => 'text_textfield',
       'module' => 'text',
@@ -227,7 +533,7 @@ function anaheimoc_event_content_default_fields() {
     'field_name' => 'field_event_leisure_description',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => '2',
+      'weight' => '-1',
       'parent' => '',
       'label' => array(
         'format' => 'above',
@@ -273,7 +579,7 @@ function anaheimoc_event_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Event description',
-      'weight' => '1',
+      'weight' => '-1',
       'description' => '',
       'type' => 'text_textarea',
       'module' => 'text',
@@ -285,7 +591,7 @@ function anaheimoc_event_content_default_fields() {
     'field_name' => 'field_event_leisure_featured',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => '-4',
+      'weight' => '-3',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -296,7 +602,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'full' => array(
         'format' => 'hidden',
-        'exclude' => 1,
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'default',
@@ -332,10 +638,77 @@ function anaheimoc_event_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Featured Event',
-      'weight' => '-4',
+      'weight' => '-3',
       'description' => '',
       'type' => 'optionwidgets_onoff',
       'module' => 'optionwidgets',
+    ),
+  );
+
+  // Exported field: field_event_leisure_image
+  $fields['event_leisure-field_event_leisure_image'] = array(
+    'field_name' => 'field_event_leisure_image',
+    'type_name' => 'event_leisure',
+    'display_settings' => array(
+      'weight' => '7',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'hidden',
+        'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '4',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '1',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => '',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '1600x1200',
+      'min_resolution' => '200x150',
+      'alt' => '',
+      'custom_alt' => 1,
+      'title' => '',
+      'custom_title' => 1,
+      'title_type' => 'textfield',
+      'default_image' => NULL,
+      'use_default_image' => 0,
+      'label' => 'Event images',
+      'weight' => '7',
+      'description' => '',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
     ),
   );
 
@@ -344,7 +717,7 @@ function anaheimoc_event_content_default_fields() {
     'field_name' => 'field_event_leisure_phone',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => '6',
+      'weight' => '2',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -388,7 +761,7 @@ function anaheimoc_event_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Public Information Phone',
-      'weight' => '4',
+      'weight' => '2',
       'description' => '',
       'type' => 'phone_textfield',
       'module' => 'phone',
@@ -400,7 +773,7 @@ function anaheimoc_event_content_default_fields() {
     'field_name' => 'field_event_leisure_tax_type',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => 0,
+      'weight' => '5',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -410,8 +783,8 @@ function anaheimoc_event_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'default',
-        'exclude' => 0,
+        'format' => 'hidden',
+        'exclude' => 1,
       ),
       '4' => array(
         'format' => 'default',
@@ -451,7 +824,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Event type',
-      'weight' => '8',
+      'weight' => '5',
       'description' => '',
       'type' => 'content_taxonomy_options',
       'module' => 'content_taxonomy_options',
@@ -463,7 +836,7 @@ function anaheimoc_event_content_default_fields() {
     'field_name' => 'field_event_leisure_time',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => '5',
+      'weight' => '3',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -521,7 +894,7 @@ function anaheimoc_event_content_default_fields() {
     'field_name' => 'field_event_leisure_website',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => '8',
+      'weight' => '4',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -531,7 +904,7 @@ function anaheimoc_event_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'default',
+        'format' => 'url',
         'exclude' => 0,
       ),
       '4' => array(
@@ -575,7 +948,7 @@ function anaheimoc_event_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Website',
-      'weight' => '6',
+      'weight' => '4',
       'description' => '',
       'type' => 'link',
       'module' => 'link',
@@ -587,13 +960,13 @@ function anaheimoc_event_content_default_fields() {
     'field_name' => 'field_global_date',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => '-3',
+      'weight' => '-2',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
       ),
       'teaser' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       'full' => array(
@@ -646,479 +1019,10 @@ function anaheimoc_event_content_default_fields() {
       'year_range' => '-3:+3',
       'label_position' => 'above',
       'label' => 'Event date',
-      'weight' => '-3',
+      'weight' => '-2',
       'description' => '',
       'type' => 'date_popup',
       'module' => 'date',
-    ),
-  );
-
-  // Exported field: field_location_address
-  $fields['event_leisure-field_location_address'] = array(
-    'field_name' => 'field_location_address',
-    'type_name' => 'event_leisure',
-    'display_settings' => array(
-      'weight' => '3',
-      'parent' => '',
-      'label' => array(
-        'format' => 'above',
-      ),
-      'teaser' => array(
-        'format' => 'hidden',
-        'exclude' => 0,
-      ),
-      'full' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '2' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '3' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'token' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-    ),
-    'widget_active' => '1',
-    'type' => 'location',
-    'required' => '0',
-    'multiple' => '0',
-    'module' => 'location_cck',
-    'active' => '1',
-    'location_settings' => array(
-      'form' => array(
-        'fields' => array(
-          'name' => array(
-            'collect' => '1',
-            'default' => '',
-            'weight' => '2',
-          ),
-          'street' => array(
-            'collect' => '1',
-            'default' => '',
-            'weight' => '4',
-          ),
-          'additional' => array(
-            'collect' => '1',
-            'default' => '',
-            'weight' => '6',
-          ),
-          'city' => array(
-            'collect' => '1',
-            'default' => '',
-            'weight' => '8',
-          ),
-          'province' => array(
-            'collect' => '1',
-            'default' => '',
-            'weight' => '10',
-          ),
-          'postal_code' => array(
-            'collect' => '1',
-            'default' => '',
-            'weight' => '12',
-          ),
-          'country' => array(
-            'collect' => '4',
-            'default' => 'us',
-            'weight' => '14',
-          ),
-          'locpick' => array(
-            'collect' => '0',
-            'weight' => '20',
-          ),
-        ),
-      ),
-      'display' => array(
-        'hide' => array(
-          'locpick' => 'locpick',
-          'province_name' => 'province_name',
-          'country_name' => 'country_name',
-          'map_link' => 'map_link',
-          'coords' => 'coords',
-          'name' => 0,
-          'street' => 0,
-          'additional' => 0,
-          'city' => 0,
-          'province' => 0,
-          'postal_code' => 0,
-          'country' => 0,
-        ),
-      ),
-    ),
-    'gmap_macro' => '[gmap ]',
-    'gmap_marker' => 'small red',
-    'widget' => array(
-      'default_value' => array(
-        '0' => array(
-          'name' => '',
-          'street' => '',
-          'additional' => '',
-          'city' => '',
-          'province' => '',
-          'postal_code' => '',
-          'cck_preview_in_progress' => TRUE,
-          'location_settings' => array(
-            'form' => array(
-              'fields' => array(
-                'name' => array(
-                  'default' => '',
-                  'collect' => '1',
-                  'weight' => '2',
-                ),
-                'street' => array(
-                  'default' => '',
-                  'collect' => '1',
-                  'weight' => '4',
-                ),
-                'additional' => array(
-                  'default' => '',
-                  'collect' => '1',
-                  'weight' => '6',
-                ),
-                'city' => array(
-                  'default' => '',
-                  'collect' => '1',
-                  'weight' => '8',
-                ),
-                'province' => array(
-                  'default' => '',
-                  'collect' => '1',
-                  'weight' => '10',
-                ),
-                'postal_code' => array(
-                  'default' => '',
-                  'collect' => '1',
-                  'weight' => '12',
-                ),
-                'country' => array(
-                  'default' => 'us',
-                  'collect' => '4',
-                  'weight' => '14',
-                ),
-                'locpick' => array(
-                  'default' => FALSE,
-                  'collect' => '0',
-                  'weight' => '20',
-                  'nodiff' => TRUE,
-                ),
-                'cck_preview_in_progress' => array(
-                  'default' => TRUE,
-                ),
-                'location_settings' => array(
-                  'default' => array(
-                    'form' => array(
-                      'fields' => array(
-                        'name' => array(
-                          'default' => '',
-                          'collect' => '1',
-                          'weight' => '2',
-                        ),
-                        'street' => array(
-                          'default' => '',
-                          'collect' => '1',
-                          'weight' => '4',
-                        ),
-                        'additional' => array(
-                          'default' => '',
-                          'collect' => '1',
-                          'weight' => '6',
-                        ),
-                        'city' => array(
-                          'default' => '',
-                          'collect' => '1',
-                          'weight' => '8',
-                        ),
-                        'province' => array(
-                          'default' => '',
-                          'collect' => '1',
-                          'weight' => '10',
-                        ),
-                        'postal_code' => array(
-                          'default' => '',
-                          'collect' => '1',
-                          'weight' => '12',
-                        ),
-                        'country' => array(
-                          'default' => 'us',
-                          'collect' => '4',
-                          'weight' => '14',
-                        ),
-                        'locpick' => array(
-                          'default' => FALSE,
-                          'collect' => '0',
-                          'weight' => '20',
-                          'nodiff' => TRUE,
-                        ),
-                        'cck_preview_in_progress' => array(
-                          'default' => TRUE,
-                        ),
-                        'location_settings' => array(
-                          'default' => array(
-                            'form' => array(
-                              'fields' => array(
-                                'name' => array(
-                                  'default' => '',
-                                  'collect' => '1',
-                                  'weight' => '2',
-                                ),
-                                'street' => array(
-                                  'default' => '',
-                                  'collect' => '1',
-                                  'weight' => '4',
-                                ),
-                                'additional' => array(
-                                  'default' => '',
-                                  'collect' => '1',
-                                  'weight' => '6',
-                                ),
-                                'city' => array(
-                                  'default' => '',
-                                  'collect' => '1',
-                                  'weight' => '8',
-                                ),
-                                'province' => array(
-                                  'default' => '',
-                                  'collect' => '1',
-                                  'weight' => '10',
-                                ),
-                                'postal_code' => array(
-                                  'default' => '',
-                                  'collect' => '1',
-                                  'weight' => '12',
-                                ),
-                                'country' => array(
-                                  'default' => 'us',
-                                  'collect' => '4',
-                                  'weight' => '14',
-                                ),
-                                'locpick' => array(
-                                  'default' => FALSE,
-                                  'collect' => '0',
-                                  'weight' => '20',
-                                  'nodiff' => TRUE,
-                                ),
-                                'cck_preview_in_progress' => array(
-                                  'default' => TRUE,
-                                ),
-                                'location_settings' => array(
-                                  'default' => array(
-                                    'form' => array(
-                                      'fields' => array(
-                                        'name' => array(
-                                          'default' => '',
-                                          'collect' => '1',
-                                          'weight' => '2',
-                                        ),
-                                        'street' => array(
-                                          'default' => '',
-                                          'collect' => '1',
-                                          'weight' => '4',
-                                        ),
-                                        'additional' => array(
-                                          'default' => '',
-                                          'collect' => '1',
-                                          'weight' => '6',
-                                        ),
-                                        'city' => array(
-                                          'default' => '',
-                                          'collect' => '1',
-                                          'weight' => '8',
-                                        ),
-                                        'province' => array(
-                                          'default' => '',
-                                          'collect' => '1',
-                                          'weight' => '10',
-                                        ),
-                                        'postal_code' => array(
-                                          'default' => '',
-                                          'collect' => '1',
-                                          'weight' => '12',
-                                        ),
-                                        'country' => array(
-                                          'default' => 'us',
-                                          'collect' => '4',
-                                          'weight' => '14',
-                                        ),
-                                        'locpick' => array(
-                                          'default' => FALSE,
-                                          'collect' => '0',
-                                          'weight' => '20',
-                                          'nodiff' => TRUE,
-                                        ),
-                                        'lid' => array(
-                                          'default' => FALSE,
-                                        ),
-                                        'latitude' => array(
-                                          'default' => 0,
-                                        ),
-                                        'longitude' => array(
-                                          'default' => 0,
-                                        ),
-                                        'source' => array(
-                                          'default' => 0,
-                                        ),
-                                        'is_primary' => array(
-                                          'default' => 0,
-                                        ),
-                                        'delete_location' => array(
-                                          'default' => FALSE,
-                                          'nodiff' => TRUE,
-                                        ),
-                                      ),
-                                    ),
-                                    'display' => array(
-                                      'hide' => array(
-                                        'locpick' => 'locpick',
-                                        'province_name' => 'province_name',
-                                        'country_name' => 'country_name',
-                                        'map_link' => 'map_link',
-                                        'coords' => 'coords',
-                                        'name' => 0,
-                                        'street' => 0,
-                                        'additional' => 0,
-                                        'city' => 0,
-                                        'province' => 0,
-                                        'postal_code' => 0,
-                                        'country' => 0,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                'lid' => array(
-                                  'default' => FALSE,
-                                ),
-                                'latitude' => array(
-                                  'default' => 0,
-                                ),
-                                'longitude' => array(
-                                  'default' => 0,
-                                ),
-                                'source' => array(
-                                  'default' => 0,
-                                ),
-                                'is_primary' => array(
-                                  'default' => 0,
-                                ),
-                                'delete_location' => array(
-                                  'default' => FALSE,
-                                  'nodiff' => TRUE,
-                                ),
-                              ),
-                            ),
-                            'display' => array(
-                              'hide' => array(
-                                'locpick' => 'locpick',
-                                'province_name' => 'province_name',
-                                'country_name' => 'country_name',
-                                'map_link' => 'map_link',
-                                'coords' => 'coords',
-                                'name' => 0,
-                                'street' => 0,
-                                'additional' => 0,
-                                'city' => 0,
-                                'province' => 0,
-                                'postal_code' => 0,
-                                'country' => 0,
-                              ),
-                            ),
-                          ),
-                        ),
-                        'lid' => array(
-                          'default' => FALSE,
-                        ),
-                        'latitude' => array(
-                          'default' => 0,
-                        ),
-                        'longitude' => array(
-                          'default' => 0,
-                        ),
-                        'source' => array(
-                          'default' => 0,
-                        ),
-                        'is_primary' => array(
-                          'default' => 0,
-                        ),
-                        'delete_location' => array(
-                          'default' => FALSE,
-                          'nodiff' => TRUE,
-                        ),
-                      ),
-                    ),
-                    'display' => array(
-                      'hide' => array(
-                        'locpick' => 'locpick',
-                        'province_name' => 'province_name',
-                        'country_name' => 'country_name',
-                        'map_link' => 'map_link',
-                        'coords' => 'coords',
-                        'name' => 0,
-                        'street' => 0,
-                        'additional' => 0,
-                        'city' => 0,
-                        'province' => 0,
-                        'postal_code' => 0,
-                        'country' => 0,
-                      ),
-                    ),
-                  ),
-                ),
-                'lid' => array(
-                  'default' => FALSE,
-                ),
-                'latitude' => array(
-                  'default' => 0,
-                ),
-                'longitude' => array(
-                  'default' => 0,
-                ),
-                'source' => array(
-                  'default' => 0,
-                ),
-                'is_primary' => array(
-                  'default' => 0,
-                ),
-                'delete_location' => array(
-                  'default' => FALSE,
-                  'nodiff' => TRUE,
-                ),
-              ),
-            ),
-            'display' => array(
-              'hide' => array(
-                'locpick' => 'locpick',
-                'province_name' => 'province_name',
-                'country_name' => 'country_name',
-                'map_link' => 'map_link',
-                'coords' => 'coords',
-                'name' => 0,
-                'street' => 0,
-                'additional' => 0,
-                'city' => 0,
-                'province' => 0,
-                'postal_code' => 0,
-                'country' => 0,
-              ),
-            ),
-          ),
-          'country' => 'us',
-        ),
-      ),
-      'default_value_php' => NULL,
-      'label' => 'Location/Address',
-      'weight' => '2',
-      'description' => '',
-      'type' => 'location',
-      'module' => 'location_cck',
     ),
   );
 
@@ -1127,7 +1031,7 @@ function anaheimoc_event_content_default_fields() {
     'field_name' => 'field_partner_reference',
     'type_name' => 'event_leisure',
     'display_settings' => array(
-      'weight' => '16',
+      'weight' => '17',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -1224,7 +1128,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Partner reference',
-      'weight' => '15',
+      'weight' => '17',
       'description' => '',
       'type' => 'nodereference_autocomplete',
       'module' => 'nodereference',
@@ -1247,7 +1151,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'full' => array(
         'format' => 'hidden',
-        'exclude' => 1,
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'default',
@@ -1302,7 +1206,7 @@ function anaheimoc_event_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Video',
-      'weight' => '7',
+      'weight' => '9',
       'description' => '',
       'type' => 'emvideo_textfields',
       'module' => 'emvideo',
@@ -1311,14 +1215,14 @@ function anaheimoc_event_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Additional images');
   t('Admission');
+  t('Event address');
   t('Event date');
   t('Event description');
+  t('Event images');
   t('Event type');
   t('Featured Event');
   t('Hours');
-  t('Location/Address');
   t('Main image');
   t('Partner reference');
   t('Public Information Phone');
