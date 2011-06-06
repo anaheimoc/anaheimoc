@@ -18,7 +18,7 @@ function anaheimoc_page_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'weight' => '-1',
+        'weight' => '-3',
         'label' => 'above',
         'teaser' => array(
           'format' => 'hidden',
