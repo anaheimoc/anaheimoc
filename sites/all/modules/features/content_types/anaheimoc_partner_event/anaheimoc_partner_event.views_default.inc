@@ -1401,6 +1401,98 @@ function anaheimoc_partner_event_views_default_views() {
   ));
   $handler->override_option('block_description', 'Partner Events (month at a glance) - calendar block');
   $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Partner Events (annual events) - block', 'block_7');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'partner_event' => 'partner_event',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'tid' => array(
+      'operator' => 'or',
+      'value' => array(
+        559 => '559',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'type' => 'select',
+      'limit' => TRUE,
+      'vid' => '24',
+      'id' => 'tid',
+      'table' => 'term_node',
+      'field' => 'tid',
+      'hierarchy' => 1,
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+    'date_filter' => array(
+      'operator' => '>=',
+      'value' => array(
+        'value' => NULL,
+        'min' => NULL,
+        'max' => NULL,
+        'default_date' => 'now',
+        'default_to_date' => '',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'date_fields' => array(
+        'node_data_field_global_date.field_global_date_value' => 'node_data_field_global_date.field_global_date_value',
+      ),
+      'date_method' => 'OR',
+      'granularity' => 'day',
+      'form_type' => 'date_select',
+      'default_date' => 'now',
+      'default_to_date' => '',
+      'year_range' => '-3:+3',
+      'id' => 'date_filter',
+      'table' => 'node',
+      'field' => 'date_filter',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('title', 'Upcoming Networking Events');
+  $handler->override_option('block_description', 'Partner Events (annual events) - block');
+  $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;
 
