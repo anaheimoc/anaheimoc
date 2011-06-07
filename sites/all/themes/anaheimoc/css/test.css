@@ -101,3 +101,8 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
   padding: 10px;
   width: 40%;
 }
+/* LITECAL
+***************************************** */
+.view-id-partner_events h3.litecal-title {
+  display: none;
+}
