@@ -161,7 +161,7 @@ function anaheimoc_partner_event_content_default_fields() {
       'weight' => '1',
       'parent' => '',
       'label' => array(
-        'format' => 'hidden',
+        'format' => 'above',
       ),
       'teaser' => array(
         'format' => 'hidden',

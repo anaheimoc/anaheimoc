@@ -232,6 +232,32 @@ function anaheimoc_partner_event_views_default_views() {
       'field' => 'tid',
       'hierarchy' => 0,
     ),
+    'date_filter' => array(
+      'operator' => '=',
+      'value' => array(
+        'min' => '',
+        'max' => '',
+        'value' => '',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'date_fields' => array(
+        'node_data_field_global_date.field_global_date_value' => 'node_data_field_global_date.field_global_date_value',
+      ),
+      'date_method' => 'OR',
+      'granularity' => 'day',
+      'form_type' => 'date_select',
+      'default_date' => '',
+      'default_to_date' => '',
+      'year_range' => '-3:+3',
+      'id' => 'date_filter',
+      'table' => 'node',
+      'field' => 'date_filter',
+    ),
   ));
   $handler->override_option('access', array(
     'type' => 'none',
@@ -240,6 +266,9 @@ function anaheimoc_partner_event_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Upcoming Partner Events and Activities');
+  $handler->override_option('use_more', 1);
+  $handler->override_option('use_more_always', 1);
+  $handler->override_option('use_more_text', 'See All Partner Events');
   $handler->override_option('row_options', array(
     'inline' => array(
       'title' => 'title',
@@ -249,7 +278,91 @@ function anaheimoc_partner_event_views_default_views() {
     'hide_empty' => 0,
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'partner-events/list');
+  $handler->override_option('arguments', array());
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'partner_event' => 'partner_event',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'tid' => array(
+      'operator' => 'or',
+      'value' => array(),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'type' => 'select',
+      'limit' => TRUE,
+      'vid' => '24',
+      'id' => 'tid',
+      'table' => 'term_node',
+      'field' => 'tid',
+      'hierarchy' => 0,
+    ),
+    'date_filter' => array(
+      'operator' => '>=',
+      'value' => array(
+        'value' => NULL,
+        'min' => '2011-01-01 00:00:00',
+        'max' => '2011-01-01 00:00:00',
+        'default_date' => 'now -1 day',
+        'default_to_date' => '',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'date_fields' => array(
+        'node_data_field_global_date.field_global_date_value' => 'node_data_field_global_date.field_global_date_value',
+      ),
+      'date_method' => 'OR',
+      'granularity' => 'day',
+      'form_type' => 'date_select',
+      'default_date' => 'now -1 day',
+      'default_to_date' => '',
+      'year_range' => '-3:+3',
+      'id' => 'date_filter',
+      'table' => 'node',
+      'field' => 'date_filter',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('items_per_page', 5);
+  $handler->override_option('use_pager', '1');
+  $handler->override_option('path', 'partner-events/all');
   $handler->override_option('menu', array(
     'type' => 'none',
     'title' => '',
@@ -588,7 +701,6 @@ function anaheimoc_partner_event_views_default_views() {
   $handler->override_option('header', 'The Anaheim/Orange County Visitor and Convention Bureau Partnership department puts on many events throughout the year. Here is a quick reference guide to the events and activities happening this month. Check back often for updates and new events.');
   $handler->override_option('header_format', '1');
   $handler->override_option('header_empty', 0);
-  $handler->override_option('use_more', 1);
   $handler->override_option('use_more_always', 0);
   $handler->override_option('use_more_text', 'See All Upcoming Partner Events');
   $handler->override_option('block_description', 'Partner Events (month at a glance) - block');
@@ -1390,7 +1502,7 @@ function anaheimoc_partner_event_views_default_views() {
   $handler->override_option('header', 'Here is a quick reference for the events and activities happening this month. Check back often for updates and new events.');
   $handler->override_option('header_format', '1');
   $handler->override_option('header_empty', 0);
-  $handler->override_option('use_more', 1);
+  $handler->override_option('use_more', 0);
   $handler->override_option('use_more_always', 0);
   $handler->override_option('use_more_text', 'See All Upcoming Partner Events');
   $handler->override_option('style_plugin', 'litecal');
