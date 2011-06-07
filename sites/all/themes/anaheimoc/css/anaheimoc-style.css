@@ -484,6 +484,7 @@ font-size: 12px;
 /-------------------------------------------------------------- */
 /* Page and full node titles */
 h1.title {
+margin: 10px 0;
 }
 
 
