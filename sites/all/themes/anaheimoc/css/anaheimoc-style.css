@@ -500,6 +500,7 @@ margin: 10px 0;
 
 /* Typography for node titles */
 h2.title {
+margin: 10px 0;
 }
 
 /* Colors and styles for linked node titles, ie. teaser listing at /node */
