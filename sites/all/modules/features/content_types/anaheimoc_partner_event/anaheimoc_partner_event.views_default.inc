@@ -1386,8 +1386,8 @@ function anaheimoc_partner_event_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
-  $handler->override_option('title', 'Partner Events - Month At A Glance');
-  $handler->override_option('header', 'The Anaheim/Orange County Visitor and Convention Bureau Partnership department puts on many events throughout the year. Here is a quick reference guide to the events and activities happening this month. Check back often for updates and new events.');
+  $handler->override_option('title', 'Partner Events - %1');
+  $handler->override_option('header', 'Here is a quick reference for the events and activities happening this month. Check back often for updates and new events.');
   $handler->override_option('header_format', '1');
   $handler->override_option('header_empty', 0);
   $handler->override_option('use_more', 1);
