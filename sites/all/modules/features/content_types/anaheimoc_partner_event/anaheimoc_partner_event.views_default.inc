@@ -1490,7 +1490,7 @@ function anaheimoc_partner_event_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('title', 'Upcoming Networking Events');
+  $handler->override_option('title', 'Upcoming Annual Events');
   $handler->override_option('block_description', 'Partner Events (annual events) - block');
   $handler->override_option('block_caching', -1);
 
