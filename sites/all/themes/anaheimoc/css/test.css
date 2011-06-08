@@ -94,6 +94,12 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
 }
 /* PRESS RELEASE CSS
 ***************************************** */
+.view-id-press_releases.view-display-id-page_1 h3.title {
+  background: #00a4e4;
+  color: #fff;
+  padding: 8px;
+  margin: 10px 0;
+}
 .node-type-press-release .field-field-pr-pull-quote {
   background: #8cc63f;
   color: #fff;
@@ -110,18 +116,26 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
 .view-id-partner_events h3.litecal-title {
   display: none;
 }
-/* PARTNER EVENT VIEWS
+/* WHAT'S NEW MISC CSS
 ***************************************** */
-.view-partner-events.view-id-partner_events .views-row {
+.view-id-whats_new.view-display-id-page_1 h3.title {
+  background: #00a4e4;
+  color: #fff;
+  padding: 8px;
+  margin: 10px 0;
+}
+/* WHAT'S NEW, PARTNER EVENT VIEWS LISTINGS
+***************************************** */
+.view-id-whats_new.view-display-id-page_1 .views-row, .view-partner-events.view-id-partner_events .views-row {
   background: #eee;
   margin-bottom: 10px;
   padding: 10px;
 }
-.view-partner-events.view-id-partner_events .views-field-field-article-image-fid {
+.view-id-whats_new.view-display-id-page_1 .views-field-field-article-image-fid, .view-partner-events.view-id-partner_events .views-field-field-article-image-fid {
   float: left;
   margin-right: 10px;
   width: 140px;
 }
-.view-partner-events.view-id-partner_events .views-field-field-article-image-fid img {
+.view-id-whats_new.view-display-id-page_1 .views-field-field-article-image-fid img, .view-partner-events.view-id-partner_events .views-field-field-article-image-fid img {
   border: 2px solid #eee	;
 }
