@@ -1,6 +1,16 @@
 /*  MICROSITE CSS
 ********************************************* */
 
+/* MICROSITE MAIN HEADER IMAGE
+********************************************* */
+body.node-type-microsite .field-field-microsite-main-img{
+margin: 10px 0 20px;
+}
+
+body.node-type-microsite .field-field-microsite-main-img img{
+border: 2px solid #eee;
+}
+
 /* SPECIAL SUBNAVIGATION LINKS
 ********************************************* */
 body.node-type-microsite .preface-top .view-display-id-block_4 div.item-list ul{
@@ -23,20 +33,42 @@ padding: 10px;
 /* MICROSITE DATE FIELD
 ********************************************** */
 body.node-type-microsite div.field-field-microsite-conf-dates{
-margin: 10px 0;
+margin: 10px 0 20px;
+font-size: 18px;
 }
 
 /* SHOW YOUR BADGE AND SAVE NODE CONTENT VIEW
 ********************************************* */
+.view-id-microsite_blocks.view-display-id-node_content_1{
+margin: 40px 0;
+}
+
+.view-id-microsite_blocks.view-display-id-node_content_2{
+
+}
+
+.view-id-microsite_blocks.view-display-id-node_content_2 .view-title{
+color: #00a4e4;
+font-size: 14px;
+font-family: Georgia;
+font-weight: bold;
+line-height: 150%;
+margin: 0 0 0.5em;
+}
 
 .view-id-microsite_blocks.view-display-id-node_content_1 table.views-view-grid{
 table-layout: fixed;
 }
 
+.view-id-microsite_blocks.view-display-id-node_content_1 table.views-view-grid tr{
+	
+}
+
 .view-id-microsite_blocks.view-display-id-node_content_1 table.views-view-grid td{
-padding: 0;
+padding: 10px 0;
 padding-right: 20px;
 width: 160px;
+vertical-align: bottom;
 }
 
 .view-id-microsite_blocks.view-display-id-node_content_1 table.views-view-grid td.col-last{
