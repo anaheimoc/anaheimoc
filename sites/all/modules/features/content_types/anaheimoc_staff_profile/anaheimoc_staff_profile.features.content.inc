@@ -11,10 +11,9 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_global_email',
     'type_name' => 'staff_profile',
     'display_settings' => array(
-      'weight' => '-1',
-      'parent' => '',
       'label' => array(
         'format' => 'above',
+        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -52,7 +51,7 @@ function anaheimoc_staff_profile_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Email',
-      'weight' => '-1',
+      'weight' => 0,
       'description' => '',
       'type' => 'email_textfield',
       'module' => 'email',
@@ -64,10 +63,9 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_global_phone',
     'type_name' => 'staff_profile',
     'display_settings' => array(
-      'weight' => '-2',
-      'parent' => '',
       'label' => array(
         'format' => 'above',
+        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -108,7 +106,7 @@ function anaheimoc_staff_profile_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Phone',
-      'weight' => '-2',
+      'weight' => '-1',
       'description' => '',
       'type' => 'phone_textfield',
       'module' => 'phone',
@@ -120,7 +118,7 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_profile_image',
     'type_name' => 'staff_profile',
     'display_settings' => array(
-      'weight' => '-3',
+      'weight' => '-1',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -130,7 +128,7 @@ function anaheimoc_staff_profile_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'staff_profile_image_default',
+        'format' => '220x220_default',
         'exclude' => 0,
       ),
       '4' => array(
@@ -175,7 +173,7 @@ function anaheimoc_staff_profile_content_default_fields() {
       'default_image' => NULL,
       'use_default_image' => 0,
       'label' => 'Profile image',
-      'weight' => '-3',
+      'weight' => '-2',
       'description' => '',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -187,10 +185,9 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_staff_department',
     'type_name' => 'staff_profile',
     'display_settings' => array(
-      'weight' => 0,
-      'parent' => '',
       'label' => array(
         'format' => 'above',
+        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -238,7 +235,7 @@ function anaheimoc_staff_profile_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Department',
-      'weight' => 0,
+      'weight' => '1',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -250,10 +247,9 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_staff_job_title',
     'type_name' => 'staff_profile',
     'display_settings' => array(
-      'weight' => '-4',
-      'parent' => '',
       'label' => array(
         'format' => 'above',
+        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -303,15 +299,76 @@ function anaheimoc_staff_profile_content_default_fields() {
     ),
   );
 
+  // Exported field: field_staff_position_level
+  $fields['staff_profile-field_staff_position_level'] = array(
+    'field_name' => 'field_staff_position_level',
+    'type_name' => 'staff_profile',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'number_integer',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'number',
+    'active' => '1',
+    'prefix' => '',
+    'suffix' => '',
+    'min' => '',
+    'max' => '',
+    'allowed_values' => '0|President
+1|Senior Vice President
+2|Vice President
+3|Director
+4|Manager
+5|General Staff',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Position level',
+      'weight' => '-3',
+      'description' => '',
+      'type' => 'optionwidgets_select',
+      'module' => 'optionwidgets',
+    ),
+  );
+
   // Exported field: field_staff_recommendation
   $fields['staff_profile-field_staff_recommendation'] = array(
     'field_name' => 'field_staff_recommendation',
     'type_name' => 'staff_profile',
     'display_settings' => array(
-      'weight' => '1',
-      'parent' => '',
       'label' => array(
         'format' => 'above',
+        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -354,7 +411,7 @@ function anaheimoc_staff_profile_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Destination recommendation',
-      'weight' => '1',
+      'weight' => '2',
       'description' => '',
       'type' => 'text_textarea',
       'module' => 'text',
@@ -368,6 +425,7 @@ function anaheimoc_staff_profile_content_default_fields() {
   t('Email');
   t('Job Title');
   t('Phone');
+  t('Position level');
   t('Profile image');
 
   return $fields;
