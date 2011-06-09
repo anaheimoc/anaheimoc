@@ -181,7 +181,7 @@ padding:10px 9px 10px 9px;
 .primary-menu-inner ul.sf-menu a.active,
 .primary-menu-inner ul.sf-menu li.expanded.active-trail a{
 background-color:rgba(0, 0, 0, 0.2);
-background: url("http://www.damimagetrends.com/tumblr/header_active.png") no-repeat scroll 0 0 transparent;
+background: url("/sites/all/themes/anaheimoc/images/nav_arrow.png") no-repeat scroll 0 0 transparent;
 background-position: center bottom;
 }
 
