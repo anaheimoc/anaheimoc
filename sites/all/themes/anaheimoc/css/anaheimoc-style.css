@@ -180,9 +180,7 @@ padding:10px 9px 10px 9px;
 .primary-menu-inner ul.sf-menu a:focus, 
 .primary-menu-inner ul.sf-menu a.active,
 .primary-menu-inner ul.sf-menu li.expanded.active-trail a{
-background-color:rgba(0, 0, 0, 0.2);
-background: url("/sites/all/themes/anaheimoc/images/nav_arrow.png") no-repeat scroll 0 0 transparent;
-background-position: center bottom;
+background: rgba(0, 0, 0, 0.2) url("/sites/all/themes/anaheimoc/images/nav_arrow.png") no-repeat center bottom;
 }
 
 /* These are the top level menu items, add border-right here for separators */
