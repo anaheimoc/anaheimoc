@@ -180,7 +180,7 @@ padding:10px 9px 10px 9px;
 .primary-menu-inner ul.sf-menu a:focus, 
 .primary-menu-inner ul.sf-menu a.active,
 .primary-menu-inner ul.sf-menu li.expanded.active-trail a{
-background: rgba(0, 0, 0, 0.2) url("/sites/all/themes/anaheimoc/images/nav_arrow.png") no-repeat center bottom;
+background: #2E80B9 url("/sites/all/themes/anaheimoc/images/nav_arrow.png") no-repeat center bottom;
 }
 
 /* These are the top level menu items, add border-right here for separators */
@@ -190,31 +190,38 @@ background: rgba(0, 0, 0, 0.2) url("/sites/all/themes/anaheimoc/images/nav_arrow
 
 /* Add border-right: 0; here to remove separator on last menu item */
 .primary-menu-inner ul.sf-menu li.last {
+border-bottom: 0;
 }
 
 /* Style for container of dropdown, add background or border */
 .primary-menu-inner ul.sf-menu ul {
- -webkit-box-shadow: 0px 0px 10px #000000;
- -moz-box-shadow: 0px 0px 10px #000000;
- box-shadow: 0px 0px 10px #000000;
+ border:1px solid #ffffff;
  width:200px;
+ color:#ffffff;
+ position: absolute;
+ top:38px;
+ left:-1px;
 }
 
 /* Style for individual dropdown menu items, add border-bottom for separators */
 .primary-menu-inner ul.sf-menu li li {
-  background-color: #fff;
+  background-color: #2E80B9;
+  border-bottom: 1px dotted #ffffff;
 }
 
 .primary-menu-inner ul.sf-menu li li a,
-.primary-menu-inner ul.sf-menu li li a:hover,
 .primary-menu-inner ul.sf-menu li li a:visited,
 .primary-menu-inner ul.sf-menu li li a.active,
 .primary-menu-inner ul.sf-menu li.expanded.active-trail li a{
-  font-family: Arial;
-  font-weight: normal;
-  font-size: 14px;
-  color: #00A4E4;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;  font-weight: normal;
+  font-size: 12px;
   text-shadow:none;
+  background-image:none;
+}
+.primary-menu-inner ul.sf-menu li li a:hover,
+.primary-menu-inner ul.sf-menu li.expanded.active-trail li a:hover{
+  background-color:#00a4e4;
   background-image:none;
 }
 
