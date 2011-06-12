@@ -1,6 +1,22 @@
 /*  MICROSITE CSS
 ********************************************* */
 
+/*  CONFERENCE LOGO
+********************************************* */
+#block-views-microsite_blocks-block_2 {
+margin-bottom: 0;
+}
+
+body.node-type-microsite .views-field-field-microsite-conf-logo-fid img{
+border: 2px solid #eee;
+border-bottom: 2px solid #ddd;
+}
+
+#block-views-microsite_blocks-block_2 a{
+display: block;
+line-height: 0;
+}
+
 /* MICROSITE MAIN HEADER IMAGE
 ********************************************* */
 body.node-type-microsite .field-field-microsite-main-img{
@@ -25,16 +41,31 @@ margin: 0;
 padding: 0;
 }
 
-body.node-type-microsite .preface-top .view-display-id-block_4 div.item-list ul li a:link,
-body.node-type-microsite .preface-top .view-display-id-block_4 div.item-list ul li a:visited{
+body.node-type-microsite .preface-top .views-field-field-microsite-links-url a:link,
+body.node-type-microsite .preface-top .views-field-field-microsite-links-url a:visited{
 padding: 10px;
+}
+
+body.node-type-microsite ul li.views-row-first .views-field-field-microsite-links-url a:link,
+body.node-type-microsite ul li.views-row-first .views-field-field-microsite-links-url a:visited{
+padding-left: 0;
+}
+
+body.node-type-microsite .views-field-field-microsite-links-url{
+font-family: Georgia;
+font-size: 14px;
+font-weight: bold;
+text-transform: capitalize;
 }
 
 /* MICROSITE DATE FIELD
 ********************************************** */
 body.node-type-microsite div.field-field-microsite-conf-dates{
-margin: 10px 0 20px;
+font-family: Georgia;
 font-size: 18px;
+color: #F7AC20;
+margin: 10px 0 20px;
+
 }
 
 /* SHOW YOUR BADGE AND SAVE NODE CONTENT VIEW
@@ -67,8 +98,11 @@ table-layout: fixed;
 .view-id-microsite_blocks.view-display-id-node_content_1 table.views-view-grid td{
 padding: 10px 0;
 padding-right: 20px;
-width: 160px;
 vertical-align: bottom;
+}
+
+.view-id-microsite_blocks.view-display-id-node_content_1 table.views-view-grid td h3 a{
+font-size: 11px;
 }
 
 .view-id-microsite_blocks.view-display-id-node_content_1 table.views-view-grid td.col-last{
@@ -78,14 +112,28 @@ width: 140px;
 
 /* MICROSITE COUNTDOWN WIDGET
 ******************************************** */
-.view-id-microsite_blocks .views-field-field-microsite-conf-countdown-value{
-font-size: 14px;
-line-height: 150%;
+body.node-type-microsite .view-id-microsite_blocks .views-field-field-microsite-conf-countdown-value{
+background: url(../images/countdown-bg.jpg);
+color: #fff;
+font-size: 16px;
+font-family: Georgia;
+font-weight: bold;
+line-height: 175%;
+//margin: 10px 0;
+padding: 30px 0;
 text-align: center;
+text-shadow: 1px 1px 3px #000;
 }
 
 /* MICROSITE SOCIAL MEDIA ICONS
 ******************************************** */
+
+
+body.node-type-microsite .view-microsite-blocks.view-display-id-block_5{
+background: #eee;
+border-top: 1px solid #eee;
+padding: 10px;
+}
 
 body.node-type-microsite .sidebar-first-inner ul.links li a.twitter-icon,
 body.node-type-microsite .sidebar-first-inner ul.links li a.facebook-icon,
