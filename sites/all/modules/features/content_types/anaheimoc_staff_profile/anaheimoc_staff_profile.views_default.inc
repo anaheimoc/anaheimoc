@@ -404,6 +404,10 @@ function anaheimoc_staff_profile_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
+  $handler->override_option('title', 'Communications Department Staff');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+  ));
   $handler->override_option('block_description', 'Staff profile (press) - block');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Staff profile (partnership) - block', 'block_2');
@@ -459,7 +463,552 @@ function anaheimoc_staff_profile_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
+  $handler->override_option('title', 'Partnership Development Staff');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+  ));
   $handler->override_option('block_description', 'Staff profile (partnership) - block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff profile (convention sales) - block', 'block_3');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'staff_profile' => 'staff_profile',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_staff_department_value' => array(
+      'operator' => 'or',
+      'value' => array(
+        464 => '464',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_staff_department_value',
+      'table' => 'node_data_field_staff_department',
+      'field' => 'field_staff_department_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
+  $handler->override_option('title', 'Convention Sales Staff');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+  ));
+  $handler->override_option('block_description', 'Staff profile (convention sales) - block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff profile (travel trade and tourism) - block', 'block_4');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'staff_profile' => 'staff_profile',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_staff_department_value' => array(
+      'operator' => 'or',
+      'value' => array(
+        472 => '472',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_staff_department_value',
+      'table' => 'node_data_field_staff_department',
+      'field' => 'field_staff_department_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
+  $handler->override_option('title', 'Tourism Staff');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+  ));
+  $handler->override_option('block_description', 'Staff profile (convention sales) - block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff profile (convention services) - block', 'block_5');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'staff_profile' => 'staff_profile',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_staff_department_value' => array(
+      'operator' => 'or',
+      'value' => array(
+        469 => '469',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_staff_department_value',
+      'table' => 'node_data_field_staff_department',
+      'field' => 'field_staff_department_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
+  $handler->override_option('title', 'Convention Services Staff');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+  ));
+  $handler->override_option('block_description', 'Staff profile (convention services) - block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff profile (convention housing) - block', 'block_6');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'staff_profile' => 'staff_profile',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_staff_department_value' => array(
+      'operator' => 'or',
+      'value' => array(
+        471 => '471',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_staff_department_value',
+      'table' => 'node_data_field_staff_department',
+      'field' => 'field_staff_department_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
+  $handler->override_option('title', 'Convention Housing Staff');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+  ));
+  $handler->override_option('block_description', 'Staff profile (convention housing) - block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff profile (marketing) - block', 'block_7');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'staff_profile' => 'staff_profile',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_staff_department_value' => array(
+      'operator' => 'or',
+      'value' => array(
+        470 => '470',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_staff_department_value',
+      'table' => 'node_data_field_staff_department',
+      'field' => 'field_staff_department_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
+  $handler->override_option('title', 'Marketing Staff');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+  ));
+  $handler->override_option('block_description', 'Staff profile (marketing) - block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff profile (executive) - block', 'block_8');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'staff_profile' => 'staff_profile',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_staff_department_value' => array(
+      'operator' => 'or',
+      'value' => array(
+        465 => '465',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_staff_department_value',
+      'table' => 'node_data_field_staff_department',
+      'field' => 'field_staff_department_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
+  $handler->override_option('title', 'Executive Staff');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+  ));
+  $handler->override_option('block_description', 'Staff profile (executive) - block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff profile (administration) - block', 'block_9');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'staff_profile' => 'staff_profile',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_staff_department_value' => array(
+      'operator' => 'or',
+      'value' => array(
+        467 => '467',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_staff_department_value',
+      'table' => 'node_data_field_staff_department',
+      'field' => 'field_staff_department_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
+  $handler->override_option('title', 'Administrative Staff');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+  ));
+  $handler->override_option('block_description', 'Staff profile (adminstration) - block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff profile (convention sales) - grid block', 'block_10');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'staff_profile' => 'staff_profile',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_staff_department_value' => array(
+      'operator' => 'or',
+      'value' => array(
+        464 => '464',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_staff_department_value',
+      'table' => 'node_data_field_staff_department',
+      'field' => 'field_staff_department_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
+  $handler->override_option('title', 'Convention Sales Staff');
+  $handler->override_option('style_plugin', 'grid');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+    'columns' => '4',
+    'alignment' => 'horizontal',
+    'fill_single_line' => 1,
+    'summary' => '',
+  ));
+  $handler->override_option('block_description', 'Staff profile (convention sales) - grid block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff profile (convention services) - grid block', 'block_11');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'staff_profile' => 'staff_profile',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_staff_department_value' => array(
+      'operator' => 'or',
+      'value' => array(
+        469 => '469',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_staff_department_value',
+      'table' => 'node_data_field_staff_department',
+      'field' => 'field_staff_department_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
+  $handler->override_option('title', 'Convention Services Staff');
+  $handler->override_option('style_plugin', 'grid');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+    'columns' => '4',
+    'alignment' => 'horizontal',
+    'fill_single_line' => 1,
+    'summary' => '',
+  ));
+  $handler->override_option('block_description', 'Staff profile (convention services) - grid block');
   $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;

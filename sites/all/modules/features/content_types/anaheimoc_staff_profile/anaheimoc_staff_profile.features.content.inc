@@ -11,9 +11,10 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_global_email',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => '1',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -51,7 +52,7 @@ function anaheimoc_staff_profile_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Email',
-      'weight' => 0,
+      'weight' => '1',
       'description' => '',
       'type' => 'email_textfield',
       'module' => 'email',
@@ -63,9 +64,10 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_global_phone',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => 0,
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -106,7 +108,7 @@ function anaheimoc_staff_profile_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Phone',
-      'weight' => '-1',
+      'weight' => 0,
       'description' => '',
       'type' => 'phone_textfield',
       'module' => 'phone',
@@ -173,7 +175,7 @@ function anaheimoc_staff_profile_content_default_fields() {
       'default_image' => NULL,
       'use_default_image' => 0,
       'label' => 'Profile image',
-      'weight' => '-2',
+      'weight' => '-1',
       'description' => '',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -185,9 +187,10 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_staff_department',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => '2',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -217,7 +220,7 @@ function anaheimoc_staff_profile_content_default_fields() {
     'widget_active' => '1',
     'type' => 'content_taxonomy',
     'required' => '1',
-    'multiple' => '0',
+    'multiple' => '1',
     'module' => 'content_taxonomy',
     'active' => '1',
     'save_term_node' => 0,
@@ -235,7 +238,7 @@ function anaheimoc_staff_profile_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Department',
-      'weight' => '1',
+      'weight' => '2',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -247,9 +250,10 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_staff_job_title',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => '-4',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -304,16 +308,17 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_staff_position_level',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => '-3',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       '4' => array(
@@ -366,9 +371,10 @@ function anaheimoc_staff_profile_content_default_fields() {
     'field_name' => 'field_staff_recommendation',
     'type_name' => 'staff_profile',
     'display_settings' => array(
+      'weight' => '3',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -411,9 +417,67 @@ function anaheimoc_staff_profile_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Destination recommendation',
-      'weight' => '2',
+      'weight' => '3',
       'description' => '',
       'type' => 'text_textarea',
+      'module' => 'text',
+    ),
+  );
+
+  // Exported field: field_staff_sales_market
+  $fields['staff_profile-field_staff_sales_market'] = array(
+    'field_name' => 'field_staff_sales_market',
+    'type_name' => 'staff_profile',
+    'display_settings' => array(
+      'weight' => '-2',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => 5,
+      'size' => '60',
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Sales Market',
+      'weight' => '-2',
+      'description' => 'If applicable, please enter the sales market or region you\'re responsible for.',
+      'type' => 'text_textfield',
       'module' => 'text',
     ),
   );
@@ -427,6 +491,7 @@ function anaheimoc_staff_profile_content_default_fields() {
   t('Phone');
   t('Position level');
   t('Profile image');
+  t('Sales Market');
 
   return $fields;
 }
