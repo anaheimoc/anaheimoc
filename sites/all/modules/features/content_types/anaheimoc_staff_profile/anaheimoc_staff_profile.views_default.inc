@@ -331,6 +331,7 @@ function anaheimoc_staff_profile_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Anaheim/Orange County Visitor & Convention Bureau Staff');
+  $handler->override_option('css_class', 'staff-profile-view');
   $handler->override_option('items_per_page', 0);
   $handler->override_option('style_options', array(
     'grouping' => 'field_staff_department_value',
@@ -935,7 +936,7 @@ function anaheimoc_staff_profile_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
-  $handler->override_option('title', 'Convention Sales Staff');
+  $handler->override_option('title', '');
   $handler->override_option('style_plugin', 'grid');
   $handler->override_option('style_options', array(
     'grouping' => '',
@@ -999,7 +1000,7 @@ function anaheimoc_staff_profile_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
-  $handler->override_option('title', 'Convention Services Staff');
+  $handler->override_option('title', '');
   $handler->override_option('style_plugin', 'grid');
   $handler->override_option('style_options', array(
     'grouping' => '',
