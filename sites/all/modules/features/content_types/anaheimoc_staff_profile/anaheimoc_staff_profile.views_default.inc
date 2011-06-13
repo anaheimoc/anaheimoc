@@ -18,7 +18,7 @@ function anaheimoc_staff_profile_views_default_views() {
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('relationships', array(
     'content_profile_rel' => array(
-      'label' => 'Content Profile',
+      'label' => 'Staff Profile Relationship',
       'required' => 0,
       'type' => 'staff_profile',
       'id' => 'content_profile_rel',
@@ -27,6 +27,15 @@ function anaheimoc_staff_profile_views_default_views() {
       'override' => array(
         'button' => 'Override',
       ),
+      'relationship' => 'none',
+    ),
+    'content_profile_rel_1' => array(
+      'label' => 'Basic Profile Relationship',
+      'required' => 0,
+      'type' => 'basic_profile',
+      'id' => 'content_profile_rel_1',
+      'table' => 'users',
+      'field' => 'content_profile_rel',
       'relationship' => 'none',
     ),
   ));
@@ -61,7 +70,7 @@ function anaheimoc_staff_profile_views_default_views() {
       'id' => 'title',
       'table' => 'node',
       'field' => 'title',
-      'relationship' => 'none',
+      'relationship' => 'content_profile_rel_1',
       'override' => array(
         'button' => 'Override',
       ),
@@ -152,49 +161,6 @@ function anaheimoc_staff_profile_views_default_views() {
       ),
       'relationship' => 'none',
     ),
-    'field_global_email_email' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'absolute' => 0,
-        'link_class' => '',
-        'alt' => '',
-        'rel' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 0,
-      'label_type' => 'none',
-      'format' => 'default',
-      'multiple' => array(
-        'group' => TRUE,
-        'multiple_number' => '',
-        'multiple_from' => '',
-        'multiple_reversed' => FALSE,
-      ),
-      'exclude' => 0,
-      'id' => 'field_global_email_email',
-      'table' => 'node_data_field_global_email',
-      'field' => 'field_global_email_email',
-      'override' => array(
-        'button' => 'Override',
-      ),
-      'relationship' => 'none',
-    ),
     'field_staff_department_value' => array(
       'label' => '',
       'alter' => array(
@@ -236,6 +202,38 @@ function anaheimoc_staff_profile_views_default_views() {
       'override' => array(
         'button' => 'Override',
       ),
+      'relationship' => 'none',
+    ),
+    'mail' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_user' => 'mailto',
+      'exclude' => 0,
+      'id' => 'mail',
+      'table' => 'users',
+      'field' => 'mail',
       'relationship' => 'none',
     ),
     'view_node' => array(
@@ -940,7 +938,7 @@ function anaheimoc_staff_profile_views_default_views() {
   $handler->override_option('style_plugin', 'grid');
   $handler->override_option('style_options', array(
     'grouping' => '',
-    'columns' => '4',
+    'columns' => '3',
     'alignment' => 'horizontal',
     'fill_single_line' => 1,
     'summary' => '',
@@ -1004,7 +1002,7 @@ function anaheimoc_staff_profile_views_default_views() {
   $handler->override_option('style_plugin', 'grid');
   $handler->override_option('style_options', array(
     'grouping' => '',
-    'columns' => '4',
+    'columns' => '3',
     'alignment' => 'horizontal',
     'fill_single_line' => 1,
     'summary' => '',
