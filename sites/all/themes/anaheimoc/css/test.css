@@ -139,3 +139,9 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
 .view-id-whats_new.view-display-id-page_1 .views-field-field-article-image-fid img, .view-partner-events.view-id-partner_events .views-field-field-article-image-fid img {
   border: 2px solid #eee	;
 }
+/* STAFF PROFILE VIEWS
+***************************************** */
+.staff-profile-view .views-view-grid.col-4 td {
+  color: #333;
+  vertical-align: top;
+}
