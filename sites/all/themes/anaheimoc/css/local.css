@@ -1046,7 +1046,7 @@ font-size: 14px;
 color:#00A4E4;
 }
 
-.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-keys .views-widget .form-item input.form-text{
+.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget .views-widget .form-item input.form-text{
 border: 1px solid #C7C7C7;
 width:202px;
 height:20px;
@@ -1054,8 +1054,7 @@ font-size:12px;
 padding:6px;
 }
 
-.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-tid .views-widget .form-item select.form-select,
-.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-tid_1 .views-widget .form-item select.form-select{
+.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget .views-widget .form-item select.form-select {
 border: 1px solid #C7C7C7;
 height:34px;
 vertical-align:middle;
@@ -1075,7 +1074,7 @@ font-family: Georgia, "Times New Roman", serif;
 font-weight: normal;
 }
 
-.views-exposed-form .views-exposed-widget input.form-submit#edit-submit-whats-new, .views-exposed-form .views-exposed-widget input.form-submit#edit-submit-event-leisure-page {
+.views-exposed-form .views-exposed-widget input.form-submit {
 border: 1px solid #C7C7C7;
 color:#ffffff;
 background-color:#8cc63f;
@@ -1093,4 +1092,44 @@ width:116px;
 border: 1px solid #C7C7C7;
 font-size:12px;
 padding:6px;
+}
+
+/* form styles */
+
+.webform-client-form input{
+border: 1px solid #C7C7C7;
+height:20px;
+padding:6px;
+font-size:12px;
+}
+
+.webform-client-form textarea{
+border: 1px solid #C7C7C7;
+padding:6px;
+font-size:12px;
+}
+
+.webform-client-form select{
+border: 1px solid #C7C7C7;
+height:34px;
+vertical-align:middle;
+font-size:12px;
+font-family: Helvetica, Arial, sans-serif;
+padding:6px;
+}
+
+.webform-client-form label{
+font-family: Georgia, "Times New Roman", serif;
+font-weight: normal;
+font-size: 14px;
+color:#00A4E4;
+}
+
+.webform-client-form label.option{
+font-family: Helvetica, Arial, sans-serif;
+font-weight: normal;
+font-size: 14px;
+color:#000000;
+vertical-align:middle;
+
 }
