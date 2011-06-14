@@ -143,5 +143,6 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
 ***************************************** */
 .staff-profile-view .views-view-grid.col-3 td {
   color: #333;
+  padding: 0 0 30px;
   vertical-align: top;
 }
