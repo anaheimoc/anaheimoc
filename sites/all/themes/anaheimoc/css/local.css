@@ -1031,3 +1031,57 @@ display: block;
 //margin:0;
 //padding:0;
 }
+
+/* search filter style */
+
+.views-exposed-form {
+background-color:#eeeeee;
+padding:4px;
+}
+
+.views-exposed-form label{
+font-family: Georgia, "Times New Roman", serif;
+font-weight: normal;
+font-size: 14px;
+color:#00A4E4;
+}
+
+.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-keys .views-widget .form-item input.form-text{
+border: 1px solid #C7C7C7;
+width:280px;
+height:20px;
+font-size:14px;
+padding:6px;
+}
+
+.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-tid .views-widget .form-item select.form-select {
+border: 1px solid #C7C7C7;
+height:34px;
+vertical-align:middle;
+font-size:14px;
+font-family: Helvetica, Arial, sans-serif;
+padding:6px;
+width:238px;
+}
+
+.views-exposed-form .views-exposed-widget input.form-submit{
+height:34px;
+width:104px;
+vertical-align:middle;
+font-size:14px;
+margin-top:16px;
+font-family: Georgia, "Times New Roman", serif;
+font-weight: normal;
+}
+
+.views-exposed-form .views-exposed-widget input.form-submit#edit-submit-whats-new {
+border: 1px solid #C7C7C7;
+color:#ffffff;
+background-color:#8cc63f;
+}
+
+.views-exposed-form .views-exposed-widget input.form-submit#edit-reset {
+border: 1px solid #C7C7C7;
+color:#ffffff;
+background-color:#0084e4;
+}
