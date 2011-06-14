@@ -141,7 +141,7 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
 }
 /* STAFF PROFILE VIEWS
 ***************************************** */
-.staff-profile-view .views-view-grid.col-3 td {
+.staff-profile-view .views-view-grid.col-3 td, .staff-profile-view .views-view-grid.col-4 td {
   color: #333;
   display: inline-block;
   padding: 0 0 30px;
@@ -149,12 +149,13 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
   vertical-align: top;
   width: 140px;
 }
-.staff-profile-view .views-view-grid.col-3 td div {
+.staff-profile-view .views-view-grid.col-3 td div, .staff-profile-view .views-view-grid.col-4 td div {
   width: 140px;
+  font-size: 11px;
 }
-.staff-profile-view .views-view-grid.col-3 td .views-field-field-staff-sales-market-value {
+.staff-profile-view .views-view-grid.col-3 td .views-field-field-staff-sales-market-value, .staff-profile-view .views-view-grid.col-4 td .views-field-field-staff-sales-market-value {
   font-style: italic;
 }
-.staff-profile-view .views-view-grid.col-3 td.col-last {
+.staff-profile-view .views-view-grid.col-3 td.col-last, .staff-profile-view .views-view-grid.col-4 td.col-last {
   padding-right: 0;
 }
