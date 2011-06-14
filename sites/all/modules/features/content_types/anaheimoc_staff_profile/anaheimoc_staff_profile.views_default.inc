@@ -1052,6 +1052,70 @@ function anaheimoc_staff_profile_views_default_views() {
   ));
   $handler->override_option('block_description', 'Staff profile (convention services) - grid block');
   $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff profile (in-market sales) - grid block', 'block_12');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'staff_profile' => 'staff_profile',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_staff_department_value' => array(
+      'operator' => 'or',
+      'value' => array(
+        591 => '591',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_staff_department_value',
+      'table' => 'node_data_field_staff_department',
+      'field' => 'field_staff_department_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
+  $handler->override_option('title', 'In-Market Sales Directors');
+  $handler->override_option('style_plugin', 'grid');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+    'columns' => '3',
+    'alignment' => 'horizontal',
+    'fill_single_line' => 1,
+    'summary' => '',
+  ));
+  $handler->override_option('block_description', 'Staff profile (in-market sales) - grid block');
+  $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;
 
