@@ -143,9 +143,18 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
 ***************************************** */
 .staff-profile-view .views-view-grid.col-3 td {
   color: #333;
+  display: inline-block;
   padding: 0 0 30px;
+  padding-right: 20px;
   vertical-align: top;
+  width: 140px;
+}
+.staff-profile-view .views-view-grid.col-3 td div {
+  width: 140px;
 }
 .staff-profile-view .views-view-grid.col-3 td .views-field-field-staff-sales-market-value {
   font-style: italic;
+}
+.staff-profile-view .views-view-grid.col-3 td.col-last {
+  padding-right: 0;
 }
