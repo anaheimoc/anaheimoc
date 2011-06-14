@@ -146,3 +146,6 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
   padding: 0 0 30px;
   vertical-align: top;
 }
+.staff-profile-view .views-view-grid.col-3 td .views-field-field-staff-sales-market-value {
+  font-style: italic;
+}
