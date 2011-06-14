@@ -1048,25 +1048,26 @@ color:#00A4E4;
 
 .views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-keys .views-widget .form-item input.form-text{
 border: 1px solid #C7C7C7;
-width:280px;
+width:202px;
 height:20px;
-font-size:14px;
+font-size:12px;
 padding:6px;
 }
 
-.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-tid .views-widget .form-item select.form-select {
+.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-tid .views-widget .form-item select.form-select,
+.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-tid_1 .views-widget .form-item select.form-select{
 border: 1px solid #C7C7C7;
 height:34px;
 vertical-align:middle;
-font-size:14px;
+font-size:12px;
 font-family: Helvetica, Arial, sans-serif;
 padding:6px;
-width:238px;
+width:200px;
 }
 
 .views-exposed-form .views-exposed-widget input.form-submit{
 height:34px;
-width:104px;
+width:74px;
 vertical-align:middle;
 font-size:14px;
 margin-top:16px;
@@ -1074,7 +1075,7 @@ font-family: Georgia, "Times New Roman", serif;
 font-weight: normal;
 }
 
-.views-exposed-form .views-exposed-widget input.form-submit#edit-submit-whats-new {
+.views-exposed-form .views-exposed-widget input.form-submit#edit-submit-whats-new, .views-exposed-form .views-exposed-widget input.form-submit#edit-submit-event-leisure-page {
 border: 1px solid #C7C7C7;
 color:#ffffff;
 background-color:#8cc63f;
@@ -1084,4 +1085,12 @@ background-color:#8cc63f;
 border: 1px solid #C7C7C7;
 color:#ffffff;
 background-color:#0084e4;
+}
+
+
+.views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-date_filter_1 .views-widget .date-views-filter-wrapper .date-clear.form-item .description .container-inline-date.form-item.date-clear-block .form-item .form-item input, .views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget.views-widget-filter-date_filter .views-widget .date-views-filter-wrapper .date-clear.form-item .description .container-inline-date.form-item.date-clear-block .form-item .form-item input{
+width:116px;
+border: 1px solid #C7C7C7;
+font-size:12px;
+padding:6px;
 }
