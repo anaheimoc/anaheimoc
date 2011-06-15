@@ -1131,5 +1131,16 @@ font-weight: normal;
 font-size: 14px;
 color:#000000;
 vertical-align:middle;
+}
 
+/* what's new */
+.views-field-created,
+.views-field-changed{
+font-size:10px;
+line-height:18px;
+}
+
+.date-block span{
+font-size:10px;
+line-height:18px;
 }
