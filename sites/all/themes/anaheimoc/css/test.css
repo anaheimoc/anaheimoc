@@ -5,6 +5,12 @@
 .page-node div.field-field-article-image img {
   border: 2px solid #eee;
 }
+p.feature-graph {
+  color: #F7AC20;
+  font-size: 1.8em;
+  font-weight: bold;
+  line-height: 150%;
+}
 /* PAGE ATTACHMENT CSS
 ********************************************** */
 .view-anaheimoc-page.view-display-id-node_content_1 .views-row {
