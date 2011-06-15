@@ -1046,6 +1046,7 @@ font-size: 14px;
 color:#00A4E4;
 }
 
+
 .views-exposed-form .views-exposed-widgets.clear-block .views-exposed-widget .views-widget .form-item input.form-text{
 border: 1px solid #C7C7C7;
 width:202px;
@@ -1064,6 +1065,7 @@ padding:6px;
 width:200px;
 }
 
+.webform-client-form div div#edit-actions.form-actions input#edit-submit.form-submit,
 .views-exposed-form .views-exposed-widget input.form-submit{
 height:34px;
 width:74px;
@@ -1072,18 +1074,28 @@ font-size:14px;
 margin-top:16px;
 font-family: Georgia, "Times New Roman", serif;
 font-weight: normal;
-}
-
-.views-exposed-form .views-exposed-widget input.form-submit {
 border: 1px solid #C7C7C7;
 color:#ffffff;
 background-color:#8cc63f;
+}
+
+.webform-client-form div div#edit-actions.form-actions input#edit-submit.form-submit:hover,
+.views-exposed-form .views-exposed-widget input.form-submit:hover{
+border: 1px solid #C7C7C7;
+color:#ffffff;
+background-color:#bcd85f;
 }
 
 .views-exposed-form .views-exposed-widget input.form-submit#edit-reset {
 border: 1px solid #C7C7C7;
 color:#ffffff;
 background-color:#0084e4;
+}
+
+.views-exposed-form .views-exposed-widget input.form-submit#edit-reset:hover {
+border: 1px solid #C7C7C7;
+color:#ffffff;
+background-color:#a4d7f4;
 }
 
 
@@ -1107,6 +1119,13 @@ font-size:12px;
 border: 1px solid #C7C7C7;
 padding:6px;
 font-size:12px;
+}
+.webform-client-form input[type="text"]:focus,
+.webform-client-form textarea:focus,
+.webform-client-form select:focus
+{
+border: 1px solid #ffd8a7;
+background-color:#f8edb5;
 }
 
 .webform-client-form select{
@@ -1143,4 +1162,32 @@ line-height:18px;
 .date-block span{
 font-size:10px;
 line-height:18px;
+}
+
+/* convention calendar */
+
+html.js body#pid-partner-events-convention-calendar.not-front div#page.page div#page-inner.page-inner div#postscript-bottom-wrapper.postscript-bottom-wrapper div#postscript-bottom.postscript-bottom div#postscript-bottom-inner.postscript-bottom-inner div#block-views-calendar_convention-block_1.block div.inner div.content div.view div.view-filters form#views-exposed-form-calendar-convention-block-1.views-processed div div.views-exposed-form div.views-exposed-widgets div.views-exposed-widget div.views-widget div.date-views-filter-wrapper div.date-clear div.description div.container-inline-date div#edit-date-start-value-wrapper.form-item div#edit-date-start-value-datepicker-popup-0-wrapper.form-item input#edit-date-start-value-datepicker-popup-0.form-text, html.js body#pid-partner-events-convention-calendar.not-front div#page.page div#page-inner.page-inner div#postscript-bottom-wrapper.postscript-bottom-wrapper div#postscript-bottom.postscript-bottom div#postscript-bottom-inner.postscript-bottom-inner div#block-views-calendar_convention-block_1.block div.inner div.content div.view div.view-filters form#views-exposed-form-calendar-convention-block-1.views-processed div div.views-exposed-form div.views-exposed-widgets div.views-exposed-widget div.views-widget div.date-views-filter-wrapper div.date-clear div.description div.container-inline-date div#edit-date-end-value-wrapper.form-item div#edit-date-end-value-datepicker-popup-0-wrapper.form-item input#edit-date-end-value-datepicker-popup-0.form-text{
+width:116px;
+border: 1px solid #C7C7C7;
+font-size:12px;
+padding:6px;
+}
+
+html.js body#pid-partner-events-convention-calendar.not-front div#page.page div#page-inner.page-inner div#postscript-bottom-wrapper.postscript-bottom-wrapper div#postscript-bottom.postscript-bottom div#postscript-bottom-inner.postscript-bottom-inner div#block-views-calendar_convention-block_1.block div.inner div.content div.view div.view-filters form#views-exposed-form-calendar-convention-block-1.views-processed div div.views-exposed-form div.views-exposed-widgets div.views-exposed-widget{
+width:160px;
+}
+
+/* calendar of events */
+
+html.js body#pid-calendar-of-events.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#main-group.main-group div#main-group-inner.main-group-inner div#main-content.main-content div#main-content-inner.main-content-inner div#content-group.content-group div#content-group-inner.content-group-inner div#content-region.content-region div#content-region-inner.content-region-inner div#content-inner.content-inner div#content-inner-inner.content-inner-inner div#content-content.content-content div.view div.view-filters form#views-exposed-form-event-leisure-page-page-1 div div.views-exposed-form div.views-exposed-widgets div.views-exposed-widget{
+width:160px;
+}
+
+html.js body#pid-calendar-of-events.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#main-group.main-group div#main-group-inner.main-group-inner div#main-content.main-content div#main-content-inner.main-content-inner div#content-group.content-group div#content-group-inner.content-group-inner div#content-region.content-region div#content-region-inner.content-region-inner div#content-inner.content-inner div#content-inner-inner.content-inner-inner div#content-content.content-content div.view div.view-filters form#views-exposed-form-event-leisure-page-page-1 div div.views-exposed-form div.views-exposed-widgets div.views-exposed-widget{
+height:65px;
+}
+
+/* staff profile */
+div#block-views-staff_profiles-block_1.block div.inner div.content div.view div.view-content div.views-row{
+margin:0 .5em 1em 0;
 }
