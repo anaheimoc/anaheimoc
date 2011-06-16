@@ -6,7 +6,7 @@
 body {
   font-size: 14px;   /* also set in fusion_starter.info: settings[base-font-size] = font-size-14 */
   color: #333333;
-  line-height: 16px;
+  line-height: 1.5;
   background: #10214d;
   font-family: Helvetica, Arial, sans-serif;
 }
@@ -30,15 +30,20 @@ list-style-image: url(img/li_bullet.png);
 h1, h2, h3, h4, h5, .views-field-title, .views-table.cols-8 thead,  .sticky-header thead tr th.views-field {
 color: #00a4e4;
 font-family: Georgia;
-line-height: 150%;
+font-weight:normal;
+line-height: 100%;
 }
-h1 {
-font-size:21px;
+h1, h1 a {
+font-size:36px;
 }
-h2 {
+h2, h2 a {
+font-size:20px;
+}
+h3, h3 a {
 font-size:16px;
 }
-h3 {
+
+p {
 font-size:14px;
 }
 

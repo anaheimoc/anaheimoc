@@ -62,9 +62,9 @@ text-transform: capitalize;
 ********************************************** */
 body.node-type-microsite div.field-field-microsite-conf-dates{
 font-family: Georgia;
-font-size: 18px;
+font-size: 20px;
 color: #F7AC20;
-margin: 10px 0 20px;
+line-height: 26px;
 
 }
 
@@ -161,3 +161,5 @@ background: url(img/youtube_25.png) no-repeat center center;
 body.node-type-microsite .sidebar-first-inner ul.links li a.linked-icon{
 background: url(img/linkedin_25.png) no-repeat center center;
 }
+
+/* header-title */
