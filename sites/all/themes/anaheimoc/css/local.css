@@ -1192,3 +1192,173 @@ height:65px;
 div#block-views-staff_profiles-block_1.block div.inner div.content div.view div.view-content div.views-row{
 margin:0 .5em 1em 0;
 }
+
+/* GENERAL NODE CSS
+********************************************** */
+.page-node div.field-field-article-image img {
+  border: 2px solid #eee;
+}
+p.feature-graph {
+  color: #F7AC20;
+  font-size: 1.8em;
+  font-weight: bold;
+  line-height: 150%;
+  margin: 5px 0 0;
+}
+/* PAGE ATTACHMENT CSS
+********************************************** */
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row {
+  background: #f1f1f1;
+  margin: 10px 0;
+  padding: 10px;
+}
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-field-article-image-fid {
+  float: left;
+  height: 140px;
+  width: 140px;
+  margin: 8px 10px 20px 0;
+}
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-edit-node,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-edit-node a:link,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-edit-node a:visited,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-delete-node,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-delete-node a:link,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-delete-node a:visited,
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-field-anaheimoc-page-weight-value {
+  font-size: 10px;
+  color: #aaa;
+}
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-edit-node a:hover, .view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-delete-node a:hover {
+  color: #000;
+}
+/* HOMEPAGE SLIDESHOW CSS
+********************************************** */
+div.view.hero-slideshow {
+  position: relative;
+}
+div.view.hero-slideshow .views-field-view-node {
+  color: #fff;
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  width: 460px;
+}
+div.view.hero-slideshow .views-field-view-node h2 {
+  color: #fff;
+}
+div.view.hero-slideshow .views-field-view-node a {
+  color: #fff;
+}
+div.view.hero-slideshow .views-field-view-node a:visited {
+  color: #fff;
+}
+div.view.hero-slideshow .views-field-view-node a:hover {
+  text-decoration: none;
+}
+/* HOMEPAGE FEATURED AND POPULAR CONTENT CSS
+********************************************** */
+.view.view-anaheimoc-page.featured-content table.views-view-grid.col-3, .view.view-anaheimoc-page.popular-content table.views-view-grid.col-3 {
+  table-layout: fixed;
+}
+.view.view-anaheimoc-page.featured-content table.views-view-grid.col-3 td, .view.view-anaheimoc-page.popular-content table.views-view-grid.col-3 td {
+  vertical-align: bottom;
+  padding: 0;
+  width: 160px;
+}
+.view.view-anaheimoc-page.featured-content table.views-view-grid.col-3 td div,
+.view.view-anaheimoc-page.popular-content table.views-view-grid.col-3 td div,
+.view.view-anaheimoc-page.featured-content table.views-view-grid.col-3 td span,
+.view.view-anaheimoc-page.popular-content table.views-view-grid.col-3 td span {
+  width: 140px;
+}
+.view.view-anaheimoc-page.featured-content table.views-view-grid.col-3 td .views-field-teaser, .view.view-anaheimoc-page.popular-content table.views-view-grid.col-3 td .views-field-teaser {
+  height: 60px;
+}
+.view.view-anaheimoc-page.featured-content table.views-view-grid.col-3 td.col-3, .view.view-anaheimoc-page.popular-content table.views-view-grid.col-3 td.col-3 {
+  width: 140px;
+}
+/* CALENDAR OF EVENTS (LEISURE EVENTS) CSS
+********************************************** */
+table.views-view-grid {
+  table-layout: fixed;
+}
+table.views-view-grid td {
+  padding: 0;
+}
+body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 table.views-view-grid.col-2 {
+  table-layout: fixed;
+}
+body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 table.views-view-grid.col-2 td {
+  padding: 0;
+}
+/* PRESS RELEASE CSS
+***************************************** */
+.view-id-press_releases.view-display-id-page_1 h3.title {
+  background: #00a4e4;
+  color: #fff;
+  padding: 8px;
+  margin: 10px 0;
+}
+.node-type-press-release .field-field-pr-pull-quote {
+  background: #8cc63f;
+  color: #fff;
+  font-family: Georgia;
+  font-size: 18px;
+  float: right;
+  line-height: 1em;
+  margin: 10px 0 10px 10px;
+  padding: 10px;
+  width: 40%;
+}
+/* LITECAL
+***************************************** */
+.view-id-partner_events h3.litecal-title {
+  display: none;
+}
+/* WHAT'S NEW MISC CSS
+***************************************** */
+.view-id-whats_new.view-display-id-page_1 h3.title {
+  background: #00a4e4;
+  color: #fff;
+  padding: 8px;
+  margin: 10px 0;
+}
+/* WHAT'S NEW, PARTNER EVENT VIEWS LISTINGS
+***************************************** */
+.view-id-whats_new.view-display-id-page_1 .views-row, .view-partner-events.view-id-partner_events .views-row {
+  background: #eee;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.view-id-whats_new.view-display-id-page_1 .views-field-field-article-image-fid, .view-partner-events.view-id-partner_events .views-field-field-article-image-fid {
+  float: left;
+  margin-right: 10px;
+  width: 140px;
+}
+.view-id-whats_new.view-display-id-page_1 .views-field-field-article-image-fid img, .view-partner-events.view-id-partner_events .views-field-field-article-image-fid img {
+  border: 2px solid #eee	;
+}
+/* STAFF PROFILE VIEWS
+***************************************** */
+.staff-profile-view .views-view-grid.col-3 td, .staff-profile-view .views-view-grid.col-4 td {
+  color: #333;
+  display: inline-block;
+  padding: 0 0 30px;
+  padding-right: 20px;
+  vertical-align: top;
+  width: 140px;
+}
+.staff-profile-view .views-view-grid.col-3 td div, .staff-profile-view .views-view-grid.col-4 td div {
+  width: 140px;
+  font-size: 11px;
+}
+.staff-profile-view .views-view-grid.col-3 td .views-field-field-staff-sales-market-value, .staff-profile-view .views-view-grid.col-4 td .views-field-field-staff-sales-market-value {
+  font-style: italic;
+}
+.staff-profile-view .views-view-grid.col-3 td .views-field-field-staff-job-title-value, .staff-profile-view .views-view-grid.col-4 td .views-field-field-staff-job-title-value {
+  font-weight: bold;
+}
+.staff-profile-view .views-view-grid.col-3 td.col-last, .staff-profile-view .views-view-grid.col-4 td.col-last {
+  padding-right: 0;
+}
