@@ -1363,6 +1363,13 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
   padding-right: 0;
 }
 
+.staff-profile-view .views-field-field-staff-job-title-value,
+.staff-profile-view .views-field-field-global-phone-value,
+.staff-profile-view .views-field-mail,
+.staff-profile-view .views-field-view-node{
+font-size: 11px;
+}
+
 .staff-profile-view .views-row{
 margin: 0 0 10px;
 }
