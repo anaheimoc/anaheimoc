@@ -1311,6 +1311,12 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
   padding: 10px;
   width: 40%;
 }
+
+.node-type-press-release .pr-subheadline{
+font-size: 18px;
+font-weight: bold;
+font-style: italic;
+}
 /* LITECAL
 ***************************************** */
 .view-id-partner_events h3.litecal-title {
