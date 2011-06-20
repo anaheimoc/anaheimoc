@@ -1294,7 +1294,7 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
 }
 /* PRESS RELEASE CSS
 ***************************************** */
-.view-id-press_releases.view-display-id-page_1 h3.title {
+.view-id-press_releases h3.title {
   background: #00a4e4;
   color: #fff;
   padding: 8px;

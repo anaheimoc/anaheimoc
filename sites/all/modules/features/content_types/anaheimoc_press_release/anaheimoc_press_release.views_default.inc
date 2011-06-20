@@ -375,6 +375,9 @@ function anaheimoc_press_release_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Anaheim/Orange County Visitor & Convention Bureau Press Releases');
+  $handler->override_option('header', '<p>The Anaheim/Orange County Visitor & Convention Bureau Communication Department issues press releases on a regular basis and also publishes select press releases from our partners. The following press releases date back one year from today\'s date. For older press releases, please refer to our <a href="/press-releases/archive">archived press release page</a>.</p>');
+  $handler->override_option('header_format', '2');
+  $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 0);
   $handler->override_option('style_options', array(
     'grouping' => 'name',
@@ -490,29 +493,33 @@ function anaheimoc_press_release_views_default_views() {
       'reduce_duplicates' => 0,
     ),
     'date_filter' => array(
-      'operator' => 'between',
+      'operator' => '=',
       'value' => array(
-        'value' => '2011-01-01 00:00:00',
-        'min' => '2011-01-01 00:00:00',
-        'max' => '2011-01-01 00:00:00',
-        'default_date' => 'now -3 years',
-        'default_to_date' => 'now -1 year',
+        'min' => NULL,
+        'max' => NULL,
+        'value' => NULL,
+        'default_date' => 'now -1 year',
+        'default_to_date' => '',
       ),
       'group' => '0',
-      'exposed' => FALSE,
+      'exposed' => TRUE,
       'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
+        'operator' => 'date_filter_op',
+        'label' => 'Year',
+        'use_operator' => 0,
+        'identifier' => 'date_filter',
+        'optional' => 1,
+        'remember' => 0,
       ),
       'date_fields' => array(
         'node_data_field_pr_release_datetime.field_pr_release_datetime_value' => 'node_data_field_pr_release_datetime.field_pr_release_datetime_value',
       ),
       'date_method' => 'OR',
-      'granularity' => 'day',
+      'granularity' => 'year',
       'form_type' => 'date_select',
-      'default_date' => 'now -3 years',
-      'default_to_date' => 'now -1 year',
-      'year_range' => '-3:+3',
+      'default_date' => 'now -1 year',
+      'default_to_date' => '',
+      'year_range' => '-3:-1',
       'id' => 'date_filter',
       'table' => 'node',
       'field' => 'date_filter',
@@ -522,10 +529,8 @@ function anaheimoc_press_release_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('header', '<h3>Archived Press Releases</h3>
-<p>This page contains Anaheim/Orange County Visitor & Convention Bureau press releases from the last three years.</p>');
-  $handler->override_option('header_format', '2');
-  $handler->override_option('header_empty', 0);
+  $handler->override_option('title', 'Archived Press Releases');
+  $handler->override_option('header', '<p>Our press release archive includes Anaheim/Orange County Visitor & Convention Bureau releases, including select press releases from our partners, from the past three years. For a current list of press releases, please refer to our <a href="/press-releases">main press release page</a>.</p>');
   $handler->override_option('path', 'press-releases/archive');
   $handler->override_option('menu', array(
     'type' => 'none',
