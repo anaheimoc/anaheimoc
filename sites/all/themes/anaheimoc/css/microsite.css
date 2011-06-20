@@ -113,17 +113,74 @@ width: 140px;
 /* MICROSITE COUNTDOWN WIDGET
 ******************************************** */
 body.node-type-microsite .view-id-microsite_blocks .views-field-field-microsite-conf-countdown-value{
-background: url(../images/countdown-bg.jpg);
-color: #fff;
-font-size: 16px;
-font-family: Georgia;
-font-weight: bold;
-line-height: 175%;
-//margin: 10px 0;
-padding: 30px 0;
-text-align: center;
-text-shadow: 1px 1px 3px #000;
+
 }
+
+
+div.countdown_days, div.countdown_hours, div.countdown_mins{
+background-color:#ffffff;
+float:left;
+text-align:center;
+margin-left:12px;
+width:84px;
+height:64px;
+line-height:64px;
+font-size:46px;
+font-family: Helvetica, Arial, sans-serif;
+-moz-box-shadow: 0px 0px 4px #ccc;
+-webkit-box-shadow: 0px 0px 4px #ccc;
+box-shadow: 0px 0px 4px #ccc;
+}
+
+div.countdown_daystxt, div.countdown_hourstxt, div.countdown_minstxt{
+color:#ffffff;
+float:left;
+text-align:center;
+margin-left:12px;
+margin-bottom:8px;
+width:84px;
+height:24px;
+line-height:24px;
+font-size:14px;
+font-family: Georgia, "Times New Roman", serif;
+-moz-box-shadow: 0px 0px 4px #ccc;
+-webkit-box-shadow: 0px 0px 4px #ccc;
+box-shadow: 0px 0px 4px #ccc;
+}
+
+div.countdown_days, div.countdown_daystxt{
+}
+
+div.countdown_hours, div.countdown_hourstxt{
+}
+
+div.countdown_mins, div.countdown_minstxt{
+}
+
+div.countdown_days{
+color:#ed2789;
+}
+
+div.countdown_hours{
+color:#00a4e4;
+}
+
+div.countdown_mins{
+color:#f8951d;
+}
+
+div.countdown_daystxt{
+background-color:#ed2789;
+}
+
+div.countdown_hourstxt{
+background-color:#00a4e4;
+}
+
+div.countdown_minstxt{
+background-color:#f8951d;
+}
+
 
 /* MICROSITE SOCIAL MEDIA ICONS
 ******************************************** */
