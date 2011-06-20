@@ -1356,9 +1356,13 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
 .staff-profile-view .views-view-grid.col-3 td .views-field-field-staff-sales-market-value, .staff-profile-view .views-view-grid.col-4 td .views-field-field-staff-sales-market-value {
   font-style: italic;
 }
-.staff-profile-view .views-view-grid.col-3 td .views-field-field-staff-job-title-value, .staff-profile-view .views-view-grid.col-4 td .views-field-field-staff-job-title-value {
+.staff-profile-view .views-field-field-staff-job-title-value{
   font-weight: bold;
 }
 .staff-profile-view .views-view-grid.col-3 td.col-last, .staff-profile-view .views-view-grid.col-4 td.col-last {
   padding-right: 0;
+}
+
+.staff-profile-view .views-row{
+margin: 0 0 10px;
 }
