@@ -263,6 +263,15 @@ font-size: 14px;
 }
 
 /* FEATURED CONTENT & HELPFUL CONTENT BLOCKS */
+.front #block-views-anaheimoc_page-block_2 h2.block-title,
+.front #block-views-anaheimoc_page-block_3 h2.block-title{
+background: #00A4E4;
+color: #fff;
+margin: 10px 0;
+padding: 8px;
+}
+
+
 .view-front-feature-articles table, 
 .view-front-helpful-articles table {
 table-layout: fixed;

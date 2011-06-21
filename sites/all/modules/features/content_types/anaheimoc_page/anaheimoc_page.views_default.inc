@@ -1091,6 +1091,7 @@ function anaheimoc_page_views_default_views() {
       ),
     ),
   ));
+  $handler->override_option('title', 'Featured Content');
   $handler->override_option('css_class', 'featured-content');
   $handler->override_option('items_per_page', 3);
   $handler->override_option('style_plugin', 'grid');
@@ -1298,6 +1299,7 @@ function anaheimoc_page_views_default_views() {
     ),
   ));
   $handler->override_option('arguments', array());
+  $handler->override_option('title', 'Popular Content');
   $handler->override_option('css_class', 'popular-content');
   $handler->override_option('items_per_page', 6);
   $handler->override_option('style_plugin', 'grid');
