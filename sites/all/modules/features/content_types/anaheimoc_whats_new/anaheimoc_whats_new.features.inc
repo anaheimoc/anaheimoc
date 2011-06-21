@@ -1,27 +1,13 @@
 <?php
 
 /**
- * Implementation of hook_imagecache_default_presets().
+ * Implementation of hook_ctools_plugin_api().
  */
-function anaheimoc_whats_new_imagecache_default_presets() {
-  $items = array(
-    'whats_new_image' => array(
-      'presetname' => 'whats_new_image',
-      'actions' => array(
-        '0' => array(
-          'weight' => '0',
-          'module' => 'smartcrop',
-          'action' => 'smartcrop_scale_and_crop',
-          'data' => array(
-            'width' => '616',
-            'height' => '216',
-            'upscale' => 0,
-          ),
-        ),
-      ),
-    ),
-  );
-  return $items;
+function anaheimoc_whats_new_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => 1);
+  }
 }
 
 /**
@@ -42,4 +28,13 @@ function anaheimoc_whats_new_node_info() {
     ),
   );
   return $items;
+}
+
+/**
+ * Implementation of hook_views_api().
+ */
+function anaheimoc_whats_new_views_api() {
+  return array(
+    'api' => '2',
+  );
 }

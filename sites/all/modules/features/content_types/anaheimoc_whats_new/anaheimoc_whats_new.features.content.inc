@@ -21,7 +21,7 @@ function anaheimoc_whats_new_content_default_fields() {
         'exclude' => 1,
       ),
       'full' => array(
-        'format' => 'whats_new_image_default',
+        'format' => 'article_image_default',
         'exclude' => 0,
       ),
       '4' => array(
