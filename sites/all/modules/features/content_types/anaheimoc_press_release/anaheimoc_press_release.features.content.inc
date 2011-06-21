@@ -310,7 +310,7 @@ function anaheimoc_press_release_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'month_day_year',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       '4' => array(
