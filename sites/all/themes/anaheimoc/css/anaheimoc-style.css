@@ -286,6 +286,7 @@ margin: 0;
 .secondary-menu-inner ul.links li a:link,
 .secondary-menu-inner ul.links li a:visited {
   padding: 3px;
+  font-size: 12px;
 }
 
 .secondary-menu-inner ul.links li a:hover,

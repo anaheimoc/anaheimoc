@@ -1324,7 +1324,7 @@ font-style: italic;
 }
 /* WHAT'S NEW MISC CSS
 ***************************************** */
-.view-id-whats_new.view-display-id-page_1 h3.title {
+.view-id-whats_new h3.title {
   background: #00a4e4;
   color: #fff;
   padding: 8px;
