@@ -1388,3 +1388,7 @@ font-size: 11px;
 .staff-profile-view .views-row{
 margin: 0 0 10px;
 }
+
+#pid-import-partner-listing-upload .description{
+display: none;
+}
