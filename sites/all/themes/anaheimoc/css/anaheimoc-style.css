@@ -150,7 +150,14 @@ display: block;
 .header-group-wrapper {
 }
 
+.header-group-inner{
+}
+
 .header-group {
+width:980px;
+height:228px;
+background: url(../images/aocvcb_header_background.png);
+display: block;
 }
 
 /* Header Top region which sits above the header */
@@ -267,7 +274,7 @@ border-bottom: 0;
 font-family: Georgia;
 font-weight: bold;
 margin: 75px 10px 0 10px;
-width: 365px;
+width: 374px;
 }
 
 #secondary-menu-inner{
@@ -294,7 +301,7 @@ margin: 0;
 /* Styles for links */
 .secondary-menu-inner ul.links li a:link,
 .secondary-menu-inner ul.links li a:visited {
-  padding: 3px;
+  padding: 4px;
   font-size: 12px;
 }
 
@@ -302,7 +309,8 @@ margin: 0;
 .secondary-menu-inner ul.links li a:focus,
 .secondary-menu-inner ul.links li a.active {
 text-decoration: none;
-background: #12536d;
+color:#ffffff;
+background: #2E80B9;
 }
 
 /* SIMULATE SECONDARY MENU ACTIVE STATUS FOR EACH DOMAIN */
@@ -312,7 +320,8 @@ body.domain-id_3 div.secondary-menu ul.links li.menu-1612 a,
 body.domain-id_4 div.secondary-menu ul.links li.menu-1613 a,
 body.domain-id_5 div.secondary-menu ul.links li.menu-1614 a,
 body.domain-id_7 div.secondary-menu ul.links li.menu-3015 a{
-background: #12536d;
+color:#ffffff;
+background: #2E80B9;
 }
 
 
@@ -323,6 +332,7 @@ background: #12536d;
 background: transparent;
 float: right;
 margin-top: 65px;
+margin-right:10px;
 width: 200px;
 }
 
