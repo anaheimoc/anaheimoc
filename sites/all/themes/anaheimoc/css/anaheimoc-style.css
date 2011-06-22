@@ -7,7 +7,12 @@ body {
   font-size: 14px;   /* also set in fusion_starter.info: settings[base-font-size] = font-size-14 */
   color: #333333;
   line-height: 1.5;
-  background: #10214d;
+  background:
+  	url(../images/aocvcb_background_4.png) repeat-x fixed -130% 0,
+  	url(../images/aocvcb_background_3.png) repeat-x fixed 40% 0,
+  	/* url(../images/aocvcb_background_2.png) repeat-x fixed -80% 0, */
+  	url(../images/aocvcb_background_1.png) repeat-x fixed 100% 0;
+  background-color: #a4d7f4;
   font-family: Helvetica, Arial, sans-serif;
 }
 thead {
