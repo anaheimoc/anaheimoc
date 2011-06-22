@@ -1,0 +1,3 @@
+<?php
+
+include_once('anaheimoc_partner_listing.features.inc');
