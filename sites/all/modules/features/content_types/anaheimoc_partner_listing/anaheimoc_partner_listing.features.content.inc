@@ -11,8 +11,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_distance_fromacckilometers',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '26',
-      'parent' => '',
+      'weight' => '6',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -72,8 +72,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_distance_fromaccmiles',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '25',
-      'parent' => '',
+      'weight' => '5',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -133,8 +133,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_distance_fromaccminutes',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '27',
-      'parent' => '',
+      'weight' => '7',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -191,8 +191,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_distance_fromsnakilometers',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '29',
-      'parent' => '',
+      'weight' => '11',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -252,8 +252,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_distance_fromsnamiles',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '28',
-      'parent' => '',
+      'weight' => '10',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -313,8 +313,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_distance_fromsnaminutes',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '30',
-      'parent' => '',
+      'weight' => '12',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -372,7 +372,7 @@ function anaheimoc_partner_listing_content_default_fields() {
     'type_name' => 'partner_listing',
     'display_settings' => array(
       'weight' => '3',
-      'parent' => 'group_mem_main_contact',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -947,7 +947,7 @@ function anaheimoc_partner_listing_content_default_fields() {
     'type_name' => 'partner_listing',
     'display_settings' => array(
       'weight' => '12',
-      'parent' => '',
+      'parent' => 'group_partner_descriptions',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -1004,8 +1004,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_description_meetings',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '9',
-      'parent' => '',
+      'weight' => '15',
+      'parent' => 'group_partner_descriptions',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -1068,8 +1068,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_description_mtgfeature',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '11',
-      'parent' => '',
+      'weight' => '16',
+      'parent' => 'group_partner_descriptions',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -1126,8 +1126,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_description_ptsofinter',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '13',
-      'parent' => '',
+      'weight' => '4',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -1193,8 +1193,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_description_visfeature',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '7',
-      'parent' => '',
+      'weight' => '14',
+      'parent' => 'group_partner_descriptions',
       'label' => array(
         'format' => 'above',
       ),
@@ -1251,8 +1251,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_description_visitor',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '6',
-      'parent' => '',
+      'weight' => '13',
+      'parent' => 'group_partner_descriptions',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -1315,8 +1315,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_dining_dress',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '48',
-      'parent' => '',
+      'weight' => '12',
+      'parent' => 'group_partner_dining_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1373,8 +1373,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_feature_parkingavail',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '33',
-      'parent' => '',
+      'weight' => '12',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1431,8 +1431,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_feature_prices',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '35',
-      'parent' => '',
+      'weight' => '14',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1489,8 +1489,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_feature_puctcppermitno',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '36',
-      'parent' => '',
+      'weight' => '11',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1547,8 +1547,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_feature_shuttleservice',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '34',
-      'parent' => '',
+      'weight' => '13',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1605,8 +1605,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_feeds_import_date',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '129',
-      'parent' => '',
+      'weight' => '7',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1666,8 +1666,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_bottledorpitcher',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '115',
-      'parent' => '',
+      'weight' => '52',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1724,8 +1724,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_cflbulbs',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '109',
-      'parent' => '',
+      'weight' => '46',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1782,8 +1782,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_donateusablefood',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '124',
-      'parent' => '',
+      'weight' => '61',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1840,8 +1840,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_eef_other',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '111',
-      'parent' => '',
+      'weight' => '48',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1898,8 +1898,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_energystarprod',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '110',
-      'parent' => '',
+      'weight' => '47',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -1956,8 +1956,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_envcleanpdcts',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '121',
-      'parent' => '',
+      'weight' => '58',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2014,8 +2014,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_infoother',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '125',
-      'parent' => '',
+      'weight' => '62',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2072,8 +2072,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_laundrysysconsrv',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '116',
-      'parent' => '',
+      'weight' => '53',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2130,8 +2130,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_linenreusepgrm',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '114',
-      'parent' => '',
+      'weight' => '51',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2188,8 +2188,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_lowflowfaucets',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '113',
-      'parent' => '',
+      'weight' => '50',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2246,8 +2246,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_lowflowtoilets',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '112',
-      'parent' => '',
+      'weight' => '49',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2304,8 +2304,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_orgsustfandb',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '122',
-      'parent' => '',
+      'weight' => '59',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2362,8 +2362,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_orgsustfandbdet',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '123',
-      'parent' => '',
+      'weight' => '60',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2420,8 +2420,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_wcp_other',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '117',
-      'parent' => '',
+      'weight' => '54',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2478,8 +2478,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_wmp_other',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '120',
-      'parent' => '',
+      'weight' => '57',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2536,8 +2536,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_wmpmaterials',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '119',
-      'parent' => '',
+      'weight' => '56',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2594,8 +2594,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_green_wmprecyclingpgrm',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '118',
-      'parent' => '',
+      'weight' => '55',
+      'parent' => 'group_partner_green_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -2652,8 +2652,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_images',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => 0,
-      'parent' => '',
+      'weight' => '2',
+      'parent' => 'group_partner_media',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -2734,8 +2734,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_internet_facebookurl',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '19',
-      'parent' => '',
+      'weight' => '22',
+      'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -2804,7 +2804,7 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_internet_publicemail',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '7',
+      'weight' => '21',
       'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'hidden',
@@ -2864,8 +2864,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_internet_res_label',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '22',
-      'parent' => '',
+      'weight' => '24',
+      'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -2922,8 +2922,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_internet_reservationur',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '23',
-      'parent' => '',
+      'weight' => '25',
+      'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -2993,8 +2993,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_internet_twitteracct',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '20',
-      'parent' => '',
+      'weight' => '23',
+      'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -3064,7 +3064,7 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_internet_url',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '6',
+      'weight' => '20',
       'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'hidden',
@@ -3137,8 +3137,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_lodging_roomcount',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '51',
-      'parent' => '',
+      'weight' => '65',
+      'parent' => 'group_partner_visitor_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3183,7 +3183,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Room count',
-      'weight' => '9',
+      'weight' => '65',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3195,8 +3195,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_logo',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '-1',
-      'parent' => '',
+      'weight' => 0,
+      'parent' => 'group_partner_media',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -3277,8 +3277,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_committablerooms',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '85',
-      'parent' => '',
+      'weight' => '15',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3323,7 +3323,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Committable rooms',
-      'weight' => '18',
+      'weight' => '15',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3335,8 +3335,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_disabledaccessrms',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '93',
-      'parent' => '',
+      'weight' => '31',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3381,7 +3381,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Disabled access meeting rooms',
-      'weight' => '34',
+      'weight' => '31',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3393,8 +3393,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_disabledequiproom',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '86',
-      'parent' => '',
+      'weight' => '17',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3439,7 +3439,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Disabled equip rooms',
-      'weight' => '20',
+      'weight' => '17',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3451,8 +3451,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_estrackrate',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '87',
-      'parent' => '',
+      'weight' => '19',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3497,7 +3497,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Estimated rack rate',
-      'weight' => '22',
+      'weight' => '19',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3509,8 +3509,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_largestbanqset',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '89',
-      'parent' => '',
+      'weight' => '23',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3555,7 +3555,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Largest banquet setting',
-      'weight' => '26',
+      'weight' => '23',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3567,8 +3567,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_largestmeetsqft',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '91',
-      'parent' => '',
+      'weight' => '27',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3613,7 +3613,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Largest meeting room (sq ft)',
-      'weight' => '30',
+      'weight' => '27',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3625,8 +3625,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_largestrecepset',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '90',
-      'parent' => '',
+      'weight' => '25',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3671,7 +3671,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Largest reception setting',
-      'weight' => '28',
+      'weight' => '25',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3683,8 +3683,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_largesttheaterset',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '88',
-      'parent' => '',
+      'weight' => '21',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3729,7 +3729,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Largest theater setting',
-      'weight' => '24',
+      'weight' => '21',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3741,8 +3741,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_lrgrestaurantcap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '95',
-      'parent' => '',
+      'weight' => '35',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3787,7 +3787,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Largest restaurant capacity',
-      'weight' => '38',
+      'weight' => '35',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3799,8 +3799,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_meetingrooms',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '92',
-      'parent' => '',
+      'weight' => '29',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3845,7 +3845,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Meeting rooms',
-      'weight' => '32',
+      'weight' => '29',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3857,8 +3857,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_numberrestaurants',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '94',
-      'parent' => '',
+      'weight' => '33',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3903,7 +3903,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Number of restaurants',
-      'weight' => '36',
+      'weight' => '33',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3915,8 +3915,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_totalsuites',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '84',
-      'parent' => '',
+      'weight' => '13',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -3961,7 +3961,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Total suites',
-      'weight' => '16',
+      'weight' => '13',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -3973,8 +3973,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_meet_totroomincsuites',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '83',
-      'parent' => '',
+      'weight' => '11',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -4019,7 +4019,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Total rooms including suites',
-      'weight' => '14',
+      'weight' => '11',
       'description' => '',
       'type' => 'number',
       'module' => 'number',
@@ -4031,8 +4031,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_phone_800',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '16',
-      'parent' => '',
+      'weight' => '17',
+      'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -4089,7 +4089,7 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_phone_fax',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '5',
+      'weight' => '16',
       'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'inline',
@@ -4147,7 +4147,7 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_phone_main',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '4',
+      'weight' => '15',
       'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'inline',
@@ -4210,8 +4210,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_phone_reservations',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '18',
-      'parent' => '',
+      'weight' => '19',
+      'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -4268,8 +4268,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_phone_sales',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '17',
-      'parent' => '',
+      'weight' => '18',
+      'parent' => 'group_mem_main_contact',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -4326,8 +4326,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_secondary_member',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '8',
-      'parent' => '',
+      'weight' => '6',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -4387,8 +4387,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_video_label',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '126',
-      'parent' => '',
+      'weight' => '3',
+      'parent' => 'group_partner_media',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -4445,8 +4445,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_mem_video_link',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '127',
-      'parent' => '',
+      'weight' => '4',
+      'parent' => 'group_partner_media',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -4504,7 +4504,7 @@ function anaheimoc_partner_listing_content_default_fields() {
     'type_name' => 'partner_listing',
     'display_settings' => array(
       'weight' => '3',
-      'parent' => '',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -4562,7 +4562,7 @@ function anaheimoc_partner_listing_content_default_fields() {
     'type_name' => 'partner_listing',
     'display_settings' => array(
       'weight' => '4',
-      'parent' => '',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -4626,7 +4626,7 @@ function anaheimoc_partner_listing_content_default_fields() {
     'type_name' => 'partner_listing',
     'display_settings' => array(
       'weight' => '5',
-      'parent' => '',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'hidden',
       ),
@@ -4688,8 +4688,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_diningamenities',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '149',
-      'parent' => '',
+      'weight' => '11',
+      'parent' => 'group_partner_dining_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -4747,8 +4747,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_diningmealsserved',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '148',
-      'parent' => '',
+      'weight' => '10',
+      'parent' => 'group_partner_dining_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -4806,8 +4806,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_diningrates',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '141',
-      'parent' => '',
+      'weight' => '9',
+      'parent' => 'group_partner_dining_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -4865,8 +4865,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_disabledaccessmeetroom',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '159',
-      'parent' => '',
+      'weight' => '32',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -4912,7 +4912,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: disabled access meeting rooms',
-      'weight' => '35',
+      'weight' => '32',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -4924,8 +4924,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_disabledequiprooms',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '156',
-      'parent' => '',
+      'weight' => '18',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -4971,7 +4971,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: disabled equip rooms (meetings)',
-      'weight' => '21',
+      'weight' => '18',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -4983,8 +4983,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_distanceacckm',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '144',
-      'parent' => '',
+      'weight' => '9',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'above',
       ),
@@ -5042,8 +5042,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_distanceaccmiles',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '143',
-      'parent' => '',
+      'weight' => '8',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'above',
       ),
@@ -5101,8 +5101,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_distancesnakm',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '146',
-      'parent' => '',
+      'weight' => '14',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'above',
       ),
@@ -5160,8 +5160,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_distancesnamiles',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '145',
-      'parent' => '',
+      'weight' => '13',
+      'parent' => 'group_partner_location',
       'label' => array(
         'format' => 'above',
       ),
@@ -5219,8 +5219,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_estrackrate',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '157',
-      'parent' => '',
+      'weight' => '20',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5266,7 +5266,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: estimated rack rate',
-      'weight' => '23',
+      'weight' => '20',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5278,8 +5278,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_financial',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '147',
-      'parent' => '',
+      'weight' => '10',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5337,8 +5337,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_grid',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '140',
-      'parent' => '',
+      'weight' => '9',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5396,8 +5396,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_lodgingrates_visitors',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '151',
-      'parent' => '',
+      'weight' => '67',
+      'parent' => 'group_partner_visitor_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5443,7 +5443,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: visitor lodging rate',
-      'weight' => '11',
+      'weight' => '67',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5455,8 +5455,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_lodgingroomcount_vis',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '152',
-      'parent' => '',
+      'weight' => '66',
+      'parent' => 'group_partner_visitor_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5502,7 +5502,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: visitor lodging room count',
-      'weight' => '10',
+      'weight' => '66',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5514,8 +5514,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_lodgingtotalrooms',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '153',
-      'parent' => '',
+      'weight' => '12',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5561,7 +5561,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: total rooms including suites',
-      'weight' => '15',
+      'weight' => '12',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5573,8 +5573,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_lodgingtotalsuites',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '154',
-      'parent' => '',
+      'weight' => '14',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5620,7 +5620,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: total suites',
-      'weight' => '17',
+      'weight' => '14',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5632,8 +5632,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_maxbanquetcap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '163',
-      'parent' => '',
+      'weight' => '24',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5679,7 +5679,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: largest banquet setting (meetings)',
-      'weight' => '27',
+      'weight' => '24',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5691,8 +5691,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_maxmeetingroomsqft',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '165',
-      'parent' => '',
+      'weight' => '28',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5738,7 +5738,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: largest meeting room sq. ft. (meetings)',
-      'weight' => '31',
+      'weight' => '28',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5750,8 +5750,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_maxreceptioncap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '164',
-      'parent' => '',
+      'weight' => '26',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5797,7 +5797,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: largest reception setting (meetings)',
-      'weight' => '29',
+      'weight' => '26',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5809,8 +5809,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_maxrestaurantcap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '161',
-      'parent' => '',
+      'weight' => '36',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5856,7 +5856,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: largest restaurant capacity (meetings)',
-      'weight' => '39',
+      'weight' => '36',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5868,8 +5868,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_maxtheatercap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '162',
-      'parent' => '',
+      'weight' => '22',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5915,7 +5915,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: largest theater setting (meetings)',
-      'weight' => '25',
+      'weight' => '22',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5927,8 +5927,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_meeting_amenities',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '167',
-      'parent' => '',
+      'weight' => '10',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -5974,7 +5974,66 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: meeting amenities',
-      'weight' => '13',
+      'weight' => '10',
+      'description' => '',
+      'type' => 'content_taxonomy_select',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_tax_meeting_categories
+  $fields['partner_listing-field_tax_meeting_categories'] = array(
+    'field_name' => 'field_tax_meeting_categories',
+    'type_name' => 'partner_listing',
+    'display_settings' => array(
+      'weight' => '9',
+      'parent' => 'group_partner_meeting_info',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '1',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 0,
+    'vid' => '66',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'tag: meeting categories',
+      'weight' => '9',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -5986,8 +6045,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_noofrestaurants',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '160',
-      'parent' => '',
+      'weight' => '34',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6033,7 +6092,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: number of restaurants (meetings)',
-      'weight' => '37',
+      'weight' => '34',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -6045,8 +6104,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_specialservices',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '150',
-      'parent' => '',
+      'weight' => '68',
+      'parent' => 'group_partner_visitor_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6092,7 +6151,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: special services',
-      'weight' => '12',
+      'weight' => '68',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -6104,8 +6163,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_totalcommittablerooms',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '155',
-      'parent' => '',
+      'weight' => '16',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6151,7 +6210,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: committable rooms (meetings)',
-      'weight' => '19',
+      'weight' => '16',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -6163,8 +6222,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_totalmeetingrooms',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '158',
-      'parent' => '',
+      'weight' => '30',
+      'parent' => 'group_partner_meeting_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6210,7 +6269,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: total meeting rooms',
-      'weight' => '33',
+      'weight' => '30',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -6222,8 +6281,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_accommodations',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '174',
-      'parent' => '',
+      'weight' => '30',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6281,8 +6340,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_alcohol',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '175',
-      'parent' => '',
+      'weight' => '28',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6340,8 +6399,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_buyoutcapacity',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '172',
-      'parent' => '',
+      'weight' => '21',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6399,8 +6458,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_catering',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '176',
-      'parent' => '',
+      'weight' => '27',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6458,8 +6517,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_locationtype',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '173',
-      'parent' => '',
+      'weight' => '29',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6517,8 +6576,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_maxbanquetcap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '169',
-      'parent' => '',
+      'weight' => '34',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6576,8 +6635,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_maxmeetingsqft',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '171',
-      'parent' => '',
+      'weight' => '32',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6635,8 +6694,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_maxprivatecap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '178',
-      'parent' => '',
+      'weight' => '25',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6694,8 +6753,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_maxreceptioncap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '170',
-      'parent' => '',
+      'weight' => '33',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6753,8 +6812,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_maxtheatercap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '168',
-      'parent' => '',
+      'weight' => '31',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6812,8 +6871,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_minprivatecap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '166',
-      'parent' => '',
+      'weight' => '23',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6871,8 +6930,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_venue_parking',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '177',
-      'parent' => '',
+      'weight' => '26',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6925,13 +6984,72 @@ function anaheimoc_partner_listing_content_default_fields() {
     ),
   );
 
+  // Exported field: field_tax_visitor_categories
+  $fields['partner_listing-field_tax_visitor_categories'] = array(
+    'field_name' => 'field_tax_visitor_categories',
+    'type_name' => 'partner_listing',
+    'display_settings' => array(
+      'weight' => '63',
+      'parent' => 'group_partner_visitor_info',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '1',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 0,
+    'vid' => '67',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'tag: visitor categories',
+      'weight' => '63',
+      'description' => '',
+      'type' => 'content_taxonomy_select',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
   // Exported field: field_tax_visitoramenities
   $fields['partner_listing-field_tax_visitoramenities'] = array(
     'field_name' => 'field_tax_visitoramenities',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '142',
-      'parent' => '',
+      'weight' => '64',
+      'parent' => 'group_partner_visitor_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -6977,7 +7095,7 @@ function anaheimoc_partner_listing_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'tag: visitor amenities',
-      'weight' => '8',
+      'weight' => '64',
       'description' => '',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -6989,8 +7107,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_tax_webpackage',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '139',
-      'parent' => '',
+      'weight' => '8',
+      'parent' => 'group_partner_general_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -7048,8 +7166,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_venue_buyoutcapacity',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '136',
-      'parent' => '',
+      'weight' => '20',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -7106,8 +7224,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_venue_maxprivateroomcap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '138',
-      'parent' => '',
+      'weight' => '24',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -7164,8 +7282,8 @@ function anaheimoc_partner_listing_content_default_fields() {
     'field_name' => 'field_venue_minprivateroomcap',
     'type_name' => 'partner_listing',
     'display_settings' => array(
-      'weight' => '137',
-      'parent' => '',
+      'weight' => '22',
+      'parent' => 'group_partner_venue_info',
       'label' => array(
         'format' => 'above',
       ),
@@ -7310,6 +7428,7 @@ function anaheimoc_partner_listing_content_default_fields() {
   t('tag: largest restaurant capacity (meetings)');
   t('tag: largest theater setting (meetings)');
   t('tag: meeting amenities');
+  t('tag: meeting categories');
   t('tag: number of restaurants (meetings)');
   t('tag: special services');
   t('tag: total meeting rooms');
@@ -7328,6 +7447,7 @@ function anaheimoc_partner_listing_content_default_fields() {
   t('tag: venue parking');
   t('tag: venue smallest private room capacity');
   t('tag: visitor amenities');
+  t('tag: visitor categories');
   t('tag: visitor lodging rate');
   t('tag: visitor lodging room count');
   t('tag: webpackage');

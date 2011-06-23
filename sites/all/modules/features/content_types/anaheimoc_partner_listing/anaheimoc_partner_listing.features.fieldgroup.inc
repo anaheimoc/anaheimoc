@@ -75,7 +75,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'description' => '',
+        'weight' => '3',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset',
@@ -85,6 +85,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
           'format' => 'fieldset',
           'exclude' => 0,
         ),
+        'description' => '',
         '4' => array(
           'format' => 'fieldset',
           'exclude' => 0,
@@ -125,7 +126,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'description' => '',
+        'weight' => '8',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset',
@@ -135,6 +136,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
           'format' => 'fieldset',
           'exclude' => 0,
         ),
+        'description' => '',
         '4' => array(
           'format' => 'fieldset',
           'exclude' => 0,
@@ -174,7 +176,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'description' => '',
+        'weight' => '-1',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset',
@@ -184,6 +186,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
           'format' => 'fieldset',
           'exclude' => 0,
         ),
+        'description' => '',
         '4' => array(
           'format' => 'fieldset',
           'exclude' => 0,
@@ -231,7 +234,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'description' => '',
+        'weight' => '6',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset',
@@ -241,6 +244,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
           'format' => 'fieldset',
           'exclude' => 0,
         ),
+        'description' => '',
         '4' => array(
           'format' => 'fieldset',
           'exclude' => 0,
@@ -293,7 +297,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'description' => '',
+        'weight' => '1',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset',
@@ -303,6 +307,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
           'format' => 'fieldset',
           'exclude' => 0,
         ),
+        'description' => '',
         '4' => array(
           'format' => 'fieldset',
           'exclude' => 0,
@@ -350,7 +355,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'description' => '',
+        'weight' => '0',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset',
@@ -360,6 +365,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
           'format' => 'fieldset',
           'exclude' => 0,
         ),
+        'description' => '',
         '4' => array(
           'format' => 'fieldset',
           'exclude' => 0,
@@ -399,7 +405,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'description' => '',
+        'weight' => '5',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset',
@@ -409,6 +415,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
           'format' => 'fieldset',
           'exclude' => 0,
         ),
+        'description' => '',
         '4' => array(
           'format' => 'fieldset',
           'exclude' => 0,
@@ -429,33 +436,34 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
     ),
     'weight' => '5',
     'fields' => array(
-      '0' => 'field_tax_meeting_amenities',
-      '1' => 'field_mem_meet_totroomincsuites',
-      '2' => 'field_tax_lodgingtotalrooms',
-      '3' => 'field_mem_meet_totalsuites',
-      '4' => 'field_tax_lodgingtotalsuites',
-      '5' => 'field_mem_meet_committablerooms',
-      '6' => 'field_tax_totalcommittablerooms',
-      '7' => 'field_mem_meet_disabledequiproom',
-      '8' => 'field_tax_disabledequiprooms',
-      '9' => 'field_mem_meet_estrackrate',
-      '10' => 'field_tax_estrackrate',
-      '11' => 'field_mem_meet_largesttheaterset',
-      '12' => 'field_tax_maxtheatercap',
-      '13' => 'field_mem_meet_largestbanqset',
-      '14' => 'field_tax_maxbanquetcap',
-      '15' => 'field_mem_meet_largestrecepset',
-      '16' => 'field_tax_maxreceptioncap',
-      '17' => 'field_mem_meet_largestmeetsqft',
-      '18' => 'field_tax_maxmeetingroomsqft',
-      '19' => 'field_mem_meet_meetingrooms',
-      '20' => 'field_tax_totalmeetingrooms',
-      '21' => 'field_mem_meet_disabledaccessrms',
-      '22' => 'field_tax_disabledaccessmeetroom',
-      '23' => 'field_mem_meet_numberrestaurants',
-      '24' => 'field_tax_noofrestaurants',
-      '25' => 'field_mem_meet_lrgrestaurantcap',
-      '26' => 'field_tax_maxrestaurantcap',
+      '0' => 'field_tax_meeting_categories',
+      '1' => 'field_tax_meeting_amenities',
+      '2' => 'field_mem_meet_totroomincsuites',
+      '3' => 'field_tax_lodgingtotalrooms',
+      '4' => 'field_mem_meet_totalsuites',
+      '5' => 'field_tax_lodgingtotalsuites',
+      '6' => 'field_mem_meet_committablerooms',
+      '7' => 'field_tax_totalcommittablerooms',
+      '8' => 'field_mem_meet_disabledequiproom',
+      '9' => 'field_tax_disabledequiprooms',
+      '10' => 'field_mem_meet_estrackrate',
+      '11' => 'field_tax_estrackrate',
+      '12' => 'field_mem_meet_largesttheaterset',
+      '13' => 'field_tax_maxtheatercap',
+      '14' => 'field_mem_meet_largestbanqset',
+      '15' => 'field_tax_maxbanquetcap',
+      '16' => 'field_mem_meet_largestrecepset',
+      '17' => 'field_tax_maxreceptioncap',
+      '18' => 'field_mem_meet_largestmeetsqft',
+      '19' => 'field_tax_maxmeetingroomsqft',
+      '20' => 'field_mem_meet_meetingrooms',
+      '21' => 'field_tax_totalmeetingrooms',
+      '22' => 'field_mem_meet_disabledaccessrms',
+      '23' => 'field_tax_disabledaccessmeetroom',
+      '24' => 'field_mem_meet_numberrestaurants',
+      '25' => 'field_tax_noofrestaurants',
+      '26' => 'field_mem_meet_lrgrestaurantcap',
+      '27' => 'field_tax_maxrestaurantcap',
     ),
   );
 
@@ -471,7 +479,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'description' => '',
+        'weight' => '7',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset',
@@ -481,6 +489,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
           'format' => 'fieldset',
           'exclude' => 0,
         ),
+        'description' => '',
         '4' => array(
           'format' => 'fieldset',
           'exclude' => 0,
@@ -531,7 +540,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'description' => '',
+        'weight' => '4',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset',
@@ -541,6 +550,7 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
           'format' => 'fieldset',
           'exclude' => 0,
         ),
+        'description' => '',
         '4' => array(
           'format' => 'fieldset',
           'exclude' => 0,
@@ -561,11 +571,12 @@ function anaheimoc_partner_listing_fieldgroup_default_groups() {
     ),
     'weight' => '4',
     'fields' => array(
-      '0' => 'field_tax_visitoramenities',
-      '1' => 'field_mem_lodging_roomcount',
-      '2' => 'field_tax_lodgingroomcount_vis',
-      '3' => 'field_tax_lodgingrates_visitors',
-      '4' => 'field_tax_specialservices',
+      '0' => 'field_tax_visitor_categories',
+      '1' => 'field_tax_visitoramenities',
+      '2' => 'field_mem_lodging_roomcount',
+      '3' => 'field_tax_lodgingroomcount_vis',
+      '4' => 'field_tax_lodgingrates_visitors',
+      '5' => 'field_tax_specialservices',
     ),
   );
 

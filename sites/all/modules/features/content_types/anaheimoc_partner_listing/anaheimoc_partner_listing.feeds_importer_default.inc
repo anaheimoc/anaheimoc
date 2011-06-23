@@ -636,6 +636,16 @@ function anaheimoc_partner_listing_feeds_importer_default() {
             'target' => 'field_mem_phone_reservations',
             'unique' => FALSE,
           ),
+          119 => array(
+            'source' => 'xpathparser:119',
+            'target' => 'field_tax_visitor_categories',
+            'unique' => FALSE,
+          ),
+          120 => array(
+            'source' => 'xpathparser:120',
+            'target' => 'field_tax_meeting_categories',
+            'unique' => FALSE,
+          ),
         ),
         'input_format' => '0',
         'author' => '1',

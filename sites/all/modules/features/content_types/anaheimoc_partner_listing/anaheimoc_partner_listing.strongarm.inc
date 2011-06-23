@@ -74,16 +74,16 @@ function anaheimoc_partner_listing_strongarm() {
   $strongarm->name = 'content_extra_weights_partner_listing';
   $strongarm->value = array(
     'title' => '-2',
-    'revision_information' => '15',
-    'author' => '14',
-    'options' => '16',
-    'comment_settings' => '18',
-    'menu' => '12',
+    'revision_information' => '13',
+    'author' => '12',
+    'options' => '14',
+    'comment_settings' => '16',
+    'menu' => '10',
     'taxonomy' => '-3',
-    'path' => '17',
-    'attachments' => '19',
-    'domain' => '13',
-    'detailed_question' => '20',
+    'path' => '15',
+    'attachments' => '17',
+    'domain' => '11',
+    'detailed_question' => '18',
   );
 
   $export['content_extra_weights_partner_listing'] = $strongarm;
