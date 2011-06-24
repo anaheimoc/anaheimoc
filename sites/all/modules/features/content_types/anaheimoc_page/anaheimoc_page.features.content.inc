@@ -455,7 +455,7 @@ function anaheimoc_page_content_default_fields() {
       'max_filesize_per_file' => '',
       'max_filesize_per_node' => '',
       'max_resolution' => '1240x920',
-      'min_resolution' => '620x240',
+      'min_resolution' => '616x236',
       'alt' => '',
       'custom_alt' => 1,
       'title' => '',

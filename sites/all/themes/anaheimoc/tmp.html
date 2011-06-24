@@ -1,50 +1,26 @@
 <html>
 <body>
-
-<div class="coupon-wrapper">
-	<h3 class="coupon-partner-title">[title_1]</h3>
-	<div class="coupon-section-left">
-		<div class="coupon-partner-logo">[field_mem_logo_fid]</div>
-		<div class="coupon-print">Print</div>
-	</div>
-	<div class="coupon-section-right">
-	  <div class="coupon-offer"><h4>[field_coupon_offer_value]</h4></div>
-	  <div class="coupon-subhead"><h5>[field_coupon_subhead_value]</h5></div>
-	  <div class="coupon-details"><p>[field_coupon_details_value]</p></div>
-	  <div class="coupon-supplemental-img">[field_coupon_sup_image_fid]</div>
-	  <div class="coupon-terms"><p>[field_coupon_terms_value]</p></div>
-	  <div class="coupon-legal"><p>[field_coupon_legal_value]</p></div>
-	  <address>[street], [city], [province], [postal_code] Phone:[field_mem_phone_main_value] </address>
-	</div>
-<div class="clearfix"></div>
-<a href="javascript:window.print()">Print this page</a>
+<div class="partner-list field-wrapper">
+ <div class="member-list photo">[field_mem_images_fid]</div>
+ <h3 class="title">[title]</h3>
+ <address>[address]</address>
+ <div>[field_mem_phone_main_value]</div>
+ <p>[field_mem_description_visitor_value]</p>
+ <div>[field_mem_logo_fid]</div>
+ <div>[field_mem_internet_facebookurl_url]</div>
+ <div>[field_mem_internet_twitteracct_url]</div>
 </div>
-
-
-
-[title_1] == Node: Title
-[field_coupon_offer_value] == Content: Coupon offer (field_coupon_offer)
-[field_coupon_subhead_value] == Content: Coupon subhead (field_coupon_subhead)
+[field_mem_images_fid] == Content: Partner images (field_mem_images)
 [title] == Node: Title
-[url] == Ad Image: URL
-[redirect] == Ad: Redirect URL
-[field_coupon_details_value] == Content: Coupon details (field_coupon_details)
-[field_coupon_legal_value] == Content: Coupon legal (field_coupon_legal)
-[field_coupon_run_dates_value] == Content: Coupon run dates (field_coupon_run_dates) - From date
-[field_coupon_valid_dates_value] == Content: Coupon valid dates (field_coupon_valid_dates) - From date
-[field_coupon_member_reference_nid] == Broken/missing handler
-[field_coupon_terms_value] == Content: Terms and conditions (field_coupon_terms)
+[field_mem_phone_800_value] == Content: Toll free (field_mem_phone_800)
+[field_mem_phone_main_value] == Content: Phone (field_mem_phone_main)
+[field_mem_phone_fax_value] == Content: Fax (field_mem_phone_fax)
+[address] == Location: Address
+[field_mem_description_visitor_value] == Content: Visitor Description (field_mem_description_visitor)
 [field_mem_logo_fid] == Content: Partner logo (field_mem_logo)
-[aid] == Ad: Aid
-[city] == Location: City
-[postal_code] == Location: Postal Code
-[province] == Location: Province
-[street] == Location: Street
-[field_coupon_sup_image_fid]
+[field_mem_internet_facebookurl_url] == Content: Facebook (field_mem_internet_facebookurl)
+[field_mem_internet_twitteracct_url] == Content: Twitter (field_mem_internet_twitteracct)
+[field_tax_webpackage_value] == Content: tag: webpackage (field_tax_webpackage)
 [nothing] == Global: Custom text
-[field_mem_phone_main_value]
-
-
-
 </body>
 </html>
