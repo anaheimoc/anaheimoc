@@ -1436,3 +1436,43 @@ a.button:hover {
   text-shadow: -1px -1px 2px #465f97;
   background-color: #245191;
 }
+
+/* PARTNER LIST BUILDER */
+.view-partner-list-builder .views-row-even .partner-list.field-wrapper{
+background: rgba(185, 227, 250, 0.05);	
+}
+
+.view-partner-list-builder .views-row .partner-list.field-wrapper{
+border-top: 1px solid #dddddd;
+padding:10px 0 10px 0;
+height:125px;
+-moz-box-shadow:0 0 4px #cccccc;
+-webkit-box-shadow: 0 0 4px #cccccc;
+box-shadow:0 0 4px #cccccc;
+margin:10px 0 10px 0;
+}
+
+.view-partner-list-builder .views-row .partner-list.field-wrapper:hover{
+background: rgba(164, 215, 244, 0.25);
+-webkit-transition-property: background;
+-webkit-transition-duration: 0.7s;
+-webkit-transition-timing-function: ease;
+-moz-transition-property: background;
+-moz-transition-duration: 0.7s;
+-moz-transition-timing-function: ease;
+}
+
+.view-partner-list-builder .partner-list.field-wrapper{
+padding: 10px 0;
+}
+
+.view-partner-list-builder .partner-list.field-wrapper .member-list.column-middle{
+float: left;
+margin-right: 20px;
+width: 220px;
+}
+
+.partner-list.field-wrapper h3.title,
+.partner-list.field-wrapper address,
+.partner-list.field-wrapper .member-list.phone{
+}
