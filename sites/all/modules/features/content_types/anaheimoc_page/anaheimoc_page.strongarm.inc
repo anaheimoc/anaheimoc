@@ -73,6 +73,7 @@ function anaheimoc_page_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'content_extra_weights_anaheimoc_page';
   $strongarm->value = array(
+    'webform' => '14',
     'title' => '-5',
     'body_field' => '-2',
     'revision_information' => '2',
@@ -86,9 +87,9 @@ function anaheimoc_page_strongarm() {
     'domain' => '5',
     'detailed_question' => '17',
     'flag' => '0',
+    'partner_list_builder_node_content_1' => '13',
+    'partner_list_builder_node_content_2' => '11',
     'anaheimoc_page_node_content_1' => '16',
-    'partner_list_builder_v2_node_content_1' => '11',
-    'partner_list_builder_v2_node_content_2' => '13',
   );
 
   $export['content_extra_weights_anaheimoc_page'] = $strongarm;
