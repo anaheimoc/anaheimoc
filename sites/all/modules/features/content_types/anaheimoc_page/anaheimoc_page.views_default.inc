@@ -1382,8 +1382,8 @@ function anaheimoc_page_views_default_views() {
     'title' => array(
       'label' => '',
       'alter' => array(
-        'alter_text' => 1,
-        'text' => '<h3>[title]</h3>',
+        'alter_text' => 0,
+        'text' => '',
         'make_link' => 0,
         'path' => '',
         'absolute' => 0,
@@ -1637,8 +1637,8 @@ function anaheimoc_page_views_default_views() {
     'field_mem_logo_fid' => array(
       'label' => '',
       'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
+        'alter_text' => 1,
+        'text' => '<div class="member-list logo">[field_mem_logo_fid]</div>',
         'make_link' => 0,
         'path' => '',
         'absolute' => 0,
@@ -1680,8 +1680,8 @@ function anaheimoc_page_views_default_views() {
     'field_mem_internet_facebookurl_url' => array(
       'label' => 'Facebook',
       'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
+        'alter_text' => 1,
+        'text' => '<div class="member-list fb">[field_mem_internet_facebookurl_url]</div>',
         'make_link' => 0,
         'path' => '',
         'absolute' => 0,
@@ -1723,8 +1723,8 @@ function anaheimoc_page_views_default_views() {
     'field_mem_internet_twitteracct_url' => array(
       'label' => 'Twitter',
       'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
+        'alter_text' => 1,
+        'text' => '<div class="member-list twitter">[field_mem_internet_twitteracct_url]</div>',
         'make_link' => 0,
         'path' => '',
         'absolute' => 0,
@@ -1811,12 +1811,15 @@ function anaheimoc_page_views_default_views() {
       'alter' => array(
         'text' => '<div class="partner-list field-wrapper">
  <div class="member-list photo">[field_mem_images_fid]</div>
- <h3 class="title">[title]</h3>
- <address>[address]</address>
- <div>[field_mem_phone_main_value]</div>
- <div>[field_mem_logo_fid]</div>
- <div>[field_mem_internet_facebookurl_url]</div>
- <div>[field_mem_internet_twitteracct_url]</div>
+ <div class="member-list column-middle">
+  <h3 class="title">[title]</h3>
+  <address>[address]</address>
+  <div class="member-list phone">[field_mem_phone_main_value]</div>
+  [field_mem_internet_facebookurl_url]
+  [field_mem_internet_twitteracct_url]
+ </div>
+ [field_mem_logo_fid]
+<div class="clear"></div>
 </div>',
         'make_link' => 0,
         'path' => '',
