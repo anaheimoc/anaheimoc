@@ -432,99 +432,6 @@ function anaheimoc_travel_trade_opportunity_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('arguments', array(
-    'date_argument' => array(
-      'default_action' => 'default',
-      'style_plugin' => 'default_summary',
-      'style_options' => array(),
-      'wildcard' => 'all',
-      'wildcard_substitution' => 'All',
-      'title' => '',
-      'breadcrumb' => '',
-      'default_argument_type' => 'date',
-      'default_argument' => '',
-      'validate_type' => 'none',
-      'validate_fail' => 'not found',
-      'date_fields' => array(
-        'node_data_field_tt_opp_datetime.field_tt_opp_datetime_value' => 'node_data_field_tt_opp_datetime.field_tt_opp_datetime_value',
-      ),
-      'year_range' => '-1:+1',
-      'date_method' => 'OR',
-      'granularity' => 'year',
-      'id' => 'date_argument',
-      'table' => 'node',
-      'field' => 'date_argument',
-      'validate_user_argument_type' => 'uid',
-      'validate_user_roles' => array(
-        2 => 0,
-        3 => 0,
-        5 => 0,
-        7 => 0,
-        8 => 0,
-        4 => 0,
-        6 => 0,
-      ),
-      'relationship' => 'none',
-      'default_options_div_prefix' => '',
-      'default_argument_user' => 0,
-      'default_argument_fixed' => '',
-      'default_argument_php' => '',
-      'validate_argument_node_type' => array(
-        'ad' => 0,
-        'feed_fast' => 0,
-        'matching' => 0,
-        'multichoice' => 0,
-        'quiz_directions' => 0,
-        'truefalse' => 0,
-        'quiz' => 0,
-        'article' => 0,
-        'blog_article' => 0,
-        'event_leisure' => 0,
-        'feature_article' => 0,
-        'front_slideshow' => 0,
-        'gallery' => 0,
-        'gallery_image' => 0,
-        'image_library_img' => 0,
-        'microsite' => 0,
-        'navigation_page' => 0,
-        'page' => 0,
-        'partner_listing' => 0,
-        'press_release' => 0,
-        'profile' => 0,
-        'staff_profile' => 0,
-        'story' => 0,
-        'sybas_offer' => 0,
-        'sybas_page' => 0,
-        'travel_trade_opp' => 0,
-        'venue_rooms' => 0,
-        'webform' => 0,
-        'whats_new_article' => 0,
-      ),
-      'validate_argument_node_access' => 0,
-      'validate_argument_nid_type' => 'nid',
-      'validate_argument_vocabulary' => array(
-        4 => 0,
-        5 => 0,
-        11 => 0,
-        2 => 0,
-        13 => 0,
-        12 => 0,
-        14 => 0,
-        15 => 0,
-        16 => 0,
-        8 => 0,
-        7 => 0,
-        9 => 0,
-        10 => 0,
-        1 => 0,
-        3 => 0,
-      ),
-      'validate_argument_type' => 'tid',
-      'validate_argument_transform' => 0,
-      'validate_user_restrict_roles' => 0,
-      'validate_argument_php' => '',
-    ),
-  ));
   $handler->override_option('filters', array(
     'status' => array(
       'operator' => '=',
@@ -556,6 +463,42 @@ function anaheimoc_travel_trade_opportunity_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
+    'date_filter' => array(
+      'operator' => '=',
+      'value' => array(
+        'value' => NULL,
+        'min' => '2011-01-01 00:00:00',
+        'max' => '2011-01-01 00:00:00',
+        'default_date' => 'now',
+        'default_to_date' => '',
+      ),
+      'group' => '0',
+      'exposed' => TRUE,
+      'expose' => array(
+        'use_operator' => 0,
+        'operator' => 'date_filter_op',
+        'identifier' => 'date_filter',
+        'label' => 'Filter by year:',
+        'optional' => 1,
+        'remember' => 0,
+      ),
+      'date_fields' => array(
+        'node_data_field_tt_opp_datetime.field_tt_opp_datetime_value' => 'node_data_field_tt_opp_datetime.field_tt_opp_datetime_value',
+      ),
+      'date_method' => 'OR',
+      'granularity' => 'year',
+      'form_type' => 'date_select',
+      'default_date' => 'now',
+      'default_to_date' => '',
+      'year_range' => '-1:+1',
+      'id' => 'date_filter',
+      'table' => 'node',
+      'field' => 'date_filter',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
   ));
   $handler->override_option('access', array(
     'type' => 'none',
@@ -563,7 +506,7 @@ function anaheimoc_travel_trade_opportunity_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Travel Trade Opportunities - %1');
+  $handler->override_option('title', 'Travel Trade Opportunities');
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 0);
   $handler->override_option('style_options', array(
@@ -586,21 +529,8 @@ function anaheimoc_travel_trade_opportunity_views_default_views() {
     'weight' => 0,
     'name' => 'navigation',
   ));
-  $handler = $view->new_display('date_nav', 'Date browser', 'date_nav_1');
-  $handler->override_option('style_plugin', 'date_nav');
-  $handler->override_option('style_options', NULL);
-  $handler->override_option('row_plugin', '');
-  $handler->override_option('attachment_position', 'before');
-  $handler->override_option('inherit_arguments', TRUE);
-  $handler->override_option('inherit_exposed_filters', FALSE);
-  $handler->override_option('inherit_pager', FALSE);
-  $handler->override_option('render_pager', TRUE);
-  $handler->override_option('displays', array(
-    'page_1' => 'page_1',
-    'block_1' => 'block_1',
-    'default' => 0,
-  ));
   $handler = $view->new_display('block', 'Travel Trade Opportunities - block', 'block_1');
+  $handler->override_option('title', '');
   $handler->override_option('block_description', 'Travel Trade Opportunities - block');
   $handler->override_option('block_caching', -1);
 
