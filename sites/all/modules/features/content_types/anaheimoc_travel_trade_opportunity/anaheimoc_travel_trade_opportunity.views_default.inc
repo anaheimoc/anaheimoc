@@ -411,7 +411,7 @@ function anaheimoc_travel_trade_opportunity_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'text' => 'Opportunity Details',
+      'text' => 'Details',
       'exclude' => 0,
       'id' => 'view_node',
       'table' => 'node',
@@ -564,11 +564,13 @@ function anaheimoc_travel_trade_opportunity_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Travel Trade Opportunities - %1');
+  $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 0);
   $handler->override_option('style_options', array(
     'grouping' => 'field_tt_opp_datetime_value_1',
   ));
   $handler = $view->new_display('page', 'Travel Trade Opportunies - Page', 'page_1');
+  $handler->override_option('use_ajax', FALSE);
   $handler->override_option('path', 'programs-and-opportunities/travel-trade-opportunities');
   $handler->override_option('menu', array(
     'type' => 'none',
