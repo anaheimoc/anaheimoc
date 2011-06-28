@@ -1323,16 +1323,41 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
   margin: 10px 0;
 }
 .node-type-press-release .field-field-pr-pull-quote {
-  background: #8cc63f;
-  color: #fff;
-  font-family: Georgia;
-  font-size: 18px;
+  background: #82b83b;
+  color: #ffffff;
+  font-family: Georgia,"Times New Roman", serif;
+  font-size: 20px;
   float: right;
-  line-height: 1em;
-  margin: 10px 0 10px 10px;
-  padding: 10px;
+  line-height: 26px;
+  margin: 0 0 24px 24px;
+  padding: 24px;
   width: 40%;
+  z-index:-9998;
+  display:block;
+  overflow:hidden;
+  border-left:solid 4px #bcd85f;
 }
+.node-type-press-release .field-field-pr-pull-quote:before {
+    content: "“";
+    font-size:104px;
+    font-weight: bold;
+    margin:-6px -24px 0px -30px;
+    display:block;
+    float:left;
+    z-index:-9999
+
+}
+
+/*
+.node-type-press-release .field-field-pr-pull-quote:after {
+    content: "”";
+    margin:0;
+    font-size: 104px;
+    font-weight: bold;
+    float:right;
+    display:block;
+}
+*/
 
 .node-type-press-release .pr-subheadline{
 font-size: 18px;
@@ -1586,5 +1611,16 @@ margin:0 0 14px 0;
 }
 
 div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div.location{
+margin:0 0 14px 0;
+}
+
+/* local job postings */
+.content-inner-inner{
+width:620px;
+display:block;
+float:left;
+}
+
+div.views-field-field-job-description-value div.field-content p{
 margin:0 0 14px 0;
 }
