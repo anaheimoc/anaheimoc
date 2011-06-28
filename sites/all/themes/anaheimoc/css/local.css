@@ -1407,8 +1407,7 @@ display: none;
 }
 
 /* Call to Action button */
-a.button {
-width: 300px;
+#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action a.button {
 padding: 10px 25px 10px 25px;
 font-family: Arial;
 font-size: 14px;
@@ -1421,11 +1420,10 @@ border: 1px solid #618926;
 border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-line-height:1;
+
 }
 
-a.button:hover {
-width: 300px;
+#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action a.button:hover {
 padding: 10px 25px 10px 25px;
 font-family: Arial;
 font-size: 14px;
@@ -1440,10 +1438,9 @@ border-radius: 3px;
 -webkit-border-radius: 3px; 
 }
 
-div#call_to_action {
-margin-top:20px;
-height:40px;
-width: 300px;
+#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action {
+margin:10px 0;
+overflow:visible;
 }
 
 /* PARTNER LIST BUILDER */
@@ -1488,15 +1485,21 @@ width: 220px;
 }
 
 /* travel trade opportunities */
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content h3.title{
+    background-color: #00A4E4;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 8px;
+	margin-top:8px;
+}
 
-
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#main-group.main-group div#main-group-inner.main-group-inner div#main-content.main-content div#main-content-inner.main-content-inner div#content-group.content-group div#content-group-inner.content-group-inner div#content-region.content-region div#content-region-inner.content-region-inner div#content-inner.content-inner div#content-inner-inner.content-inner-inner div#content-content.content-content div.view div.view-content{
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content{
 float:left;
 width: 620px;
 display:block;
 }
 
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row{
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row{
 border:1px;
 border-style: none none solid none;
 border-color: #eeeeee;
@@ -1504,7 +1507,7 @@ margin-bottom:24px;
 padding:12px 0;
 }
 
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-field-tt-opp-logo-fid span.field-content a.imagecache img.imagecache{
+div.views-field-field-tt-opp-logo-fid span.field-content a.imagecache img.imagecache{
     background-color: #F2F2F3;
     float: left;
     margin: 0 10px 0 0;
@@ -1512,26 +1515,23 @@ padding:12px 0;
     width: 136px;
 }
 
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-field-tt-opp-logo-fid span.field-content a.imagecache img.imagecache{
-}
 
-
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info{
+div.travel-trade-opp-info{
 margin:0 10px;
 float:left;
 display:block;
 width:300px;
 }
 
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info h3{
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info h3{
 margin:0px;
 line-height:16px;
 }
 
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-single,
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view  div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-start,
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-separator,
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-end{
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-single,
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-start,
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-separator,
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-end{
     color: #f8951d;
     font-family: Georgia,"Times New Roman",serif;
     font-size: 16px;
@@ -1547,19 +1547,11 @@ font-weight:bold;
 margin: 0 0 0 10px;
 }
 
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-view-node span.field-content a{
-/* background: -moz-linear-gradient(#98BA40, #A6C250 35%, #618926) repeat scroll 0 0 transparent;
-    border: 1px solid #618926;
-    border-radius: 3px 3px 3px 3px;
-    color: #FFFFFF;
-    font-family: Georgia,"Times New Roman",serif;
-    font-size: 14px;
-    line-height: 1;
-    padding: 10px 25px;
-    text-decoration: none;
-    text-shadow: -1px -1px 2px #618926;
-    font-weight: normal;
-*/
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-view-node{
+    margin-top: 8px;
+}
+
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-view-node span.field-content a{
     background-color: #8CC63F;
     border: 1px solid #C7C7C7;
     color: #FFFFFF;
@@ -1571,7 +1563,7 @@ margin: 0 0 0 10px;
     vertical-align: middle;
     padding:8px 20px;
 }
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-view-node span.field-content a:hover{
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-view-node span.field-content a:hover{
 /* background: -moz-linear-gradient(#245192, #1E3B73 75%, #12295D) repeat scroll 0 0 transparent;
     border: 1px solid #0F2557;
     border-radius: 3px 3px 3px 3px;
@@ -1589,10 +1581,10 @@ margin: 0 0 0 10px;
     color: #FFFFFF;
 }
 
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div div p{
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div div p{
 margin:0 0 14px 0;
 }
 
-#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div.location{
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div.location{
 margin:0 0 14px 0;
 }
