@@ -1057,7 +1057,7 @@ display: block;
 /* search filter style */
 
 .views-exposed-form {
-background-color:#eeeeee;
+background-color:#EFEFEF;
 padding:4px;
 }
 
@@ -1380,7 +1380,7 @@ font-style: italic;
 /* WHAT'S NEW, PARTNER EVENT VIEWS LISTINGS
 ***************************************** */
 .view-id-whats_new.view-display-id-page_1 .views-row, .view-partner-events.view-id-partner_events .views-row {
-  background: #eee;
+  background: #EFEFEF;
   margin-bottom: 10px;
   padding: 10px;
 }
@@ -1424,7 +1424,7 @@ font-size: 11px;
 }
 
 .staff-profile-view .views-row{
-margin: 0 0 10px;
+margin: 12px 0;
 }
 
 #pid-import-partner-listing-upload .description{
@@ -1510,7 +1510,7 @@ width: 220px;
 }
 
 /* travel trade opportunities */
-div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content h3.title{
+.view-travel-trade-opportunities div.view div.view-content h3.title{
     background-color: #00A4E4;
     color: #FFFFFF;
     margin: 0;
