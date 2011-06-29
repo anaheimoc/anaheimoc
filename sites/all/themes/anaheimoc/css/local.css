@@ -1497,3 +1497,77 @@ width: 220px;
 .partner-list.field-wrapper .member-list.phone{
 
 }
+
+
+/* PARTNER GRID VIEWS
+------------------------------------------------ */
+.view-partner-grid .views-exposed-form{
+float: left;
+margin-right: 20px;
+width: 212px;
+}
+
+.view-partner-grid .views-exposed-form .bef-checkboxes label{
+font-size: 10px;
+}
+
+.view-partner-grid .view-content{
+float: left;
+width: 700px;	
+}
+
+.view-partner-grid .view-content .partner-grid-photo{
+float: left;
+margin-right: 20px;
+margin-left: 10px;
+width: 220px;
+}
+
+.view-partner-grid .view-content .partner-grid-photo img,
+.view-partner-grid .view-content .partner-grid-logo img{
+border: 2px solid #eee;
+margin: 0 auto;
+}
+
+.view-partner-grid .view-content .partner-grid-logo{
+float: left;
+width: 140px;
+}
+
+.view-partner-grid .view-content .grid-info-wrapper{
+float: left;
+margin-right: 20px;
+width: 280px;
+}
+
+.view-partner-grid .view-content div.acc-miles{
+content: 'Miles from Anaheim Convention Center: ';
+font-weight: bold;
+display: none;
+}
+
+.view-partner-grid .view-content div.sna-miles{
+content: 'Miles from John Wayne Airport: ';
+font-weight: bold;
+display: none;
+}
+
+.view-partner-grid .pager.clear-block{
+float: right;
+width: 700px;
+}
+
+.view-partner-grid .view-content .views-row .grid-container{
+border-top: 1px solid #DDDDDD;
+box-shadow: 0 0 4px #CCCCCC;
+margin: 10px 0;
+padding: 10px 0;
+}
+
+.view-partner-grid .view-content .views-row-odd .grid-container{
+background-color: ;
+background: none repeat scroll 0 0 rgba(185, 227, 250, 0.15);
+}
+
+.view-partner-grid .view-content .views-row-even .grid-container
+{background: none repeat scroll 0 0 rgba(185, 227, 250, 0.05);}
