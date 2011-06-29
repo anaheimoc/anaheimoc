@@ -658,7 +658,6 @@ margin: 0;
 .view-partner-directory div.member-list.logo {
 float: left;
 width:136px;
-height:70px;
 margin: 0 10px 0 0;
 padding:2px;
 background-color:#f2f2f3;
@@ -714,7 +713,6 @@ margin: 0 10px 10px 0;
 .view-partner-list-builder div.member-list.logo {
 float: left;
 width:136px;
-height:70px;
 margin: 0 10px 0 0;
 padding:2px;
 background-color:#f2f2f3;
@@ -1325,16 +1323,41 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
   margin: 10px 0;
 }
 .node-type-press-release .field-field-pr-pull-quote {
-  background: #8cc63f;
-  color: #fff;
-  font-family: Georgia;
-  font-size: 18px;
+  background: #82b83b;
+  color: #ffffff;
+  font-family: Georgia,"Times New Roman", serif;
+  font-size: 20px;
   float: right;
-  line-height: 1em;
-  margin: 10px 0 10px 10px;
-  padding: 10px;
+  line-height: 26px;
+  margin: 0 0 24px 24px;
+  padding: 24px;
   width: 40%;
+  z-index:-9998;
+  display:block;
+  overflow:hidden;
+  border-left:solid 4px #bcd85f;
 }
+.node-type-press-release .field-field-pr-pull-quote:before {
+    content: "“";
+    font-size:104px;
+    font-weight: bold;
+    margin:-6px -24px 0px -30px;
+    display:block;
+    float:left;
+    z-index:-9999
+
+}
+
+/*
+.node-type-press-release .field-field-pr-pull-quote:after {
+    content: "”";
+    margin:0;
+    font-size: 104px;
+    font-weight: bold;
+    float:right;
+    display:block;
+}
+*/
 
 .node-type-press-release .pr-subheadline{
 font-size: 18px;
@@ -1409,8 +1432,7 @@ display: none;
 }
 
 /* Call to Action button */
-a.button {
-width: 250px;
+#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action a.button {
 padding: 10px 25px 10px 25px;
 font-family: Arial;
 font-size: 14px;
@@ -1423,12 +1445,10 @@ border: 1px solid #618926;
 border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-line-height:1;
+
 }
 
-a.button:hover {
-
-width: 250px;
+#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action a.button:hover {
 padding: 10px 25px 10px 25px;
 font-family: Arial;
 font-size: 14px;
@@ -1443,18 +1463,9 @@ border-radius: 3px;
 -webkit-border-radius: 3px; 
 }
 
-div#call_to_action {
-margin-top:20px;
-height:40px;
-
-  background: -moz-linear-gradient(#245192, #1e3b73 75%, #12295d);
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #245192),color-stop(.75, #1e3b73),color-stop(1, #12295d));
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border: 1px solid #0f2557;
-  text-shadow: -1px -1px 2px #465f97;
-  background-color: #245191;
+#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action {
+margin:10px 0;
+overflow:visible;
 }
 
 /* PARTNER LIST BUILDER */
@@ -1497,7 +1508,6 @@ width: 220px;
 .partner-list.field-wrapper .member-list.phone{
 
 }
-
 
 /* PARTNER GRID VIEWS
 ------------------------------------------------ */
@@ -1571,3 +1581,122 @@ background: none repeat scroll 0 0 rgba(185, 227, 250, 0.15);
 
 .view-partner-grid .view-content .views-row-even .grid-container
 {background: none repeat scroll 0 0 rgba(185, 227, 250, 0.05);}
+
+
+/* travel trade opportunities */
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content h3.title{
+    background-color: #00A4E4;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 8px;
+	margin-top:8px;
+}
+
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content{
+float:left;
+width: 620px;
+display:block;
+}
+
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row{
+border:1px;
+border-style: none none solid none;
+border-color: #eeeeee;
+margin-bottom:24px;
+padding:12px 0;
+}
+
+div.views-field-field-tt-opp-logo-fid span.field-content a.imagecache img.imagecache{
+    background-color: #F2F2F3;
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 2px;
+    width: 136px;
+}
+
+
+div.travel-trade-opp-info{
+margin:0 10px;
+float:left;
+display:block;
+width:300px;
+}
+
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info h3{
+margin:0px;
+line-height:16px;
+}
+
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-single,
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-start,
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-separator,
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div span.date-display-end{
+    color: #f8951d;
+    font-family: Georgia,"Times New Roman",serif;
+    font-size: 16px;
+    line-height:16px;
+    margin:0px;
+}
+
+#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div label{
+font-weight:bold;
+}
+
+#pid-programs-and-opportunities-travel-trade-opportunities.not-front div.view div.view-content div.views-row div.views-field-view-node span.field-content{
+margin: 0 0 0 10px;
+}
+
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-view-node{
+    margin-top: 8px;
+}
+
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-view-node span.field-content a{
+    background-color: #8CC63F;
+    border: 1px solid #C7C7C7;
+    color: #FFFFFF;
+    font-family: Georgia,"Times New Roman",serif;
+    font-size: 14px;
+    font-weight: normal;
+    height: 34px;
+    margin-top: 16px;
+    vertical-align: middle;
+    padding:8px 20px;
+}
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-view-node span.field-content a:hover{
+/* background: -moz-linear-gradient(#245192, #1E3B73 75%, #12295D) repeat scroll 0 0 transparent;
+    border: 1px solid #0F2557;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    font-family: Georgia,"Times New Roman",serif;
+    font-size: 14px;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-shadow: -1px -1px 2px #465F97;
+    font-weight: normal;
+*/
+    text-decoration: none;
+    background-color: #BCD85F;
+    border: 1px solid #C7C7C7;
+    color: #FFFFFF;
+}
+
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div div p{
+margin:0 0 14px 0;
+}
+
+div#block-views-660d94a55b4837b7a29699c79adbcef9.block div.inner div.content div.view div.view-content div.views-row div.views-field-nothing span.field-content div.travel-trade-opp-info div.location{
+margin:0 0 14px 0;
+}
+
+/* local job postings */
+.content-inner-inner{
+width:620px;
+display:block;
+float:left;
+}
+
+div.views-field-field-job-description-value div.field-content p{
+margin:0 0 14px 0;
+}
+
+
