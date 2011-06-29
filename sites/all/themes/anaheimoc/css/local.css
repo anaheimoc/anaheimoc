@@ -1057,7 +1057,7 @@ display: block;
 /* search filter style */
 
 .views-exposed-form {
-background-color:#eeeeee;
+background-color:#eaf7ff;
 padding:4px;
 }
 
@@ -1380,7 +1380,7 @@ font-style: italic;
 /* WHAT'S NEW, PARTNER EVENT VIEWS LISTINGS
 ***************************************** */
 .view-id-whats_new.view-display-id-page_1 .views-row, .view-partner-events.view-id-partner_events .views-row {
-  background: #eee;
+  background: #eaf7ff;
   margin-bottom: 10px;
   padding: 10px;
 }
@@ -1424,7 +1424,7 @@ font-size: 11px;
 }
 
 .staff-profile-view .views-row{
-margin: 0 0 10px;
+margin: 20px 0;
 }
 
 #pid-import-partner-listing-upload .description{

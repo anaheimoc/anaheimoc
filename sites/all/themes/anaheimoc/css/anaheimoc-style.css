@@ -882,7 +882,7 @@ div.comment ul.links a {
 }
 
 .comments div.even {
-  background-color: #eee;
+  background-color: #eaf7ff;
 }
 
 /* A special highlight style for a comment by the author of the node */
@@ -1058,7 +1058,7 @@ input.list-add-to-cart:focus {
 
 .fusion-border .inner{
 /* This resets the default fusion border skinr style*/
-background: #eee;
+background: #eaf7ff;
 border: none;
 padding: 10px;	
 }
