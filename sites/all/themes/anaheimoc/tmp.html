@@ -10,17 +10,38 @@
  <div>[field_mem_internet_facebookurl_url]</div>
  <div>[field_mem_internet_twitteracct_url]</div>
 </div>
-[field_mem_images_fid] == Content: Partner images (field_mem_images)
-[title] == Node: Title
-[field_mem_phone_800_value] == Content: Toll free (field_mem_phone_800)
-[field_mem_phone_main_value] == Content: Phone (field_mem_phone_main)
-[field_mem_phone_fax_value] == Content: Fax (field_mem_phone_fax)
-[address] == Location: Address
-[field_mem_description_visitor_value] == Content: Visitor Description (field_mem_description_visitor)
-[field_mem_logo_fid] == Content: Partner logo (field_mem_logo)
-[field_mem_internet_facebookurl_url] == Content: Facebook (field_mem_internet_facebookurl)
-[field_mem_internet_twitteracct_url] == Content: Twitter (field_mem_internet_twitteracct)
-[field_tax_webpackage_value] == Content: tag: webpackage (field_tax_webpackage)
-[nothing] == Global: Custom text
+
+
+<div class="coupon-preview-wrapper">
+	<h3 class="coupon-preview-partner-title"><a href="[redirect]">[title_1]</a></h3>
+  <div class="coupon-preview-inner">
+  
+  	<div class="coupon-preview-offer"><h4>[field_coupon_offer_value]</h4></div>
+    <div class="coupon-preview-subhead"><h5>[field_coupon_subhead_value]</h5></div>
+    <div class="coupon-preview-details"><p>[field_coupon_details_value]<p></div>
+    <div class="coupon-preview-partner-logo">[field_mem_logo_fid]</div>
+    <div class="coupon-preview-more-info"><a href="[redirect]">More Info</a></div>
+    <div class="clearfix"></div>
+  </div>
+
+</div>    
+    
+    
+    
+    
+    
+    [field_coupon_offer_value] == Content: Coupon offer (field_coupon_offer)
+    [field_coupon_subhead_value] == Content: Coupon subhead (field_coupon_subhead)
+    [title] == Node: Title
+    [url] == Ad Image: URL
+    [redirect] == Ad: Redirect URL
+    [field_coupon_details_value] == Content: Coupon details (field_coupon_details)
+    [field_mem_logo_fid] == Content: Partner logo (field_mem_logo)
+    [title_1] == Node: Title
+    [nothing] == Global: Custom text
+
+
+
+
 </body>
 </html>

@@ -543,8 +543,8 @@ function anaheimoc_coupon_views_default_views() {
         'suffix' => '',
         'target' => '',
         'help' => '',
-        'trim' => 0,
-        'max_length' => '',
+        'trim' => 1,
+        'max_length' => '75',
         'word_boundary' => 1,
         'ellipsis' => 1,
         'html' => 0,
@@ -653,19 +653,19 @@ function anaheimoc_coupon_views_default_views() {
       'label' => '',
       'alter' => array(
         'text' => '<div class="coupon-preview-wrapper">
-  <a href="[redirect]">
-    <h3 class="coupon-preview-partner-title">[title_1]</h3>
-  </a>
-    <div class="coupon-preview-left">
-      <div class="coupon-preview-partner-logo">[field_mem_logo_fid]</div>
-      <div class="coupon-preview-more-info"><a href="[redirect]">More Info</a></div>
-    </div>
-    <div class="coupon-preview-right">
+    <h3 class="coupon-preview-partner-title"><a href="[redirect]">[title_1]</a></h3>
+    
+    <div class="coupon-preview-inner">
+  
       <div class="coupon-preview-offer"><h4>[field_coupon_offer_value]</h4></div>
       <div class="coupon-preview-subhead"><h5>[field_coupon_subhead_value]</h5></div>
       <div class="coupon-preview-details"><p>[field_coupon_details_value]<p></div>
-    </div>
-<div class="clearfix"></div>
+      <div class="coupon-preview-partner-logo">[field_mem_logo_fid]</div>
+      <div class="coupon-preview-more-info"><a href="[redirect]">More Info</a></div>
+      <div class="clearfix"></div>
+
+  </div>
+
 </div>',
         'make_link' => 0,
         'path' => '',
@@ -3095,19 +3095,19 @@ function anaheimoc_coupon_views_default_views() {
       'label' => '',
       'alter' => array(
         'text' => '<div class="coupon-preview-wrapper">
-  <a href="[redirect]">
-    <h3 class="coupon-preview-partner-title">[title_1]</h3>
-  </a>
-    <div class="coupon-preview-left">
-      <div class="coupon-preview-partner-logo">[field_mem_logo_fid]</div>
-      <div class="coupon-preview-more-info"><a href="[redirect]">More Info</a></div>
-    </div>
-    <div class="coupon-preview-right">
+    <h3 class="coupon-preview-partner-title"><a href="[redirect]">[title_1]</a></h3>
+    
+    <div class="coupon-preview-inner">
+  
       <div class="coupon-preview-offer"><h4>[field_coupon_offer_value]</h4></div>
       <div class="coupon-preview-subhead"><h5>[field_coupon_subhead_value]</h5></div>
       <div class="coupon-preview-details"><p>[field_coupon_details_value]<p></div>
-    </div>
-<div class="clearfix"></div>
+      <div class="coupon-preview-partner-logo">[field_mem_logo_fid]</div>
+      <div class="coupon-preview-more-info"><a href="[redirect]">More Info</a></div>
+      <div class="clearfix"></div>
+
+  </div>
+
 </div>',
         'make_link' => 0,
         'path' => '',
