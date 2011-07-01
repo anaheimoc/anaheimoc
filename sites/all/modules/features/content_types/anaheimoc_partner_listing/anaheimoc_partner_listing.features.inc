@@ -32,3 +32,12 @@ function anaheimoc_partner_listing_node_info() {
   );
   return $items;
 }
+
+/**
+ * Implementation of hook_views_api().
+ */
+function anaheimoc_partner_listing_views_api() {
+  return array(
+    'api' => '2',
+  );
+}

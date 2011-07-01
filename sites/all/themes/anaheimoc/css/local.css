@@ -1517,6 +1517,10 @@ margin-right: 20px;
 width: 212px;
 }
 
+.view-partner-grid .views-exposed-form .views-widget-filter-keys input#edit-keys{
+width: 192px;
+}
+
 .view-partner-grid .views-exposed-form .bef-checkboxes label{
 font-size: 10px;
 }
