@@ -102,7 +102,7 @@ function anaheimoc_preprocess_node(&$variables, $hook) {
 }
 
 function anaheimoc_preprocess_node_partner_listing(&$variables) {
-  dpm($variables);
+  //dpm($variables);
   //$node = $variables['node'];
   $variables['visitor_description'] = $variables['field_mem_description_visitor'][0]['safe'];
   $variables['meetings_description'] = $variables['field_mem_description_meetings'][0]['safe'];
@@ -168,9 +168,12 @@ function anaheimoc_preprocess_node_partner_listing(&$variables) {
   
   $variables['coupon_offer'] = views_embed_view('coupons', 'block_6', $node->nid);
   
-  //$variables['partner_logo'] = views_embed_view('partner_listing_alt', 'block_7', $node->nid);
+  // Video Tour Variables
+  $video_tour_label = '';
+  $video_tour_link = '';
+  $variables['video_tour'] = l($video_tour_label, $video_tour_link);
   
-  
+  //$variables['partner_logo'] = views_embed_view('partner_listing_alt', 'block_7', $node->nid);  
 }
 
 function anaheimoc_preprocess_node_image_library_img(&$variables) {
