@@ -1,5 +1,9 @@
 /* $Id: local-sample.css,v 1.1.2.1 2010/01/11 00:08:12 sociotech Exp $ */
 
+.front .sidebar-last .views-row{
+margin: 10px 0;
+}
+
 .clear {clear: both;}
 
 /* Google Map Fix */
@@ -545,12 +549,6 @@ line-height: 22px;
 font-weight: normal;
 margin-bottom:2px;
 }
-/* hides node title from partner listings */
-.node-type-partner-listing .main-wrapper h1.title{
-	display: none;
-}
-
-
 
 div.view.view-partner-listing-alt.view-id-partner_listing_alt  div.attachment.attachment-after div.view.view-partner-listing-alt.view-id-partner_listing_alt {
 margin-bottom:1em;
@@ -960,6 +958,10 @@ line-height:26px;
 padding: 10px;
 }
 
+.view.view-event-leisure-page.view-id-event_leisure_page.view-display-id-block_1 .view-content .views-row{
+padding: 0;
+}
+
 .view.view-event-leisure-page.view-id-event_leisure_page .view-content .views-field-field-article-image-fid{
 float: left;
 margin-right: 10px;	
@@ -1230,7 +1232,7 @@ p.feature-graph {
 /* PAGE ATTACHMENT CSS
 ********************************************** */
 .view-anaheimoc-page.view-display-id-node_content_1 .views-row {
-  background: #f1f1f1;
+  background: #EAF7FF;
   margin: 10px 0;
   padding: 10px;
 }
@@ -1511,6 +1513,26 @@ width: 220px;
 
 /* PARTNER GRID VIEWS
 ------------------------------------------------ */
+#pid-partners-grid-business-directory h1.title{
+color: #fff;
+text-indent: -9999px;
+margin: 0;
+max-height: 90px;
+}
+
+#pid-partners-grid-business-directory .views-exposed-form{
+display: none;
+}
+
+#pid-partners-grid-business-directory h1.title:before{
+color: #00A4E4;
+content: 'Anaheim/Orange County Visitor & Convention Bureau Partner Directory';
+display: block;
+font-size: 36px;
+text-indent: 0px;
+margin: 10px 0;
+}
+
 .view-partner-grid .views-exposed-form{
 float: left;
 margin-right: 20px;
@@ -1585,6 +1607,18 @@ background: none repeat scroll 0 0 rgba(185, 227, 250, 0.15);
 
 .view-partner-grid .view-content .views-row-even .grid-container
 {background: none repeat scroll 0 0 rgba(185, 227, 250, 0.05);}
+
+.view.view-partner-grid.view-id-partner_grid.view-display-id-page_6.partner-grid .view-content{
+}
+
+.view-partner-grid.view-id-partner_grid.view-display-id-page_6.partner-grid .views-summary{
+padding: 5px;
+}
+
+.view-partner-grid.view-id-partner_grid.view-display-id-page_6.partner-grid .views-summary:nth-child(-n+28){
+float: left;
+width: 400px;
+}
 
 
 /* travel trade opportunities */
@@ -1704,6 +1738,7 @@ div.views-field-field-job-description-value div.field-content p{
 margin:0 0 14px 0;
 }
 
+
 /* search results page */
 .search-form div div.form-item div.container-inline{
 width:620px;
@@ -1732,6 +1767,152 @@ width:600px;
 
 .search-snippet{
 margin:0px;
+}
+
+/* PARTNER LISTING CSS
+***************************************** */
+.node-type-partner-listing .partner-book-now {
+  float: ;
+  position: ;
+  text-align: right;
+}
+.node-type-partner-listing .partner-book-now a:link, .node-type-partner-listing .partner-book-now a:visited {
+  background: #9C0;
+  color: #fff;
+  font-family: Georgia;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 16px;
+  -moz-box-shadow: 0 0 4px #CCC;
+  -webkit-box-shadow: 0 0 4px #CCC;
+  box-shadow: 0 0 4px #CCC;
+}
+.node-type-partner-listing .partner-book-now a:hover {
+  color: #000;
+  text-decoration: none;
+}
+.node-type-partner-listing .logo-contact-wrapper {
+  float: left;
+  width: 300px;
+  margin-right: 20px;
+}
+.node-type-partner-listing .logo-contact-wrapper .partner-logo {
+  float: left;
+  width: 140px;
+  margin-right: 20px;
+}
+.node-type-partner-listing .logo-contact-wrapper .partner-address {
+  width: 140px;
+}
+.node-type-partner-listing .logo-contact-wrapper .partner-contact-info {
+  float: left;
+  width: 140px;
+}
+.node-type-partner-listing .partner-image-teaser-wrapper {
+  float: left;
+  width: 300px;
+  margin-right: 20px;
+}
+.node-type-partner-listing .partner-map-teaser-wrapper {
+  float: left;
+  width: 300px;
+}
+
+.node-type-partner-listing .coupon-offer-teaser{
+background: #82B83B;
+float: left;
+margin-top: 10px;
+width: 300px;
+}
+
+.node-type-partner-listing .coupon-offer-teaser a:link,
+.node-type-partner-listing .coupon-offer-teaser a:visited{
+color: #fff;
+display: block;
+font-weight: bold;
+padding: 5px 10px;
+}
+
+.node-type-partner-listing .coupon-offer-teaser a:hover{
+text-decoration: none;
+color: #333;
+}
+
+/* PARTNER NODE BLOCK VIEWS
+*********************************** */
+.node-type-partner-listing .view.view-partners.view-display-id-block_1 > .view-content:nth-child(2),
+.node-type-partner-listing .view.view-partners.view-display-id-block_2 > .view-content:nth-child(2){
+float: left;
+margin-right: 20px;
+width: 600px;
+}
+
+.node-type-partner-listing .view.view-partners.view-display-id-block_1 > .attachment-after,
+.node-type-partner-listing .view.view-partners.view-display-id-block_2 > .attachment-after{
+float: left;
+width: 300px;
+}
+
+.node-type-partner-listing .view.view-partners.view-display-id-block_1 > .attachment-after h3.title,
+.node-type-partner-listing .view.view-partners.view-display-id-block_2 > .attachment-after h3.title{
+color: #F8951D;
+font-size: 22px;
+font-weight: normal;
+line-height: 22px;
+margin: 10px 0;
+}
+
+.node-type-partner-listing .view.view-partners.view-display-id-block_1 > .attachment-after .view-header h3,
+.node-type-partner-listing .view.view-partners.view-display-id-block_2 > .attachment-after .view-header h3{
+color: #F8951D;
+font-size: 22px;
+font-weight: normal;
+line-height: 22px;
+}
+
+.node-type-partner-listing .view.view-partners.view-display-id-block_1 > .attachment-after .views-row,
+.node-type-partner-listing .view.view-partners.view-display-id-block_2 > .attachment-after .views-row{
+margin: 10px 0;
+}
+
+.node-type-partner-listing .view.view-partners .views-field-nothing h3{
+color: #F8951D;
+font-size: 22px;
+font-weight: normal;
+line-height: 22px;
+
+}
+
+.node-type-partner-listing .view.view-partners.view-display-id-block_3 .view-content:nth-child(2),
+.node-type-partner-listing .view.view-partners.view-display-id-block_4 .view-content:nth-child(3){
+float: left;
+margin-right: 20px;
+width: 220px;
+}
+
+.node-type-partner-listing .view.view-partners.view-display-id-block_3 .attachment-after,
+.node-type-partner-listing .view.view-partners.view-display-id-block_4 .attachment-after{
+float: left;
+margin-right: 0;
+width: 300px;
+}
+
+.node-type-partner-listing .view.view-partners.view-display-id-block_4 .attachment-before{
+float: left;
+margin-right: 20px;
+width: 380px;
+}
+
+.node-type-partner-listing .view.view-partners label{
+font-weight: bold;
+}
+
+.node-type-partner-listing .view.view-partners label.views-label-field-mem-description-visfeature-value,
+.node-type-partner-listing .view.view-partners label.views-label-field-mem-description-mtgfeature-value{
+color: #F8951D;
+font-size: 22px;
+font-weight: normal;
+line-height: 22px;
 }
 
 .search-info{
