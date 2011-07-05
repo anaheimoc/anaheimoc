@@ -15,7 +15,7 @@
 #block-weather-3 {
     float: left;
     height: 90px;
-    margin: 35px 10px 0;
+    margin: 54px 10px 0;
     width: 140px;
 }
 #block-weather-3 div.inner {
@@ -1734,14 +1734,4 @@ width:600px;
 margin:0px;
 }
 
-.search-info{
-color:#cccccc;
-}
-
-.search-info a{
-color:#A0A0A0
-}
-
-div.search-result dd{
-margin:0px;
-}
+.                                                                                                    
