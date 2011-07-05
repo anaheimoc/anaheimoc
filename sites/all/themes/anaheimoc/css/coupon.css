@@ -1,3 +1,25 @@
+div.coupon-preview-offer{
+height:28px;
+margin:0;
+}
+
+div.coupon-preview-subhead{
+height:42px;
+margin:0;
+}
+
+div.coupon-preview-details{
+height:104px;
+margin:0;
+}
+
+div.coupon-preview-partner-logo,
+div.coupon-preview-more-info{
+height:70px;
+margin:0;
+float:left;
+}
+
 .view-coupons h3.title{
 width:940px;
 clear:both;
