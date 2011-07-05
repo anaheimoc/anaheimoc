@@ -19,7 +19,7 @@ margin: 10px 0;
 #block-weather-3 {
     float: left;
     height: 90px;
-    margin: 35px 10px 0;
+    margin: 54px 10px 0;
     width: 140px;
 }
 #block-weather-3 div.inner {
@@ -1340,7 +1340,7 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
   border-left:solid 4px #bcd85f;
 }
 .node-type-press-release .field-field-pr-pull-quote:before {
-    content: "“";
+    content: "‚Äú";
     font-size:104px;
     font-weight: bold;
     margin:-6px -24px 0px -30px;
@@ -1352,7 +1352,7 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
 
 /*
 .node-type-press-release .field-field-pr-pull-quote:after {
-    content: "”";
+    content: "‚Äù";
     margin:0;
     font-size: 104px;
     font-weight: bold;
@@ -1768,6 +1768,7 @@ width:600px;
 .search-snippet{
 margin:0px;
 }
+.                                                                                                    
 
 /* PARTNER LISTING CSS
 ***************************************** */
