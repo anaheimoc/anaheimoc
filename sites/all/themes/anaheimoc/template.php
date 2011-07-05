@@ -51,7 +51,14 @@ function phptemplate_preprocess_views_view(&$vars){
 	// If the view returns no results, show nothing
 	else {
 		$vars['views_of_counter'] =  '';
-		}	
+		}
+		
+	//Create some variables to use in Views Summary View
+	
+	$summary_rows = count($rows);
+	$row_thirds = round($summary_rows/3);
+	$row_number = 0;
+			
 }
 
 
