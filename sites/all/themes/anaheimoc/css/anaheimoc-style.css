@@ -698,9 +698,13 @@ h2.block-title {
 /* Pagers
 -------------------------------------------------------------- */
 ul.pager {
+font-size:18px;
 }
 
 ul.pager li {
+color:#00a4e4;
+font-weight:bold;
+
 }
 
 ul.links.pager.pager-list{
@@ -713,21 +717,33 @@ float: right;
 width: auto;
 }
 
+ul.links.pager.pager-links a{
+  background-color: #ffffff;
+  border-color:#ffffff;
+  color: #00a4e4;
+}
+
+ul.links.pager.pager-links a:hover{
+text-decoration:underline;
+}
+
 ul.pager a,
 ul.pager li.pager-current {
-  border-color: #333;
+  border-color: #a4d7f4;
+  background-color: #a4d7f4;
 }
 
 ul.pager li.pager-current {
-  background-color: #777;
-  color: #fff;
+  background-color: #ffffff;
+  border-color:#ffffff;
+  color: #00a4e4;
 }
 
 ul.pager a:hover,
 ul.pager a:active,
 ul.pager a:focus {
-  background-color: #777;
-  border-color: #333;
+  background-color: #00a4e4;
+  border-color: #a4d7f4;
   color: #fff;
 }
 
