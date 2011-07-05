@@ -693,11 +693,16 @@ function anaheimoc_microsite_views_default_views() {
   $handler->override_option('inherit_pager', FALSE);
   $handler->override_option('render_pager', 0);
   $handler->override_option('displays', array(
-    'node_content_1' => 'node_content_1',
     'default' => 0,
     'block_1' => 0,
     'block_2' => 0,
     'block_3' => 0,
+    'node_content_1' => 0,
+    'block_4' => 0,
+    'block_5' => 0,
+    'block_6' => 0,
+    'block_7' => 0,
+    'node_content_2' => 0,
   ));
   $handler = $view->new_display('block', 'Microsite (links - special navigation) - block', 'block_4');
   $handler->override_option('fields', array(
@@ -1091,7 +1096,139 @@ function anaheimoc_microsite_views_default_views() {
   ));
   $handler->override_option('block_description', 'Microsite (special video) - block');
   $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('node_content', 'Node content', 'node_content_2');
+  $handler = $view->new_display('node_content', 'Points of Interest Map - node content', 'node_content_2');
+  $handler->override_option('fields', array(
+    'address' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 1,
+      'empty_zero' => 0,
+      'hide' => array(
+        'country' => 'country',
+        'locpick' => 'locpick',
+        'province_name' => 'province_name',
+        'country_name' => 'country_name',
+        'map_link' => 'map_link',
+        'coords' => 'coords',
+        'name' => 0,
+        'street' => 0,
+        'additional' => 0,
+        'city' => 0,
+        'province' => 0,
+        'postal_code' => 0,
+      ),
+      'exclude' => 0,
+      'id' => 'address',
+      'table' => 'location',
+      'field' => 'address',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'microsite' => 'microsite',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'field_map_builder_lid' => array(
+      'operator' => 'not empty',
+      'value' => array(
+        'value' => '',
+        'min' => '',
+        'max' => '',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_map_builder_lid',
+      'table' => 'node_data_field_map_builder',
+      'field' => 'field_map_builder_lid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('title', 'Points of Interest for %1');
+  $handler->override_option('style_plugin', 'gmap');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+    'macro' => '[gmap zoom=11 |width=616px|height=300px]',
+    'datasource' => 'location',
+    'latfield' => 'address',
+    'lonfield' => 'address',
+    'markers' => 'static',
+    'markerfield' => 'address',
+    'markertype' => '',
+    'center_on_nodearg' => 0,
+    'center_on_nodearg_arg' => 'nid',
+    'highlight_nodearg' => 0,
+    'highlight_nodearg_arg' => 'nid',
+    'highlight_nodearg_color' => '#FF0000',
+    'tooltipenabled' => 0,
+    'tooltipfield' => 'address',
+  ));
+  $handler->override_option('types', array(
+    'story' => 'story',
+  ));
+  $handler->override_option('modes', array(
+    0 => 'full',
+  ));
+  $handler->override_option('argument_mode', 'nid');
+  $handler->override_option('default_argument', '');
+  $handler->override_option('show_title', 1);
+  $handler = $view->new_display('block', 'Points of Interest Map - Block', 'block_8');
   $handler->override_option('fields', array(
     'address' => array(
       'label' => '',
@@ -1119,18 +1256,18 @@ function anaheimoc_microsite_views_default_views() {
       'hide_empty' => 0,
       'empty_zero' => 0,
       'hide' => array(
-        'country' => 'country',
-        'locpick' => 'locpick',
-        'province_name' => 'province_name',
-        'country_name' => 'country_name',
-        'map_link' => 'map_link',
-        'coords' => 'coords',
         'name' => 0,
         'street' => 0,
         'additional' => 0,
         'city' => 0,
         'province' => 0,
         'postal_code' => 0,
+        'country' => 0,
+        'locpick' => 0,
+        'province_name' => 0,
+        'country_name' => 0,
+        'map_link' => 0,
+        'coords' => 0,
       ),
       'exclude' => 0,
       'id' => 'address',
@@ -1142,7 +1279,63 @@ function anaheimoc_microsite_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('title', 'Points of Interest for %1');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'microsite' => 'microsite',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+    'field_map_builder_lid' => array(
+      'operator' => 'not empty',
+      'value' => array(
+        'value' => '',
+        'min' => '',
+        'max' => '',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'field_map_builder_lid',
+      'table' => 'node_data_field_map_builder',
+      'field' => 'field_map_builder_lid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('title', 'Points of Interest');
   $handler->override_option('style_plugin', 'gmap');
   $handler->override_option('style_options', array(
     'grouping' => '',
@@ -1161,15 +1354,8 @@ function anaheimoc_microsite_views_default_views() {
     'tooltipenabled' => 0,
     'tooltipfield' => 'address',
   ));
-  $handler->override_option('types', array(
-    'microsite' => 'microsite',
-  ));
-  $handler->override_option('modes', array(
-    0 => 'full',
-  ));
-  $handler->override_option('argument_mode', 'nid');
-  $handler->override_option('default_argument', '');
-  $handler->override_option('show_title', 1);
+  $handler->override_option('block_description', 'Points of Interest Map - Block');
+  $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;
 
