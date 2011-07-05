@@ -1513,6 +1513,26 @@ width: 220px;
 
 /* PARTNER GRID VIEWS
 ------------------------------------------------ */
+#pid-partners-grid-business-directory h1.title{
+color: #fff;
+text-indent: -9999px;
+margin: 0;
+max-height: 90px;
+}
+
+#pid-partners-grid-business-directory .views-exposed-form{
+display: none;
+}
+
+#pid-partners-grid-business-directory h1.title:before{
+color: #00A4E4;
+content: 'Anaheim/Orange County Visitor & Convention Bureau Partner Directory';
+display: block;
+font-size: 36px;
+text-indent: 0px;
+margin: 10px 0;
+}
+
 .view-partner-grid .views-exposed-form{
 float: left;
 margin-right: 20px;
@@ -1587,6 +1607,18 @@ background: none repeat scroll 0 0 rgba(185, 227, 250, 0.15);
 
 .view-partner-grid .view-content .views-row-even .grid-container
 {background: none repeat scroll 0 0 rgba(185, 227, 250, 0.05);}
+
+.view.view-partner-grid.view-id-partner_grid.view-display-id-page_6.partner-grid .view-content{
+}
+
+.view-partner-grid.view-id-partner_grid.view-display-id-page_6.partner-grid .views-summary{
+padding: 5px;
+}
+
+.view-partner-grid.view-id-partner_grid.view-display-id-page_6.partner-grid .views-summary:nth-child(-n+28){
+float: left;
+width: 400px;
+}
 
 
 /* travel trade opportunities */
