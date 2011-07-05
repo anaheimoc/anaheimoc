@@ -1432,7 +1432,7 @@ display: none;
 }
 
 /* Call to Action button */
-div#call_to_action a.button {
+#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action a.button {
 padding: 10px 25px 10px 25px;
 font-family: Arial;
 font-size: 14px;
@@ -1448,7 +1448,7 @@ border-radius: 3px;
 
 }
 
-div#call_to_action a.button:hover {
+#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action a.button:hover {
 padding: 10px 25px 10px 25px;
 font-family: Arial;
 font-size: 14px;
@@ -1463,7 +1463,7 @@ border-radius: 3px;
 -webkit-border-radius: 3px; 
 }
 
-div#call_to_action {
+#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action {
 margin:10px 0;
 overflow:visible;
 }
@@ -1690,8 +1690,54 @@ margin:0 0 14px 0;
 }
 
 /* local job postings */
+.content-inner-inner{
+//width:620px;
+//display:block;
+//float:left;
+}
+
 div.views-field-field-job-description-value div.field-content p{
 margin:0 0 14px 0;
 }
 
+/* search results page */
+.search-form div div.form-item div.container-inline{
+width:620px;
+float:left;
+display:block;
+}
 
+.search-form div fieldset.search-advanced{
+width:620px;
+}
+
+.search-form div fieldset.collapsed{
+margin-bottom:4px;
+height:0;
+}
+
+div.search-result dt.title a{
+text-decoration:underline;
+}
+
+.search-result{
+margin-left:10px;
+margin-bottom:20px;
+width:600px;
+}
+
+.search-snippet{
+margin:0px;
+}
+
+.search-info{
+color:#cccccc;
+}
+
+.search-info a{
+color:#A0A0A0
+}
+
+div.search-result dd{
+margin:0px;
+}

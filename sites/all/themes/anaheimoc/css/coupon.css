@@ -1,14 +1,80 @@
-div.coupon-preview-wrapper{
-width:600px;
-padding:10px;
+.view-coupons h3.title{
+width:940px;
+clear:both;
 }
 
-div.coupon-wrapper{
+.view-coupons div.coupon-preview-wrapper h3.coupon-preview-partner-title a{
+color:#ffffff;
+font-size:14px;
+}
+
+.view-coupons div.view-content div.views-row{
+width:290px;
+padding:10px;
+float:left;
+}
+
+.view-coupons div.coupon-preview-wrapper{
+
+}
+
+.view-coupons div.coupon-preview-wrapper div.coupon-preview-inner{
+border-left:10px solid #00a4e4;
+border-right:10px solid #00a4e4;
+border-bottom:10px solid #00a4e4;
+background-color:#ffffff;
+padding:10px;
+height:260px
+}
+
+.view-coupons div.coupon-preview-wrapper div.coupon-preview-inner div.coupon-preview-offer h4{
+color:#00a4e4;
+text-transform:uppercase;
+font-family: Helvetica, Arial, sans-serif;
+margin:0;
+font-size:28px;
+font-weight:bold;
+}
+
+.view-coupons div.coupon-preview-wrapper div.coupon-preview-inner div.coupon-preview-subhead h5{
+font-size:14px;
+line-height:14px;
+color:#58d558;
+text-transform:uppercase;
+font-family: Helvetica, Arial, sans-serif;
+margin:0;
+}
+
+.view-coupons div.coupon-wrapper{
 width:600px;
 border: 5px dashed #00a5e5;
 padding:5px;
 }
 
+.view-coupons .coupon-preview-partner-logo img{
+width:136px;
+height:70px;
+float:left;
+}
+
+.view-coupons div.coupon-preview-more-info{
+float:left;
+padding-left:10px;
+display:block;
+}
+.view-coupons div.coupon-preview-more-info a{
+float:left;
+display:block;
+padding:10px;
+text-align:center;
+color:#ffffff;
+background-color:#58d558;
+font-weight:bold;
+font-size:18px;
+line-height:52px;
+text-decoration:none;
+height:52px;
+}
 
 div.coupon-preview-wrapper h3.coupon-preview-partner-title,
 div.coupon-wrapper h3.coupon-partner-title{
@@ -16,6 +82,7 @@ color:#ffffff;
 background-color:#00a4e4;
 padding:8px;
 margin:0;
+height:40px;
 }
 
 div.coupon-preview-wrapper div.coupon-preview-left,
