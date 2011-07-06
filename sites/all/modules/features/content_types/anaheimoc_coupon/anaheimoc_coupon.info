@@ -4,9 +4,14 @@ dependencies[] = "content"
 dependencies[] = "location"
 dependencies[] = "views_attach"
 description = "Coupon Content Type and Views"
+features[imagecache][] = "coupon_partner_logo"
 features[views][] = "coupons"
 features[views_api][] = "api:2"
 name = "Coupon"
 package = "Features"
 project = "anaheimoc_coupon"
+<<<<<<< HEAD
 version = "6.x-1.0beta6"
+=======
+version = "6.x-1.0beta7"
+>>>>>>> 2d77717d90573cea835d620a78f6385c42382edb
