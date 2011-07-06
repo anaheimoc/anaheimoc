@@ -51,7 +51,14 @@ function phptemplate_preprocess_views_view(&$vars){
 	// If the view returns no results, show nothing
 	else {
 		$vars['views_of_counter'] =  '';
-		}	
+		}
+		
+	//Create some variables to use in Views Summary View
+	
+	$summary_rows = count($rows);
+	$row_thirds = round($summary_rows/3);
+	$row_number = 0;
+			
 }
 
 
@@ -99,6 +106,81 @@ function anaheimoc_preprocess_node(&$variables, $hook) {
       ));
     }
   }
+}
+
+function anaheimoc_preprocess_node_partner_listing(&$variables) {
+  //dpm($variables);
+  //$node = $variables['node'];
+  $variables['visitor_description'] = $variables['field_mem_description_visitor'][0]['safe'];
+  $variables['meetings_description'] = $variables['field_mem_description_meetings'][0]['safe'];
+  
+  // Create Partner Logo variable
+  $variables['partner_logo'] = theme('imagecache', 'partner_logo', $variables['field_mem_logo'][0]['filepath'],'','',array('class' => 'partner-logo'));
+  
+  // Create Partner Teaser Image variable
+  $variables['partner_image_teaser'] = theme('imagecache', 'partner_listing_preview', $variables['field_mem_images'][0]['filepath'],'','',array('class' => 'partner-image-teaser'));
+  
+  // Build Gmap Teaser Array
+  $map_teaser_array = array(
+  'id' => "map-teaser",       // id attribute for the map
+    'width' => "296px",       // map width in pixels or %
+    'height' => "171px",      // map height in pixels
+    'latitude' => $variables['field_mem_address'][0]['latitude'],    // map center latitude
+    'longitude' => $variables['field_mem_address'][0]['longitude'],  // map center longitude
+    'zoom' => 14,              // zoom level
+    'maxzoom' => 14,
+    'maptype' => "Map",       // baselayer type
+    'controltype' => "Small",  // size of map controls
+    'behavior' => array(
+      'locpick' => TRUE,
+      'nomousezoom' => TRUE,
+      'nodrag' => TRUE,
+      'nokeyboard' => FALSE,
+      'overview' => FALSE,
+      'scale' => FALSE,
+    ),
+    'markers' => array(
+      'text' => 'First Marker',
+      'longitude' => $variables['field_mem_address'][0]['longitude'],
+      'latitude' => $variables['field_mem_address'][0]['latitude'],
+      'markername' => 'orange',
+    )
+  );
+  
+  // Render gmap using theme function
+  $variables['map_teaser'] = theme('gmap', array('#settings' => $map_teaser_array));
+  
+  
+  // Create Partner Address variables
+  $partner_address_street = $variables['field_mem_address'][0]['street'];
+  $partner_address_city = $variables['field_mem_address'][0]['city'];
+  $partner_address_state = $variables['field_mem_address'][0]['province'];
+  $partner_address_province = $variables['field_mem_address'][0]['postal_code'];
+  
+  // Theme the address variables and send them to the node template
+  $variables['partner_address'] = '<address>' . $partner_address_street . '<br />' . $partner_address_city . ', ' . $partner_address_state . ' ' . $partner_address_province . '</address>';
+  
+  // Phone, Fax, Toll Free and Website variables
+  
+  $variables['partner_phone'] = 'Phone: ' . $variables['field_mem_phone_main'][0]['safe'];
+  $variables['partner_fax'] = 'Fax: ' . $variables['field_mem_phone_fax'][0]['safe'];
+  $variables['partner_tollfree'] = 'Toll Free: ' . $variables['field_mem_phone_800'][0]['safe'];
+  $variables['partner_website'] = l('Website', $variables['field_mem_internet_url'][0]['url'], array('attributes' => array('onclick' => 'window.open(this.href); return false;')));
+  
+  // Book Now Variable
+  $book_now_label = $variables['field_mem_internet_res_label'][0]['safe'];
+  $book_now_link = $variables['field_mem_internet_reservationur'][0]['url'];
+  
+  $variables['book_now'] = l($book_now_label, $book_now_link, array('attributes' => array('onclick' => 'window.open(this.href); return false;')));
+  
+  $variables['coupon_offer'] = views_embed_view('coupons', 'block_6', $node->nid);
+  
+  // Video Tour Variables
+  $video_tour_label = '';
+  $video_tour_link = '';
+  $variables['video_tour'] = l($video_tour_label, $video_tour_link);
+  
+  //$variables['partner_logo'] = views_embed_view('partner_listing_alt', 'block_7', $node->nid);  
 }
 
 function anaheimoc_preprocess_node_image_library_img(&$variables) {

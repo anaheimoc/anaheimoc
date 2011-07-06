@@ -25,6 +25,12 @@ function anaheimoc_coupon_views_default_views() {
       'field' => 'aid',
       'relationship' => 'none',
     ),
+    'field_partner_reference_nid' => array(
+      'id' => 'field_partner_reference_nid',
+      'table' => 'node_data_field_partner_reference',
+      'field' => 'field_partner_reference_nid',
+      'relationship' => 'aid',
+    ),
   ));
   $handler->override_option('fields', array(
     'upload_fid' => array(
@@ -3338,6 +3344,106 @@ function anaheimoc_coupon_views_default_views() {
     'hide_empty' => 0,
   ));
   $handler->override_option('block_description', 'Coupons (content type -partner node) - block');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Coupon offer teaser - block', 'block_6');
+  $handler->override_option('relationships', array(
+    'aid' => array(
+      'label' => 'Node',
+      'required' => 0,
+      'id' => 'aid',
+      'table' => 'ads',
+      'field' => 'aid',
+      'relationship' => 'none',
+    ),
+    'field_partner_reference_nid' => array(
+      'label' => 'Partner reference',
+      'required' => 0,
+      'delta' => '-1',
+      'id' => 'field_partner_reference_nid',
+      'table' => 'node_data_field_partner_reference',
+      'field' => 'field_partner_reference_nid',
+      'relationship' => 'aid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+  ));
+  $handler->override_option('fields', array(
+    'nid' => array(
+      'label' => 'Nid',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'exclude' => 1,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_partner_reference_nid',
+    ),
+    'title' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 1,
+        'text' => 'View our special offers!',
+        'make_link' => 1,
+        'path' => 'node/[nid]/?quicktabs_1=4#quicktabs-1',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'exclude' => 0,
+      'id' => 'title',
+      'table' => 'node',
+      'field' => 'title',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_partner_reference_nid',
+    ),
+  ));
+  $handler->override_option('items_per_page', 1);
+  $handler->override_option('row_plugin', 'fields');
+  $handler->override_option('row_options', array());
+  $handler->override_option('block_description', 'Coupon offer teaser - block');
   $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;

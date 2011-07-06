@@ -73,10 +73,11 @@ border: 5px dashed #00a5e5;
 padding:5px;
 }
 
-.view-coupons .coupon-preview-partner-logo img{
+.view-coupons div.coupon-preview-partner-logo{
 width:136px;
 height:70px;
 float:left;
+overflow:hidden;
 }
 
 .view-coupons div.coupon-preview-more-info{
