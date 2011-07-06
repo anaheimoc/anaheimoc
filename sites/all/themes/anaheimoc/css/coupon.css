@@ -23,6 +23,9 @@ float:left;
 .view-coupons h3.title{
 width:940px;
 clear:both;
+padding:8px 0;
+font-size:28px;
+line-height:28px;
 }
 
 .view-coupons div.coupon-preview-wrapper h3.coupon-preview-partner-title a{
