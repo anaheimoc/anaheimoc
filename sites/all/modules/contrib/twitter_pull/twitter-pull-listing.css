@@ -13,19 +13,26 @@ div.tweets-pulled-listing div.tweet-authorphoto img {
 }
 
 div.tweets-pulled-listing a {
-  color: blue;
+  color: #00A4E4;
 }
 
 div.tweets-pulled-listing .tweet-author a {
-  font-weight: bold;
+  font-family:Georgia, "Times New Roman", serif;
 }
 
 div.tweets-pulled-listing .tweet-time a {
-  color: silver;
+  color: #CCCCCC;
+  font-size:0.85em;
 }
 
 div.tweets-pulled-listing  div.tweet-divider {
   clear: left;
   border-bottom: 1px solid #efefef;
   margin: 5px 0 5px 0;
+}
+
+div.tweets-pulled-listing ul.tweets-pulled-listing li span.tweet-text{
+font-size:14px;
+line-height:1.5;
+color:#333333;
 }

@@ -438,7 +438,6 @@ div#quicktabs-3 ul.quicktabs_tabs li.active a:hover{
   
 }
 
-
 ul.quicktabs_tabs.quicktabs-style-zen{
   margin:0;
   padding:0;
@@ -989,9 +988,10 @@ display: none;
 
 /* Calendar of Events Slideshow */
 .attachment-before .view.view-event-leisure-page.view-display-id-attachment_1 .views-row{
-background: #eee;
 padding: 10px;
 width: 600px;
+background-color: #a4d7f4;
+background: -moz-linear-gradient(100% 100% 90deg, #ffffff, #a4d7f4); /* Safari 4-5, Chrome 1-9 */ /* -webkit-gradient(<type>, <point> [, <radius>]?, <point> [, <radius>]? [, <stop>]*) */ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a4d7f4), to(#ffffff)); /* Safari 5.1+, Chrome 10+ */ background: -webkit-linear-gradient(#a4d7f4, #ffffff); /* Opera 11.10+ */ background: -o-linear-gradient(#a4d7f4, #ffffff);
 }
 .attachment-before .view.view-event-leisure-page.view-display-id-attachment_1 .views-field-field-article-image-fid{
 float: left;
@@ -1017,7 +1017,6 @@ display: block;
 //height:160px;
 //margin:8px 0;
 //padding:10px;
-//background-color: #eeeeee;
 }
 
 .view-id-event_leisure_page.view-display-id-page_1 .views_slideshow_singleframe_main.views_slideshow_main.viewsSlideshowSingleFrame-processed .views_slideshow_singleframe_teaser_section{
@@ -1042,8 +1041,7 @@ display: block;
 //height:120px;
 //margin:8px 0;
 //padding:10px;
-//background-color: #eeeeee;
-//overflow:none;
+	//overflow:none;
 }
 
 .view.view-event-leisure-page.view-id-event_leisure_page.view-display-id-page_1.view-dom-id-2 .view-content .views-row.views-row-1.views-row-odd.views-row-first.views-row-last span.views-field-title span.field-content h3 a{
