@@ -1434,7 +1434,7 @@ display: none;
 }
 
 /* Call to Action button */
-#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action a.button {
+#call_to_action a.button {
 padding: 10px 25px 10px 25px;
 font-family: Arial;
 font-size: 14px;
@@ -1450,7 +1450,7 @@ border-radius: 3px;
 
 }
 
-#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action a.button:hover {
+#call_to_action a.button:hover {
 padding: 10px 25px 10px 25px;
 font-family: Arial;
 font-size: 14px;
@@ -1465,7 +1465,7 @@ border-radius: 3px;
 -webkit-border-radius: 3px; 
 }
 
-#pid-plan.not-front div#page.page div#page-inner.page-inner div#main-wrapper.main-wrapper div#main.main div#main-inner.main-inner div#sidebar-first.sidebar-first div#sidebar-first-inner.sidebar-first-inner div#block-block-8.block div.inner div.content div#call_to_action {
+#call_to_action {
 margin:10px 0;
 overflow:visible;
 }
