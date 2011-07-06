@@ -6,6 +6,9 @@ margin: 10px 0;
 
 .clear {clear: both;}
 
+/* General Spacing on CCK Fields */
+.node.full-node .field{margin:10px 0;}
+
 /* Google Map Fix */
 .quicktabs-hide {
   display: block;
