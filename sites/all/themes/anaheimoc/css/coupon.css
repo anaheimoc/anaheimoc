@@ -69,7 +69,7 @@ font-weight:bold;
 .view-coupons div.coupon-preview-wrapper div.coupon-preview-inner div.coupon-preview-subhead h5{
 font-size:14px;
 line-height:14px;
-color:#58d558;
+color:#8CC63F;
 text-transform:uppercase;
 font-family: Helvetica, Arial, sans-serif;
 margin:0;
@@ -92,19 +92,26 @@ overflow:hidden;
 float:left;
 padding-left:10px;
 display:block;
+height:70px;
+vertical-align:middle;
 }
 .view-coupons div.coupon-preview-more-info a{
 float:left;
 display:block;
 padding:10px;
+margin-top:18px;
 text-align:center;
+vertical-align:middle;
 color:#ffffff;
-background-color:#58d558;
+background-color:#8CC63F;
 font-weight:bold;
 font-size:18px;
-line-height:52px;
+line-height:18px;
 text-decoration:none;
-height:52px;
+}
+
+.view-coupons div.coupon-preview-more-info a:hover{
+background-color:#BCD85F;
 }
 
 div.coupon-preview-wrapper h3.coupon-preview-partner-title,
@@ -138,11 +145,18 @@ display:block;
 padding:10px;
 text-align:center;
 color:#ffffff;
-background-color:#58d558;
+background-color:#8CC63F;
 font-weight:bold;
 font-size:18px;
 text-decoration:none;
 }
+
+div.coupon-preview-wrapper div.coupon-preview-left .coupon-preview-more-info a:hover,
+div.coupon-wrapper div.coupon-section-left .coupon-print a:hover,
+div.node-bottom.row.nested div.node-bottom-inner.inner div.coupon-print a:hover{
+background-color:#BCD85F;
+}
+
 div.node-bottom-inner.inner h4{
 float:left;
 padding: 0 12px;
@@ -177,7 +191,7 @@ div.coupon-preview-wrapper div.coupon-preview-right .coupon-preview-subhead h5,
 div.coupon-wrapper div.coupon-section-right .coupon-subhead h5{
 font-size:14px;
 line-height:14px;
-color:#58d558;
+color:#8CC63F;
 text-transform:uppercase;
 font-family: Helvetica, Arial, sans-serif;
 margin:0;
