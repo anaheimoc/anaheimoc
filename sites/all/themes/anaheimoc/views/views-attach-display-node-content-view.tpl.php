@@ -29,7 +29,7 @@
   <?php endif; ?>
   <?php if ($title): ?>
     <div class="view-title">
-      <?php print $title; ?>
+      <h3><?php print $title; ?></h3>
     </div>
   <?php endif; ?>
   <?php if ($header): ?>
