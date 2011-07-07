@@ -212,6 +212,21 @@ line-height:12px;
 color:#333333;
 }
 
+div.coupon-section-bottom,
+div.coupon-footer-text{
+width:600px;
+display:block;
+clear:both;
+}
+
+div.coupon-section-bottom .coupon-bureau-logo{
+float:left;
+display:block;
+width:140px;
+height:71px;
+overflow:hidden;
+padding:0 10px 10px 0;
+}
 
 /*
 
