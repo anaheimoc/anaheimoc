@@ -1657,9 +1657,9 @@ function anaheimoc_coupon_views_default_views() {
       'label' => '',
       'alter' => array(
         'text' => '<div class="coupon-wrapper">
-	<h3 class="coupon-partner-title">[title_1]</h3>
+  <h3 class="coupon-partner-title">[title_1]</h3>
 	<div class="coupon-section-left">
-		<div class="coupon-partner-logo">[field_mem_logo_fid]</div>
+	  <div class="coupon-partner-logo">[field_mem_logo_fid]</div>
 	</div>
 	<div class="coupon-section-right">
 	  <div class="coupon-offer"><h4>[field_coupon_offer_value]</h4></div>
@@ -1667,11 +1667,17 @@ function anaheimoc_coupon_views_default_views() {
 	  <div class="coupon-details"><p>[field_coupon_details_value]</p></div>
 	  <div class="coupon-supplemental-img">[field_coupon_sup_image_fid]</div>
 	  <div class="coupon-terms"><p>[field_coupon_terms_value]</p></div>
-	  <div class="coupon-legal"><p>[field_coupon_legal_value]</p></div>
-	  <address>[street], [city], [province], [postal_code]</address>
-          <div class="coupon-phone">Phone: [field_mem_phone_main_value]</div>
+	  <div class="coupon-legal"><p>[field_coupon_legal_value]</p></div>	  
 	</div>
-<div class="clearfix"></div>
+	<div class="coupon-section-bottom">
+	    <div class="coupon-bureau-logo"><img src="/sites/all/themes/anaheimoc/logo.png"/></div>
+	    <div class="coupon-contact-info">
+  	      <address>[street], [city], [province], [postal_code]</address>
+          <div class="coupon-phone">Phone: [field_mem_phone_main_value]</div>
+        </div>
+    </div>
+    <div class="coupon-footer-text">Brought to you by Anaheim/Orange County Visitor &amp; Convention Bureau | anaheimoc.org/deals</div>
+  <div class="clearfix"></div>
 </div>',
         'make_link' => 0,
         'path' => '',
