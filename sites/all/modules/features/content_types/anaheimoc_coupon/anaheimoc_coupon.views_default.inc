@@ -802,7 +802,28 @@ function anaheimoc_coupon_views_default_views() {
       'relationship' => 'field_ad_coupon_reference_nid',
     ),
   ));
-  $handler->override_option('sorts', array());
+  $handler->override_option('sorts', array(
+    'name' => array(
+      'order' => 'ASC',
+      'id' => 'name',
+      'table' => 'term_data',
+      'field' => 'name',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_ad_coupon_reference_nid',
+    ),
+    'title' => array(
+      'order' => 'ASC',
+      'id' => 'title',
+      'table' => 'node',
+      'field' => 'title',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_ad_coupon_reference_nid',
+    ),
+  ));
   $handler->override_option('arguments', array());
   $handler->override_option('filters', array(
     'tid' => array(
@@ -872,6 +893,7 @@ function anaheimoc_coupon_views_default_views() {
     ),
   ));
   $handler->override_option('use_ajax', TRUE);
+  $handler->override_option('distinct', 1);
   $handler->override_option('style_options', array(
     'grouping' => 'tid',
   ));
