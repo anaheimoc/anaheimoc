@@ -675,7 +675,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
     'field_name' => 'field_global_fax',
     'type_name' => 'media_outlet',
     'display_settings' => array(
-      'weight' => '-1',
+      'weight' => 0,
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -719,7 +719,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Fax',
-      'weight' => '-1',
+      'weight' => 0,
       'description' => '',
       'type' => 'phone_textfield',
       'module' => 'phone',
@@ -798,7 +798,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
     'field_name' => 'field_global_node_weight',
     'type_name' => 'media_outlet',
     'display_settings' => array(
-      'weight' => '4',
+      'weight' => '5',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -868,7 +868,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Sort order',
-      'weight' => '4',
+      'weight' => '5',
       'description' => 'Field used for custom sorting in list views',
       'type' => 'optionwidgets_select',
       'module' => 'optionwidgets',
@@ -880,7 +880,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
     'field_name' => 'field_global_phone',
     'type_name' => 'media_outlet',
     'display_settings' => array(
-      'weight' => '-2',
+      'weight' => '-1',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -929,7 +929,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Phone',
-      'weight' => '-2',
+      'weight' => '-1',
       'description' => '',
       'type' => 'phone_textfield',
       'module' => 'phone',
@@ -941,7 +941,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
     'field_name' => 'field_global_website',
     'type_name' => 'media_outlet',
     'display_settings' => array(
-      'weight' => 0,
+      'weight' => '1',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -995,7 +995,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Website',
-      'weight' => 0,
+      'weight' => '1',
       'description' => '',
       'type' => 'link',
       'module' => 'link',
@@ -1007,7 +1007,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
     'field_name' => 'field_location_address',
     'type_name' => 'media_outlet',
     'display_settings' => array(
-      'weight' => '-3',
+      'weight' => '-2',
       'parent' => '',
       'label' => array(
         'format' => 'above',
@@ -1290,7 +1290,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Location/Address',
-      'weight' => '-3',
+      'weight' => '-2',
       'description' => '',
       'type' => 'location',
       'module' => 'location_cck',
@@ -1302,7 +1302,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
     'field_name' => 'field_media_outlet_circulation',
     'type_name' => 'media_outlet',
     'display_settings' => array(
-      'weight' => '1',
+      'weight' => '2',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -1348,9 +1348,67 @@ function anaheimoc_local_media_outlet_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Circulation',
-      'weight' => '1',
+      'weight' => '2',
       'description' => '',
       'type' => 'text_textfield',
+      'module' => 'text',
+    ),
+  );
+
+  // Exported field: field_media_outlet_description
+  $fields['media_outlet-field_media_outlet_description'] = array(
+    'field_name' => 'field_media_outlet_description',
+    'type_name' => 'media_outlet',
+    'display_settings' => array(
+      'weight' => '-3',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => '8',
+      'size' => 60,
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Outlet Description',
+      'weight' => '-3',
+      'description' => '',
+      'type' => 'text_textarea',
       'module' => 'text',
     ),
   );
@@ -1360,7 +1418,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
     'field_name' => 'field_media_outlet_lead_ad',
     'type_name' => 'media_outlet',
     'display_settings' => array(
-      'weight' => '3',
+      'weight' => '4',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -1406,7 +1464,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Advertising lead time',
-      'weight' => '3',
+      'weight' => '4',
       'description' => '',
       'type' => 'text_textfield',
       'module' => 'text',
@@ -1418,7 +1476,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
     'field_name' => 'field_media_outlet_lead_ed',
     'type_name' => 'media_outlet',
     'display_settings' => array(
-      'weight' => '2',
+      'weight' => '3',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
@@ -1464,7 +1522,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
       'default_value' => NULL,
       'default_value_php' => NULL,
       'label' => 'Editorial lead time',
-      'weight' => '2',
+      'weight' => '3',
       'description' => '',
       'type' => 'text_textfield',
       'module' => 'text',
@@ -1485,6 +1543,7 @@ function anaheimoc_local_media_outlet_content_default_fields() {
   t('Location/Address');
   t('Logo');
   t('Media outlet');
+  t('Outlet Description');
   t('Phone');
   t('Sort order');
   t('Website');

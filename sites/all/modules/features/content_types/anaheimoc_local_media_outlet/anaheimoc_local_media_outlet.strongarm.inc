@@ -154,15 +154,15 @@ function anaheimoc_local_media_outlet_strongarm() {
   $strongarm->name = 'content_extra_weights_media_outlet';
   $strongarm->value = array(
     'title' => '-5',
-    'revision_information' => '8',
-    'author' => '7',
-    'options' => '9',
-    'comment_settings' => '12',
-    'menu' => '5',
-    'path' => '10',
-    'domain' => '6',
-    'detailed_question' => '13',
-    'media_outlets_node_content_1' => '11',
+    'revision_information' => '9',
+    'author' => '8',
+    'options' => '10',
+    'comment_settings' => '13',
+    'menu' => '6',
+    'path' => '11',
+    'domain' => '7',
+    'detailed_question' => '14',
+    'media_outlets_node_content_1' => '12',
   );
 
   $export['content_extra_weights_media_outlet'] = $strongarm;
