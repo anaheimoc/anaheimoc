@@ -1670,13 +1670,13 @@ function anaheimoc_coupon_views_default_views() {
 	  <div class="coupon-legal"><p>[field_coupon_legal_value]</p></div>	  
 	</div>
 	<div class="coupon-section-bottom">
-	    <div class="coupon-bureau-logo"><img src="/sites/all/themes/anaheimoc/logo.png"/></div>
+	    <div class="coupon-bureau-logo"><img src="/sites/all/themes/anaheimoc/images/coupon-logo.png"/></div>
 	    <div class="coupon-contact-info">
   	      <address>[street], [city], [province], [postal_code]</address>
           <div class="coupon-phone">Phone: [field_mem_phone_main_value]</div>
         </div>
     </div>
-    <div class="coupon-footer-text">Brought to you by Anaheim/Orange County Visitor &amp; Convention Bureau | anaheimoc.org/deals</div>
+    <div class="coupon-footer-text"><p>Brought to you by Anaheim/Orange County Visitor &amp; Convention Bureau | anaheimoc.org/deals</p></div>
   <div class="clearfix"></div>
 </div>',
         'make_link' => 0,
