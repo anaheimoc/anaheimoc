@@ -219,13 +219,21 @@ display:block;
 clear:both;
 }
 
-div.coupon-section-bottom .coupon-bureau-logo{
+div.coupon-section-bottom .coupon-bureau-logo img{
 float:left;
 display:block;
 width:140px;
 height:71px;
 overflow:hidden;
 padding:0 10px 10px 0;
+}
+
+div.coupon-footer-text p{
+margin:0;
+font-size:13px;
+padding:10px;
+background-color:#00a4e4;
+color:#ffffff;
 }
 
 /*
