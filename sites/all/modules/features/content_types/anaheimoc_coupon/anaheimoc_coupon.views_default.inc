@@ -838,6 +838,38 @@ function anaheimoc_coupon_views_default_views() {
       'relationship' => 'none',
       'reduce_duplicates' => 0,
     ),
+    'date_filter' => array(
+      'operator' => '>=',
+      'value' => array(
+        'value' => NULL,
+        'min' => NULL,
+        'max' => NULL,
+        'default_date' => 'now',
+        'default_to_date' => '',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'date_fields' => array(
+        'node_data_field_coupon_run_dates.field_coupon_run_dates_value2' => 'node_data_field_coupon_run_dates.field_coupon_run_dates_value2',
+      ),
+      'date_method' => 'OR',
+      'granularity' => 'day',
+      'form_type' => 'date_select',
+      'default_date' => 'now',
+      'default_to_date' => '',
+      'year_range' => '-3:+3',
+      'id' => 'date_filter',
+      'table' => 'node',
+      'field' => 'date_filter',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_ad_coupon_reference_nid',
+    ),
   ));
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('style_options', array(
@@ -3408,7 +3440,40 @@ function anaheimoc_coupon_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
-  $handler->override_option('filters', array());
+  $handler->override_option('filters', array(
+    'date_filter' => array(
+      'operator' => '>=',
+      'value' => array(
+        'value' => NULL,
+        'min' => NULL,
+        'max' => NULL,
+        'default_date' => 'now',
+        'default_to_date' => '',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'date_fields' => array(
+        'node_data_field_coupon_run_dates.field_coupon_run_dates_value2' => 'node_data_field_coupon_run_dates.field_coupon_run_dates_value2',
+      ),
+      'date_method' => 'OR',
+      'granularity' => 'day',
+      'form_type' => 'date_select',
+      'default_date' => 'now',
+      'default_to_date' => '',
+      'year_range' => '-3:+3',
+      'id' => 'date_filter',
+      'table' => 'node',
+      'field' => 'date_filter',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_ad_coupon_reference_nid',
+    ),
+  ));
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('style_options', array(
     'grouping' => '',
@@ -3438,6 +3503,18 @@ function anaheimoc_coupon_views_default_views() {
       'id' => 'field_partner_reference_nid',
       'table' => 'node_data_field_partner_reference',
       'field' => 'field_partner_reference_nid',
+      'relationship' => 'aid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+    'field_ad_coupon_reference_nid' => array(
+      'label' => 'Coupon reference',
+      'required' => 0,
+      'delta' => -1,
+      'id' => 'field_ad_coupon_reference_nid',
+      'table' => 'node_data_field_ad_coupon_reference',
+      'field' => 'field_ad_coupon_reference_nid',
       'relationship' => 'aid',
       'override' => array(
         'button' => 'Use default',
@@ -3514,6 +3591,87 @@ function anaheimoc_coupon_views_default_views() {
         'button' => 'Use default',
       ),
       'relationship' => 'field_partner_reference_nid',
+    ),
+  ));
+  $handler->override_option('filters', array(
+    'tid' => array(
+      'operator' => 'or',
+      'value' => array(
+        273 => '273',
+        272 => '272',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'type' => 'select',
+      'limit' => TRUE,
+      'vid' => '11',
+      'id' => 'tid',
+      'table' => 'term_node',
+      'field' => 'tid',
+      'hierarchy' => 0,
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+    'tid_1' => array(
+      'operator' => 'or',
+      'value' => array(),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'type' => 'select',
+      'limit' => TRUE,
+      'vid' => '12',
+      'id' => 'tid_1',
+      'table' => 'term_node',
+      'field' => 'tid',
+      'hierarchy' => 0,
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+    'date_filter' => array(
+      'operator' => '>=',
+      'value' => array(
+        'value' => NULL,
+        'min' => NULL,
+        'max' => NULL,
+        'default_date' => 'now',
+        'default_to_date' => '',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'date_fields' => array(
+        'node_data_field_coupon_run_dates.field_coupon_run_dates_value2' => 'node_data_field_coupon_run_dates.field_coupon_run_dates_value2',
+      ),
+      'date_method' => 'OR',
+      'granularity' => 'day',
+      'form_type' => 'date_select',
+      'default_date' => 'now',
+      'default_to_date' => '',
+      'year_range' => '-3:+3',
+      'id' => 'date_filter',
+      'table' => 'node',
+      'field' => 'date_filter',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_ad_coupon_reference_nid',
     ),
   ));
   $handler->override_option('items_per_page', 1);
