@@ -961,6 +961,7 @@ function anaheimoc_local_media_outlet_views_default_views() {
       ),
     ),
   ));
+  $handler->override_option('title', 'Media Contacts');
   $handler->override_option('style_options', array(
     'grouping' => '',
     'override' => 1,
@@ -1002,6 +1003,7 @@ function anaheimoc_local_media_outlet_views_default_views() {
     0 => 'full',
   ));
   $handler->override_option('argument_mode', 'nid');
+  $handler->override_option('show_title', 1);
   $handler = $view->new_display('block', 'Media outlets - block', 'block_1');
   $handler->override_option('block_description', 'media_outlets: media outlets - block');
   $handler->override_option('block_caching', -1);
