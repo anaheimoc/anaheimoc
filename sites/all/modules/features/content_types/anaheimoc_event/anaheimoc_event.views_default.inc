@@ -238,6 +238,7 @@ function anaheimoc_event_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Anaheim/Orange County Calendar of Events');
+  $handler->override_option('empty_format', '1');
   $handler->override_option('items_per_page', 1);
   $handler->override_option('use_pager', '1');
   $handler->override_option('row_options', array(
@@ -1451,7 +1452,6 @@ function anaheimoc_event_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'Event Images');
-  $handler->override_option('empty_format', '1');
   $handler->override_option('items_per_page', 4);
   $handler->override_option('style_plugin', 'grid');
   $handler->override_option('style_options', array(
@@ -3018,12 +3018,15 @@ View <a href="/calendar-of-events">Current Events</a>.');
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'link_to_node' => 1,
-      'exclude' => 0,
+      'link_to_node' => 0,
+      'exclude' => 1,
       'id' => 'title',
       'table' => 'node',
       'field' => 'title',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
     'field_global_date_value' => array(
       'label' => '',
@@ -3065,7 +3068,7 @@ View <a href="/calendar-of-events">Current Events</a>.');
       'fromto' => array(
         'fromto' => 'both',
       ),
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'field_global_date_value',
       'table' => 'node_data_field_global_date',
       'field' => 'field_global_date_value',
@@ -3203,6 +3206,74 @@ View <a href="/calendar-of-events">Current Events</a>.');
       'id' => 'address',
       'table' => 'location',
       'field' => 'address',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'nid' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'exclude' => 1,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'nothing' => array(
+      'label' => '',
+      'alter' => array(
+        'text' => '[field_global_date_value] | [title]',
+        'make_link' => 1,
+        'path' => 'node/[nid]',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'exclude' => 0,
+      'id' => 'nothing',
+      'table' => 'views',
+      'field' => 'nothing',
       'override' => array(
         'button' => 'Use default',
       ),
