@@ -346,12 +346,20 @@ font-family: Georgia;
 // line-height:0.3;
 }
 
-/* blog posts front page */
+/* blog posts what's new this week's events front page */
 .front .sidebar-last .sidebar-last-inner span.field-content h3 a,
 .front .sidebar-last span.field-content a{
 font-size:12px;
 line-height:14px;
 font-family:Helvetica, Arial, sans-serif;
+}
+
+.front .sidebar-last .sidebar-last-inner span.field-content h3 a span.date-display-start,
+.sidebar-last .sidebar-last-inner span.field-content h3 a span.date-display-separator,
+.sidebar-last .sidebar-last-inner span.field-content h3 a span.date-display-end{
+text-transform:uppercase;
+font-weight:bold;
+color:#c7c7c7;
 }
 
 
