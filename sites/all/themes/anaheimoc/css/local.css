@@ -347,7 +347,8 @@ font-family: Georgia;
 }
 
 /* blog posts front page */
-.front .sidebar-last .sidebar-last-inner span.field-content h3 a{
+.front .sidebar-last .sidebar-last-inner span.field-content h3 a,
+.front .sidebar-last span.field-content a{
 font-size:12px;
 line-height:14px;
 font-family:Helvetica, Arial, sans-serif;
