@@ -38,7 +38,8 @@ color:#ffffff;
 font-size:14px;
 }
 
-.view-coupons div.view-content div.views-row{
+.view-coupons.view-display-id-block_2 div.view-content div.views-row,
+.view-coupons.view-display-id-block_5 div.view-content div.views-row{
 width:290px;
 padding:10px;
 float:left;
@@ -206,7 +207,15 @@ color:#333333;
 
 div.coupon-wrapper div.coupon-section-right .coupon-terms p,
 div.coupon-wrapper div.coupon-section-right .coupon-legal p,
+div.coupon-wrapper div.coupon-section-right .coupon-offer-code p,
 div.coupon-wrapper div.coupon-section-right .coupon-address address{
+font-size:10px;
+line-height:12px;
+color:#333333;
+}
+
+div.coupon-wrapper div.coupon-section-right div.coupon-offer-code p:before{
+content: 'Offer Code: ';
 font-size:10px;
 line-height:12px;
 color:#333333;
