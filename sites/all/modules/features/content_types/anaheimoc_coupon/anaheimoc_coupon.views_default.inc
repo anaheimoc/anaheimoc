@@ -1932,7 +1932,7 @@ function anaheimoc_coupon_views_default_views() {
   ));
   $handler->override_option('filters', array());
   $handler->override_option('title', '');
-  $handler->override_option('distinct', 0);
+  $handler->override_option('distinct', 1);
   $handler->override_option('row_plugin', 'fields');
   $handler->override_option('row_options', array());
   $handler->override_option('block_description', 'Coupons (content type - node) - block');
