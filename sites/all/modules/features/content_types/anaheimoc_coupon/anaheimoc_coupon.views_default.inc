@@ -1707,6 +1707,49 @@ function anaheimoc_coupon_views_default_views() {
         'button' => 'Use default',
       ),
     ),
+    'field_coupon_offer_code_value' => array(
+      'label' => 'Coupon offer code',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => 'Offer Code: [field_coupon_offer_code_value]',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 1,
+      'empty_zero' => 1,
+      'link_to_node' => 0,
+      'label_type' => 'widget',
+      'format' => 'default',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 1,
+      'id' => 'field_coupon_offer_code_value',
+      'table' => 'node_data_field_coupon_offer_code',
+      'field' => 'field_coupon_offer_code_value',
+      'relationship' => 'field_ad_coupon_reference_nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
     'nothing' => array(
       'label' => '',
       'alter' => array(
@@ -1719,9 +1762,10 @@ function anaheimoc_coupon_views_default_views() {
 	  <div class="coupon-offer"><h4>[field_coupon_offer_value]</h4></div>
 	  <div class="coupon-subhead"><h5>[field_coupon_subhead_value]</h5></div>
 	  <div class="coupon-details"><p>[field_coupon_details_value]</p></div>
-	  <div class="coupon-supplemental-img">[field_coupon_sup_image_fid]</div>
+	  <div class="coupon-supplemental-img">[field_coupon_sup_image_fid]</div>          
 	  <div class="coupon-terms"><p>[field_coupon_terms_value]</p></div>
-	  <div class="coupon-legal"><p>[field_coupon_legal_value]</p></div>	  
+	  <div class="coupon-legal"><p>[field_coupon_legal_value]</p></div>
+          <div class="coupon-offer-code"><p>[field_coupon_offer_code_value]</p></div>	  
 	</div>
 	<div class="coupon-section-bottom">
 	    <div class="coupon-bureau-logo"><img src="/sites/all/themes/anaheimoc/images/coupon-logo.png"/></div>
@@ -1888,6 +1932,7 @@ function anaheimoc_coupon_views_default_views() {
   ));
   $handler->override_option('filters', array());
   $handler->override_option('title', '');
+  $handler->override_option('distinct', 0);
   $handler->override_option('row_plugin', 'fields');
   $handler->override_option('row_options', array());
   $handler->override_option('block_description', 'Coupons (content type - node) - block');
