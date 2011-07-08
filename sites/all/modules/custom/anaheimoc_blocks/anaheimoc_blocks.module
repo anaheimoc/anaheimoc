@@ -9,6 +9,22 @@ if ($op == 'list') {
     $blocks[1] = array(
       'info' => t('Request Partner Information Block'),
     );
+    
+    $blocks[2] = array(
+      'info' => t('Visitors Newsletter Signup'),
+    );
+    
+    $blocks[3] = array(
+      'info' => t('Meetings Newsletter Signup'),
+    );
+    
+    $blocks[4] = array(
+      'info' => t('Travel Trade Newsletter Signup'),
+    );
+    
+    $blocks[5] = array(
+      'info' => t('Press Newsletter Signup'),
+    );
 
     return $blocks;
   }
@@ -27,6 +43,34 @@ if ($op == 'list') {
         $block = array(
           'subject' => t('Become a Partner'), 
           'content' => '<p>Interested in becoming a partner of the Anaheim/Orange County Visitor &amp; Convention Bureau?</p><div id="call_to_action"><a href="/become-a-partner/request-info" class="button">REQUEST PARTNERSHIP INFO!</a></div>',
+        );
+        break;
+        case 2:
+        // Your module will need to define this function to render the block.
+        $block = array(
+          'subject' => t('Visitors Newsletter Signup'), 
+          'content' => '',
+        );
+        break;
+        case 3:
+        // Your module will need to define this function to render the block.
+        $block = array(
+          'subject' => t('Meetings Newsletter Signup'), 
+          'content' => '',
+        );
+        break;
+        case 4:
+        // Your module will need to define this function to render the block.
+        $block = array(
+          'subject' => t('Travel Trade Newsletter Signup'), 
+          'content' => '',
+        );
+        break;
+        case 5:
+        // Your module will need to define this function to render the block.
+        $block = array(
+          'subject' => t('Press Newsletter Signup'), 
+          'content' => '',
         );
         break;
     }
