@@ -45,6 +45,10 @@ padding:10px;
 float:left;
 }
 
+.views-coupons.view-display-id-block_3 .view-content .views-row{
+margin-bottom: 10px 0;
+}
+
 .view-coupons div.coupon-preview-wrapper{
 
 }
