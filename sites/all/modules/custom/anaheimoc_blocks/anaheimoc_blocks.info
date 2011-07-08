@@ -1,0 +1,4 @@
+name = Anaheim/OC Custom Blocks
+description = Default Blocks for www.anaheimoc.org
+package = Custom
+core = 6.x
