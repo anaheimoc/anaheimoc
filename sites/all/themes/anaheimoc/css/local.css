@@ -1098,7 +1098,8 @@ width:200px;
 }
 
 .webform-client-form div div#edit-actions.form-actions input#edit-submit.form-submit,
-.views-exposed-form .views-exposed-widget input.form-submit{
+.views-exposed-form .views-exposed-widget input.form-submit,
+div.vertical-response-bot input.form-submit{
 height:34px;
 width:74px;
 vertical-align:middle;
@@ -1112,7 +1113,8 @@ background-color:#8cc63f;
 }
 
 .webform-client-form div div#edit-actions.form-actions input#edit-submit.form-submit:hover,
-.views-exposed-form .views-exposed-widget input.form-submit:hover{
+.views-exposed-form .views-exposed-widget input.form-submit:hover,
+div.vertical-response-bot input.form-submit:hover{
 border: 1px solid #C7C7C7;
 color:#ffffff;
 background-color:#bcd85f;
