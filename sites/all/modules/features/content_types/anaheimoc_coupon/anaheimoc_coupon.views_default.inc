@@ -813,15 +813,16 @@ function anaheimoc_coupon_views_default_views() {
       ),
       'relationship' => 'field_ad_coupon_reference_nid',
     ),
-    'title' => array(
+    'field_memcompanysort_value' => array(
       'order' => 'ASC',
-      'id' => 'title',
-      'table' => 'node',
-      'field' => 'title',
+      'delta' => -1,
+      'id' => 'field_memcompanysort_value',
+      'table' => 'node_data_field_memcompanysort',
+      'field' => 'field_memcompanysort_value',
+      'relationship' => 'field_partner_reference_nid',
       'override' => array(
         'button' => 'Use default',
       ),
-      'relationship' => 'field_ad_coupon_reference_nid',
     ),
   ));
   $handler->override_option('arguments', array());
