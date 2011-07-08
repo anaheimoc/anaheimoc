@@ -3249,9 +3249,9 @@ View <a href="/calendar-of-events">Current Events</a>.');
     'nothing' => array(
       'label' => '',
       'alter' => array(
-        'text' => '<h3>[field_global_date_value] [title]</h3>',
-        'make_link' => 1,
-        'path' => 'node/[nid]',
+        'text' => '<h3><a href="/node/[nid]">[field_global_date_value] [title]</a></h3>',
+        'make_link' => 0,
+        'path' => '',
         'absolute' => 0,
         'link_class' => '',
         'alt' => '',
