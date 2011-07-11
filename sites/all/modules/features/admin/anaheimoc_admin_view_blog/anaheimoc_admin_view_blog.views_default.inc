@@ -255,7 +255,11 @@ function anaheimoc_admin_view_blog_views_default_views() {
     ),
   ));
   $handler->override_option('access', array(
-    'type' => 'none',
+    'type' => 'role',
+    'role' => array(
+      36 => 36,
+      32 => 32,
+    ),
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
