@@ -1249,11 +1249,29 @@ p.feature-graph {
 }
 /* PAGE ATTACHMENT CSS
 ********************************************** */
-.view-anaheimoc-page.view-display-id-node_content_1 .views-row {
-  background: #EAF7FF;
-  margin: 10px 0;
-  padding: 10px;
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row-even{
+background: rgba(185, 227, 250, 0.05);	
 }
+
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row {
+  border-top: 1px solid #DDD;
+  padding: 10px;
+	-moz-box-shadow: 0 0 4px #CCC;
+	-webkit-box-shadow: 0 0 4px #CCC;
+	box-shadow: 0 0 4px #CCC;
+	margin: 10px 0 10px 0;
+}
+
+.view-anaheimoc-page.view-display-id-node_content_1 .views-row:hover{
+background: rgba(164, 215, 244, 0.25);
+-webkit-transition-property: background;
+-webkit-transition-duration: 0.7s;
+-webkit-transition-timing-function: ease;
+-moz-transition-property: background;
+-moz-transition-duration: 0.7s;
+-moz-transition-timing-function: ease;
+}
+
 .view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-field-article-image-fid {
   float: left;
   height: 140px;
@@ -1663,12 +1681,18 @@ margin-bottom:24px;
 padding:12px 0;
 }
 
-div.views-field-field-tt-opp-logo-fid span.field-content a.imagecache img.imagecache{
-background-color: #F2F2F3;
+div.views-field-field-tt-opp-logo-fid{
+min-height: 10px;width: 136px;
 float: left;
 margin: 0 10px 0 0;
+}
+
+div.views-field-field-tt-opp-logo-fid span.field-content a.imagecache img.imagecache{
+background-color: #F2F2F3;
+//float: left;
+//margin: 0 10px 0 0;
 padding: 2px;
-width: 136px;
+//width: 136px;
 }
 
 
