@@ -1262,16 +1262,6 @@ background: rgba(185, 227, 250, 0.05);
 	margin: 10px 0 10px 0;
 }
 
-.view-anaheimoc-page.view-display-id-node_content_1 .views-row:hover{
-background: rgba(164, 215, 244, 0.25);
--webkit-transition-property: background;
--webkit-transition-duration: 0.7s;
--webkit-transition-timing-function: ease;
--moz-transition-property: background;
--moz-transition-duration: 0.7s;
--moz-transition-timing-function: ease;
-}
-
 .view-anaheimoc-page.view-display-id-node_content_1 .views-row .views-field-field-article-image-fid {
   float: left;
   height: 140px;
@@ -2008,5 +1998,13 @@ div.tweets-pulled-listing ul.tweets-pulled-listing li span.tweet-text{
 font-size:14px;
 line-height:1.5;
 color:#333333;
+}
+
+/* OC SPECIALIST UPDATES CSS */
+.view.view-specialist-updates.view-display-id-page_1 .views-row{
+margin: 0 0 35px 0;
+}
+.view.view-id-specialist_updates.view-display-id-block_1 .views-row{
+margin: 0 0 20px 0;	
 }
  
