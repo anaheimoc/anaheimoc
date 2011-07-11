@@ -1,0 +1,3 @@
+<?php
+
+include_once('anaheimoc_admin_view_blog.features.inc');
