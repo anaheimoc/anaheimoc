@@ -892,6 +892,23 @@ function anaheimoc_coupon_views_default_views() {
       ),
       'relationship' => 'field_ad_coupon_reference_nid',
     ),
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_ad_coupon_reference_nid',
+    ),
   ));
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('distinct', 1);
@@ -1931,7 +1948,25 @@ function anaheimoc_coupon_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
-  $handler->override_option('filters', array());
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_ad_coupon_reference_nid',
+    ),
+  ));
   $handler->override_option('title', '');
   $handler->override_option('distinct', 1);
   $handler->override_option('row_plugin', 'fields');
@@ -3541,6 +3576,23 @@ function anaheimoc_coupon_views_default_views() {
       ),
       'relationship' => 'field_ad_coupon_reference_nid',
     ),
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_ad_coupon_reference_nid',
+    ),
   ));
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('style_options', array(
@@ -3736,6 +3788,23 @@ function anaheimoc_coupon_views_default_views() {
       'id' => 'date_filter',
       'table' => 'node',
       'field' => 'date_filter',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_ad_coupon_reference_nid',
+    ),
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
       'override' => array(
         'button' => 'Use default',
       ),
