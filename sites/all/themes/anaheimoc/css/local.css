@@ -359,7 +359,7 @@ font-family:Helvetica, Arial, sans-serif;
 .sidebar-last .sidebar-last-inner span.field-content h3 a span.date-display-end{
 text-transform:uppercase;
 font-weight:bold;
-color:#c7c7c7;
+color:#92a5a4;
 }
 
 
@@ -1307,6 +1307,7 @@ div.view.hero-slideshow .views-field-view-node a:hover {
   vertical-align: bottom;
   padding: 0;
   width: 160px;
+  padding-bottom:16px;
 }
 .view.view-anaheimoc-page.featured-content table.views-view-grid.col-3 td div,
 .view.view-anaheimoc-page.popular-content table.views-view-grid.col-3 td div,
