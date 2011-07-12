@@ -5,16 +5,22 @@ display: none;
 div.coupon-preview-offer{
 height:28px;
 margin:0;
+overflow:hidden;
+padding:1px;
 }
 
 div.coupon-preview-subhead{
 height:42px;
 margin:0;
+overflow:hidden;
+padding:1px;
 }
 
 div.coupon-preview-details{
 height:104px;
 margin:0;
+overflow:hidden;
+padding:1px;
 }
 
 div.coupon-preview-partner-logo,
