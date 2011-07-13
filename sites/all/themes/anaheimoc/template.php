@@ -343,5 +343,35 @@ function anaheimoc_views_mini_pager($tags = array(), $limit = 10, $element = 0, 
 
 function anaheimoc_preprocess_nws_weather_forecast_period(&$vars){
 $vars['period_start'] = date('l', $vars['timeforecast']['start-valid-unix']);
+}
 
+
+/**
+ * Override of theme_quiz_take_summary
+ */
+function anaheimoc_quiz_take_summary($quiz, $questions, $score, $summary) {
+  
+  // Create special button for webform redirect  
+  $dsp_register_link = l('CLAIM YOUR CERTIFICATE', 'oc-specialist/register', array('query' => 'pass_key=' . $score['passing'] . '&eval=' . $score['is_evaluated'], 'attributes' => array('class' => 'button')));
+  $dsp_register = '<div id="call_to_action">' . $dsp_register_link . '</div>';
+  
+  $output .= '';
+  if (!empty($score['possible_score'])) {
+    if (!$score['is_evaluated']) {
+      $msg = t('Parts of this @quiz have not been evaluated yet. The score below is not final.', array('@quiz' => QUIZ_NAME));
+      drupal_set_message($msg, 'warning');
+    }
+    $output .= '<div id="quiz_score_possible">'. t('You got %num_correct of %question_count possible points.', array('%num_correct' => $score['numeric_score'], '%question_count' => $score['possible_score'])) .'</div>'."\n";
+    $output .= '<div id="quiz_score_percent">'. t('Your score: %score %', array('%score' => $score['percentage_score'])) .'</div>'."\n";
+  }
+  if (isset($summary['passfail']))
+    $output .= '<div id="quiz_summary">'. $summary['passfail'] . $dsp_register . '</div>'."\n";
+
+  if (isset($summary['result']))
+    $output .= '<div id="quiz_summary">'. $summary['result'] .'</div>'."\n";
+  // Get the feedback for all questions. These are included here to provide maximum flexibility for themers
+  if ($quiz->display_feedback) {
+    $output .= drupal_get_form('quiz_report_form', $questions);
+  }
+  return $output;
 }
