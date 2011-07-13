@@ -1004,6 +1004,12 @@ display: none;
 //width:600px;
 }
 
+/* Calendar of Events Event */
+.sidebar-first-inner .view-event-leisure .field-content .imagefield img{
+border:solid #eeeeee 2px;
+margin:3px;
+}
+
 /* Calendar of Events Slideshow */
 .attachment-before .view.view-event-leisure-page.view-display-id-attachment_1 .views-row{
 padding: 10px;
