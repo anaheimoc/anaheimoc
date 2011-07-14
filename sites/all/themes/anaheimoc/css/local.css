@@ -615,9 +615,16 @@ margin-bottom: 10px;
 width: 140px;
 }
 
-.view-partner-listing-alt.view-display-id-block_3 .views-slideshow-controls-bottom .views_slideshow_thumbnailhover_div_breakout_teaser.views-row-even{
-margin-left: 20px;
+.view-partner-listing-alt.view-display-id-block_3 .views-slideshow-controls-bottom .views_slideshow_thumbnailhover_div_breakout_teaser img{
+margin:3px;
+border:solid #eeeeee 2px;
 }
+
+.view-partner-listing-alt.view-display-id-block_3 .views-slideshow-controls-bottom .views_slideshow_thumbnailhover_div_breakout_teaser.views-row-even{
+margin-left: 0px;
+}
+
+
 
 /* PARTNER LISTS
 *************************** */
@@ -1358,7 +1365,7 @@ body.node-type-event-leisure .view-id-event_leisure.view-display-id-block_7 tabl
   margin: 10px 0;
 }
 .node-type-press-release .field-field-pr-pull-quote {
-  background: #82b83b;
+  background: #8cc63f;
   color: #ffffff;
   font-family: Georgia,"Times New Roman", serif;
   font-size: 20px;
@@ -1858,7 +1865,7 @@ margin:0px;
 }
 
 .node-type-partner-listing .coupon-offer-teaser{
-background: #82B83B;
+background: #8cc63f;
 float: left;
 margin-top: 10px;
 width: 300px;
