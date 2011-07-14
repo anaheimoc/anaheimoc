@@ -132,7 +132,7 @@ function anaheimoc_preprocess_node_partner_listing(&$variables) {
     'maptype' => "Map",       // baselayer type
     'controltype' => "Small",  // size of map controls
     'behavior' => array(
-      'locpick' => TRUE,
+      'locpick' => FALSE,
       'nomousezoom' => TRUE,
       'nodrag' => TRUE,
       'nokeyboard' => FALSE,
@@ -140,10 +140,14 @@ function anaheimoc_preprocess_node_partner_listing(&$variables) {
       'scale' => FALSE,
     ),
     'markers' => array(
-      'text' => 'First Marker',
-      'longitude' => $variables['field_mem_address'][0]['longitude'],
-      'latitude' => $variables['field_mem_address'][0]['latitude'],
-      'markername' => 'orange',
+      array(
+		    'options' => array(),
+		    'text' => 'Partner Location',
+		    'longitude' => $variables['field_mem_address'][0]['longitude'],
+		    'latitude' => $variables['field_mem_address'][0]['latitude'],
+		    'markername' => 'small red',
+		    'offset' => 0,
+	    )
     )
   );
   
