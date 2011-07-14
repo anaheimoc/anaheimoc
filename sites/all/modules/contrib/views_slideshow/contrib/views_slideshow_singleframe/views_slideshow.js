@@ -254,7 +254,7 @@ Drupal.theme.prototype.viewsSlideshowPagerNumbered = function (classes, idx, sli
   if (settings.pager_click_to_page) {
     href = $(slide).find('a').attr('href');
   }
-  return '<div class="' + classes + '"><a href="' + href + '">' + (idx+1) + '</a></div>';
+  return '<div class="' + classes + '"><a href="' + href + '">' + '&bull;' + '</a></div>';
 }
 
 // Verify that the value is a number.

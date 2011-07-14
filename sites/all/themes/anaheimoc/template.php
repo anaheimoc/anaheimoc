@@ -379,3 +379,109 @@ function anaheimoc_quiz_take_summary($quiz, $questions, $score, $summary) {
   }
   return $output;
 }
+
+
+/**
+ * The slideshow controls.
+ *
+ * @ingroup themeable
+ */
+function anaheimoc_views_slideshow_singleframe_controls($vss_id, $view, $options) {
+  $classes = array(
+    'views_slideshow_singleframe_controls',
+    'views_slideshow_controls',
+  );
+
+  $attributes['class'] = implode(' ', $classes);
+  $attributes['id'] = "views_slideshow_singleframe_controls_" . $vss_id;
+  $attributes = drupal_attributes($attributes);
+
+  $output = "<div$attributes>";
+  $output .= theme('views_slideshow_singleframe_control_previous', $vss_id, $view, $options);
+  if ($options['views_slideshow_singleframe']['timeout']) {
+    $output .= theme('views_slideshow_singleframe_control_pause', $vss_id, $view, $options);
+  }
+  $output .= theme('views_slideshow_singleframe_control_next', $vss_id, $view, $options);
+  $output .= "</div>\n";
+  return $output;
+}
+
+/**
+ * Views Slideshow: "previous" control.
+ *
+ * @ingroup themeable
+ */
+function anaheimoc_views_slideshow_singleframe_control_previous($vss_id, $view, $options) {
+  return l('&laquo;', '#', array(
+    'attributes' => array(
+      'class' => 'views_slideshow_singleframe_previous views_slideshow_previous',
+      'id' => "views_slideshow_singleframe_prev_" . $vss_id,
+    ),
+    'fragment' => ' ',
+    'external' => TRUE,
+    'html' => TRUE,
+  ));
+}
+
+/**
+ * Views Slideshow: "pause" control.
+ *
+ * @ingroup themeable
+ */
+function anaheimoc_views_slideshow_singleframe_control_pause($vss_id, $view, $options) {
+  return l(t('Pause'), '', array(
+    'attributes' => array(
+      'class' => 'views_slideshow_singleframe_pause views_slideshow_pause',
+      'id' => "views_slideshow_singleframe_playpause_" . $vss_id,
+    ),
+    'fragment' => ' ',
+    'external' => TRUE,
+  ));
+}
+
+/**
+ * Views Slideshow: "next" control.
+ *
+ * @ingroup themeable
+ */
+function anaheimoc_views_slideshow_singleframe_control_next($vss_id, $view, $options) {
+  return l('&raquo;', '#', array(
+    'attributes' => array(
+      'class' => 'views_slideshow_singleframe_next views_slideshow_next',
+      'id' => "views_slideshow_singleframe_next_" . $vss_id,
+    ),
+    'fragment' => ' ',
+    'external' => TRUE,
+    'html' => TRUE,
+  ));
+}
+
+/**
+ * Views Slideshow: pager.
+ *
+ * @ingroup themeable
+ */
+function anaheimoc_views_slideshow_singleframe_pager($vss_id, $view, $options) {
+  $pager_type = $options['views_slideshow_singleframe']['pager_type'];
+
+  $attributes['class'] = "views_slideshow_singleframe_pager views_slideshow_pager$pager_type";
+  $attributes['id'] = "views_slideshow_singleframe_pager_" . $vss_id;
+  $attributes = drupal_attributes($attributes);
+
+  return "<div$attributes></div>";
+}
+
+/**
+ * Views Slideshow: image counter.
+ *
+ * @ingroup themeable
+ */
+function anaheimoc_views_slideshow_singleframe_image_count($vss_id, $view, $options) {
+  $attributes['class'] = 'views_slideshow_singleframe_image_count views_slideshow_image_count';
+  $attributes['id'] = "views_slideshow_singleframe_image_count_" . $vss_id;
+  $attributes = drupal_attributes($attributes);
+
+  $counter = '<span class="num">1</span> ' . t('of') . ' <span class="total">1</span>';
+
+  return "<div$attributes>$counter</div>";
+}

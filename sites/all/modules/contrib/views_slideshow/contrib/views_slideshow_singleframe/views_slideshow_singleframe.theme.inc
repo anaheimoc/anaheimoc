@@ -241,7 +241,7 @@ function theme_views_slideshow_singleframe_pager($vss_id, $view, $options) {
   $attributes['id'] = "views_slideshow_singleframe_pager_" . $vss_id;
   $attributes = drupal_attributes($attributes);
 
-  return "<div$attributes></div>";
+  return "&bull;";
 }
 
 /**
