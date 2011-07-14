@@ -611,12 +611,12 @@ margin-left: 20px;
 .view-partner-listing-alt.view-display-id-block_3 .views-slideshow-controls-bottom .views_slideshow_thumbnailhover_div_breakout_teaser{
 display: block;
 float: left;
-margin-bottom: 10px;
-width: 140px;
+margin: 0px;
+width: 150px;
 }
 
 .view-partner-listing-alt.view-display-id-block_3 .views-slideshow-controls-bottom .views_slideshow_thumbnailhover_div_breakout_teaser img{
-margin:3px;
+margin:0 3px 3px 0;
 border:solid #eeeeee 2px;
 }
 
