@@ -429,7 +429,7 @@ function anaheimoc_views_slideshow_singleframe_control_previous($vss_id, $view, 
  * @ingroup themeable
  */
 function anaheimoc_views_slideshow_singleframe_control_pause($vss_id, $view, $options) {
-  return l(t('Pause'), '', array(
+  return l(t('||'), '', array(
     'attributes' => array(
       'class' => 'views_slideshow_singleframe_pause views_slideshow_pause',
       'id' => "views_slideshow_singleframe_playpause_" . $vss_id,
