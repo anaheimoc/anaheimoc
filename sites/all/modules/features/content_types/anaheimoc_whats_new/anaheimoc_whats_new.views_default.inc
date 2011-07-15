@@ -642,7 +642,7 @@ function anaheimoc_whats_new_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'What\'s New in Anaheim/Orange County');
-  $handler->override_option('header', '<p>What\'s New in Anaheim/Orange County is a collection of the latest and most important updates for our destination. What\'s New includes information on Anaheim/Orange County attractions, arts and culture, dining, accommodations, shopping and much more.</p><p>You are currently viewing the latest updates from the past year.  If you\'d like to see older items, please refer to our <a href="/whats-new/archive">What\'s New Archive</a>.</p>');
+  $handler->override_option('header', '<p>What\'s New in Anaheim/Orange County is a collection of the latest and most important updates for our destination. What\'s New includes information on Anaheim/Orange County attractions, arts and culture, dining, accommodations, shopping and much more.</p><!-- <p>You are currently viewing the latest updates from the past year.  If you\'d like to see older items, please refer to our <a href="/whats-new/archive">What\'s New Archive</a>.</p> -->');
   $handler->override_option('header_format', '2');
   $handler->override_option('header_empty', 0);
   $handler->override_option('use_pager', '1');
