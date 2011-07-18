@@ -23,8 +23,8 @@ margin:0 0 35px 0;
 margin:0;
 }
 
-.view-blog .view-content .views-row .views-field-title h3 a{
-    font-size: 14px;
+.sidebar-first-inner .view-blog .view-content .views-row .views-field-title h3 a{
+    font-size: 12px;
     line-height: 1.5;
 }
 

@@ -1356,7 +1356,8 @@ margin:0 .5em 1em 0;
 
 /* GENERAL NODE CSS
 ********************************************** */
-.page-node div.field-field-article-image img {
+.page-node div.field-field-article-image img,
+div.view div.view-content div.views-row div.views-field-field-article-image-fid span.field-content a.imagecache img{
   border: 2px solid #eee;
 }
 p.feature-graph {
