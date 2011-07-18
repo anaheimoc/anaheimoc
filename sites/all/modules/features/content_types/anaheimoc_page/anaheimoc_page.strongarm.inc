@@ -87,9 +87,10 @@ function anaheimoc_page_strongarm() {
     'domain' => '5',
     'detailed_question' => '17',
     'flag' => '0',
+    'path_redirect' => '18',
+    'anaheimoc_page_node_content_1' => '16',
     'partner_list_builder_node_content_1' => '13',
     'partner_list_builder_node_content_2' => '11',
-    'anaheimoc_page_node_content_1' => '16',
   );
 
   $export['content_extra_weights_anaheimoc_page'] = $strongarm;

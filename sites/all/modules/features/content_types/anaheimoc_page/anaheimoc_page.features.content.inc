@@ -480,6 +480,126 @@ function anaheimoc_page_content_default_fields() {
     ),
   );
 
+  // Exported field: field_page_editor_notes
+  $fields['anaheimoc_page-field_page_editor_notes'] = array(
+    'field_name' => 'field_page_editor_notes',
+    'type_name' => 'anaheimoc_page',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => '10',
+      'size' => 60,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_page_editor_notes][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Editor notes',
+      'weight' => '22',
+      'description' => '',
+      'type' => 'text_textarea',
+      'module' => 'text',
+    ),
+  );
+
+  // Exported field: field_page_editor_review
+  $fields['anaheimoc_page-field_page_editor_review'] = array(
+    'field_name' => 'field_page_editor_review',
+    'type_name' => 'anaheimoc_page',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'number_integer',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'number',
+    'active' => '1',
+    'prefix' => '',
+    'suffix' => '',
+    'min' => '',
+    'max' => '',
+    'allowed_values' => '0|No review needed
+1|Needs Review/Edit',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Needs review',
+      'weight' => '21',
+      'description' => '',
+      'type' => 'optionwidgets_onoff',
+      'module' => 'optionwidgets',
+    ),
+  );
+
   // Exported field: field_partner_m_list_builder
   $fields['anaheimoc_page-field_partner_m_list_builder'] = array(
     'field_name' => 'field_partner_m_list_builder',
@@ -492,11 +612,11 @@ function anaheimoc_page_content_default_fields() {
       ),
       'teaser' => array(
         'format' => 'default',
-        'exclude' => 0,
+        'exclude' => 1,
       ),
       'full' => array(
         'format' => 'default',
-        'exclude' => 0,
+        'exclude' => 1,
       ),
       '4' => array(
         'format' => 'default',
@@ -555,11 +675,11 @@ function anaheimoc_page_content_default_fields() {
       ),
       'teaser' => array(
         'format' => 'default',
-        'exclude' => 0,
+        'exclude' => 1,
       ),
       'full' => array(
         'format' => 'default',
-        'exclude' => 0,
+        'exclude' => 1,
       ),
       '4' => array(
         'format' => 'default',
@@ -608,11 +728,13 @@ function anaheimoc_page_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Editor notes');
   t('Hero feature');
   t('Hero feature image');
   t('Hero feature image weight');
   t('Main image');
   t('Meetings partner list builder');
+  t('Needs review');
   t('Page reference');
   t('Page weight');
   t('Visitors partner list builder');

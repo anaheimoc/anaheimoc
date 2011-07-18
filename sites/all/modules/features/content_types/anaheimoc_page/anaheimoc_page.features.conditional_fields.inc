@@ -23,5 +23,14 @@ $items[] = array (
     586 => '586',
   ),
 );
+$items[] = array (
+  'control_field_name' => 'field_page_editor_review',
+  'field_name' => 'field_page_editor_notes',
+  'type' => 'anaheimoc_page',
+  'trigger_values' => 
+  array (
+    1 => '1',
+  ),
+);
 return $items;
 }
