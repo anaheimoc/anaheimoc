@@ -314,6 +314,7 @@ font-size:56px;
 line-height:56px;
 text-align:center;
 text-decoration:none;
+text-shadow:none;
 color:rgb(255,255,255);
 color:rgba(255,255,255,0.2);
 -webkit-transition: all 0.5s ease;
@@ -324,6 +325,7 @@ transition: all 0.5s ease;
 
 a:hover.views_slideshow_previous,
 a:hover.views_slideshow_next{
+text-shadow: 0px 0px 12px #FFFFFF, 0px 0px 12px #FFFFFF, 0px 0px 12px #FFFFFF, 0px 0px 12px #FFFFFF, 0px 0px 12px #FFFFFF;
 color:rgba(255,255,255,1);
 background: rgb(255,223,81); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(255,223,81,1.0) 0%, rgba(255,210,0,1.0) 100%); /* FF3.6+ */
@@ -356,8 +358,8 @@ text-align:center;
 
 .views_slideshow_singleframe_pager .pager-item{
 position:relative;
-top:-38px;
-font-size:24px;
+top:-46px;
+font-size:32px;
 padding:0px;
 margin-right:10px;
 }
@@ -366,6 +368,18 @@ margin-right:10px;
 text-decoration:none;
 color:rgb(255,255,255);
 color:rgba(255,255,255,0.4);
+text-shadow:none;
+-moz-transition: all 0.2s ease;
+-webkit-transition: all 0.2s ease;
+-o-transition: all 0.2s ease;
+transition: all 0.2s ease;
+}
+
+.views_slideshow_singleframe_pager .pager-item a:hover{
+text-decoration:none;
+color:rgb(255,255,255);
+color:rgba(255,255,255,1.0);
+text-shadow: 0px 0px 12px #FFFFFF, 0px 0px 12px #FFFFFF, 0px 0px 12px #FFFFFF, 0px 0px 12px #FFFFFF, 0px 0px 12px #FFFFFF;
 }
 
 .views_slideshow_singleframe_pager .pager-item.activeSlide a{
@@ -2090,28 +2104,4 @@ div.tweets-pulled-listing .tweet-author a {
   font-family:Georgia, "Times New Roman", serif;
 }
 
-div.tweets-pulled-listing .tweet-time a {
-  color: #CCCCCC;
-  font-size:0.85em;
-}
-
-div.tweets-pulled-listing  div.tweet-divider {
-  clear: left;
-  border-bottom: 1px solid #efefef;
-  margin: 5px 0 5px 0;
-}
-
-div.tweets-pulled-listing ul.tweets-pulled-listing li span.tweet-text{
-font-size:14px;
-line-height:1.5;
-color:#333333;
-}
-
-/* OC SPECIALIST UPDATES CSS */
-.view.view-specialist-updates.view-display-id-page_1 .views-row{
-margin: 0 0 35px 0;
-}
-.view.view-id-specialist_updates.view-display-id-block_1 .views-row{
-margin: 0 0 20px 0;	
-}
- 
+di                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
