@@ -489,6 +489,7 @@ list-style-type: none;
 .footer-inner ul.menu li a:visited,
 .footer-inner ul.menu li a.active{
 color: #a68462;
+font-size:10px;
 }
 
 .footer-inner h2.block-title{
