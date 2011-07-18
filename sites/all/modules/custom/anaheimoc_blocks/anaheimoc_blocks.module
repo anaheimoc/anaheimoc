@@ -25,6 +25,10 @@ if ($op == 'list') {
     $blocks[5] = array(
       'info' => t('Press Newsletter Signup'),
     );
+    
+    $blocks[6] = array(
+      'info' => t('Hotels Within ACC Walking Distance'),
+    );
 
     return $blocks;
   }
@@ -71,6 +75,32 @@ if ($op == 'list') {
         $block = array(
           'subject' => t('Press Newsletter Signup'), 
           'content' => '',
+        );
+        break;
+        case 6:
+        // Your module will need to define this function to render the block.
+        $block = array(
+          'subject' => t('Hotels Within Walking Distance of Anaheim Convention Center'), 
+          'content' => '<img src="/sites/default/files/assets/misc/walkingdistance6.GIF" />
+          <ol>
+           <li>Disneyland Hotel - 990 Rooms</li>
+           <li>Disney\'s Grand Californian Hotel - 745 rooms</li>
+           <li>Disney\'s Paradise Pier Hotel - 489 rooms</li>
+           <li>Hilton Anaheim - 1,572 rooms</li>
+           <li>Anaheim Marriott - 1,031 rooms</li>
+           <li>Sheraton Park Hotel - 490 rooms</li>
+           <li>Hyatt Regency Orange County - 654 rooms</li>
+           <li>Best Western Stovall\'s Inn - 289 rooms</li>
+           <li>Anabella Hotel - 336 rooms</li>
+           <li>Residence Inn by Marriott Anaheim Maingate - 200 rooms</li>
+           <li>Castle Inn and Suites - 249 rooms</li>
+           <li>Motel 6 Anaheim Maingate - 230 rooms</li>
+           <li>Clarion Hotel Anaheim Resort - 284 rooms</li>
+           <li>Red Lion Hotel Anaheim - 314 rooms</li>
+           <li>Doubletree Guest Suites Convention Center - 252 rooms</li>
+           <li>Embassy Suites Hotel Anaheim South - 375 rooms</li>
+           <li>Residence Inn Anaheim Resort Area - 200 rooms</li>
+          </ol> ',
         );
         break;
     }
