@@ -469,7 +469,6 @@ font-weight:bold;
 color:#92a5a4;
 }
 
-
 /* PARTNER LOGO/CONTACT/ADDRESS
 *************************** */
 
@@ -2104,4 +2103,28 @@ div.tweets-pulled-listing .tweet-author a {
   font-family:Georgia, "Times New Roman", serif;
 }
 
-di                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+div.tweets-pulled-listing .tweet-time a {
+  color: #CCCCCC;
+  font-size:0.85em;
+}
+
+div.tweets-pulled-listing  div.tweet-divider {
+  clear: left;
+  border-bottom: 1px solid #efefef;
+  margin: 5px 0 5px 0;
+}
+
+div.tweets-pulled-listing ul.tweets-pulled-listing li span.tweet-text{
+font-size:14px;
+line-height:1.5;
+color:#333333;
+}
+
+/* OC SPECIALIST UPDATES CSS */
+.view.view-specialist-updates.view-display-id-page_1 .views-row{
+margin: 0 0 35px 0;
+}
+.view.view-id-specialist_updates.view-display-id-block_1 .views-row{
+margin: 0 0 20px 0;	
+}
+ 
