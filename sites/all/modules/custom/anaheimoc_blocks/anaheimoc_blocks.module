@@ -80,7 +80,7 @@ if ($op == 'list') {
         case 6:
         // Your module will need to define this function to render the block.
         $block = array(
-          'subject' => t('Hotels Within Walking Distance of Anaheim Convention Center'), 
+          'subject' => t('Hotel Map - Walking Distance Hotels'), 
           'content' => '<img src="/sites/default/files/assets/misc/walkingdistance6.GIF" />
           <ol>
            <li>Disneyland Hotel - 990 Rooms</li>
