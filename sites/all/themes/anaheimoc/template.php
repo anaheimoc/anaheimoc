@@ -20,12 +20,127 @@ function anaheimoc_theme() {
 
 function anaheimoc_preprocess_page(&$vars) {
   //Add domain id variable to page.tpl.php
+  global $user;
   global $_domain;
   $vars['domain_id'] = check_plain($_domain['domain_id']);
   
   // Alter the $logo link on the microsite section
   if ($_domain['domain_id'] == 6){
     $vars['front_page'] = '';
+  }
+  
+  if ($user->uid > 0){  
+  $vars['login_links'] = array(
+  'logout' => array(
+    'title' => t('Log Out'),
+    'href' => 'logout',
+    'attributes' => array(
+      'title' => t('Log out'),
+      'class' => 'logout',
+     ),
+    ),
+  'about' => array(
+    'title' => t('About Anaheim/OC'),
+    'href' => 'node/23091',
+    'attributes' => array(
+      'title' => t('About Anaheim/Orange County'),
+      'class' => 'about',
+     ),
+    ),
+  'twitter' => array(
+    'title' => '<img src="/sites/all/themes/anaheimoc/images/twitter_25.png" />',
+    'href' => 'http://www.twitter.com/anaheim_oc',
+    'html' => TRUE,    
+    'attributes' => array(
+      'title' => t('go to another page'),
+      'class' => 'twitter',
+     ),
+    ),
+  'facebook' => array(
+    'title' => '<img src="/sites/all/themes/anaheimoc/images/facebook_25.png" />',
+    'href' => 'http://facebook.com/anaheimoc',
+    'html' => TRUE, 
+    'attributes' => array(
+      'title' => t('go to another page'),
+      'class' => 'facebook',
+     ),
+    ),  
+  'youtube' => array(
+    'title' => '<img src="/sites/all/themes/anaheimoc/images/youtube_25.png" />',
+    'href' => 'node/add',
+    'html' => TRUE,     
+    'attributes' => array(
+      'title' => t('go to another page'),
+      'class' => 'youtube',
+     ),
+    ),
+  'flickr' => array(
+    'title' => '<img src="/sites/all/themes/anaheimoc/images/flickr_25.png" />',
+    'href' => 'node/add',
+    'html' => TRUE,     
+    'attributes' => array(
+      'title' => t('go to another page'),
+      'class' => 'flickr',
+     ),
+    ),       
+  );
+  }
+  
+  else{
+  $vars['login_links'] = array(
+  'login' => array(
+    'title' => t('Log In'),
+    'href' => 'user/login',
+    'attributes' => array(
+      'title' => t('Log in'),
+      'class' => 'login',
+     ),
+    ),
+  'about' => array(
+    'title' => t('About Anaheim/OC'),
+    'href' => 'node/23091',
+    'attributes' => array(
+      'title' => t('About Anaheim/Orange County'),
+      'class' => 'about',
+     ),
+    ),
+  'twitter' => array(
+    'title' => '<img src="/sites/all/themes/anaheimoc/images/twitter_25.png" />',
+    'href' => 'http://www.twitter.com/anaheim_oc',
+    'html' => TRUE,    
+    'attributes' => array(
+      'title' => t('go to another page'),
+      'class' => 'twitter',
+     ),
+    ),
+  'facebook' => array(
+    'title' => '<img src="/sites/all/themes/anaheimoc/images/facebook_25.png" />',
+    'href' => 'http://facebook.com/anaheimoc',
+    'html' => TRUE, 
+    'attributes' => array(
+      'title' => t('go to another page'),
+      'class' => 'facebook',
+     ),
+    ),  
+  'youtube' => array(
+    'title' => '<img src="/sites/all/themes/anaheimoc/images/youtube_25.png" />',
+    'href' => 'node/add',
+    'html' => TRUE,     
+    'attributes' => array(
+      'title' => t('go to another page'),
+      'class' => 'youtube',
+     ),
+    ),
+  'flickr' => array(
+    'title' => '<img src="/sites/all/themes/anaheimoc/images/flickr_25.png" />',
+    'href' => 'node/add',
+    'html' => TRUE,     
+    'attributes' => array(
+      'title' => t('go to another page'),
+      'class' => 'flickr',
+     ),
+    ),       
+  );
   }
 }
 
@@ -108,8 +223,6 @@ function anaheimoc_preprocess_node(&$variables, $hook) {
 }
 
 function anaheimoc_preprocess_node_partner_listing(&$variables) {
-  //dpm($variables);
-  //$node = $variables['node'];
   $variables['visitor_description'] = $variables['field_mem_description_visitor'][0]['safe'];
   $variables['meetings_description'] = $variables['field_mem_description_meetings'][0]['safe'];
   

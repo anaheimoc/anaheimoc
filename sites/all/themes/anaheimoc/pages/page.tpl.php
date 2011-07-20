@@ -46,6 +46,8 @@
             <?php print theme('grid_block', $weather_bug, 'weather-block') ?>
             
 			<?php print theme('grid_block', $search_box, 'search-box'); ?>
+			
+			<?php print theme('grid_block', theme('links', $login_links), 'login-block'); ?>
             
             <?php if ($site_name || $site_slogan): ?>
             <div id="header-site-info" class="header-site-info block">
