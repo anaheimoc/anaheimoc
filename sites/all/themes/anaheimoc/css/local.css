@@ -19,10 +19,11 @@ margin: 10px 0;
 
 /* WEATHER BUG
 *************************************** */
+/*
 #block-weather-3 {
     float: left;
     height: 90px;
-    margin: 54px 10px 0;
+    margin: 54px 10px 0 0;
     width: 140px;
 }
 #block-weather-3 div.inner {
@@ -89,13 +90,16 @@ text-shadow: 1px 1px 4px #000000;
     display: block;
 }
 
+*/
+
 /* FRONT PAGE CSS - SITEWIDE */
 
 /* LOGIN HEADER AREA
 ************************** */
+/*
 #block-menu-menu-header-login{
 margin-bottom: 5px;
-font-family: Georgia;
+font-family: Georgia, "Times New Roman", serif;
 font-weight: bold;
 font-style:italic;
 }
@@ -139,31 +143,37 @@ padding-right: 0;
 #block-menu-menu-header-login ul.menu a.youtube-btn,
 #block-menu-menu-header-login ul.menu a.flickr-btn{
 border-right: 0;
-height: 0px; width: 25px;
+height: 0px; 
+width: 25px;
 overflow: visible;
-padding: 30px 0 0px;
+padding: 30px 0 0 0;
 margin: 0;
+display:block;
 }
 
-#block-menu-menu-header-login ul.menu a.facebook-btn,
-#block-menu-menu-header-login ul.menu a.facebook-btn:hover{
-background: url(img/facebook_25.png) no-repeat center top;	
+#block-menu-menu-header-login ul.menu li.leaf a.facebook-btn,
+#block-menu-menu-header-login ul.menu li.leaf a:hover.facebook-btn{
+background-image:url(img/facebook_25.png);
+background: url(img/facebook_25.png) center top no-repeat;	
 }
 #block-menu-menu-header-login ul.menu a.twitter-btn,
-#block-menu-menu-header-login ul.menu a.twitter-btn:hover{
+#block-menu-menu-header-login ul.menu a:hover.twitter-btn{
 background: url(img/twitter_25.png) no-repeat center top;	
 }
 #block-menu-menu-header-login ul.menu a.youtube-btn,
-#block-menu-menu-header-login ul.menu a.youtube-btn:hover{
+#block-menu-menu-header-login ul.menu a:hover.youtube-btn{
 background: url(img/youtube_25.png) no-repeat center top;	
 }
 #block-menu-menu-header-login ul.menu a.flickr-btn,
-#block-menu-menu-header-login ul.menu a.flickr-btn:hover{
+#block-menu-menu-header-login ul.menu a:hover.flickr-btn{
 background: url(img/flickr_25.png) no-repeat center top;
 }
 
+*/
+
 /* ALTERNATE PRIMARY MENU CSS (BLOCKS)
 *************************************** */
+/*
 #header-group-inner .block.block-menu.alt-primary-menu{
 background: rgba(0, 164, 228, 1.0);
 margin:0px auto;
@@ -206,7 +216,7 @@ margin:0 auto;
 	position: relative;
 	left: -10px;
 	top: 218px;
-	z-index: -1; /* displayed under menulayer */
+	z-index: -1;
 }
 
 .menu-triangle-right {
@@ -218,7 +228,7 @@ margin:0 auto;
 	position: relative;
 	left: 970px;
 	top: 198px;
-	z-index: -1; /* displayed under menulayer */
+	z-index: -1;
 }
 
 
@@ -254,6 +264,9 @@ padding:10px 9px 10px 9px;
 background: rgba(0,0,0,0.2)url("img/arrow-up.png") no-repeat scroll center bottom;
 text-decoration: none;
 }
+*/
+
+/* end header */
 
 /* HOMEPAGE SLIDESHOWS */
 .front .slideshow-wrapper{
@@ -291,12 +304,13 @@ padding:0;
 
 .views_slideshow_pause,
 .views_slideshow_play{
-display:none
+display:none;
 }
 
 a.views_slideshow_previous,
 a.views_slideshow_next{
-display:block;
+float:left;
+display:inline;
 position:relative;
 width:56px;
 height:56px;
@@ -308,7 +322,6 @@ background: -o-linear-gradient(top, rgba(255,223,81,0.2) 0%,rgba(255,210,0,0.2) 
 background: -ms-linear-gradient(top, rgba(255,223,81,0.2) 0%,rgba(255,210,0,0.2) 100%); /* IE10+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdf51', endColorstr='#ffd200',GradientType=0 ); /* IE6-9 */
 background: linear-gradient(top, rgba(255,223,81,0.2) 0%,rgba(255,210,0,0.2) 100%); /* W3C */
-float:left;
 z-index:9999;
 font-size:56px;
 line-height:56px;
