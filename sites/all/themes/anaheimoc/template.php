@@ -22,7 +22,6 @@ function anaheimoc_preprocess_page(&$vars) {
   //Add domain id variable to page.tpl.php
   global $_domain;
   $vars['domain_id'] = check_plain($_domain['domain_id']);
-  //dpm($vars['front_page']);
   
   // Alter the $logo link on the microsite section
   if ($_domain['domain_id'] == 6){
