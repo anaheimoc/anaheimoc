@@ -34,15 +34,19 @@
       <div id="header-group-wrapper" class="header-group-wrapper full-width">
         <div id="header-group" class="header-group row <?php print $grid_width; ?>">
           <div id="header-group-inner" class="header-group-inner inner clearfix">                    
-            <?php print theme('grid_block', $search_box, 'search-box'); ?>
-						<?php if ($logo): ?>
+            
+            <?php if ($logo): ?>
                 <div id="logo">
                   <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
                 </div>
-            <?php endif; ?>
+            <?php endif; ?>            
+            
             <?php print theme('grid_block', theme('links', $secondary_links), 'secondary-menu'); ?>
             
-
+            <?php print theme('grid_block', $weather_bug, 'weather-block') ?>
+            
+			<?php print theme('grid_block', $search_box, 'search-box'); ?>
+            
             <?php if ($site_name || $site_slogan): ?>
             <div id="header-site-info" class="header-site-info block">
               <div id="header-site-info-inner" class="header-site-info-inner inner">
