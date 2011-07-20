@@ -52,7 +52,7 @@ function anaheimoc_preprocess_page(&$vars) {
     'href' => 'http://www.twitter.com/anaheim_oc',
     'html' => TRUE,    
     'attributes' => array(
-      'title' => t('go to another page'),
+      'title' => t('Follow Us On Twitter'),
       'class' => 'twitter',
      ),
     ),
@@ -61,25 +61,25 @@ function anaheimoc_preprocess_page(&$vars) {
     'href' => 'http://facebook.com/anaheimoc',
     'html' => TRUE, 
     'attributes' => array(
-      'title' => t('go to another page'),
+      'title' => t('Like Us On Facebook'),
       'class' => 'facebook',
      ),
     ),  
   'youtube' => array(
     'title' => '<img src="/sites/all/themes/anaheimoc/images/youtube_25.png" />',
-    'href' => 'node/add',
+    'href' => 'http://www.youtube.com/aocvcb',
     'html' => TRUE,     
     'attributes' => array(
-      'title' => t('go to another page'),
+      'title' => t('Watch Our Videos'),
       'class' => 'youtube',
      ),
     ),
   'flickr' => array(
     'title' => '<img src="/sites/all/themes/anaheimoc/images/flickr_25.png" />',
-    'href' => 'node/add',
+    'href' => 'http://www.flickr.com/anaheimoc',
     'html' => TRUE,     
     'attributes' => array(
-      'title' => t('go to another page'),
+      'title' => t('See Out Pictures'),
       'class' => 'flickr',
      ),
     ),       
@@ -109,7 +109,7 @@ function anaheimoc_preprocess_page(&$vars) {
     'href' => 'http://www.twitter.com/anaheim_oc',
     'html' => TRUE,    
     'attributes' => array(
-      'title' => t('go to another page'),
+      'title' => t('Follow Us On Twitter'),
       'class' => 'twitter',
      ),
     ),
@@ -118,25 +118,25 @@ function anaheimoc_preprocess_page(&$vars) {
     'href' => 'http://facebook.com/anaheimoc',
     'html' => TRUE, 
     'attributes' => array(
-      'title' => t('go to another page'),
+      'title' => t('Like Us On Facebook'),
       'class' => 'facebook',
      ),
     ),  
   'youtube' => array(
     'title' => '<img src="/sites/all/themes/anaheimoc/images/youtube_25.png" />',
-    'href' => 'node/add',
+    'href' => 'http://www.youtube.com/aocvcb',
     'html' => TRUE,     
     'attributes' => array(
-      'title' => t('go to another page'),
+      'title' => t('Watch Our Videos'),
       'class' => 'youtube',
      ),
     ),
   'flickr' => array(
     'title' => '<img src="/sites/all/themes/anaheimoc/images/flickr_25.png" />',
-    'href' => 'node/add',
+    'href' => 'http://www.flickr.com/anaheimoc',
     'html' => TRUE,     
     'attributes' => array(
-      'title' => t('go to another page'),
+      'title' => t('See Our Pictures'),
       'class' => 'flickr',
      ),
     ),       
