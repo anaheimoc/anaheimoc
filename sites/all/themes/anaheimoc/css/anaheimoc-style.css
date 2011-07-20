@@ -4,16 +4,17 @@
 -------------------------------------------------------------- */
 /* Add general site styling here for typography and background */
 body {
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;   /* also set in fusion_starter.info: settings[base-font-size] = font-size-14 */
   color: #333333;
   line-height: 1.5;
+  background: url(../images/aocvcb_background_flat.jpg) repeat-x fixed -80% 0;
   background:
   	url(../images/aocvcb_background_4.png) repeat-x fixed -130% 0,
   	url(../images/aocvcb_background_3.png) repeat-x fixed 40% 0,
-  	/* url(../images/aocvcb_background_2.png) repeat-x fixed -80% 0, */
   	url(../images/aocvcb_background_1.png) repeat-x fixed 100% 0;
   background-color: #a4d7f4;
-  font-family: Helvetica, Arial, sans-serif;
+
 }
 thead {
 background: #dbeffb;
@@ -154,11 +155,9 @@ display: block;
 }
 
 .header-group {
-width:980px;
-height:228px;
-background: url(../images/aocvcb_header_background.png);
-display: block;
+
 }
+
 
 /* Header Top region which sits above the header */
 /* Works well with inline login or inline menu block style */
@@ -188,6 +187,8 @@ padding:0;
 .primary-menu-inner ul.sf-menu a,
 .primary-menu-inner ul.sf-menu a:visited  {
 font-family: Georgia;
+color: #ffffff;
+color: rgb(255, 255, 255);
 color: rgba(255, 255, 255, 1.0);
 text-shadow: 1px 1px 4px #000000;
 font-weight: bold;
@@ -201,7 +202,7 @@ padding:10px 9px 10px 9px;
 .primary-menu-inner ul.sf-menu a:focus, 
 .primary-menu-inner ul.sf-menu a.active,
 .primary-menu-inner ul.sf-menu li.expanded.active-trail a{
-background: #2E80B9 url("/sites/all/themes/anaheimoc/images/nav_arrow.png") no-repeat center bottom;
+background: #2E80B9 url(/sites/all/themes/anaheimoc/images/nav_arrow.png) no-repeat center bottom;
 }
 
 /* These are the top level menu items, add border-right here for separators */
@@ -270,16 +271,21 @@ border-bottom: 0;
 /* Secondary menu
 -------------------------------------------------------------- */
 /* This menu usually appears in the header as a set of simple text links */
+
 .secondary-menu {
+/*
 font-family: Georgia;
-font-weight: bold;
+font-weight: normal;
 margin: 75px 10px 0 10px;
 width: 374px;
+*/
 }
 
 #secondary-menu-inner{
+/*
 margin: 0;
-// width: 380px;
+width: 374px;
+*/
 }
 
 .secondary-menu-inner ul.links{
@@ -301,16 +307,20 @@ margin: 0;
 /* Styles for links */
 .secondary-menu-inner ul.links li a:link,
 .secondary-menu-inner ul.links li a:visited {
+/*
   padding: 4px;
   font-size: 12px;
+*/
 }
 
 .secondary-menu-inner ul.links li a:hover,
 .secondary-menu-inner ul.links li a:focus,
 .secondary-menu-inner ul.links li a.active {
+/*
 text-decoration: none;
 color:#ffffff;
 background: #2E80B9;
+*/
 }
 
 /* SIMULATE SECONDARY MENU ACTIVE STATUS FOR EACH DOMAIN */
@@ -320,8 +330,10 @@ body.domain-id_3 div.secondary-menu ul.links li.menu-1612 a,
 body.domain-id_4 div.secondary-menu ul.links li.menu-1613 a,
 body.domain-id_5 div.secondary-menu ul.links li.menu-1614 a,
 body.domain-id_7 div.secondary-menu ul.links li.menu-3015 a{
+/*
 color:#ffffff;
 background: #2E80B9;
+*/
 }
 
 
@@ -329,52 +341,68 @@ background: #2E80B9;
 /* Header - Search
 -------------------------------------------------------------- */
 .search-box.block {
+/*
 background: transparent;
 float: right;
 margin-top: 65px;
 margin-right:10px;
-width: 200px;
+width: 210px;
+*/
 }
 
 div#search-box-inner{
-background: #fff;
+/*
+background: #ffffff;
 margin-right: 0;
 padding: 3px;
+*/
 }
 
 .search-box-inner.block.form-item {
+/*
 vertical-align: middle;
+*/
 }
 
 .search-box-inner form#search-theme-form {
 }
 
 .search-box-inner form#search-theme-form #search{
-background: #fff;
+/*
+background: #ffffff;
+*/
 }
 
 .search-box-inner input#edit-search-theme-form-header {
 }
 
 .search-box-inner form#search-theme-form #edit-search-theme-form-1-wrapper{
+/*
 margin: 0;
+*/
 }
 
 .search-box-inner form#search-theme-form .form-submit.btn{
+/*
 display: inline;
 float: right;
 padding: 4px 0 0;
+*/
 }
 
 .search-box-inner form#search-theme-form input#edit-search-theme-form-1{
+/*
 background: none;
 border: none;
 margin: 8px 0 5px;
+*/
 /*padding: 5px;*/
 }
 .search-box-inner form#search-theme-form input#edit-search-theme-form-1.form-item{
+/*
 background: none;
 padding: 5px;
+*/
 }
 
 .search-box-inner form#search-theme-form input#edit-search-theme-form-1:focus{
@@ -393,6 +421,8 @@ padding: 5px;
 }
 
 .preface-top-inner {
+background: #ffffff;
+background: rgb(255, 255, 255);
 background: rgba(255, 255, 255, 1.0);
 padding: 10px 0 0 0;
 }
@@ -410,7 +440,9 @@ padding: 10px 0 0 0;
 }
 
 .main{
-background: rgba(255, 255, 255, 1.0)
+background: #ffffff;
+background: rgb(255, 255, 255);
+background: rgba(255, 255, 255, 1.0);
 }
 
 
@@ -462,13 +494,15 @@ margin-top: 10px;
 }
 
 .postscript-bottom-inner {
-background: #fff;
+background: #ffffff;
 }
 
 .footer-wrapper {
 }
 
 .footer {
+background: #ffffff;
+background: rgb(255,255,255);
 background: rgba(255,255,255,1.0);
 }
 
@@ -630,7 +664,7 @@ h2.block-title {
 
 #content-tabs ul.primary,
 #content-tabs ul.secondary {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #000000;
   clear: both;
   float: left; /* LTR */
   margin: 0;
@@ -659,7 +693,7 @@ h2.block-title {
 #content-tabs ul.secondary li a:visited {
   background-color: transparent;
   border: none;
-  color: #000;
+  color: #000000;
   float: left; /* LTR */
   font-weight: bold;
   margin: 0;
@@ -675,7 +709,7 @@ h2.block-title {
 
 #content-tabs ul.primary li a.active:link,
 #content-tabs ul.primary li a.active:visited {
-  border-bottom: 4px solid #000;
+  border-bottom: 4px solid #000000;
   color: #555;
   padding-bottom: 2px;
 }
@@ -745,7 +779,7 @@ ul.pager a:active,
 ul.pager a:focus {
   background-color: #00a4e4;
   border-color: #a4d7f4;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Forms
@@ -808,22 +842,26 @@ table {
 
 /* Body of tables */
 tbody {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
 }
 
 /* Header of tables */
 thead th,
 th {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #ffffff;
 }
 
 tbody th {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #ffffff;
 }
 
 /* Alternating row background styles */
 tr.even:hover, tr.odd:hover, tr.even:hover td, tr.odd:hover td {
+  color: #00a4e4;
+  color: rgb(0, 164, 228);
   color: rgba(0, 164, 228, 1.0);
+  background: #a4d7f4;
+  background: rgb(164, 215, 244);
   background: rgba(164, 215, 244, 0.25);
   -webkit-transition-property: background;
   -webkit-transition-duration: 0.7s;
@@ -834,14 +872,18 @@ tr.even:hover, tr.odd:hover, tr.even:hover td, tr.odd:hover td {
 }
 tr.even,
 tr.even td {
-  border-bottom: 1px solid #fff;
-  background: rgba(185, 227, 250, 0.05)
+  border-bottom: 1px solid #ffffff;
+  background: #b9e3fa;
+  background: rgb(185, 227, 250);
+  background: rgba(185, 227, 250, 0.05);
 }
 
 tr.odd,
 tr.odd td {
-  border-bottom: 1px solid #fff;
-  background: rgba(185, 227, 250, 0.15)
+  border-bottom: 1px solid #ffffff;
+  background: #b9e3fa;
+  background: rgb(185, 227, 250);
+  background: rgba(185, 227, 250, 0.15);
 }
 
 td.active {
@@ -849,7 +891,7 @@ td.active {
 
 tr.drag td,
 tr.drag-previous td {
-  color: #000;
+  color: #000000;
 }
 
 
@@ -869,12 +911,12 @@ tr.drag-previous td {
 /* Book
 /-------------------------------------------------------------- */
 .book-navigation .menu {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
 }
 
 .book-navigation .page-links {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
 }
 
 
@@ -895,7 +937,7 @@ div.comment ul.links a {
 
 /* Alternating styles for even/odd comments */
 .comments div.odd {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .comments div.even {
@@ -947,7 +989,7 @@ div.poll div.bar div.foreground {
 
 /* Styles for sub-headings on user profiles */
 .profile dt {
-  background-color: #ccc;
+  background-color: #cccccc;
 }
 
 
@@ -1065,11 +1107,11 @@ input.list-add-to-cart:focus {
     links, even if it's similar to the default body style. Remember, this block
     style may be used in regions with other foreground colors, thus making text
     invisible if left unspecified */
-  background-color: #ccc;
-  color: #000;
+  background-color: #cccccc;
+  color: #000000;
   /* All padding and borders should go on the .inner div, so as not to break
     the widths of the grid */
-  border: 3px solid #000;
+  border: 3px solid #000000;
   padding: 10px;
 }
 
