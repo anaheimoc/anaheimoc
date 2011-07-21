@@ -3,3 +3,4 @@ sites/default/settings.php
 sites/default/default.settings.php
 partners.xml
 sites/all/modules/contrib/examples/*
+php.ini
