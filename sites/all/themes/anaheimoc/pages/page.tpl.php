@@ -68,8 +68,7 @@
 
             <?php print $header; ?>
             <?php print theme('grid_block', $primary_links_tree, 'primary-menu'); ?>
-            <div class="menu-triangle-left"></div>
-            <div class="menu-triangle-right"></div>
+            
           </div><!-- /header-group-inner -->
         </div><!-- /header-group -->
       </div><!-- /header-group-wrapper -->
