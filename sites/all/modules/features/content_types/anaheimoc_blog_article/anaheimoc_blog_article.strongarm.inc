@@ -74,18 +74,41 @@ function anaheimoc_blog_article_strongarm() {
   $strongarm->name = 'content_extra_weights_blog_article';
   $strongarm->value = array(
     'title' => '-5',
-    'body_field' => '0',
-    'revision_information' => '4',
-    'author' => '3',
-    'options' => '5',
-    'comment_settings' => '6',
-    'menu' => '-1',
+    'body_field' => '-1',
+    'revision_information' => '5',
+    'author' => '4',
+    'options' => '6',
+    'comment_settings' => '7',
+    'menu' => '3',
     'taxonomy' => '-2',
-    'path' => '7',
+    'path' => '8',
     'domain' => '2',
+    'detailed_question' => '10',
+    'path_redirect' => '11',
   );
 
   $export['content_extra_weights_blog_article'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ffp_blog_article_field_anaheimoc_page_hero_image';
+  $strongarm->value = 0;
+
+  $export['ffp_blog_article_field_anaheimoc_page_hero_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ffp_blog_article_field_article_image';
+  $strongarm->value = 0;
+
+  $export['ffp_blog_article_field_article_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ffp_blog_article_field_article_image_additional';
+  $strongarm->value = 0;
+
+  $export['ffp_blog_article_field_article_image_additional'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
