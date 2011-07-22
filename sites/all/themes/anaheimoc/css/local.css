@@ -103,9 +103,10 @@ background: url(img/flickr_25.png) no-repeat center top;
 background: rgba(0, 164, 228, 1.0);
 margin:0px auto;
 padding:0;
--moz-box-shadow: 0px 0px 6px rgba(0,164,228,0.7);
-  -khtml-box-shadow: 0px 0px 6px rgba(0,164,228,0.7);
-  -webkit-box-shadow: 0px 0px 6px rgba(0,164,228,0.7);
+-moz-box-shadow: 0px 0px 6px #00A4E4;
+  -khtml-box-shadow: 0px 0px 6px #00A4E4;
+  -webkit-box-shadow: 0px 0px 6px #00A4E4;
+  box-shadow: 0px 0px 6px #00A4E4;
 }
 
 #header-group-inner .block.block-menu.alt-primary-menu li:after{  
@@ -126,9 +127,10 @@ margin:0 auto;
 }
 
 .primary-menu.block{
--moz-box-shadow: 0px 0px 6px rgba(0,164,228,0.7);
+  -moz-box-shadow: 0px 0px 6px rgba(0,164,228,0.7);
   -khtml-box-shadow: 0px 0px 6px rgba(0,164,228,0.7);
   -webkit-box-shadow: 0px 0px 6px rgba(0,164,228,0.7);
+  box-shadow: 0px 0px 6px rgba(0,164,228,0.7);
 	z-index: 100;
 }
 

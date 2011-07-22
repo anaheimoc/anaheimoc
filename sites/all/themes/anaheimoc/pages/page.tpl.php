@@ -69,11 +69,11 @@
             <?php print $header; ?>
             
             <div id="primary-menu" class="primary-menu block">
-              <div class="menu-triangle-left"></div>
-			  <div class="menu-triangle-right"></div>
 			  <div id="primary-menu-inner" class="primary-menu-inner inner clearfix">
                 <?php print $primary_links_tree; ?>
               </div>
+           	  <div class="menu-triangle-left"></div>
+			  <div class="menu-triangle-right"></div>
             </div>
             
           </div><!-- /header-group-inner -->
