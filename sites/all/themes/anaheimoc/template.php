@@ -142,6 +142,24 @@ function anaheimoc_preprocess_page(&$vars) {
     ),       
   );
   }
+  
+  // Generate links tree & add Superfish class if dropdown enabled, else make standard primary links
+  $vars['primary_links_tree'] = '';
+  if ($vars['primary_links']) {
+    if (theme_get_setting('primary_menu_dropdown') == 1) {
+      // Check for menu internationalization
+      if (module_exists('i18nmenu')) {
+        $vars['primary_links_tree'] = i18nmenu_translated_tree(variable_get('menu_primary_links_source', 'primary-links'));
+      }
+      else {
+        $vars['primary_links_tree'] = menu_tree(variable_get('menu_primary_links_source', 'primary-links'));
+      }
+      $vars['primary_links_tree'] = preg_replace('/<ul class="menu/i', '<div class="menu-triangle-left"></div><div class="menu-triangle-right"></div><ul class="menu sf-menu', $vars['primary_links_tree'], 1);
+    }
+    else {
+      $vars['primary_links_tree'] = theme('links', $vars['primary_links'], array('class' => 'menu'));
+    }
+  }
 }
 
 /**
