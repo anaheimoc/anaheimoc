@@ -84,6 +84,7 @@ function anaheimoc_partner_listing_strongarm() {
     'attachments' => '17',
     'domain' => '11',
     'detailed_question' => '18',
+    'path_redirect' => '30',
   );
 
   $export['content_extra_weights_partner_listing'] = $strongarm;

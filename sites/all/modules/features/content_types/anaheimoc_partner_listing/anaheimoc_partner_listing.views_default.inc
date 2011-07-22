@@ -4372,6 +4372,8 @@ function anaheimoc_partner_listing_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
+  $handler->override_option('header_format', '2');
+  $handler->override_option('header_empty', 0);
   $handler = $view->new_display('block', 'Partners (visitor description) - block', 'block_1');
   $handler->override_option('fields', array(
     'nid' => array(
@@ -5003,8 +5005,6 @@ function anaheimoc_partner_listing_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('header_format', '2');
-  $handler->override_option('header_empty', 0);
   $handler->override_option('block_description', 'Partners (visitor amenities) - block');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Partners (meetings amenities) - block', 'block_4');
@@ -5156,8 +5156,6 @@ function anaheimoc_partner_listing_views_default_views() {
       ),
     ),
   ));
-  $handler->override_option('header_format', '2');
-  $handler->override_option('header_empty', 0);
   $handler->override_option('block_description', 'Partners (meetings amenities) - block');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('attachment', 'Partners (visitor features) - attachment', 'attachment_1');
@@ -5293,8 +5291,6 @@ function anaheimoc_partner_listing_views_default_views() {
     ),
   ));
   $handler->override_option('header', '<h3>Features</h3>');
-  $handler->override_option('header_format', '2');
-  $handler->override_option('header_empty', 0);
   $handler->override_option('attachment_position', 'after');
   $handler->override_option('inherit_arguments', TRUE);
   $handler->override_option('inherit_exposed_filters', FALSE);
@@ -5444,8 +5440,6 @@ function anaheimoc_partner_listing_views_default_views() {
     ),
   ));
   $handler->override_option('header', '<h3>Features</h3>');
-  $handler->override_option('header_format', '2');
-  $handler->override_option('header_empty', 0);
   $handler->override_option('attachment_position', 'after');
   $handler->override_option('inherit_arguments', TRUE);
   $handler->override_option('inherit_exposed_filters', FALSE);
@@ -5628,8 +5622,6 @@ function anaheimoc_partner_listing_views_default_views() {
     ),
   ));
   $handler->override_option('css_class', 'related-partners');
-  $handler->override_option('header_format', '2');
-  $handler->override_option('header_empty', 0);
   $handler->override_option('attachment_position', 'after');
   $handler->override_option('inherit_arguments', TRUE);
   $handler->override_option('inherit_exposed_filters', FALSE);
@@ -6902,8 +6894,6 @@ function anaheimoc_partner_listing_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('header_format', '2');
-  $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 5);
   $handler->override_option('style_options', array(
     'grouping' => 'type',
