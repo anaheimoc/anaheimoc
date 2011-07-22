@@ -67,7 +67,14 @@
             <?php endif; ?>
 
             <?php print $header; ?>
-            <?php print theme('grid_block', $primary_links_tree, 'primary-menu'); ?>
+            
+            <div id="primary-menu" class="primary-menu block">
+              <div class="menu-triangle-left"></div>
+			  <div class="menu-triangle-right"></div>
+			  <div id="primary-menu-inner" class="primary-menu-inner inner clearfix">
+                <?php print $primary_links_tree; ?>
+              </div>
+            </div>
             
           </div><!-- /header-group-inner -->
         </div><!-- /header-group -->
