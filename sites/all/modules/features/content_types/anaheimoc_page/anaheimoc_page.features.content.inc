@@ -394,7 +394,11 @@ function anaheimoc_page_content_default_fields() {
 10',
     'allowed_values_php' => '',
     'widget' => array(
-      'default_value' => NULL,
+      'default_value' => array(
+        '0' => array(
+          'value' => '0',
+        ),
+      ),
       'default_value_php' => NULL,
       'label' => 'Page weight',
       'weight' => '-1',

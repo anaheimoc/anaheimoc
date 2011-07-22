@@ -662,7 +662,19 @@ function anaheimoc_page_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('sorts', array());
+  $handler->override_option('sorts', array(
+    'field_anaheimoc_page_hero_weight_value' => array(
+      'order' => 'ASC',
+      'delta' => -1,
+      'id' => 'field_anaheimoc_page_hero_weight_value',
+      'table' => 'node_data_field_anaheimoc_page_hero_weight',
+      'field' => 'field_anaheimoc_page_hero_weight_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
   $handler->override_option('arguments', array());
   $handler->override_option('filters', array(
     'status' => array(
@@ -677,25 +689,6 @@ function anaheimoc_page_views_default_views() {
       'id' => 'status',
       'table' => 'node',
       'field' => 'status',
-      'relationship' => 'none',
-    ),
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'anaheimoc_page' => 'anaheimoc_page',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'override' => array(
-        'button' => 'Use default',
-      ),
       'relationship' => 'none',
     ),
     'field_anaheimoc_page_hero_tax_value' => array(
