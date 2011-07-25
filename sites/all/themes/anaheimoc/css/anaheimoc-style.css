@@ -149,15 +149,16 @@ display: inline;
 /* Header Top region to the bottom of Header region */
 /* For full-width header background, add background image/color here */
 .header-group-wrapper {
-
-}
-
-.header-group-inner{
 margin-top:18px;
 }
 
-.header-group {
+.header-group-inner{
+margin:0;
+padding:0;
+width: auto;
+}
 
+#header-group {
 }
 
 
@@ -181,10 +182,9 @@ width: 374px;
 */
 font-family: Georgia, "Times New Roman", serif;
 float:left;
-margin:70px 0 0 0;
+margin:72px 0 0 0;
 display:inline;
 width:380px;
-vertical-align:text-bottom;
 }
 
 .secondary-meny.block{
@@ -375,7 +375,7 @@ margin-right:10px;
 width: 210px;
 */
 display:inline;
-width:210px;
+width:240px;
 height:60px;
 float:left;
 }
@@ -428,10 +428,12 @@ padding: 4px 0 0;
 }
 
 .search-box-inner form#search-theme-form input#edit-search-theme-form-1{
-width:150px;
+width:200px;
 background: none;
 border: none;
-margin: 8px 0 5px 0;
+margin:0;
+font-size:20px;
+color:#666666;
 
 /*padding: 5px;*/
 }
@@ -450,6 +452,36 @@ padding: 5px;
 float:left;
 display:inline;
 width:380px;
+text-align:right;
+font-family: Georgia, "Times New Roman", serif;
+}
+
+.login-block .links li{
+margin-right: 4px;
+}
+
+.login-block .links li.last{
+margin-right: 0px;
+}
+
+.login-block .links li a{
+font-size:12px;
+}
+
+.login-block .links li a:hover{
+font-size:12px;
+color: #ffffff;
+text-decoration:none;
+}
+
+#login-block.block .inner{
+margin:0;
+}
+
+a.feed-icon img, ul.links img, th img{
+margin:0;
+width:25px;
+height:25px;
 }
 
 /* Primary Menu
@@ -458,8 +490,47 @@ width:380px;
   or spacing above/below */
 .primary-menu {
 background-color: #00A4E4;
-margin:0;
-padding:0;
+margin:0 -10px;
+padding:0 10px;
+position:relative;
+-moz-box-shadow: 0px 0px 6px #00A4E4;
+-khtml-box-shadow: 0px 0px 6px #00A4E4;
+-webkit-box-shadow: 0px 0px 6px #00A4E4;
+box-shadow: 0px 0px 6px #00A4E4;
+clear:both;
+}
+
+.primary-menu-inner{
+}
+
+.menu-triangle-left {
+	margin:0;
+	padding:0;
+	outline:0;
+	border-color: transparent #0066cc transparent transparent;
+	border-style:solid;
+	border-width:10px;
+	height:0px;
+	width:0px;
+	position: absolute;
+	left: -10px;
+	top: 30px;
+	z-index: -1;
+}
+
+.menu-triangle-right {
+	margin:0;
+	padding:0;
+	outline:0;
+	border-color: transparent transparent transparent #0066cc;
+	border-style:solid;
+	border-width:10px;
+	height:0px;
+	width:0px;
+	position: absolute;
+	left: 970px;
+	top: 30px;
+	z-index: -1;
 }
 
 /* styles for Superfish primary menu */
