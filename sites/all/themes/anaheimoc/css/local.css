@@ -342,15 +342,14 @@ left:470px;
 margin:12px 0 12px 0;
 padding:12px;
 overflow:hidden;
-background:#92a5a4;
-background:rgba(146, 165, 164, 0.2);
--ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-filter: alpha(opacity=20);
+background:rgb(146, 165, 164);
+background:transparent;
+background:rgba(146, 165, 164, 0.6);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#9992a5a4  endColorstr=#9992a5a4);
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#9992a5a4, endColorstr=#9992a5a4)";
 }
 
 .slideshow-text-title, .slideshow-text-description{
--ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-filter: alpha(opacity=100);
 }
 
 .slideshow-text-title h3{
