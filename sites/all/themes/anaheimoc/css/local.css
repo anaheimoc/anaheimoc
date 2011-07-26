@@ -1553,7 +1553,8 @@ display: none;
 }
 
 /* Call to Action button */
-#call_to_action a.button {
+#call_to_action a.button,
+#call_to_action_side a.button{
 padding: 10px 25px 10px 25px;
 font-family: Arial;
 font-size: 14px;
@@ -1566,10 +1567,10 @@ border: 1px solid #618926;
 border-radius: 3px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-
 }
 
-#call_to_action a.button:hover {
+#call_to_action a.button:hover,
+#call_to_action_side a.button:hover{
 padding: 10px 25px 10px 25px;
 font-family: Arial;
 font-size: 14px;
@@ -1584,8 +1585,8 @@ border-radius: 3px;
 -webkit-border-radius: 3px; 
 }
 
-#call_to_action {
-margin:10px 0;
+#call_to_action, #call_to_action_side {
+margin:18px 0;
 overflow:visible;
 }
 
