@@ -20,12 +20,13 @@ function anaheimoc_page_imagecache_default_presets() {
       'actions' => array(
         '0' => array(
           'weight' => '0',
-          'module' => 'smartcrop',
-          'action' => 'smartcrop_scale_and_crop',
+          'module' => 'imagefield_focus',
+          'action' => 'imagefield_focus_scale_and_crop',
           'data' => array(
             'width' => '616',
             'height' => '236',
-            'upscale' => 0,
+            'strength' => 'high',
+            'fallback' => 'smartcrop',
           ),
         ),
       ),
