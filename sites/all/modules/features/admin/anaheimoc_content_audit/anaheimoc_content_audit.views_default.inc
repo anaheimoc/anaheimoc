@@ -281,6 +281,17 @@ function anaheimoc_content_audit_views_default_views() {
     ),
   ));
   $handler->override_option('sorts', array(
+    'field_page_editor_review_value' => array(
+      'order' => 'DESC',
+      'delta' => -1,
+      'id' => 'field_page_editor_review_value',
+      'table' => 'node_data_field_page_editor_review',
+      'field' => 'field_page_editor_review_value',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
     'changed' => array(
       'order' => 'ASC',
       'granularity' => 'second',
@@ -307,14 +318,72 @@ function anaheimoc_content_audit_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
+    'title' => array(
+      'operator' => 'word',
+      'value' => '',
+      'group' => '0',
+      'exposed' => TRUE,
+      'expose' => array(
+        'use_operator' => 0,
+        'operator' => 'title_op',
+        'identifier' => 'title',
+        'label' => 'Page Title Search:',
+        'remember' => 0,
+      ),
+      'case' => 1,
+      'id' => 'title',
+      'table' => 'node',
+      'field' => 'title',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
+    'uid' => array(
+      'operator' => 'in',
+      'value' => '',
+      'group' => '0',
+      'exposed' => TRUE,
+      'expose' => array(
+        'use_operator' => 0,
+        'operator' => 'uid_op',
+        'identifier' => 'uid',
+        'label' => 'Updated By:',
+        'optional' => 1,
+        'remember' => 0,
+        'reduce' => 0,
+      ),
+      'id' => 'uid',
+      'table' => 'users',
+      'field' => 'uid',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'uid',
+    ),
   ));
   $handler->override_option('access', array(
-    'type' => 'none',
+    'type' => 'role',
+    'role' => array(
+      3 => 3,
+      32 => 32,
+      35 => 35,
+      28 => 28,
+      30 => 30,
+      29 => 29,
+      27 => 27,
+      24 => 24,
+      25 => 25,
+      23 => 23,
+      22 => 22,
+      26 => 26,
+      31 => 31,
+    ),
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Anaheim/OC Content Audit');
+  $handler->override_option('title', 'Anaheim/OC Editorial Review');
   $handler->override_option('items_per_page', 20);
   $handler->override_option('use_pager', '1');
   $handler->override_option('distinct', 0);
