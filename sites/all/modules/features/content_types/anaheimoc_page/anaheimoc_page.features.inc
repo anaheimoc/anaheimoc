@@ -31,6 +31,21 @@ function anaheimoc_page_imagecache_default_presets() {
         ),
       ),
     ),
+    'page_main_image_teaser' => array(
+      'presetname' => 'page_main_image_teaser',
+      'actions' => array(
+        '0' => array(
+          'weight' => '0',
+          'module' => 'smartcrop',
+          'action' => 'smartcrop_scale_and_crop',
+          'data' => array(
+            'width' => '136',
+            'height' => '136',
+            'upscale' => 0,
+          ),
+        ),
+      ),
+    ),
   );
   return $items;
 }
